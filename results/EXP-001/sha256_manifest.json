@@ -1,0 +1,49 @@
+{
+ "directory": "results/EXP-001",
+ "files": {
+  "analysis/analysis.json": {
+   "bytes": 3802,
+   "sha256": "7d491b6f8e5528431e1acae65de4364d76b0bd14ec2cc9cd47b54d8278c47280"
+  },
+  "analysis/analysis.md": {
+   "bytes": 1208,
+   "sha256": "c46cd50b4fab1d71c2933b5c964bf18291af59cb7888986f390f066ae743359c"
+  },
+  "exit_status.json": {
+   "bytes": 327,
+   "sha256": "dd6af6c0c2b52881fd90b706fcd1058f9bc83dedbeb5378b042ef27070b56ad0"
+  },
+  "figures/z_histogram.png": {
+   "bytes": 19796,
+   "sha256": "a19b81b375def39e8e308c3711c4f1dcdb7c48a70ba12cf7e4605c32513f76db"
+  },
+  "metrics.csv": {
+   "bytes": 45252,
+   "sha256": "9c1d8964e0db77d0f00d4c64bd0581eb367c432c200a6d0d2ae626c12f5b28ff"
+  },
+  "provenance.csv": {
+   "bytes": 110808,
+   "sha256": "2351a3e2f96ab5f2c0f0b3084ba720253e3dc6532ff8cfb6f9dd725e70bebeb8"
+  },
+  "report.md": {
+   "bytes": 31995,
+   "sha256": "4a336c75a0b8547dd7ab635d874109912541dea95338ef1a8e65cd80b0cb2417"
+  },
+  "report.pdf": {
+   "bytes": 496705,
+   "sha256": "82967f43e7841619d74312f0694faa2c9f6be61e08e945f21b74a5c35606c998"
+  },
+  "results.json": {
+   "bytes": 234258,
+   "sha256": "c79d15c55b9cedc9c52caf96360edbc39b56d4606da93037907b4a75a5778d76"
+  },
+  "run_log.txt": {
+   "bytes": 284,
+   "sha256": "5e685bd6e86ebe41b9dcf03c2e61c84e59a5a2b5c2b9a50e459a28a510026e91"
+  },
+  "run_manifest.json": {
+   "bytes": 1606,
+   "sha256": "799aa5de5a2a55b3ec17753457458940052395b9eea51a0cc6194c1af4571619"
+  }
+ }
+}

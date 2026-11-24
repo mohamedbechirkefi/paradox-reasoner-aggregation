@@ -1,0 +1,3 @@
+confirmatory run of EXP-003 finished in 70.26 s; peak RSS 226.4 MiB; outputs in results/EXP-003
+report: results/EXP-003/report.md; pdf: /Users/bechir/research/labs/paradox-reasoner-aggregation/results/EXP-003/report.pdf
+H1: the sign of Delta_MV depends on the dependence model in at least one matched cell

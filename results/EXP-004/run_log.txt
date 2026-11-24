@@ -1,0 +1,3 @@
+confirmatory run of EXP-004 finished in 43.66 s; peak RSS 223.2 MiB; outputs in results/EXP-004
+report: results/EXP-004/report.md; pdf: /Users/bechir/research/labs/paradox-reasoner-aggregation/results/EXP-004/report.pdf
+H0 retained: no factor level reverses the sign of any Holm-significant cell

@@ -1,0 +1,54 @@
+{
+ "command": [
+  "paradox",
+  "run",
+  "--config",
+  "configs/exploratory/smoke.json",
+  "--out",
+  "results/exploratory/m3-smoke",
+  "--pdf"
+ ],
+ "config_sha256": "4d15e19e71aa2ba917002c71a862634252d274c84d08f5a0e98d68628d0a2671",
+ "environment": {
+  "cpu": "Apple M1 Pro",
+  "machine": "arm64",
+  "os": "Darwin 24.3.0 (macOS-15.3.1-arm64-arm-64bit)",
+  "versions": {
+   "hypothesis": "6.170.15",
+   "jsonschema": "4.26.0",
+   "matplotlib": "3.11.2",
+   "numpy": "2.5.4",
+   "paradox": "0.1.0",
+   "pytest": "9.2.0",
+   "python": "3.12.1",
+   "typst": "0.15.2"
+  }
+ },
+ "experiment_id": "SMOKE",
+ "finished_utc": "2026-11-24T23:36:40Z",
+ "git_revision": "d997cf81784aaf136e385e489febaade7e18e55c",
+ "label": "exploratory",
+ "manifest_version": "1.0.0",
+ "outputs": {
+  "metrics.csv": "e7aa8a432ef6c144b9b05d50a06f770aece09d09e7047021185343eb2f75b7b1",
+  "results.json": "710b9a56c5faa4834e6d10d222daa99eb97f91f6f6a9fc098a5c2fc9da46aea0"
+ },
+ "peak_rss_bytes": 43302912,
+ "peak_rss_note": "process-level peak resident set size from getrusage, includes interpreter and imports",
+ "per_record_runtime_s": {
+  "RUN-0001": 0.0019442499979049899,
+  "RUN-0002": 0.0015868329937802628,
+  "RUN-0003": 0.0014408329952857457,
+  "RUN-0004": 0.03915508299542125,
+  "RUN-0005": 0.004634042001271155,
+  "RUN-0006": 0.0031711659976281226,
+  "RUN-0007": 0.0015019580023363233,
+  "RUN-0008": 0.0013791669989586808
+ },
+ "runtime_s": 0.2872298750007758,
+ "seeds": [
+  3757552657,
+  673228719
+ ],
+ "started_utc": "2026-11-24T23:36:39Z"
+}

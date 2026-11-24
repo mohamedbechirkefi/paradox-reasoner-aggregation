@@ -3,6 +3,15 @@
 
 Status at the freeze (2026-11-24): no confirmatory experiment has run. These are limitations of the frozen design (protocol v1.0), to be revised with results.
 
+## Limitations shown by the confirmatory results (M3, 2026-11-25)
+
+- **The degradation result is model-dependent (EXP-003).** At matched marginal competence and pairwise correlation, the sign of the majority-vote effect differs between dependence models in 16 of 48 matched cells. The Bahadur model degrades without any below-chance item (8 of 39 admissible cells), and the Beta difficulty model never degrades in the grid although it has below-chance items. The condition of protocol section 7 is met: EXP-002 claims about when aggregation degrades hold only for the common-shock and two-class mixture families, and pairwise correlation is not a sufficient summary (CLM-009).
+- **P2 was disconfirmed (EXP-002).** Herding (SEQ) reduces the gain of aggregation only where aggregation helps; where MV degrades (S4, S6), SEQ loses less than MV. The proposed mechanism is not tested.
+- **Shared seeds show up as correlated deviations.** In EXP-001, the S6 cells all deviate in the same direction from theory because they share one realised hard-item share (J-0011); counts of significant or deviating cells are not counts of independent findings.
+- **EXP-004 checked only 3 Holm-significant EXP-002 cells** (S4, `lambda = 0`, MV, `B` 9, 15, 31), because its scenarios and `lambda` levels cover few of the 32 significant cells. Its "no reversal" result does not extend to S6. The tie rule "abstain counted as wrong" changes the sign of many small even-budget cells (descriptive), and `w = 0.25` makes SEQ degrade in S4 at `lambda = 0` (descriptive).
+- **CW dominates every cell** (up to +0.4478 over SINGLE), as expected from the assumed confidence model; it carries no claim about aggregation.
+- **Standalone reports pending.** The section 11.3 reports for EXP-001 to EXP-004 were not written in the M3 session (D-012).
+
 ## Construct validity
 
 - Reasoners are synthetic Bernoulli answerers with a parameterised confidence signal. They are not LLMs and not people. Nothing here is an LLM benchmark result.

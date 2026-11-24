@@ -1,0 +1,1 @@
+{"experiment_id": "EXP-004", "command": "nice -n 10 .venv/bin/paradox run --config research/experiments/EXP-004/config.json --out results/EXP-004 --pdf", "wrapper_started_utc": "2026-11-24T23:39:51Z", "wrapper_finished_utc": "2026-11-24T23:40:50Z", "exit_status": 0, "git_revision": "d997cf81784aaf136e385e489febaade7e18e55c"}

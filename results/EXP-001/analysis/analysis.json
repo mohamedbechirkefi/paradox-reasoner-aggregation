@@ -1,0 +1,240 @@
+{
+ "by_model": {
+  "bahadur": {
+   "cells": 70,
+   "fail": 0,
+   "max_abs_z": 1.32281809774815
+  },
+  "common_shock": {
+   "cells": 90,
+   "fail": 0,
+   "max_abs_z": 2.7466958439230535
+  },
+  "independent": {
+   "cells": 30,
+   "fail": 0,
+   "max_abs_z": 2.9733667589972477
+  },
+  "mixture": {
+   "cells": 72,
+   "fail": 0,
+   "max_abs_z": 3.115524712906583
+  },
+  "perfect_correlation": {
+   "cells": 30,
+   "fail": 0,
+   "max_abs_z": 1.0873035253455432
+  }
+ },
+ "decision_rule": "H0 (engine correct) holds if every admissible cell has |A_sim - A_theory| <= 4 SE_MC and every golden fixture is reproduced",
+ "excluded_cells": [
+  {
+   "n": 31,
+   "params": {
+    "c": 0.1,
+    "p": 0.45
+   },
+   "record_id": "CELL-0234"
+  },
+  {
+   "n": 9,
+   "params": {
+    "c": 0.4,
+    "p": 0.45
+   },
+   "record_id": "CELL-0238"
+  },
+  {
+   "n": 15,
+   "params": {
+    "c": 0.4,
+    "p": 0.45
+   },
+   "record_id": "CELL-0239"
+  },
+  {
+   "n": 31,
+   "params": {
+    "c": 0.4,
+    "p": 0.45
+   },
+   "record_id": "CELL-0240"
+  },
+  {
+   "n": 31,
+   "params": {
+    "c": 0.1,
+    "p": 0.5
+   },
+   "record_id": "CELL-0252"
+  },
+  {
+   "n": 9,
+   "params": {
+    "c": 0.4,
+    "p": 0.5
+   },
+   "record_id": "CELL-0256"
+  },
+  {
+   "n": 15,
+   "params": {
+    "c": 0.4,
+    "p": 0.5
+   },
+   "record_id": "CELL-0257"
+  },
+  {
+   "n": 31,
+   "params": {
+    "c": 0.4,
+    "p": 0.5
+   },
+   "record_id": "CELL-0258"
+  },
+  {
+   "n": 31,
+   "params": {
+    "c": 0.1,
+    "p": 0.55
+   },
+   "record_id": "CELL-0270"
+  },
+  {
+   "n": 9,
+   "params": {
+    "c": 0.4,
+    "p": 0.55
+   },
+   "record_id": "CELL-0274"
+  },
+  {
+   "n": 15,
+   "params": {
+    "c": 0.4,
+    "p": 0.55
+   },
+   "record_id": "CELL-0275"
+  },
+  {
+   "n": 31,
+   "params": {
+    "c": 0.4,
+    "p": 0.55
+   },
+   "record_id": "CELL-0276"
+  },
+  {
+   "n": 31,
+   "params": {
+    "c": 0.1,
+    "p": 0.6
+   },
+   "record_id": "CELL-0288"
+  },
+  {
+   "n": 9,
+   "params": {
+    "c": 0.4,
+    "p": 0.6
+   },
+   "record_id": "CELL-0292"
+  },
+  {
+   "n": 15,
+   "params": {
+    "c": 0.4,
+    "p": 0.6
+   },
+   "record_id": "CELL-0293"
+  },
+  {
+   "n": 31,
+   "params": {
+    "c": 0.4,
+    "p": 0.6
+   },
+   "record_id": "CELL-0294"
+  },
+  {
+   "n": 31,
+   "params": {
+    "c": 0.1,
+    "p": 0.8
+   },
+   "record_id": "CELL-0306"
+  },
+  {
+   "n": 9,
+   "params": {
+    "c": 0.4,
+    "p": 0.8
+   },
+   "record_id": "CELL-0310"
+  },
+  {
+   "n": 15,
+   "params": {
+    "c": 0.4,
+    "p": 0.8
+   },
+   "record_id": "CELL-0311"
+  },
+  {
+   "n": 31,
+   "params": {
+    "c": 0.4,
+    "p": 0.8
+   },
+   "record_id": "CELL-0312"
+  }
+ ],
+ "experiment_id": "EXP-001",
+ "figures": [],
+ "golden": [
+  {
+   "abs_tol": 1e-09,
+   "check": "golden bahadur_mv(3, 0.55, 0.4)",
+   "expected": 0.54505,
+   "got": 0.54505,
+   "pass": true
+  },
+  {
+   "abs_tol": 5e-08,
+   "check": "golden bahadur_mv(5, 0.55, 0.4)",
+   "expected": 0.5196194,
+   "got": 0.519619375,
+   "pass": true
+  },
+  {
+   "abs_tol": 1e-09,
+   "check": "golden condorcet(3, 0.55)",
+   "expected": 0.57475,
+   "got": 0.5747500000000001,
+   "pass": true
+  },
+  {
+   "abs_tol": 5e-08,
+   "check": "golden condorcet(5, 0.55)",
+   "expected": 0.5931269,
+   "got": 0.593126875,
+   "pass": true
+  }
+ ],
+ "label": "confirmatory",
+ "max_abs_z": 3.115524712906583,
+ "n_abs_z_above_2": 30,
+ "n_abs_z_above_3": 1,
+ "n_cells_excluded": 20,
+ "n_cells_fail": 0,
+ "n_cells_run": 292,
+ "pass": true,
+ "source": {
+  "code_revision": "d997cf81784aaf136e385e489febaade7e18e55c",
+  "config_sha256": "ec431b20bff323bb1c6e8461d721c25909e3522c839f03e0cc212775ec906709",
+  "generator": "paradox.analysis",
+  "results_json": "results/EXP-001/results.json",
+  "results_json_sha256": "c79d15c55b9cedc9c52caf96360edbc39b56d4606da93037907b4a75a5778d76"
+ },
+ "verdict": "PASS: engine validated; the stop rule allows EXP-002 to EXP-004"
+}

@@ -1,0 +1,73 @@
+{
+ "command": [
+  "paradox",
+  "run",
+  "--config",
+  "research/experiments/EXP-003/config.json",
+  "--out",
+  "results/EXP-003",
+  "--pdf"
+ ],
+ "config_sha256": "70d5474b2e27cb3ae2314c13e7f8a6c51a79326eca7856e9a43a0a89ea93122c",
+ "environment": {
+  "cpu": "Apple M1 Pro",
+  "machine": "arm64",
+  "os": "Darwin 24.3.0 (macOS-15.3.1-arm64-arm-64bit)",
+  "versions": {
+   "hypothesis": "6.170.15",
+   "jsonschema": "4.26.0",
+   "matplotlib": "3.11.2",
+   "numpy": "2.5.4",
+   "paradox": "0.1.0",
+   "pytest": "9.2.0",
+   "python": "3.12.1",
+   "typst": "0.15.2"
+  }
+ },
+ "experiment_id": "EXP-003",
+ "finished_utc": "2026-11-24T23:39:40Z",
+ "git_revision": "d997cf81784aaf136e385e489febaade7e18e55c",
+ "label": "confirmatory",
+ "manifest_version": "1.0.0",
+ "outputs": {
+  "metrics.csv": "266ee1679f219e36ac8732ca8a7a9e2f90eea361bea295ed72e86a97bebba29f",
+  "results.json": "072d6cecf45405254949c1b97436c2d6d0461c7176fb93c4bd27413586ca5a78"
+ },
+ "peak_rss_bytes": 237404160,
+ "peak_rss_note": "process-level peak resident set size from getrusage, includes interpreter and imports",
+ "per_record_runtime_s": {},
+ "runtime_s": 70.25817291599378,
+ "seeds": [
+  4081218282,
+  3682024014,
+  2560712631,
+  3921651552,
+  4191974640,
+  2901837982,
+  299243026,
+  3584341964,
+  470840663,
+  3717419112,
+  3863015920,
+  3690208844,
+  1878958287,
+  3674753195,
+  4225516169,
+  4016339100,
+  387561879,
+  1274279766,
+  33776825,
+  3913718065,
+  952162785,
+  2664475064,
+  4515682,
+  1003833796,
+  885547622,
+  471843871,
+  3973450909,
+  3063446374,
+  3560773735,
+  1515114762
+ ],
+ "started_utc": "2026-11-24T23:38:29Z"
+}

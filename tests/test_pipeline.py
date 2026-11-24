@@ -359,7 +359,8 @@ def test_freeze_record_matches_registry_and_files():
     assert set(rec["experiments"]) == set(reg) == {"EXP-001", "EXP-002", "EXP-003", "EXP-004"}
     for exp, e in rec["experiments"].items():
         assert reg[exp]["protocol_sha256"] == e["protocol_sha256"]
-        assert reg[exp]["status"] == "frozen (owner-approved 2026-11-24), not yet run"
+        # M3 (2026-11-25): statuses keep the freeze prefix and add the run outcome
+        assert reg[exp]["status"].startswith("frozen (owner-approved 2026-11-24)")
         assert hashlib.sha256((REPO / e["protocol_path"]).read_bytes()).hexdigest() == e["protocol_sha256"]
         assert hashlib.sha256((REPO / e["config_path"]).read_bytes()).hexdigest() == e["config_file_sha256"]
     assert {r["scenario"] for run in rec["c4_disclosure"]["runs"] for r in run["primary_contrast_values"]} == {"S1", "S4"}

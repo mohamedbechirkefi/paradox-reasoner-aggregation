@@ -8,7 +8,7 @@ Milestones from master prompt section 5 with the section 11.6 additions. Effort 
 | M0 | Bootstrap and feasibility | none | P0 | 0.5 | done (this session; owner review pending) | none |
 | M1 | Research and preregistration | M0 | P0 | 0.5 | done; M1 gate passed (protocols frozen at v1.0, owner-approved 2026-11-24) | none (foundational sources still unverified, see below) |
 | M2 | Core implementation | M1 drafts (implementation may start before freeze; exploratory only) | P0 | 1 | done (amendments applied, EXP-004 tie rule and variants, confirmatory configs, freeze guard) | none |
-| M3 | Experiments | M1 freeze, M2 | P0 | 0.75 | not started (ready) | scheduled by the coordinator; needs a quiet machine for timings |
+| M3 | Experiments | M1 freeze, M2 | P0 | 0.75 | in progress: all four frozen matrices complete (2026-11-25), master prompt M3 gate holds; 11.3 standalone reports not yet written | the four standalone reports (D-012) |
 | M4 | Interpretation | M3 | P0 | 0.75 | not started | none |
 | M5 | Interactive experience | M3 results (demo shell can start in M2) | P1 | 0.75 | not started | none |
 | M6 | Release candidate | M4, M5 | P0 | 0.75 | not started | owner approval for any publication (G-PUBLIC) |
@@ -61,10 +61,11 @@ Additions (11.6): individual reports as experiments finish; all unsuccessful exp
 
 Acceptance criteria:
 
-- [ ] Smoke matrix run (exploratory, labelled).
-- [ ] EXP-001 passes before EXP-002 to EXP-004 start (stop rule).
-- [ ] Frozen matrices run in full, or failures documented; no silently dropped runs.
-- [ ] Raw machine-readable results, plots with uncertainty, per-experiment report drafts.
+- [x] Smoke matrix run (exploratory, labelled): `results/exploratory/m3-smoke/`, 32 of 32 metric checks (J-0009).
+- [x] EXP-001 passes before EXP-002 to EXP-004 start (stop rule): PASS, 292 cells, 0 failing (J-0010).
+- [x] Frozen matrices run in full, or failures documented; no silently dropped runs: EXP-001 292 + 20 excluded cells, EXP-002 720 runs, EXP-003 183 + 9 excluded cells, EXP-004 1440 runs; 0 failures (J-0010 to J-0014).
+- [x] Raw machine-readable results with SHA-256 manifests and provenance tables, plots with uncertainty (`results/EXP-00N/`).
+- [ ] Per-experiment 11.3 report drafts (`research/experiments/EXP-NNN/report.md`): not written in the M3 session (D-012).
 
 ## M4: Interpretation
 

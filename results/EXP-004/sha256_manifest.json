@@ -1,0 +1,61 @@
+{
+ "directory": "results/EXP-004",
+ "files": {
+  "analysis/analysis.json": {
+   "bytes": 29335,
+   "sha256": "9ff869932f39ceafc1f94f84567ca888543903608b2bb438b7f55e5ee0f5f053"
+  },
+  "analysis/analysis.md": {
+   "bytes": 8548,
+   "sha256": "29e89e596023e13ad69f966234efa2e38dd1005bba893e66f3967875f9eeea1d"
+  },
+  "analysis/figures/FIG-004-1_mv_delta_by_variant.png": {
+   "bytes": 182502,
+   "sha256": "3487f48e77c23c90216f64e6d40453dabad2960da28af3d6d2a951cc9ba72c5c"
+  },
+  "analysis/figures/FIG-004-2_seq_delta_by_variant.png": {
+   "bytes": 157339,
+   "sha256": "9593b8def6ffc27f4756c5aab57fb45d5929609dd9a187c453abb54e5356a269"
+  },
+  "analysis/figures/FIG-004-3_tie_rule.png": {
+   "bytes": 137396,
+   "sha256": "ddc72bfac7bc9d3a282a83c3dc436b98bf9461a6fff7b1416cbd75f052bbf309"
+  },
+  "exit_status.json": {
+   "bytes": 327,
+   "sha256": "69b1a4c39feb3aab8d0b076fbe520d3dfd037532c71ab200df3b94a4c77b394d"
+  },
+  "figures/accuracy_vs_budget.png": {
+   "bytes": 1300663,
+   "sha256": "5484b5974f3e049392c8b7945872c3d1e07cbc1163eae209b9ba0347df6a9579"
+  },
+  "metrics.csv": {
+   "bytes": 3602601,
+   "sha256": "896f08490b8398139678ea16b1449000fb7da585b292ea59b67b308e42f9dbc6"
+  },
+  "provenance.csv": {
+   "bytes": 496545,
+   "sha256": "21bd100a9db56e866ed253059384e9393226c8fe3d185eacc13e90631d509b66"
+  },
+  "report.md": {
+   "bytes": 123494,
+   "sha256": "b1c38517faa45803e72a38127b56fa18c14127e5c9c2d2c792d188ebaefc4998"
+  },
+  "report.pdf": {
+   "bytes": 3847531,
+   "sha256": "fdcd1b51488eb3acf4695f9014b7a21ac7963d71e94ffc9c3a9a025be1891a57"
+  },
+  "results.json": {
+   "bytes": 13115512,
+   "sha256": "68638fd8c4d010547dd00d524e4c582495b262b0758327992d4d5a3a6c5a9114"
+  },
+  "run_log.txt": {
+   "bytes": 296,
+   "sha256": "af54ee95a055e638771a23ee145e5602615a42c2e909e6274351a8d7cf62315a"
+  },
+  "run_manifest.json": {
+   "bytes": 52806,
+   "sha256": "61914a7eda54082efa9bb203b4c799f017c86406fb881317e686efee5239ae6b"
+  }
+ }
+}

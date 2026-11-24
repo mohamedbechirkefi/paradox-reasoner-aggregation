@@ -1,0 +1,437 @@
+{
+ "decision_rule": "H0 (the sign of Delta_MV at matched (p, r, n) is the same across the four models in every admissible cell) is rejected in favour of H1 if the signs differ in at least one cell",
+ "disagreeing_cells": [
+  {
+   "analytic_signs": {
+    "bahadur": -1,
+    "beta": 1,
+    "common_shock": 1,
+    "mixture": 1
+   },
+   "n": 9,
+   "p": 0.55,
+   "r": 0.2,
+   "signs_agree": false
+  },
+  {
+   "analytic_signs": {
+    "beta": 1,
+    "common_shock": 1,
+    "mixture": -1
+   },
+   "n": 15,
+   "p": 0.55,
+   "r": 0.2,
+   "signs_agree": false
+  },
+  {
+   "analytic_signs": {
+    "bahadur": -1,
+    "beta": 1,
+    "common_shock": 1,
+    "mixture": -1
+   },
+   "n": 3,
+   "p": 0.55,
+   "r": 0.4,
+   "signs_agree": false
+  },
+  {
+   "analytic_signs": {
+    "bahadur": -1,
+    "beta": 1,
+    "common_shock": 1,
+    "mixture": -1
+   },
+   "n": 5,
+   "p": 0.55,
+   "r": 0.4,
+   "signs_agree": false
+  },
+  {
+   "analytic_signs": {
+    "beta": 1,
+    "common_shock": 1,
+    "mixture": -1
+   },
+   "n": 9,
+   "p": 0.55,
+   "r": 0.4,
+   "signs_agree": false
+  },
+  {
+   "analytic_signs": {
+    "beta": 1,
+    "common_shock": 1,
+    "mixture": -1
+   },
+   "n": 15,
+   "p": 0.55,
+   "r": 0.4,
+   "signs_agree": false
+  },
+  {
+   "analytic_signs": {
+    "bahadur": -1,
+    "beta": 1,
+    "common_shock": 1,
+    "mixture": 1
+   },
+   "n": 9,
+   "p": 0.6,
+   "r": 0.2,
+   "signs_agree": false
+  },
+  {
+   "analytic_signs": {
+    "beta": 1,
+    "common_shock": 1,
+    "mixture": -1
+   },
+   "n": 15,
+   "p": 0.6,
+   "r": 0.2,
+   "signs_agree": false
+  },
+  {
+   "analytic_signs": {
+    "bahadur": -1,
+    "beta": 1,
+    "common_shock": 1,
+    "mixture": -1
+   },
+   "n": 3,
+   "p": 0.6,
+   "r": 0.4,
+   "signs_agree": false
+  },
+  {
+   "analytic_signs": {
+    "bahadur": -1,
+    "beta": 1,
+    "common_shock": 1,
+    "mixture": -1
+   },
+   "n": 5,
+   "p": 0.6,
+   "r": 0.4,
+   "signs_agree": false
+  },
+  {
+   "analytic_signs": {
+    "beta": 1,
+    "common_shock": 1,
+    "mixture": -1
+   },
+   "n": 9,
+   "p": 0.6,
+   "r": 0.4,
+   "signs_agree": false
+  },
+  {
+   "analytic_signs": {
+    "beta": 1,
+    "common_shock": 1,
+    "mixture": -1
+   },
+   "n": 15,
+   "p": 0.6,
+   "r": 0.4,
+   "signs_agree": false
+  },
+  {
+   "analytic_signs": {
+    "bahadur": -1,
+    "beta": 1,
+    "common_shock": 1,
+    "mixture": -1
+   },
+   "n": 3,
+   "p": 0.7,
+   "r": 0.4,
+   "signs_agree": false
+  },
+  {
+   "analytic_signs": {
+    "bahadur": -1,
+    "beta": 1,
+    "common_shock": 1,
+    "mixture": -1
+   },
+   "n": 5,
+   "p": 0.7,
+   "r": 0.4,
+   "signs_agree": false
+  },
+  {
+   "analytic_signs": {
+    "beta": 1,
+    "common_shock": 1,
+    "mixture": -1
+   },
+   "n": 9,
+   "p": 0.7,
+   "r": 0.4,
+   "signs_agree": false
+  },
+  {
+   "analytic_signs": {
+    "beta": 1,
+    "common_shock": 1,
+    "mixture": -1
+   },
+   "n": 15,
+   "p": 0.7,
+   "r": 0.4,
+   "signs_agree": false
+  }
+ ],
+ "experiment_id": "EXP-003",
+ "figures": [
+  "analysis/figures/FIG-003-1_delta_by_model.png"
+ ],
+ "h0_rejected": true,
+ "label": "confirmatory",
+ "mc_check": {
+  "cells": [
+   {
+    "delta_theory": 0.04085378636319015,
+    "mc_t95": [
+     0.038449683645182725,
+     0.040766983021483835
+    ],
+    "model": "beta",
+    "n": 9,
+    "p": 0.55,
+    "r": 0.1,
+    "record_id": "CELL-0028"
+   },
+   {
+    "delta_theory": 0.15903426617910865,
+    "mc_t95": [
+     0.15712615726597823,
+     0.15895717606735515
+    ],
+    "model": "beta",
+    "n": 9,
+    "p": 0.7,
+    "r": 0.05,
+    "record_id": "CELL-0140"
+   },
+   {
+    "delta_theory": 0.1927126352953904,
+    "mc_t95": [
+     0.1909381490254103,
+     0.1927018509745898
+    ],
+    "model": "beta",
+    "n": 15,
+    "p": 0.7,
+    "r": 0.05,
+    "record_id": "CELL-0144"
+   }
+  ],
+  "mc_interval_sides": {
+   "above 0": 160,
+   "below 0": 22,
+   "includes 0": 1
+  },
+  "n_analytic_outside_mc_t95": 3,
+  "n_cells_with_interval": 183
+ },
+ "n_matched_cells": 48,
+ "n_matched_cells_disagree": 16,
+ "n_model_cells": 192,
+ "n_model_cells_excluded": 9,
+ "n_model_cells_run": 183,
+ "negative_cells": [
+  {
+   "delta_theory": -0.02313772428515637,
+   "model": "bahadur",
+   "n": 9,
+   "p": 0.55,
+   "r": 0.2
+  },
+  {
+   "delta_theory": -0.014607358751665078,
+   "model": "mixture",
+   "n": 15,
+   "p": 0.55,
+   "r": 0.2
+  },
+  {
+   "delta_theory": -0.00495000000000001,
+   "model": "bahadur",
+   "n": 3,
+   "p": 0.55,
+   "r": 0.4
+  },
+  {
+   "delta_theory": -0.00495000000000001,
+   "model": "mixture",
+   "n": 3,
+   "p": 0.55,
+   "r": 0.4
+  },
+  {
+   "delta_theory": -0.03038062500000005,
+   "model": "bahadur",
+   "n": 5,
+   "p": 0.55,
+   "r": 0.4
+  },
+  {
+   "delta_theory": -0.015679125000000016,
+   "model": "mixture",
+   "n": 5,
+   "p": 0.55,
+   "r": 0.4
+  },
+  {
+   "delta_theory": -0.032579582566781284,
+   "model": "mixture",
+   "n": 9,
+   "p": 0.55,
+   "r": 0.4
+  },
+  {
+   "delta_theory": -0.04417404548308834,
+   "model": "mixture",
+   "n": 15,
+   "p": 0.55,
+   "r": 0.4
+  },
+  {
+   "delta_theory": -0.0337827839999999,
+   "model": "bahadur",
+   "n": 9,
+   "p": 0.6,
+   "r": 0.2
+  },
+  {
+   "delta_theory": -0.015787524064202918,
+   "model": "mixture",
+   "n": 15,
+   "p": 0.6,
+   "r": 0.2
+  },
+  {
+   "delta_theory": -0.009599999999999942,
+   "model": "bahadur",
+   "n": 3,
+   "p": 0.6,
+   "r": 0.4
+  },
+  {
+   "delta_theory": -0.009599999999999942,
+   "model": "mixture",
+   "n": 3,
+   "p": 0.6,
+   "r": 0.4
+  },
+  {
+   "delta_theory": -0.05568000000000006,
+   "model": "bahadur",
+   "n": 5,
+   "p": 0.6,
+   "r": 0.4
+  },
+  {
+   "delta_theory": -0.028032000000000057,
+   "model": "mixture",
+   "n": 5,
+   "p": 0.6,
+   "r": 0.4
+  },
+  {
+   "delta_theory": -0.05667267379200003,
+   "model": "mixture",
+   "n": 9,
+   "p": 0.6,
+   "r": 0.4
+  },
+  {
+   "delta_theory": -0.07927005967431822,
+   "model": "mixture",
+   "n": 15,
+   "p": 0.6,
+   "r": 0.4
+  },
+  {
+   "delta_theory": -0.016800000000000037,
+   "model": "bahadur",
+   "n": 3,
+   "p": 0.7,
+   "r": 0.4
+  },
+  {
+   "delta_theory": -0.016799999999999926,
+   "model": "mixture",
+   "n": 3,
+   "p": 0.7,
+   "r": 0.4
+  },
+  {
+   "delta_theory": -0.07476000000000005,
+   "model": "bahadur",
+   "n": 5,
+   "p": 0.7,
+   "r": 0.4
+  },
+  {
+   "delta_theory": -0.03242400000000001,
+   "model": "mixture",
+   "n": 5,
+   "p": 0.7,
+   "r": 0.4
+  },
+  {
+   "delta_theory": -0.055909430303999974,
+   "model": "mixture",
+   "n": 9,
+   "p": 0.7,
+   "r": 0.4
+  },
+  {
+   "delta_theory": -0.08108935306161014,
+   "model": "mixture",
+   "n": 15,
+   "p": 0.7,
+   "r": 0.4
+  }
+ ],
+ "sign_counts_by_model": {
+  "bahadur": {
+   "cells": 39,
+   "negative": 8,
+   "positive": 31,
+   "zero": 0
+  },
+  "beta": {
+   "cells": 48,
+   "negative": 0,
+   "positive": 48,
+   "zero": 0
+  },
+  "common_shock": {
+   "cells": 48,
+   "negative": 0,
+   "positive": 48,
+   "zero": 0
+  },
+  "mixture": {
+   "cells": 48,
+   "negative": 14,
+   "positive": 34,
+   "zero": 0
+  }
+ },
+ "source": {
+  "code_revision": "d997cf81784aaf136e385e489febaade7e18e55c",
+  "config_sha256": "70d5474b2e27cb3ae2314c13e7f8a6c51a79326eca7856e9a43a0a89ea93122c",
+  "generator": "paradox.analysis",
+  "results_json": "results/EXP-003/results.json",
+  "results_json_sha256": "072d6cecf45405254949c1b97436c2d6d0461c7176fb93c4bd27413586ca5a78"
+ },
+ "verdict": "H1: the sign of Delta_MV depends on the dependence model in at least one matched cell"
+}

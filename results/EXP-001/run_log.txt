@@ -1,0 +1,3 @@
+confirmatory run of EXP-001 finished in 89.10 s; peak RSS 573.2 MiB; outputs in results/EXP-001
+report: results/EXP-001/report.md; pdf: /Users/bechir/research/labs/paradox-reasoner-aggregation/results/EXP-001/report.pdf
+PASS: engine validated; the stop rule allows EXP-002 to EXP-004

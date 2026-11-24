@@ -1,0 +1,3 @@
+confirmatory run of EXP-002 finished in 26.26 s; peak RSS 174.5 MiB; outputs in results/EXP-002
+report: results/EXP-002/report.md; pdf: /Users/bechir/research/labs/paradox-reasoner-aggregation/results/EXP-002/report.pdf
+H0 rejected: degradation exists in at least one cell (H1)

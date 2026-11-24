@@ -1,0 +1,138 @@
+{
+ "label": "exploratory",
+ "smoke_results": "results/exploratory/m3-smoke",
+ "seed_entropy": 0,
+ "known_cases": [
+  {
+   "check": "accuracy [T,F,T,T] = 0.75",
+   "pass": true
+  },
+  {
+   "check": "Brier q=[1,0.5,0] = 1.25/3",
+   "pass": true
+  },
+  {
+   "check": "ECE calibrated bin (0.75, 3 of 4 correct) = 0",
+   "pass": true
+  },
+  {
+   "check": "ECE p=0.95, 1 of 2 correct = 0.45",
+   "pass": true
+  },
+  {
+   "check": "ECE two bins (0.55: 1/2; 0.95: 2/2) = 0.5*0.05 + 0.5*0.05",
+   "pass": true
+  },
+  {
+   "check": "disagreement k=[0,1,3], n=3: share 1/3",
+   "pass": true
+  },
+  {
+   "check": "pairwise disagreement k=[0,1,3], n=3: (0 + 4/6 + 0)/3",
+   "pass": true
+  },
+  {
+   "check": "paired delta [T,T,F] vs [F,T,T] = 0",
+   "pass": true
+  },
+  {
+   "check": "paired delta [T,T,T] vs [F,F,T] = 2/3",
+   "pass": true
+  },
+  {
+   "check": "Condorcet M_3(0.55) = 0.57475",
+   "pass": true
+  },
+  {
+   "check": "common shock G(5, 0.6, 1) = 0.6",
+   "pass": true
+  }
+ ],
+ "smoke_checks": [
+  {
+   "check": "all smoke invariants hold, no exclusions",
+   "pass": true
+  },
+  {
+   "check": "RUN-0001: SINGLE delta 0, MV(1)=SINGLE, accuracy per call, SEQ messages n(n-1)/2, metric ranges",
+   "pass": true
+  },
+  {
+   "check": "RUN-0002: SINGLE delta 0, MV(1)=SINGLE, accuracy per call, SEQ messages n(n-1)/2, metric ranges",
+   "pass": true
+  },
+  {
+   "check": "RUN-0003: SINGLE delta 0, MV(1)=SINGLE, accuracy per call, SEQ messages n(n-1)/2, metric ranges",
+   "pass": true
+  },
+  {
+   "check": "RUN-0004: SINGLE delta 0, MV(1)=SINGLE, accuracy per call, SEQ messages n(n-1)/2, metric ranges",
+   "pass": true
+  },
+  {
+   "check": "RUN-0005: SINGLE delta 0, MV(1)=SINGLE, accuracy per call, SEQ messages n(n-1)/2, metric ranges",
+   "pass": true
+  },
+  {
+   "check": "RUN-0006: SINGLE delta 0, MV(1)=SINGLE, accuracy per call, SEQ messages n(n-1)/2, metric ranges",
+   "pass": true
+  },
+  {
+   "check": "RUN-0007: SINGLE delta 0, MV(1)=SINGLE, accuracy per call, SEQ messages n(n-1)/2, metric ranges",
+   "pass": true
+  },
+  {
+   "check": "RUN-0008: SINGLE delta 0, MV(1)=SINGLE, accuracy per call, SEQ messages n(n-1)/2, metric ranges",
+   "pass": true
+  },
+  {
+   "check": "MV accuracy S1 lambda 0.0 B 1 within 4 SE of theory (z = -0.82)",
+   "pass": true
+  },
+  {
+   "check": "MV accuracy S1 lambda 0.0 B 3 within 4 SE of theory (z = 0.19)",
+   "pass": true
+  },
+  {
+   "check": "MV accuracy S1 lambda 0.0 B 9 within 4 SE of theory (z = -1.06)",
+   "pass": true
+  },
+  {
+   "check": "MV accuracy S1 lambda 0.5 B 1 within 4 SE of theory (z = -1.84)",
+   "pass": true
+  },
+  {
+   "check": "MV accuracy S1 lambda 0.5 B 3 within 4 SE of theory (z = -1.09)",
+   "pass": true
+  },
+  {
+   "check": "MV accuracy S1 lambda 0.5 B 9 within 4 SE of theory (z = -2.08)",
+   "pass": true
+  },
+  {
+   "check": "MV accuracy S4 lambda 0.0 B 1 within 4 SE of theory (z = 0.42)",
+   "pass": true
+  },
+  {
+   "check": "MV accuracy S4 lambda 0.0 B 3 within 4 SE of theory (z = 1.08)",
+   "pass": true
+  },
+  {
+   "check": "MV accuracy S4 lambda 0.0 B 9 within 4 SE of theory (z = 1.60)",
+   "pass": true
+  },
+  {
+   "check": "MV accuracy S4 lambda 0.5 B 1 within 4 SE of theory (z = -0.84)",
+   "pass": true
+  },
+  {
+   "check": "MV accuracy S4 lambda 0.5 B 3 within 4 SE of theory (z = -0.31)",
+   "pass": true
+  },
+  {
+   "check": "MV accuracy S4 lambda 0.5 B 9 within 4 SE of theory (z = 0.16)",
+   "pass": true
+  }
+ ],
+ "all_pass": true
+}
