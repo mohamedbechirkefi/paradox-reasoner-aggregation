@@ -128,3 +128,56 @@ DELIB as drafted cannot answer its question (A-2). CW conclusions would depend o
 ### Next action
 
 The owner decides on O-1 to O-6 and A-1 to A-5 and freezes the protocols. Then: write the confirmatory configs, run EXP-001 (stop rule), then EXP-002 to EXP-004 (M3).
+
+## 2026-11-24: Freeze session (owner-approved amendments, protocol freeze)
+
+**Milestone:** M1 gate passed: `research/protocol.md` and EXP-001 to EXP-004 frozen at v1.0 (owner-approved 2026-11-24, G-FREEZE). M2 done. M3 not started: no confirmatory run in this session (the coordinator schedules M3 on a quiet machine). Nothing pushed.
+
+### Authority
+
+The owner's approvals in `labs/_shared/owner-approvals-2026-11-24.md` (PARADOX section and common decisions C1 to C4), following `labs/_shared/FREEZE-brief.md`. Quoted in `research/freeze.json`.
+
+### Amendments applied (protocol section 10 and each EXP protocol's "Amendments before freeze" section)
+
+1. 30 seeds per cell in EXP-001 to EXP-004 (EXP-001: 30 x 20,000 items, `N = 600,000`; EXP-002: 720 runs).
+2. DELIB dropped from EXP-002 and EXP-004; reason in `research/limitations.md`. Code and the pinning test kept.
+3. EXP-004 kept, optional.
+4. Inadmissible Bahadur cells reported as exclusions (EXP-001: 20 of 90; EXP-003: 9 of 48); grids not narrowed.
+5. Commands updated to `paradox run` and `paradox report <results folder>`; shared seeds across cells (D-008) confirmed, with the EXP-001 false-alarm estimate marked approximate.
+6. Exploratory S1/S4 values of the primary contrast disclosed, with values and paths, in `research/freeze.json` (C4).
+
+Not applied: A-3 (confidence model), not among the approvals; stated as a limitation.
+
+### Code and configs
+
+- `src/paradox/rules.py`: tie rule `abstain_wrong` for MV and SEQ (EXP-004).
+- `src/paradox/schema.py`, `runner.py`, `report.py`: optional `tie_rule` and `variants` in aggregation configs; records and summaries tagged by variant; Holm per variant without a primary family; `variant` column in `metrics.csv`.
+- `runner.check_confirmatory_allowed`: also requires `research/freeze.json` to match the main protocol hash, the experiment protocol hash and the config hash (canonical JSON and file bytes).
+- `research/experiments/EXP-00{1,2,3,4}/config.json`: confirmatory configs, entropy 20261124, 30 seeds.
+
+### Commands and actual outputs
+
+| Command | Output |
+|---|---|
+| `.venv/bin/python -m pytest -q` (before commit 1) | `310 passed in 5.99s` |
+| `.venv/bin/python -m pytest -q` (after the freeze record and registry update) | `315 passed in 6.27s` |
+| `check_confirmatory_allowed` on the four frozen configs | `EXP-001 ... EXP-004 accepted by the guard` |
+| `paradox run` on a changed copy of each frozen config (test) | refused, exit code 3, nothing written |
+
+The dev dependencies were already installed (`.venv` present), so `uv sync` was not run.
+
+### Freeze record
+
+`research/freeze.json`. SHA-256 of `research/protocol.md`: `68ce4b150fc8350b66a2e89d6c9049e241555a05bb7e381243b42a7dd5654de9`. Experiment protocol and config hashes are in the record and the registry. Git revision of the frozen files: `3b595680e8e36e01e0a3f9abdf80632929fc1475` (commit 1); the record and registry were committed after it.
+
+### Changed files
+
+Commit 1 (`3b59568`): `research/protocol.md`, `research/experiments/EXP-00{1..4}/{protocol.md,config.json}`, `research/limitations.md`, `research/paper/manuscript.md` (author metadata, C3), `CITATION.cff` (C3 comment), `src/paradox/{rules,schema,runner,report}.py`, `tests/test_{rules,pipeline}.py`. Commit 2: `research/freeze.json`, `research/experiment_registry.csv`, `research/decision_log.md` (D-009, D-010), `research/experiment_journal.jsonl` (J-0008), `research/publication/author_review.md`, `tests/test_pipeline.py`, `README.md`, `CONTRIBUTING.md` (guard sentence in the development section), `roadmap.md`, `progress.md`.
+
+### Risks
+
+CW conclusions depend on the assumed confidence model (A-3 not adopted). S1/S4 exploratory values were seen before the freeze (disclosed). Foundational sources (Boland 1989, Ladha 1992, Lorenz et al. 2011) remain unverified.
+
+### Next action
+
+M3, when the coordinator schedules it: run EXP-001 (`uv run paradox run --config research/experiments/EXP-001/config.json --out results/EXP-001/ --pdf`); if it passes, EXP-002 and EXP-003, then optional EXP-004.

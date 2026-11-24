@@ -3,7 +3,7 @@
 
 Decisions reserved to the owner:
 
-- [ ] Protocol freezes (EXP-001 to EXP-004), with version and hash.
+- [x] Protocol freezes (EXP-001 to EXP-004), with version and hash: v1.0, owner-approved 2026-11-24, hashes in `research/freeze.json` and the registry.
 - [ ] Authorship and affiliation metadata of the manuscript and reports.
 - [ ] AI-assistance disclosure text.
 - [ ] Final title and abstract.

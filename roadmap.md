@@ -6,9 +6,9 @@ Milestones from master prompt section 5 with the section 11.6 additions. Effort 
 | Id | Milestone | Depends on | Priority | Effort | Status | Blockers |
 |---|---|---|---|---|---|---|
 | M0 | Bootstrap and feasibility | none | P0 | 0.5 | done (this session; owner review pending) | none |
-| M1 | Research and preregistration | M0 | P0 | 0.5 | in progress (drafts written; freeze pending) | owner freeze (G-FREEZE); owner decisions O-1 to O-6 |
-| M2 | Core implementation | M1 drafts (implementation may start before freeze; exploratory only) | P0 | 1 | in progress (engine, tests, schemas, manifests, CLI, reports done; open items below) | owner decisions on amendments A-1 to A-5 |
-| M3 | Experiments | M1 freeze, M2 | P0 | 0.75 | not started | owner freeze |
+| M1 | Research and preregistration | M0 | P0 | 0.5 | done; M1 gate passed (protocols frozen at v1.0, owner-approved 2026-11-24) | none (foundational sources still unverified, see below) |
+| M2 | Core implementation | M1 drafts (implementation may start before freeze; exploratory only) | P0 | 1 | done (amendments applied, EXP-004 tie rule and variants, confirmatory configs, freeze guard) | none |
+| M3 | Experiments | M1 freeze, M2 | P0 | 0.75 | not started (ready) | scheduled by the coordinator; needs a quiet machine for timings |
 | M4 | Interpretation | M3 | P0 | 0.75 | not started | none |
 | M5 | Interactive experience | M3 results (demo shell can start in M2) | P1 | 0.75 | not started | none |
 | M6 | Release candidate | M4, M5 | P0 | 0.75 | not started | owner approval for any publication (G-PUBLIC) |
@@ -34,9 +34,9 @@ Acceptance criteria:
 - [x] Draft protocol with H0/H1, baseline, one primary metric, secondary metrics, unit, seeds, sample-size rationale, uncertainty, exclusion and stopping rules, smoke and full matrices, invalidating sensitivity analysis.
 - [x] EXP-001 to EXP-004 registered with draft protocols following 11.2.
 - [ ] Unverified foundational sources (Boland 1989, Ladha 1992, Lorenz et al. 2011) opened or recorded as permanently unverified.
-- [ ] Owner decisions O-1 to O-6 taken (see `progress.md`).
-- [x] Smoke run (exploratory, after M2) measures between-seed SD (J-0006). [ ] Seed count confirmed by the owner (amendment A-1).
-- [ ] Owner freezes each protocol; version and SHA-256 recorded in the registry and decision log.
+- [x] Owner decisions taken at the freeze (2026-11-24): 30 seeds, DELIB dropped, EXP-004 optional, Bahadur exclusions, commands and shared seeds, exposure disclosure (D-009). A-3 not approved; confidence model unchanged.
+- [x] Smoke run (exploratory, after M2) measures between-seed SD (J-0006). [x] Seed count confirmed by the owner: 30 (amendment 1).
+- [x] Owner freezes each protocol; version 1.0 and SHA-256 recorded in the registry, `research/freeze.json` and the decision log (D-009).
 - [x] Golden values committed with tests (`tests/test_theory.py`, sources in J-0002 and the test comments).
 
 ## M2: Core implementation
@@ -51,9 +51,9 @@ Acceptance criteria:
 - [x] Deterministic rerun check (`test_rerun_is_deterministic`; same seed gives bit-identical draws).
 - [x] `paradox run` refuses confirmatory configs while protocols are unfrozen (D-007; tested).
 - [x] Exploratory smoke run and probes, labelled exploratory, in `results/exploratory/` (J-0004 to J-0007).
-- [ ] DELIB rule redefined or dropped (amendment A-2): as drafted it is identical to MV at half the budget.
-- [ ] EXP-004 tie-rule level "abstain counted as wrong" implemented (not done; EXP-004 is optional, O-5).
-- [ ] Per-experiment `config.json` files written at freeze, with the owner's seed count (A-1).
+- [x] DELIB dropped from the confirmatory design (amendment 2); reason in `research/limitations.md`.
+- [x] EXP-004 tie-rule level "abstain counted as wrong" implemented and tested (D-010).
+- [x] Per-experiment `config.json` files written at freeze, with 30 seeds; hashes in `research/freeze.json`.
 
 ## M3: Experiments
 

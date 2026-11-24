@@ -331,3 +331,35 @@ def test_frozen_confirmatory_configs_follow_the_amendments():
             assert "DELIB" not in {**cfg, **v}.get("rules", [])  # DELIB dropped
         if cfg["kind"] == "aggregation":
             assert cfg["delib_budgets"] == []
+
+
+@pytest.mark.parametrize("exp", ["EXP-001", "EXP-002", "EXP-003", "EXP-004"])
+def test_real_frozen_configs_are_accepted_and_changed_ones_refused(exp, tmp_path):
+    # Guard check only: no confirmatory run is executed here.
+    path = REPO / "research" / "experiments" / exp / "config.json"
+    cfg = load_config(path)
+    check_confirmatory_allowed(cfg, REPO, path)
+    changed = copy.deepcopy(cfg) | {"n_seeds": 29}
+    with pytest.raises(ProtocolNotFrozen):
+        check_confirmatory_allowed(changed, REPO)
+    changed_path = write_cfg(tmp_path, changed)
+    with pytest.raises(ProtocolNotFrozen):
+        check_confirmatory_allowed(load_config(changed_path), REPO, changed_path)
+    # a CLI run of the changed config is refused (exit 3) and writes nothing
+    assert cli.main(["run", "--config", str(changed_path), "--out", str(tmp_path / "o")]) == 3
+    assert not (tmp_path / "o").exists()
+
+
+def test_freeze_record_matches_registry_and_files():
+    rec = json.loads((REPO / "research" / "freeze.json").read_text())
+    assert hashlib.sha256((REPO / rec["main_protocol"]["path"]).read_bytes()).hexdigest() == rec["main_protocol"]["sha256"]
+    import csv
+    with (REPO / "research" / "experiment_registry.csv").open(newline="") as fh:
+        reg = {r["exp_id"]: r for r in csv.DictReader(fh)}
+    assert set(rec["experiments"]) == set(reg) == {"EXP-001", "EXP-002", "EXP-003", "EXP-004"}
+    for exp, e in rec["experiments"].items():
+        assert reg[exp]["protocol_sha256"] == e["protocol_sha256"]
+        assert reg[exp]["status"] == "frozen (owner-approved 2026-11-24), not yet run"
+        assert hashlib.sha256((REPO / e["protocol_path"]).read_bytes()).hexdigest() == e["protocol_sha256"]
+        assert hashlib.sha256((REPO / e["config_path"]).read_bytes()).hexdigest() == e["config_file_sha256"]
+    assert {r["scenario"] for run in rec["c4_disclosure"]["runs"] for r in run["primary_contrast_values"]} == {"S1", "S4"}

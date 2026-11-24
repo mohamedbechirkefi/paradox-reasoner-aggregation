@@ -66,3 +66,19 @@ Append-only. Each entry: id, date, decision, decided by, context, alternatives, 
 - **Context:** protocol section 2.6 requires common random numbers across rules and budgets within a run. It does not say whether different `(scenario, lambda)` cells share seeds.
 - **Decision:** every cell uses the same seed list, and each random component (labels, difficulty, leader, adoption, private answers, signals, speaking order, herding, switching, ties) has its own child stream, so cells are matched by seed. Rules and budgets use prefixes of one 31-reasoner table.
 - **Consequences:** comparisons across `lambda` and scenarios are also paired by seed. Cells are therefore not independent of one another; analyses that pool cells must account for this. The owner may prefer independent seeds per cell at freeze.
+
+## D-009: Protocols frozen at v1.0 with six owner-approved amendments
+
+- **Date:** 2026-11-24
+- **Decided by:** the owner (G-FREEZE). Approval recorded in `labs/_shared/owner-approvals-2026-11-24.md` (outside this repository) and quoted in `research/freeze.json`.
+- **Context:** M2 proposed amendments A-1 to A-5 and an exposure disclosure; the owner answered them.
+- **Decision:** apply exactly the approved amendments and freeze `research/protocol.md` and EXP-001 to EXP-004 at v1.0: (1) 30 seeds per cell; (2) DELIB dropped from the primary analysis, the reason (identical to MV at half the calls) reported as a limitation; (3) EXP-004 stays optional; (4) inadmissible Bahadur cells reported as exclusions; (5) command names updated, seeds shared across cells (D-008 confirmed); (6) exploratory S1/S4 values disclosed. Common decisions C1 (synthetic data only), C2 (PDFs through pandoc and Typst), C3 (authorship: Mohamed Bechir Kefi, no affiliation, AI disclosed as a research and development assistant) and C4 (disclosure of exploratory primary values) apply.
+- **Not applied:** A-3 (fix the confidence parameter from a stated target) was not among the approved amendments; the confidence model is unchanged and its influence on CW is a stated limitation.
+- **Consequences:** the freeze record `research/freeze.json` holds the approval, C1 to C4, the C4 values and paths, and the SHA-256 of the main protocol, every experiment protocol and every confirmatory config, with the git revision `3b595680e8e36e01e0a3f9abdf80632929fc1475`. Registry statuses are "frozen (owner-approved 2026-11-24), not yet run". Any later change to a frozen file is a dated post-freeze deviation.
+
+## D-010: EXP-004 implementation and a stricter freeze guard
+
+- **Date:** 2026-11-24
+- **Decided by:** session (freeze), implementing the frozen protocol; open to owner review
+- **Decision:** (a) the EXP-004 tie level "abstain counted as wrong" is implemented as `tie_rule = "abstain_wrong"` for MV and SEQ (default `"coin"`); (b) an aggregation config may carry `variants`, each overriding only `budgets`, `rules`, `tie_rule`, `w` or `tau`, so EXP-004 is one config with eight one-factor variants; the cost factor is computed from `messages_per_item` of the primary variant; (c) `paradox run` now also requires `research/freeze.json` to list the experiment with the same protocol hash, the current hash of `research/protocol.md`, and the hash of the exact config (canonical JSON, plus file bytes when read from a file).
+- **Consequences:** a changed confirmatory config, a changed protocol or a missing freeze record is refused (exit code 3). Tests cover acceptance of the four frozen configs and refusal of changed ones. The metrics CSV of aggregation runs gains a `variant` column (empty when no variants).

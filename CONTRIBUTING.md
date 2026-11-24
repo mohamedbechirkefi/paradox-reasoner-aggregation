@@ -53,4 +53,4 @@ Test, smoke, run and report (M2):
     uv run paradox run --config configs/exploratory/probe_engine_validation.json --out results/exploratory/probe-engine-validation --pdf
     uv run paradox report results/exploratory/smoke --pdf
 
-`paradox run` refuses a config labelled `confirmatory` unless the experiment's protocol is frozen (registry SHA-256 matching the protocol file, no DRAFT marker), and refuses exploratory output paths without an `exploratory` component. PDFs need pandoc (`PARADOX_PANDOC`, default the shared `.tools/pandoc`).
+`paradox run` refuses a config labelled `confirmatory` unless the experiment's protocol is frozen (registry SHA-256 matching the protocol file, no DRAFT marker) and the config, the protocol and `research/protocol.md` match the hashes in `research/freeze.json`, and refuses exploratory output paths without an `exploratory` component. PDFs need pandoc (`PARADOX_PANDOC`, default the shared `.tools/pandoc`).

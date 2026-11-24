@@ -1,0 +1,746 @@
+{
+ "freeze_record_version": "1.0",
+ "project": "PARADOX",
+ "spdx": "LicenseRef-PARADOX-NC-Research-1.0 (covered by NOTICE.md)",
+ "frozen_date": "2026-11-24",
+ "frozen_by": "the owner (G-FREEZE), approval recorded in labs/_shared/owner-approvals-2026-11-24.md (outside this repository)",
+ "owner_approval": {
+  "date": "2026-11-24",
+  "quoted_answers": "\"2. yes 3. yes 4. yes\", \"yes for all others\"",
+  "quoted_paradox_section": [
+   "30 seeds.",
+   "Drop DELIB from the primary analysis and report the reason (identical to MV at half the calls) as a limitation.",
+   "EXP-004 stays optional.",
+   "Report infeasible Bahadur cells as exclusions.",
+   "Update the command names, and keep shared seeds across cells.",
+   "Disclose the exploratory S1/S4 values."
+  ]
+ },
+ "common_decisions": {
+  "C1": "Data. Synthetic data only.",
+  "C2": "PDFs. Built with pandoc and Typst (-V mainfont=\"Libertinus Serif\"); there is no LaTeX on the machine.",
+  "C3": "Authorship. \"Mohamed Bechir Kefi\", no affiliation. The AI is disclosed as a research and development assistant, not as an author.",
+  "C4": "Disclosure. Where exploratory values of the primary contrast were seen before the freeze, the freeze record says so, with the values and where they are stored."
+ },
+ "amendments_applied": [
+  "1. 30 seeds per cell in EXP-001 to EXP-004 (protocol section 5; was 10).",
+  "2. DELIB dropped from EXP-002 and EXP-004; reason (DELIB at 2n calls equals MV at n calls on every item) reported in research/limitations.md.",
+  "3. EXP-004 kept, optional.",
+  "4. Inadmissible Bahadur cells reported as exclusions, grids not narrowed (EXP-001: 20 of 90; EXP-003: 9 of 48).",
+  "5. Commands updated to paradox run / paradox report <results folder>; seeds shared across cells (D-008) confirmed.",
+  "6. Exploratory S1/S4 values disclosed (this record, c4_disclosure)."
+ ],
+ "not_applied": [
+  "A-3 (fix the confidence parameter delta from a stated target): not among the approved amendments. The confidence model is unchanged and CW stays secondary and descriptive; stated as a limitation."
+ ],
+ "c4_disclosure": {
+  "statement": "Before the freeze, exploratory runs with exploratory seeds (SeedSequence entropy 0, not the confirmatory entropy 20261124) produced values of the primary contrast Delta_r = A_r(B) - A_SINGLE (r in MV, SEQ) for scenarios S1 and S4 at lambda 0 and 0.5. They were seen by the M2 session and by this freeze session and are readable by anyone in the repository. They were used only to set the seed count (protocol section 5 rule), not any other design value. Values below are seed means and seed-level t 95% intervals, copied by script from the stored results.json files.",
+  "runs": [
+   {
+    "path": "results/exploratory/probe-seed-spread",
+    "files": [
+     "results/exploratory/probe-seed-spread/results.json",
+     "results/exploratory/probe-seed-spread/metrics.csv",
+     "results/exploratory/probe-seed-spread/report.md",
+     "results/exploratory/probe-seed-spread/report.pdf"
+    ],
+    "seed_entropy": 0,
+    "n_seeds": 10,
+    "n_items": 2000,
+    "code_revision": "9bfb9d3eaef0fb7676a6b2c1950c121b27e08135",
+    "results_json_sha256": "3509c5a074fdb2f8338551a6ff72b28aae9a2d8b793b5afd4616592a86ef6e4f",
+    "primary_contrast_values": [
+     {
+      "scenario": "S1",
+      "lambda": 0.0,
+      "rule": "MV",
+      "budget": 3,
+      "delta_mean": 0.0474,
+      "delta_t95": [
+       0.0398,
+       0.0551
+      ]
+     },
+     {
+      "scenario": "S1",
+      "lambda": 0.0,
+      "rule": "MV",
+      "budget": 5,
+      "delta_mean": 0.0776,
+      "delta_t95": [
+       0.0725,
+       0.0828
+      ]
+     },
+     {
+      "scenario": "S1",
+      "lambda": 0.0,
+      "rule": "MV",
+      "budget": 9,
+      "delta_mean": 0.133,
+      "delta_t95": [
+       0.1266,
+       0.1394
+      ]
+     },
+     {
+      "scenario": "S1",
+      "lambda": 0.0,
+      "rule": "MV",
+      "budget": 15,
+      "delta_mean": 0.1844,
+      "delta_t95": [
+       0.178,
+       0.1908
+      ]
+     },
+     {
+      "scenario": "S1",
+      "lambda": 0.0,
+      "rule": "MV",
+      "budget": 31,
+      "delta_mean": 0.2681,
+      "delta_t95": [
+       0.2617,
+       0.2744
+      ]
+     },
+     {
+      "scenario": "S1",
+      "lambda": 0.0,
+      "rule": "SEQ",
+      "budget": 3,
+      "delta_mean": 0.0224,
+      "delta_t95": [
+       0.015,
+       0.0299
+      ]
+     },
+     {
+      "scenario": "S1",
+      "lambda": 0.0,
+      "rule": "SEQ",
+      "budget": 5,
+      "delta_mean": 0.0342,
+      "delta_t95": [
+       0.0265,
+       0.042
+      ]
+     },
+     {
+      "scenario": "S1",
+      "lambda": 0.0,
+      "rule": "SEQ",
+      "budget": 9,
+      "delta_mean": 0.0502,
+      "delta_t95": [
+       0.0421,
+       0.0583
+      ]
+     },
+     {
+      "scenario": "S1",
+      "lambda": 0.0,
+      "rule": "SEQ",
+      "budget": 15,
+      "delta_mean": 0.0609,
+      "delta_t95": [
+       0.0532,
+       0.0685
+      ]
+     },
+     {
+      "scenario": "S1",
+      "lambda": 0.0,
+      "rule": "SEQ",
+      "budget": 31,
+      "delta_mean": 0.064,
+      "delta_t95": [
+       0.0512,
+       0.0768
+      ]
+     },
+     {
+      "scenario": "S1",
+      "lambda": 0.5,
+      "rule": "MV",
+      "budget": 3,
+      "delta_mean": 0.023,
+      "delta_t95": [
+       0.0172,
+       0.0288
+      ]
+     },
+     {
+      "scenario": "S1",
+      "lambda": 0.5,
+      "rule": "MV",
+      "budget": 5,
+      "delta_mean": 0.0263,
+      "delta_t95": [
+       0.0196,
+       0.0329
+      ]
+     },
+     {
+      "scenario": "S1",
+      "lambda": 0.5,
+      "rule": "MV",
+      "budget": 9,
+      "delta_mean": 0.0202,
+      "delta_t95": [
+       0.0111,
+       0.0294
+      ]
+     },
+     {
+      "scenario": "S1",
+      "lambda": 0.5,
+      "rule": "MV",
+      "budget": 15,
+      "delta_mean": 0.0111,
+      "delta_t95": [
+       0.0022,
+       0.0199
+      ]
+     },
+     {
+      "scenario": "S1",
+      "lambda": 0.5,
+      "rule": "MV",
+      "budget": 31,
+      "delta_mean": -0.0015,
+      "delta_t95": [
+       -0.0113,
+       0.0084
+      ]
+     },
+     {
+      "scenario": "S1",
+      "lambda": 0.5,
+      "rule": "SEQ",
+      "budget": 3,
+      "delta_mean": 0.0104,
+      "delta_t95": [
+       0.0054,
+       0.0154
+      ]
+     },
+     {
+      "scenario": "S1",
+      "lambda": 0.5,
+      "rule": "SEQ",
+      "budget": 5,
+      "delta_mean": 0.0086,
+      "delta_t95": [
+       -0.0007,
+       0.0179
+      ]
+     },
+     {
+      "scenario": "S1",
+      "lambda": 0.5,
+      "rule": "SEQ",
+      "budget": 9,
+      "delta_mean": 0.0118,
+      "delta_t95": [
+       -0.0005,
+       0.0242
+      ]
+     },
+     {
+      "scenario": "S1",
+      "lambda": 0.5,
+      "rule": "SEQ",
+      "budget": 15,
+      "delta_mean": 0.0181,
+      "delta_t95": [
+       0.0081,
+       0.0281
+      ]
+     },
+     {
+      "scenario": "S1",
+      "lambda": 0.5,
+      "rule": "SEQ",
+      "budget": 31,
+      "delta_mean": 0.0166,
+      "delta_t95": [
+       0.0055,
+       0.0276
+      ]
+     },
+     {
+      "scenario": "S4",
+      "lambda": 0.0,
+      "rule": "MV",
+      "budget": 3,
+      "delta_mean": 0.0111,
+      "delta_t95": [
+       0.0051,
+       0.017
+      ]
+     },
+     {
+      "scenario": "S4",
+      "lambda": 0.0,
+      "rule": "MV",
+      "budget": 5,
+      "delta_mean": -0.0016,
+      "delta_t95": [
+       -0.0063,
+       0.003
+      ]
+     },
+     {
+      "scenario": "S4",
+      "lambda": 0.0,
+      "rule": "MV",
+      "budget": 9,
+      "delta_mean": -0.0197,
+      "delta_t95": [
+       -0.0253,
+       -0.0141
+      ]
+     },
+     {
+      "scenario": "S4",
+      "lambda": 0.0,
+      "rule": "MV",
+      "budget": 15,
+      "delta_mean": -0.0382,
+      "delta_t95": [
+       -0.0439,
+       -0.0326
+      ]
+     },
+     {
+      "scenario": "S4",
+      "lambda": 0.0,
+      "rule": "MV",
+      "budget": 31,
+      "delta_mean": -0.0573,
+      "delta_t95": [
+       -0.0633,
+       -0.0512
+      ]
+     },
+     {
+      "scenario": "S4",
+      "lambda": 0.0,
+      "rule": "SEQ",
+      "budget": 3,
+      "delta_mean": 0.004,
+      "delta_t95": [
+       -0.003,
+       0.0111
+      ]
+     },
+     {
+      "scenario": "S4",
+      "lambda": 0.0,
+      "rule": "SEQ",
+      "budget": 5,
+      "delta_mean": 0.0013,
+      "delta_t95": [
+       -0.0044,
+       0.007
+      ]
+     },
+     {
+      "scenario": "S4",
+      "lambda": 0.0,
+      "rule": "SEQ",
+      "budget": 9,
+      "delta_mean": 0.0021,
+      "delta_t95": [
+       -0.0027,
+       0.0069
+      ]
+     },
+     {
+      "scenario": "S4",
+      "lambda": 0.0,
+      "rule": "SEQ",
+      "budget": 15,
+      "delta_mean": 0.0037,
+      "delta_t95": [
+       -0.0019,
+       0.0093
+      ]
+     },
+     {
+      "scenario": "S4",
+      "lambda": 0.0,
+      "rule": "SEQ",
+      "budget": 31,
+      "delta_mean": 0.0006,
+      "delta_t95": [
+       -0.0052,
+       0.0063
+      ]
+     },
+     {
+      "scenario": "S4",
+      "lambda": 0.5,
+      "rule": "MV",
+      "budget": 3,
+      "delta_mean": 0.0016,
+      "delta_t95": [
+       -0.0037,
+       0.0069
+      ]
+     },
+     {
+      "scenario": "S4",
+      "lambda": 0.5,
+      "rule": "MV",
+      "budget": 5,
+      "delta_mean": 0.001,
+      "delta_t95": [
+       -0.0056,
+       0.0077
+      ]
+     },
+     {
+      "scenario": "S4",
+      "lambda": 0.5,
+      "rule": "MV",
+      "budget": 9,
+      "delta_mean": 0.0001,
+      "delta_t95": [
+       -0.0075,
+       0.0078
+      ]
+     },
+     {
+      "scenario": "S4",
+      "lambda": 0.5,
+      "rule": "MV",
+      "budget": 15,
+      "delta_mean": 0.0035,
+      "delta_t95": [
+       -0.0042,
+       0.0112
+      ]
+     },
+     {
+      "scenario": "S4",
+      "lambda": 0.5,
+      "rule": "MV",
+      "budget": 31,
+      "delta_mean": 0.0083,
+      "delta_t95": [
+       0.0003,
+       0.0164
+      ]
+     },
+     {
+      "scenario": "S4",
+      "lambda": 0.5,
+      "rule": "SEQ",
+      "budget": 3,
+      "delta_mean": -0.0016,
+      "delta_t95": [
+       -0.0084,
+       0.0052
+      ]
+     },
+     {
+      "scenario": "S4",
+      "lambda": 0.5,
+      "rule": "SEQ",
+      "budget": 5,
+      "delta_mean": -0.0015,
+      "delta_t95": [
+       -0.0074,
+       0.0045
+      ]
+     },
+     {
+      "scenario": "S4",
+      "lambda": 0.5,
+      "rule": "SEQ",
+      "budget": 9,
+      "delta_mean": -0.0007,
+      "delta_t95": [
+       -0.0083,
+       0.0069
+      ]
+     },
+     {
+      "scenario": "S4",
+      "lambda": 0.5,
+      "rule": "SEQ",
+      "budget": 15,
+      "delta_mean": 0.0005,
+      "delta_t95": [
+       -0.0054,
+       0.0063
+      ]
+     },
+     {
+      "scenario": "S4",
+      "lambda": 0.5,
+      "rule": "SEQ",
+      "budget": 31,
+      "delta_mean": -0.0018,
+      "delta_t95": [
+       -0.0091,
+       0.0055
+      ]
+     }
+    ]
+   },
+   {
+    "path": "results/exploratory/smoke",
+    "files": [
+     "results/exploratory/smoke/results.json",
+     "results/exploratory/smoke/metrics.csv",
+     "results/exploratory/smoke/report.md",
+     "results/exploratory/smoke/report.pdf"
+    ],
+    "seed_entropy": 0,
+    "n_seeds": 2,
+    "n_items": 200,
+    "code_revision": "9bfb9d3eaef0fb7676a6b2c1950c121b27e08135",
+    "results_json_sha256": "1e55b038a33ce491a1ac8588fd941513584b834be5b86f43983a9bed8c0891a2",
+    "primary_contrast_values": [
+     {
+      "scenario": "S1",
+      "lambda": 0.0,
+      "rule": "MV",
+      "budget": 3,
+      "delta_mean": 0.0725,
+      "delta_t95": [
+       -0.2134,
+       0.3584
+      ]
+     },
+     {
+      "scenario": "S1",
+      "lambda": 0.0,
+      "rule": "MV",
+      "budget": 9,
+      "delta_mean": 0.13,
+      "delta_t95": [
+       0.0029,
+       0.2571
+      ]
+     },
+     {
+      "scenario": "S1",
+      "lambda": 0.0,
+      "rule": "SEQ",
+      "budget": 3,
+      "delta_mean": 0.0425,
+      "delta_t95": [
+       -0.0528,
+       0.1378
+      ]
+     },
+     {
+      "scenario": "S1",
+      "lambda": 0.0,
+      "rule": "SEQ",
+      "budget": 9,
+      "delta_mean": 0.07,
+      "delta_t95": [
+       -0.2477,
+       0.3877
+      ]
+     },
+     {
+      "scenario": "S1",
+      "lambda": 0.5,
+      "rule": "MV",
+      "budget": 3,
+      "delta_mean": 0.0425,
+      "delta_t95": [
+       0.0107,
+       0.0743
+      ]
+     },
+     {
+      "scenario": "S1",
+      "lambda": 0.5,
+      "rule": "MV",
+      "budget": 9,
+      "delta_mean": 0.0225,
+      "delta_t95": [
+       -0.0093,
+       0.0543
+      ]
+     },
+     {
+      "scenario": "S1",
+      "lambda": 0.5,
+      "rule": "SEQ",
+      "budget": 3,
+      "delta_mean": 0.0225,
+      "delta_t95": [
+       -0.0093,
+       0.0543
+      ]
+     },
+     {
+      "scenario": "S1",
+      "lambda": 0.5,
+      "rule": "SEQ",
+      "budget": 9,
+      "delta_mean": 0.005,
+      "delta_t95": [
+       -0.0585,
+       0.0685
+      ]
+     },
+     {
+      "scenario": "S4",
+      "lambda": 0.0,
+      "rule": "MV",
+      "budget": 3,
+      "delta_mean": 0.025,
+      "delta_t95": [
+       -0.5468,
+       0.5968
+      ]
+     },
+     {
+      "scenario": "S4",
+      "lambda": 0.0,
+      "rule": "MV",
+      "budget": 9,
+      "delta_mean": 0.0075,
+      "delta_t95": [
+       -0.596,
+       0.611
+      ]
+     },
+     {
+      "scenario": "S4",
+      "lambda": 0.0,
+      "rule": "SEQ",
+      "budget": 3,
+      "delta_mean": 0.0075,
+      "delta_t95": [
+       -0.6596,
+       0.6746
+      ]
+     },
+     {
+      "scenario": "S4",
+      "lambda": 0.0,
+      "rule": "SEQ",
+      "budget": 9,
+      "delta_mean": 0.0325,
+      "delta_t95": [
+       -0.8252,
+       0.8902
+      ]
+     },
+     {
+      "scenario": "S4",
+      "lambda": 0.5,
+      "rule": "MV",
+      "budget": 3,
+      "delta_mean": 0.0175,
+      "delta_t95": [
+       -0.3319,
+       0.3669
+      ]
+     },
+     {
+      "scenario": "S4",
+      "lambda": 0.5,
+      "rule": "MV",
+      "budget": 9,
+      "delta_mean": 0.0275,
+      "delta_t95": [
+       -0.3219,
+       0.3769
+      ]
+     },
+     {
+      "scenario": "S4",
+      "lambda": 0.5,
+      "rule": "SEQ",
+      "budget": 3,
+      "delta_mean": -0.005,
+      "delta_t95": [
+       -0.3862,
+       0.3762
+      ]
+     },
+     {
+      "scenario": "S4",
+      "lambda": 0.5,
+      "rule": "SEQ",
+      "budget": 9,
+      "delta_mean": 0.0125,
+      "delta_t95": [
+       -0.4005,
+       0.4255
+      ]
+     }
+    ]
+   }
+  ],
+  "other_exploratory_exposure": [
+   "results/exploratory/probe-engine-validation/ (J-0005): EXP-001 design with exploratory seeds; MV accuracy against closed forms, not the primary contrast.",
+   "J-0007: timing-only run of the EXP-003 draft grid with exploratory seeds, written outside the repository; outcome values not inspected."
+  ]
+ },
+ "main_protocol": {
+  "path": "research/protocol.md",
+  "version": "1.0",
+  "sha256": "68ce4b150fc8350b66a2e89d6c9049e241555a05bb7e381243b42a7dd5654de9"
+ },
+ "experiments": {
+  "EXP-001": {
+   "protocol_path": "research/experiments/EXP-001/protocol.md",
+   "protocol_version": "1.0",
+   "protocol_sha256": "3e5f7992cba2a5769aabbb2072d98cc2885d4ba76bd8e28d2de914639dfc8c16",
+   "config_path": "research/experiments/EXP-001/config.json",
+   "config_file_sha256": "d5e1172275af17f28362139611a95ab0bc0c47b5ba6d2e19e657c491328a3dce",
+   "config_canonical_sha256": "ec431b20bff323bb1c6e8461d721c25909e3522c839f03e0cc212775ec906709",
+   "optional": false,
+   "status": "frozen (owner-approved 2026-11-24), not yet run"
+  },
+  "EXP-002": {
+   "protocol_path": "research/experiments/EXP-002/protocol.md",
+   "protocol_version": "1.0",
+   "protocol_sha256": "93a7b67515c971ac47e0e6faaeca4e12bea00c8470060068d4f8cec950562358",
+   "config_path": "research/experiments/EXP-002/config.json",
+   "config_file_sha256": "68aad6ce449ab3c5fe99bf786bfa9a2c067cdf142104782f683de60d0a9206a5",
+   "config_canonical_sha256": "a69b5eb8cedca9e14027b68fde479fbfaf2d1b25ddb6ead6c5cf66360f89ae2b",
+   "optional": false,
+   "status": "frozen (owner-approved 2026-11-24), not yet run"
+  },
+  "EXP-003": {
+   "protocol_path": "research/experiments/EXP-003/protocol.md",
+   "protocol_version": "1.0",
+   "protocol_sha256": "8e59d02e5e5bd317ba1b98d7cb2d0d5506cbb8b30ffb83e5b55104b1c24d3c8b",
+   "config_path": "research/experiments/EXP-003/config.json",
+   "config_file_sha256": "d77141005f882fc68efb42269efb91d2d24cdc895c5a4c25da7450d28ae9ed8c",
+   "config_canonical_sha256": "70d5474b2e27cb3ae2314c13e7f8a6c51a79326eca7856e9a43a0a89ea93122c",
+   "optional": false,
+   "status": "frozen (owner-approved 2026-11-24), not yet run"
+  },
+  "EXP-004": {
+   "protocol_path": "research/experiments/EXP-004/protocol.md",
+   "protocol_version": "1.0",
+   "protocol_sha256": "55c261f93b3a5549f4f2a36b3eb8a43b80166d3ff91b9aee89807d113303ca02",
+   "config_path": "research/experiments/EXP-004/config.json",
+   "config_file_sha256": "c69cd7cfd7fbce7f596b692d16e517ffc95ae1191ba48713869230089cf151c0",
+   "config_canonical_sha256": "9f7e8cbf704f804170bbded5878e39d594afe418b582592db786be239efb1807",
+   "optional": true,
+   "status": "frozen (owner-approved 2026-11-24), not yet run"
+  }
+ },
+ "confirmatory_seed_entropy": 20261124,
+ "git_revision": {
+  "commit": "3b595680e8e36e01e0a3f9abdf80632929fc1475",
+  "note": "Commit that contains the frozen protocols, configs and code. The hashes above are of the files at this commit; this record is added in the following commit."
+ },
+ "guard": "src/paradox/runner.py check_confirmatory_allowed: a confirmatory config runs only if the registry hash equals the protocol file hash, the protocol is not marked DRAFT, research/protocol.md matches main_protocol.sha256, and the config matches config_canonical_sha256 (and config_file_sha256 when read from a file)."
+}
