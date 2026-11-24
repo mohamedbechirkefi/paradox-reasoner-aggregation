@@ -1,0 +1,7 @@
+{
+  "schema_version": "0.1",
+  "updated": "2026-11-24",
+  "status": "empty at M0: no figure, table or quantitative claim exists yet",
+  "entries": [],
+  "entry_fields": ["artifact_id", "kind", "exp_id", "run_ids", "metric_definition", "result_path", "generator_script", "config_sha256", "protocol_sha256", "code_revision"]
+}

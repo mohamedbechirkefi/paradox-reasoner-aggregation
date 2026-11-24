@@ -1,0 +1,25 @@
+# SPDX-License-Identifier: LicenseRef-PARADOX-NC-Research-1.0
+[project]
+name = "paradox"
+version = "0.0.0"
+description = "PARADOX: when does aggregation of fallible synthetic reasoners improve or degrade accuracy under equal compute budgets"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+# The project licence is custom (LicenseRef-PARADOX-NC-Research-1.0); see LICENSE and NOTICE.md.
+dependencies = [
+    "numpy>=2.1",
+    "matplotlib>=3.9",
+    "jsonschema>=4.23",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3",
+    "hypothesis>=6.112",
+]
+
+[tool.uv]
+# Decision D-005: no release newer than two weeks before 2026-11-24.
+exclude-newer = "2026-11-10T00:00:00Z"
+# M0: no package code yet. M2 switches this to a packaged src/paradox layout with a CLI entry point.
+package = false

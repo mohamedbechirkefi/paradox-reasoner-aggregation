@@ -1,0 +1,41 @@
+{
+  "schema_version": "0.1",
+  "updated": "2026-11-24",
+  "note": "No external dataset is adopted (decision D-004). All experiment data are synthetic, produced by the project generator; generator version, parameters and seeds will be recorded per run in research/experiments/EXP-NNN/run_manifest.json.",
+  "datasets": [],
+  "synthetic_generators": [
+    {
+      "id": "GEN-binary-reasoners",
+      "status": "planned (M2)",
+      "description": "Binary-choice synthetic reasoners: two-class difficulty mixture, common-shock correlation, confidence signal. See research/protocol.md section 2.",
+      "redistributable": true,
+      "licence": "LicenseRef-PARADOX-NC-Research-1.0 (project original material, see NOTICE.md)"
+    }
+  ],
+  "candidates_not_adopted": [
+    {
+      "id": "CAND-001",
+      "name": "Open LLM Leaderboard per-model aggregate results (open-llm-leaderboard/contents) and per-model details datasets",
+      "url": "https://huggingface.co/datasets/open-llm-leaderboard/contents",
+      "accessed": "2026-11-24",
+      "what_was_checked": "dataset page only; aggregate rows, one per model; per-item data appear to live in separate per-model details datasets (not opened)",
+      "licence": "unverified: no dataset licence tag was visible on the page fetched",
+      "redistributable": "unknown",
+      "downloaded": false,
+      "possible_use": "calibrating an empirical item-difficulty distribution (optional extension only)",
+      "blocker": "licence unclear; owner decision required before any use"
+    },
+    {
+      "id": "CAND-002",
+      "name": "MMLU (cais/mmlu)",
+      "url": "https://huggingface.co/api/datasets/cais/mmlu",
+      "accessed": "2026-11-24",
+      "what_was_checked": "Hugging Face API metadata only: cardData.license = [\"mit\"], lastModified 2024-03-08T20:36:26Z",
+      "licence": "MIT as declared in the Hugging Face card metadata (declared, not independently verified against the original release)",
+      "redistributable": "likely yes under MIT with notice; not needed",
+      "downloaded": false,
+      "possible_use": "only within an optional, separately protocolled local open-weight LLM extension; not planned",
+      "blocker": "none for the primary design (not used)"
+    }
+  ]
+}

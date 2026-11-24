@@ -1,0 +1,18 @@
+# SPDX-License-Identifier: LicenseRef-PARADOX-NC-Research-1.0
+# Licence: PARADOX Source-Available Non-Commercial Research License v1.0
+# (custom licence, not on the SPDX list; see LICENSE). No SPDX license field is set on purpose.
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below. This is an independent research project, not peer reviewed."
+title: "PARADOX: collective reasoning under equal compute budgets"
+type: software
+authors:
+  - family-names: Kefi
+    given-names: Mohamed Bechir
+version: 0.0.0
+date-released: 2026-11-24
+keywords:
+  - collective reasoning
+  - Condorcet jury theorem
+  - majority voting
+  - correlated errors
+  - simulation
