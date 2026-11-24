@@ -4,10 +4,13 @@ manifest. Simulation, metrics and serialization stay in their own modules;
 this module only orchestrates them.
 
 Guards (G-FREEZE): a config labelled ``confirmatory`` runs only if the
-experiment's registry row carries a SHA-256 that matches its protocol file and
-the protocol is no longer marked DRAFT. Exploratory configs must write under a
-path containing an ``exploratory`` component and may not use the confirmatory
-seed entropy.
+experiment's registry row carries a SHA-256 that matches its protocol file,
+the protocol is no longer marked DRAFT, and the freeze record
+(``research/freeze.json``) lists the experiment with the same protocol hash,
+the current hash of ``research/protocol.md`` and the hash of this exact config
+(canonical JSON, and the file bytes when the config comes from a file).
+Exploratory configs must write under a path containing an ``exploratory``
+component and may not use the confirmatory seed entropy.
 """
 
 from __future__ import annotations
@@ -29,6 +32,7 @@ from .schema import RESULT_SCHEMA_VERSION, SchemaError, sha256_json, validate_co
 
 __all__ = [
     "CONFIRMATORY_ENTROPY",
+    "FREEZE_RECORD",
     "REPO_ROOT",
     "ProtocolNotFrozen",
     "GuardError",
@@ -41,6 +45,7 @@ __all__ = [
 
 CONFIRMATORY_ENTROPY = 20261124
 REPO_ROOT = Path(__file__).resolve().parents[2]
+FREEZE_RECORD = Path("research") / "freeze.json"
 CLAIMS_BOUNDARY = (
     "Synthetic reasoners, not LLMs or people. Values hold only within the stated simulation model. "
     "Exploratory results are not findings and do not test any preregistered hypothesis."
@@ -74,8 +79,13 @@ def resolve_seeds(cfg: dict) -> list[int]:
     return derived
 
 
-def check_confirmatory_allowed(cfg: dict, repo_root: Path = REPO_ROOT) -> None:
-    """Raise ``ProtocolNotFrozen`` unless the experiment's protocol is frozen."""
+def _sha256_file(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def check_confirmatory_allowed(cfg: dict, repo_root: Path = REPO_ROOT, config_path: str | Path | None = None) -> None:
+    """Raise ``ProtocolNotFrozen`` unless the experiment's protocol is frozen
+    and ``cfg`` is the frozen confirmatory config of that experiment."""
     exp = cfg["experiment_id"]
     reg = repo_root / "research" / "experiment_registry.csv"
     if not reg.is_file():
@@ -98,6 +108,24 @@ def check_confirmatory_allowed(cfg: dict, repo_root: Path = REPO_ROOT) -> None:
         raise ProtocolNotFrozen(f"{exp}: protocol is still marked DRAFT; refusing")
     if cfg["seed_entropy"] != CONFIRMATORY_ENTROPY:
         raise GuardError(f"confirmatory runs must use seed entropy {CONFIRMATORY_ENTROPY}")
+    rec_path = repo_root / FREEZE_RECORD
+    if not rec_path.is_file():
+        raise ProtocolNotFrozen(f"freeze record not found: {rec_path}; refusing a confirmatory run")
+    try:
+        rec = json.loads(rec_path.read_text(encoding="utf-8"))
+        main = rec["main_protocol"]
+        entry = rec["experiments"][exp]
+    except (json.JSONDecodeError, KeyError, TypeError) as exc:
+        raise ProtocolNotFrozen(f"{exp}: not listed in a valid freeze record ({exc!r}); refusing") from exc
+    main_path = repo_root / main["path"]
+    if not main_path.is_file() or _sha256_file(main_path) != main["sha256"]:
+        raise ProtocolNotFrozen(f"{main['path']} differs from its frozen hash; refusing")
+    if entry.get("protocol_sha256") != sha or entry.get("protocol_path") != row["protocol_path"]:
+        raise ProtocolNotFrozen(f"{exp}: registry and freeze record disagree on the protocol; refusing")
+    if sha256_json(cfg) != entry.get("config_canonical_sha256"):
+        raise ProtocolNotFrozen(f"{exp}: config differs from the frozen confirmatory config; refusing")
+    if config_path is not None and _sha256_file(Path(config_path)) != entry.get("config_file_sha256"):
+        raise ProtocolNotFrozen(f"{exp}: config file bytes differ from the frozen config file; refusing")
 
 
 def _check_exploratory(cfg: dict, out_dir: Path | None) -> None:
@@ -113,15 +141,16 @@ def _fmt(x: float) -> str:
 
 # ---------------------------------------------------------------- aggregation
 
-def _aggregation_record(sc: Scenario, lam: float, seed: int, cfg: dict, idx: int) -> dict:
+def _aggregation_record(sc: Scenario, lam: float, seed: int, cfg: dict, idx: int, variant: str | None = None) -> dict:
     t0 = time.perf_counter()
     params = ModelParams(lam=lam, w=cfg["w"], delta=cfg["delta"], tau=cfg["tau"], max_reasoners=MAX_REASONERS)
     d = generate_run(sc, params, cfg["n_items"], seed)
+    tie_rule = cfg.get("tie_rule", "coin")
     base = rules.single(d)
     outs = [base]
     for rule in cfg["rules"]:
         if rule in ("MV", "CW", "SEQ"):
-            outs += [rules.apply_rule(d, rule, b) for b in cfg["budgets"]]
+            outs += [rules.apply_rule(d, rule, b, tie_rule) for b in cfg["budgets"]]
         elif rule == "DELIB":
             outs += [rules.deliberation(d, b) for b in cfg["delib_budgets"]]
     rows, inv = [], {"vote_counts": True, "budget_accounting": True}
@@ -137,7 +166,9 @@ def _aggregation_record(sc: Scenario, lam: float, seed: int, cfg: dict, idx: int
     acc1 = float(d.correct[:, 0].mean())
     inv["marginal_competence_4se"] = abs(acc1 - sc.mu) <= 4 * sqrt(sc.mu * (1 - sc.mu) / cfg["n_items"]) + 1e-12
     failed = [k for k, v in inv.items() if not v]
+    extra = {} if variant is None else {"variant": variant, "tie_rule": tie_rule, "w": cfg["w"], "tau": cfg["tau"]}
     return {
+        **extra,
         "record_id": f"RUN-{idx:04d}",
         "scenario": sc.id,
         "lambda": lam,
@@ -153,15 +184,19 @@ def _aggregation_record(sc: Scenario, lam: float, seed: int, cfg: dict, idx: int
 
 def _aggregation_summary(cfg: dict, records: list[dict]) -> list[dict]:
     scen = {s["id"]: s for s in cfg["scenarios"]}
+    vorder = [v["id"] for v in cfg.get("variants", [])]
     groups: dict[tuple, list[dict]] = {}
     for r in records:
         if r["excluded"]:
             continue
         for m in r["metrics"]:
-            groups.setdefault((r["scenario"], r["lambda"], m["rule"], m["budget"]), []).append(m)
+            groups.setdefault((r.get("variant"), r["scenario"], r["lambda"], m["rule"], m["budget"]), []).append(m)
     out = []
-    for (sid, lam, rule, b), ms in sorted(groups.items(), key=lambda kv: (kv[0][0], kv[0][1], rules.RULES.index(kv[0][2]), kv[0][3])):
+    order = lambda kv: (vorder.index(kv[0][0]) if kv[0][0] is not None else -1, kv[0][1], kv[0][2], rules.RULES.index(kv[0][3]), kv[0][4])  # noqa: E731
+    for (var, sid, lam, rule, b), ms in sorted(groups.items(), key=order):
         row = {"scenario": sid, "lambda": lam, "rule": rule, "budget": b, "n_seeds": len(ms)}
+        if var is not None:
+            row["variant"] = var
         for key in ("accuracy", "delta_vs_single", "brier", "ece", "disagreement_share"):
             vals = [m[key] for m in ms]
             row[f"{key}_mean"] = float(np.mean(vals))
@@ -173,23 +208,39 @@ def _aggregation_summary(cfg: dict, records: list[dict]) -> list[dict]:
         if rule in ("MV", "SINGLE") and b % 2 == 1:
             row["accuracy_theory"] = theory.mixture(b, s0["p_easy"], s0["h"], s0["p_hard"], lam)
         out.append(row)
-    fam = [i for i, r in enumerate(out) if r["rule"] in ("MV", "SEQ") and r["budget"] >= 3 and "delta_p_one_sided_negative" in r]
-    if fam:
-        adj = stats.holm([out[i]["delta_p_one_sided_negative"] for i in fam])
-        for i, a in zip(fam, adj):
-            out[i]["delta_p_holm"] = a
-            out[i]["primary_family"] = True
+    # Holm family: MV and SEQ cells with budget >= 3. Without variants this is the
+    # primary family (EXP-002). With variants (EXP-004) each variant gets its own
+    # family and nothing is marked primary: EXP-004 is a robustness check.
+    for var in ([None] if not vorder else vorder):
+        fam = [i for i, r in enumerate(out) if r.get("variant") == var and r["rule"] in ("MV", "SEQ") and r["budget"] >= 3
+               and "delta_p_one_sided_negative" in r]
+        if fam:
+            adj = stats.holm([out[i]["delta_p_one_sided_negative"] for i in fam])
+            for i, a in zip(fam, adj):
+                out[i]["delta_p_holm"] = a
+                if var is None:
+                    out[i]["primary_family"] = True
     return out
+
+
+def _variant_configs(cfg: dict) -> list[tuple[str | None, dict]]:
+    if "variants" not in cfg:
+        return [(None, cfg)]
+    ids = [v["id"] for v in cfg["variants"]]
+    if len(set(ids)) != len(ids):
+        raise SchemaError("variant ids must be unique")
+    return [(v["id"], {**cfg, **{k: val for k, val in v.items() if k not in ("id", "description")}}) for v in cfg["variants"]]
 
 
 def _run_aggregation(cfg: dict, seeds: list[int]) -> tuple[list[dict], list[dict]]:
     records, idx = [], 1
-    for s in cfg["scenarios"]:
-        sc = Scenario(s["id"], s["p_easy"], s["h"], s["p_hard"])
-        for lam in cfg["lambdas"]:
-            for seed in seeds:
-                records.append(_aggregation_record(sc, float(lam), seed, cfg, idx))
-                idx += 1
+    for var, vcfg in _variant_configs(cfg):
+        for s in vcfg["scenarios"]:
+            sc = Scenario(s["id"], s["p_easy"], s["h"], s["p_hard"])
+            for lam in vcfg["lambdas"]:
+                for seed in seeds:
+                    records.append(_aggregation_record(sc, float(lam), seed, vcfg, idx, var))
+                    idx += 1
     return records, _aggregation_summary(cfg, records)
 
 
@@ -326,10 +377,11 @@ def run_config(cfg: dict) -> dict:
 
 def _write_metrics_csv(doc: dict, path: Path) -> None:
     if doc["kind"] == "aggregation":
-        fields = ["record_id", "scenario", "lambda", "seed", "excluded", "rule", "budget", "n_reasoners", "calls_per_item",
+        fields = ["record_id", "variant", "scenario", "lambda", "seed", "excluded", "rule", "budget", "n_reasoners", "calls_per_item",
                   "messages_per_item", "accuracy", "delta_vs_single", "brier", "ece", "disagreement_share",
                   "pairwise_disagreement", "accuracy_per_call", "tie_share"]
-        rows = [{**{k: r[k] for k in ("record_id", "scenario", "lambda", "seed", "excluded")}, **m} for r in doc["records"] for m in r["metrics"]]
+        rows = [{**{k: r.get(k, "") for k in ("record_id", "variant", "scenario", "lambda", "seed", "excluded")}, **m}
+                for r in doc["records"] for m in r["metrics"]]
     elif doc["kind"] == "validation":
         fields = ["record_id", "model", "params", "n", "excluded", "accuracy_sim", "accuracy_theory", "se_mc", "z", "pass"]
         rows = [{**r, "params": json.dumps(r["params"], sort_keys=True)} for r in doc["records"]]
@@ -349,7 +401,7 @@ def execute(config_path: str | Path, out_dir: str | Path, command: list[str] | N
     cfg = load_config(config_path)
     out = Path(out_dir)
     if cfg["label"] == "confirmatory":
-        check_confirmatory_allowed(cfg, repo_root)
+        check_confirmatory_allowed(cfg, repo_root, config_path)
     else:
         _check_exploratory(cfg, out)
     started, t0 = utc_now(), time.perf_counter()

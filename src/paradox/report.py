@@ -54,7 +54,9 @@ def _header(doc: dict, title: str) -> list[str]:
 
 
 def _aggregation(doc: dict, out: Path, figs: Path) -> list[str]:
-    cfg, summ = doc["config"], doc["summary"]
+    cfg = doc["config"]
+    # EXP-004 variants: label each cell "variant: scenario" so tables and panels stay separate.
+    summ = [dict(s, scenario=f"{s['variant']}: {s['scenario']}") if "variant" in s else s for s in doc["summary"]]
     lines = ["## Run records", ""]
     n_ex = sum(r["excluded"] for r in doc["records"])
     lines += [f"{len(doc['records'])} runs ({cfg['n_items']} items each); {n_ex} excluded by invariant checks.", ""]

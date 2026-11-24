@@ -1,0 +1,77 @@
+{
+ "schema_version": "1.0.0",
+ "label": "confirmatory",
+ "experiment_id": "EXP-001",
+ "kind": "validation",
+ "description": "Confirmatory EXP-001 (protocol v1.0, frozen 2026-11-24): engine MV accuracy against closed forms; 30 seeds x 20,000 items per cell; inadmissible Bahadur cells are reported exclusions.",
+ "ns": [
+  1,
+  3,
+  5,
+  9,
+  15,
+  31
+ ],
+ "items_per_seed": 20000,
+ "tolerance_se": 4.0,
+ "seed_entropy": 20261124,
+ "n_seeds": 30,
+ "common_shock": {
+  "ps": [
+   0.45,
+   0.5,
+   0.55,
+   0.6,
+   0.8
+  ],
+  "lambdas": [
+   0.0,
+   0.25,
+   0.5,
+   0.75,
+   1.0
+  ]
+ },
+ "mixture": {
+  "scenarios": [
+   {
+    "id": "S4",
+    "p_easy": 0.9,
+    "h": 0.4,
+    "p_hard": 0.3
+   },
+   {
+    "id": "S5",
+    "p_easy": 0.7,
+    "h": 0.2,
+    "p_hard": 0.45
+   },
+   {
+    "id": "S6",
+    "p_easy": 0.95,
+    "h": 0.5,
+    "p_hard": 0.35
+   }
+  ],
+  "lambdas": [
+   0.0,
+   0.25,
+   0.5,
+   0.75
+  ]
+ },
+ "bahadur": {
+  "ps": [
+   0.45,
+   0.5,
+   0.55,
+   0.6,
+   0.8
+  ],
+  "cs": [
+   0.0,
+   0.1,
+   0.4
+  ]
+ }
+}

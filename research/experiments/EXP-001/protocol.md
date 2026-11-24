@@ -1,7 +1,7 @@
 <!-- SPDX-License-Identifier: LicenseRef-PARADOX-NC-Research-1.0 -->
 # EXP-001 protocol: engine and theoretical-baseline validation
 
-**Status: DRAFT v0.1, 2026-11-24, awaiting owner freeze (G-FREEZE). Protocol hash: not yet computed (computed at freeze).**
+**Status: FROZEN v1.0 (owner-approved 2026-11-24). Drafted as v0.1 on 2026-11-24. The SHA-256 of this file and of `config.json` is recorded in `research/freeze.json` and in the registry.**
 
 Project-level definitions (model, rules, metrics) are in [`research/protocol.md`](../../protocol.md); this file states only what is specific to EXP-001.
 
@@ -27,7 +27,7 @@ This is a verification experiment, not a test of a scientific hypothesis.
 ## 5. Estimand, unit, variables
 
 - Estimand: `A_sim - A_theory` per cell.
-- Unit: one validation cell `(model, p, lambda or c, n)`, `N = 200,000` simulated items pooled over 10 seeds of 20,000.
+- Unit: one validation cell `(model, p, lambda or c, n)`, `N = 600,000` simulated items pooled over 30 seeds of 20,000 (amendment 1; v0.1 had 10 seeds, `N = 200,000`).
 - Independent variables: model in {independent, common-shock, two-class mixture, Bahadur}; `p` in {0.45, 0.5, 0.55, 0.6, 0.8}; `lambda` in {0, 0.25, 0.5, 0.75, 1}; Bahadur `c` in {0, 0.1, 0.4} where admissible; `n` in {1, 3, 5, 9, 15, 31}.
 - Dependent variable: MV accuracy.
 
@@ -43,22 +43,34 @@ This is a verification experiment, not a test of a scientific hypothesis.
 
 ## 7. Sample size
 
-`N = 200,000` gives `SE_MC <= 0.0011`; the 4 SE tolerance is then at most 0.0045. With about 300 cells, a 4 SE threshold keeps the expected number of false alarms from a correct engine near 0.02 (planning estimate under a normal approximation).
+`N = 600,000` gives `SE_MC <= 0.00065`; the 4 SE tolerance is then at most 0.0026. With about 300 cells, a 4 SE threshold keeps the expected number of false alarms from a correct engine near 0.02 (planning estimate under a normal approximation that treats cells as independent). Cells are not exactly independent: within a dependence model and parameter set, cells for different `n` use prefixes of the same draws, and every cell uses the same seed list (seeds shared across cells, decision D-008, confirmed at the freeze). The false-alarm figure is therefore approximate.
 
 ## 8. Budget, uncertainty, exclusion, stopping
 
 - Compute: under one minute expected (estimate).
 - Uncertainty: Monte Carlo SE from theory, as above; per-seed values retained.
-- Exclusion: inadmissible Bahadur cells (any negative profile probability) are reported and skipped.
+- Exclusion: inadmissible Bahadur cells (any negative profile probability) are reported as exclusions and skipped; the grid is not narrowed (amendment 4). For this grid these are 20 of the 90 Bahadur cells (`c = 0.1` at `n = 31`; `c = 0.4` at `n` in {9, 15, 31}; for each `p`), a deterministic design property.
 - Stopping: a failed cell triggers diagnosis; the experiment is rerun in full after a fix, and both the failed and the passing reports are kept.
 
 ## 9. Failure modes and sensitivity
 
 Floating-point accumulation in large binomial sums (use exact `math.comb` and log-space where needed); RNG stream reuse across rules; off-by-one in `m = (n+1)/2`.
 
-## 10. Reproduction (planned commands, not yet implemented)
+## 10. Reproduction
 
 ```
-uv run paradox validate --config research/experiments/EXP-001/config.json --out results/EXP-001/
-uv run paradox report EXP-001
+uv run paradox run --config research/experiments/EXP-001/config.json --out results/EXP-001/ --pdf
+uv run paradox report results/EXP-001/ --pdf
 ```
+
+`paradox run` refuses the config unless its hash and this protocol's hash match `research/freeze.json`.
+
+## Amendments before freeze (owner-approved 2026-11-24)
+
+Approved by the owner on 2026-11-24 and applied before the freeze and before any confirmatory run (full list: `research/protocol.md` section 10; approval quoted in `research/freeze.json`).
+
+- **Seeds:** 30 seeds of 20,000 items per cell (was 10), `N = 600,000` (sections 5 and 7).
+- **Bahadur exclusions:** inadmissible cells are reported exclusions, listed in section 8.
+- **Shared seeds:** confirmed across cells; the false-alarm estimate in section 7 is marked approximate.
+- **Commands:** `paradox validate` and `paradox report EXP-001` replaced by the implemented `paradox run` and `paradox report <results folder>` (section 10).
+- **Exposure:** an exploratory run of this design with exploratory seeds exists (`results/exploratory/probe-engine-validation/`, journal J-0005: 0 of 292 cells outside 4 SE). It does not involve the primary contrast.

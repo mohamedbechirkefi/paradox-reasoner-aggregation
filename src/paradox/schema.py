@@ -40,6 +40,25 @@ _scenario = {
     "properties": {"id": {"type": "string", "minLength": 1}, "p_easy": _prob, "h": _prob, "p_hard": {"oneOf": [_prob, {"type": "null"}]}},
 }
 
+_tie_rule = {"enum": ["coin", "abstain_wrong"]}
+_rule_list = {"type": "array", "items": {"enum": ["SINGLE", "MV", "CW", "SEQ", "DELIB"]}, "minItems": 1, "contains": {"const": "SINGLE"}}
+# EXP-004: one-factor-at-a-time variants of an aggregation config. Each variant
+# overrides only the listed keys; everything else comes from the parent config.
+_variant = {
+    "type": "object",
+    "required": ["id"],
+    "additionalProperties": False,
+    "properties": {
+        "id": {"type": "string", "pattern": "^[A-Za-z0-9_-]+$"},
+        "description": {"type": "string"},
+        "budgets": {"type": "array", "items": {"type": "integer", "minimum": 1, "maximum": 31}, "minItems": 1},
+        "rules": _rule_list,
+        "tie_rule": _tie_rule,
+        "w": _prob,
+        "tau": {"type": "number", "minimum": 0},
+    },
+}
+
 _common_cfg = {
     "schema_version": {"const": RESULT_SCHEMA_VERSION},
     "experiment_id": {"type": "string", "pattern": "^(EXP-[0-9]{3}|SMOKE|PROBE-[A-Z0-9-]+)$"},
@@ -66,11 +85,13 @@ CONFIG_SCHEMA = {
                     "lambdas": {"type": "array", "items": _prob, "minItems": 1},
                     "budgets": {"type": "array", "items": {"type": "integer", "minimum": 1, "maximum": 31}, "minItems": 1},
                     "delib_budgets": {"type": "array", "items": {"type": "integer", "minimum": 2, "maximum": 62, "multipleOf": 2}},
-                    "rules": {"type": "array", "items": {"enum": ["SINGLE", "MV", "CW", "SEQ", "DELIB"]}, "minItems": 1, "contains": {"const": "SINGLE"}},
+                    "rules": _rule_list,
                     "n_items": {"type": "integer", "minimum": 1},
                     "w": _prob,
                     "delta": {"type": "number"},
                     "tau": {"type": "number", "minimum": 0},
+                    "tie_rule": _tie_rule,
+                    "variants": {"type": "array", "minItems": 1, "items": _variant},
                 },
             },
         },

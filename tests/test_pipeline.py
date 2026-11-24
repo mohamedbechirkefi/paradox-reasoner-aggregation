@@ -12,8 +12,8 @@ import pytest
 
 from paradox import cli, dependence, theory
 from paradox.report import build_report
-from paradox.runner import CONFIRMATORY_ENTROPY, GuardError, ProtocolNotFrozen, check_confirmatory_allowed, execute, run_config
-from paradox.schema import SchemaError, load_result, validate_config, validate_result
+from paradox.runner import CONFIRMATORY_ENTROPY, GuardError, ProtocolNotFrozen, check_confirmatory_allowed, execute, load_config, run_config
+from paradox.schema import SchemaError, load_result, sha256_json, validate_config, validate_result
 
 REPO = Path(__file__).resolve().parents[1]
 
@@ -116,7 +116,9 @@ def test_explicit_seeds_must_match_derivation():
         run_config(cfg)
 
 
-def test_confirmatory_refused_while_protocols_are_drafts(tmp_path):
+def test_confirmatory_refused_for_a_config_that_is_not_frozen(tmp_path):
+    # Before the freeze this was refused because the protocol was a draft; after the
+    # freeze it is refused because TINY is not the frozen EXP-002 config.
     cfg = copy.deepcopy(TINY) | {"experiment_id": "EXP-002", "label": "confirmatory", "seed_entropy": CONFIRMATORY_ENTROPY}
     with pytest.raises(ProtocolNotFrozen):
         check_confirmatory_allowed(cfg, REPO)
@@ -125,21 +127,77 @@ def test_confirmatory_refused_while_protocols_are_drafts(tmp_path):
     assert not (tmp_path / "out").exists()
 
 
-def test_confirmatory_guard_accepts_a_frozen_fixture(tmp_path):
-    # A synthetic repository with a frozen protocol (fixture only; the real protocols are drafts).
-    proto = tmp_path / "research" / "experiments" / "EXP-002" / "protocol.md"
+def _frozen_fixture(root: Path, cfg: dict) -> Path:
+    """A synthetic repository with a frozen EXP-002 protocol, main protocol, config and freeze record."""
+    proto = root / "research" / "experiments" / "EXP-002" / "protocol.md"
     proto.parent.mkdir(parents=True)
     proto.write_text("# EXP-002 protocol\n\nStatus: FROZEN v1.0 (fixture).\n")
+    main = root / "research" / "protocol.md"
+    main.write_text("# Protocol\n\nStatus: FROZEN v1.0 (fixture).\n")
+    cfg_path = proto.parent / "config.json"
+    cfg_path.write_text(json.dumps(cfg, indent=1) + "\n")
     sha = hashlib.sha256(proto.read_bytes()).hexdigest()
-    (tmp_path / "research" / "experiment_registry.csv").write_text(
+    (root / "research" / "experiment_registry.csv").write_text(
         "exp_id,protocol_path,protocol_sha256\nEXP-002,research/experiments/EXP-002/protocol.md," + sha + "\n")
+    rec = {
+        "main_protocol": {"path": "research/protocol.md", "sha256": hashlib.sha256(main.read_bytes()).hexdigest()},
+        "experiments": {"EXP-002": {
+            "protocol_path": "research/experiments/EXP-002/protocol.md", "protocol_sha256": sha,
+            "config_path": "research/experiments/EXP-002/config.json",
+            "config_file_sha256": hashlib.sha256(cfg_path.read_bytes()).hexdigest(), "config_canonical_sha256": sha256_json(cfg),
+        }},
+    }
+    (root / "research" / "freeze.json").write_text(json.dumps(rec))
+    return cfg_path
+
+
+def test_confirmatory_guard_accepts_a_frozen_fixture_and_refuses_changes(tmp_path):
     cfg = copy.deepcopy(TINY) | {"experiment_id": "EXP-002", "label": "confirmatory", "seed_entropy": CONFIRMATORY_ENTROPY}
+    cfg_path = _frozen_fixture(tmp_path, cfg)
     check_confirmatory_allowed(cfg, tmp_path)
+    check_confirmatory_allowed(load_config(cfg_path), tmp_path, cfg_path)
+    # a changed config (content) is refused
+    with pytest.raises(ProtocolNotFrozen):
+        check_confirmatory_allowed(cfg | {"n_items": 121}, tmp_path)
+    # a changed config file (same content, different bytes) is refused when the path is given
+    other = tmp_path / "reformatted.json"
+    other.write_text(json.dumps(cfg))
+    with pytest.raises(ProtocolNotFrozen):
+        check_confirmatory_allowed(cfg, tmp_path, other)
+    # the wrong seed entropy is refused
+    with pytest.raises(GuardError):
+        check_confirmatory_allowed(cfg | {"seed_entropy": 0}, tmp_path)
+    # a changed main protocol is refused
+    main = tmp_path / "research" / "protocol.md"
+    original = main.read_text()
+    main.write_text(original + "edit\n")
+    with pytest.raises(ProtocolNotFrozen):
+        check_confirmatory_allowed(cfg, tmp_path)
+    main.write_text(original)
+    check_confirmatory_allowed(cfg, tmp_path)
+    # a missing freeze record is refused
+    (tmp_path / "research" / "freeze.json").unlink()
+    with pytest.raises(ProtocolNotFrozen):
+        check_confirmatory_allowed(cfg, tmp_path)
+
+
+def test_confirmatory_guard_refuses_an_edited_frozen_protocol(tmp_path):
+    cfg = copy.deepcopy(TINY) | {"experiment_id": "EXP-002", "label": "confirmatory", "seed_entropy": CONFIRMATORY_ENTROPY}
+    _frozen_fixture(tmp_path, cfg)
+    proto = tmp_path / "research" / "experiments" / "EXP-002" / "protocol.md"
     proto.write_text("# EXP-002 protocol\n\nStatus: FROZEN v1.0 (fixture), edited after freeze.\n")
     with pytest.raises(ProtocolNotFrozen):
         check_confirmatory_allowed(cfg, tmp_path)
-    with pytest.raises(GuardError):
-        check_confirmatory_allowed(cfg | {"seed_entropy": 0}, tmp_path.parent / "nowhere")
+    with pytest.raises(ProtocolNotFrozen):
+        check_confirmatory_allowed(cfg, tmp_path.parent / "nowhere")
+
+
+def test_confirmatory_run_end_to_end_in_a_frozen_fixture(tmp_path):
+    cfg = copy.deepcopy(TINY) | {"experiment_id": "EXP-002", "label": "confirmatory", "seed_entropy": CONFIRMATORY_ENTROPY}
+    cfg_path = _frozen_fixture(tmp_path, cfg)
+    man = execute(cfg_path, tmp_path / "results" / "EXP-002", repo_root=tmp_path)
+    assert man["label"] == "confirmatory"
+    assert "Confirmatory run under a frozen protocol." in Path(build_report(tmp_path / "results" / "EXP-002")["report_md"]).read_text()
 
 
 def test_exploratory_guards(tmp_path):
@@ -210,3 +268,66 @@ def test_bahadur_sampler_distribution():
 def test_committed_exploratory_configs_validate():
     for p in sorted((REPO / "configs").rglob("*.json")):
         validate_config(json.loads(p.read_text()))
+
+
+def test_tie_rule_in_config_changes_only_even_budget_mv_and_seq():
+    cfg = copy.deepcopy(TINY) | {"budgets": [1, 2, 3, 4], "rules": ["SINGLE", "MV", "CW", "SEQ"], "delib_budgets": []}
+    coin = run_config(copy.deepcopy(cfg) | {"tie_rule": "coin"})
+    absn = run_config(copy.deepcopy(cfg) | {"tie_rule": "abstain_wrong"})
+    for rc, ra in zip(coin["records"], absn["records"]):
+        mc = {(m["rule"], m["budget"]): m for m in rc["metrics"]}
+        ma = {(m["rule"], m["budget"]): m for m in ra["metrics"]}
+        assert mc.keys() == ma.keys()
+        for key in mc:
+            rule, b = key
+            if rule in ("MV", "SEQ") and b % 2 == 0:
+                # abstain-as-wrong loses exactly the ties the coin resolved correctly
+                assert ma[key]["accuracy"] <= mc[key]["accuracy"]
+                assert ma[key]["tie_share"] == mc[key]["tie_share"]
+            else:
+                assert ma[key]["accuracy"] == mc[key]["accuracy"]
+    assert any(m["tie_share"] > 0 for r in coin["records"] for m in r["metrics"] if m["rule"] == "MV" and m["budget"] == 2)
+
+
+def test_variants_run_tagged_and_separate(tmp_path):
+    cfg = copy.deepcopy(TINY) | {"rules": ["SINGLE", "MV", "SEQ"], "delib_budgets": [], "variants": [
+        {"id": "primary"},
+        {"id": "abstain", "budgets": [1, 2, 4], "tie_rule": "abstain_wrong"},
+        {"id": "w_0p9", "w": 0.9},
+    ]}
+    doc = run_config(copy.deepcopy(cfg))
+    assert len(doc["records"]) == 3 * 2 * 2 * 2
+    assert {r["variant"] for r in doc["records"]} == {"primary", "abstain", "w_0p9"}
+    assert {r["w"] for r in doc["records"] if r["variant"] == "w_0p9"} == {0.9}
+    assert {r["tie_rule"] for r in doc["records"] if r["variant"] == "abstain"} == {"abstain_wrong"}
+    # the primary variant reproduces the plain config exactly (same seeds, same parameters)
+    plain = run_config({k: v for k, v in copy.deepcopy(cfg).items() if k != "variants"})
+    prim = [r for r in doc["records"] if r["variant"] == "primary"]
+    assert [r["metrics"] for r in prim] == [r["metrics"] for r in plain["records"]]
+    assert {s["variant"] for s in doc["summary"]} == {"primary", "abstain", "w_0p9"}
+    assert not any(s.get("primary_family") for s in doc["summary"])
+    assert any("delta_p_holm" in s for s in doc["summary"] if s["variant"] == "abstain")
+    out = tmp_path / "exploratory" / "var"
+    execute(write_cfg(tmp_path, cfg), out)
+    assert "abstain: S1" in Path(build_report(out)["report_md"]).read_text()
+    assert "variant" in (out / "metrics.csv").read_text().splitlines()[0]
+    dup = copy.deepcopy(cfg)
+    dup["variants"].append({"id": "primary"})
+    with pytest.raises(SchemaError):
+        run_config(dup)
+    bad = copy.deepcopy(cfg)
+    bad["variants"].append({"id": "x", "lambdas": [0.1]})
+    with pytest.raises(SchemaError):
+        validate_config(bad)
+
+
+def test_frozen_confirmatory_configs_follow_the_amendments():
+    for exp in ("EXP-001", "EXP-002", "EXP-003", "EXP-004"):
+        cfg = load_config(REPO / "research" / "experiments" / exp / "config.json")
+        assert cfg["experiment_id"] == exp and cfg["label"] == "confirmatory"
+        assert cfg["seed_entropy"] == CONFIRMATORY_ENTROPY
+        assert cfg["n_seeds"] == 30  # owner-approved amendment: 30 seeds
+        for v in cfg.get("variants", [{}]):
+            assert "DELIB" not in {**cfg, **v}.get("rules", [])  # DELIB dropped
+        if cfg["kind"] == "aggregation":
+            assert cfg["delib_budgets"] == []

@@ -8,7 +8,8 @@ read count earlier votes a reasoner sees (SEQ) or round-0 answers it reads
 
 Ties (possible only with an even number of votes, or an exact weight tie in
 CW) are resolved by the run's seeded ``tie_coin``; a tie never counts as
-correct without the coin.
+correct without the coin. MV and SEQ also accept the EXP-004 tie rule
+``abstain_wrong``: a tied vote abstains and the abstention is scored as wrong.
 """
 
 from __future__ import annotations
@@ -19,9 +20,10 @@ import numpy as np
 
 from .generator import RunDraws
 
-__all__ = ["RuleOutput", "RULES", "single", "majority", "confidence_weighted", "sequential", "deliberation", "apply_rule"]
+__all__ = ["RuleOutput", "RULES", "TIE_RULES", "single", "majority", "confidence_weighted", "sequential", "deliberation", "apply_rule"]
 
 RULES = ("SINGLE", "MV", "CW", "SEQ", "DELIB")
+TIE_RULES = ("coin", "abstain_wrong")
 
 
 @dataclass(frozen=True)
@@ -50,16 +52,23 @@ def _check_n(d: RunDraws, n: int) -> int:
     return n
 
 
-def _majority_from_counts(k: np.ndarray, n: int, coin: np.ndarray) -> tuple[np.ndarray, np.ndarray]:
-    """Decision correctness from correct-vote counts; returns (correct, tie)."""
+def _majority_from_counts(k: np.ndarray, n: int, coin: np.ndarray, tie_rule: str = "coin") -> tuple[np.ndarray, np.ndarray]:
+    """Decision correctness from correct-vote counts; returns (correct, tie).
+
+    ``tie_rule="coin"`` resolves a tie by the seeded coin; ``"abstain_wrong"``
+    scores a tie as wrong (EXP-004 tie-rule level)."""
+    if tie_rule not in TIE_RULES:
+        raise ValueError(f"unknown tie rule {tie_rule!r}; expected one of {TIE_RULES}")
     twice = 2 * k
     tie = twice == n
-    return np.where(tie, coin, twice > n), tie
+    resolved = coin if tie_rule == "coin" else np.zeros_like(tie)
+    return np.where(tie, resolved, twice > n), tie
 
 
-def _vote_share_output(rule: str, budget: int, n: int, calls: int, msgs: int, votes: np.ndarray, coin: np.ndarray) -> RuleOutput:
+def _vote_share_output(rule: str, budget: int, n: int, calls: int, msgs: int, votes: np.ndarray, coin: np.ndarray,
+                       tie_rule: str = "coin") -> RuleOutput:
     k = votes.sum(axis=1)
-    decision, tie = _majority_from_counts(k, n, coin)
+    decision, tie = _majority_from_counts(k, n, coin, tie_rule)
     q_true = k / n
     p_chosen = np.where(decision, q_true, 1.0 - q_true)
     return RuleOutput(rule, budget, n, calls, msgs, decision, q_true, p_chosen, k.astype(np.int64), n, tie)
@@ -73,10 +82,10 @@ def single(d: RunDraws) -> RuleOutput:
     return RuleOutput("SINGLE", 1, 1, 1, 0, correct.copy(), q_true, c.copy(), correct.astype(np.int64), 1, np.zeros(d.n_items, bool))
 
 
-def majority(d: RunDraws, n: int) -> RuleOutput:
+def majority(d: RunDraws, n: int, tie_rule: str = "coin") -> RuleOutput:
     """Simple majority of reasoners ``0..n-1``; budget ``n`` calls."""
     n = _check_n(d, n)
-    return _vote_share_output("MV", n, n, n, 0, d.correct[:, :n], d.tie_coin)
+    return _vote_share_output("MV", n, n, n, 0, d.correct[:, :n], d.tie_coin, tie_rule)
 
 
 def confidence_weighted(d: RunDraws, n: int) -> RuleOutput:
@@ -121,11 +130,11 @@ def sequential_votes(d: RunDraws, n: int, w: float) -> np.ndarray:
     return votes
 
 
-def sequential(d: RunDraws, n: int, w: float | None = None) -> RuleOutput:
+def sequential(d: RunDraws, n: int, w: float | None = None, tie_rule: str = "coin") -> RuleOutput:
     """SEQ: sequential public voting with herding; budget ``n`` calls."""
     w = d.params.w if w is None else w
     votes = sequential_votes(d, n, w)
-    return _vote_share_output("SEQ", n, n, n, n * (n - 1) // 2, votes, d.tie_coin)
+    return _vote_share_output("SEQ", n, n, n, n * (n - 1) // 2, votes, d.tie_coin, tie_rule)
 
 
 def deliberation(d: RunDraws, budget: int, w: float | None = None) -> RuleOutput:
@@ -146,18 +155,19 @@ def deliberation(d: RunDraws, budget: int, w: float | None = None) -> RuleOutput
     return _vote_share_output("DELIB", int(budget), n, 2 * n, n * (n - 1), r1, d.tie_coin)
 
 
-def apply_rule(d: RunDraws, rule: str, budget: int) -> RuleOutput:
-    """Dispatch by rule id. SINGLE requires ``budget == 1``."""
+def apply_rule(d: RunDraws, rule: str, budget: int, tie_rule: str = "coin") -> RuleOutput:
+    """Dispatch by rule id. SINGLE requires ``budget == 1``. ``tie_rule``
+    applies to MV and SEQ only (EXP-004); other rules keep the seeded coin."""
     if rule == "SINGLE":
         if budget != 1:
             raise ValueError("SINGLE has budget 1")
         return single(d)
     if rule == "MV":
-        return majority(d, budget)
+        return majority(d, budget, tie_rule)
     if rule == "CW":
         return confidence_weighted(d, budget)
     if rule == "SEQ":
-        return sequential(d, budget)
+        return sequential(d, budget, tie_rule=tie_rule)
     if rule == "DELIB":
         return deliberation(d, budget)
     raise ValueError(f"unknown rule {rule!r}; expected one of {RULES}")

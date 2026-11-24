@@ -5,6 +5,11 @@
 
 ## Author and affiliation metadata
 
+- **Author:** Mohamed Bechir Kefi.
+- **Affiliation:** none (independent research).
+- **AI assistance:** an AI system (Claude, Anthropic) was used as a research and development assistant for code, analysis and drafting under the author's direction. It is not an author. The author is responsible for the content.
+- **Status:** independent research manuscript, not peer reviewed.
+
 ## Abstract
 
 ## Keywords

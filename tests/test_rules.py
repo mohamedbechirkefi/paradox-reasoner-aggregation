@@ -218,3 +218,29 @@ def test_delib_as_drafted_always_equals_mv_of_round0(draws, n, w):
     # from the round-0 majority. DELIB at budget 2n is therefore MV at n with twice the cost.
     # Recorded as proposed amendment A-2 for the owner; this test pins the behaviour.
     assert np.array_equal(rules.deliberation(draws, 2 * n, w=w).decision_correct, rules.majority(draws, n).decision_correct)
+
+
+def test_abstain_wrong_tie_rule_scores_ties_as_wrong():
+    # EXP-004 tie level: a tied vote abstains and counts as wrong, whatever the coin says.
+    d = hand_draws([[1, 0, 1, 0], [1, 0, 0, 1], [1, 1, 0, 0]], tie_coin=[True, True, True])
+    coin = rules.majority(d, 2)
+    absn = rules.majority(d, 2, tie_rule="abstain_wrong")
+    assert coin.decision_correct.tolist() == [True, True, True]
+    assert absn.decision_correct.tolist() == [False, False, True]
+    assert absn.tie.tolist() == coin.tie.tolist() == [True, True, False]
+    assert np.array_equal(rules.apply_rule(d, "MV", 2, "abstain_wrong").decision_correct, absn.decision_correct)
+    # odd n cannot tie, so the tie rule has no effect
+    assert np.array_equal(rules.majority(d, 3, tie_rule="abstain_wrong").decision_correct, rules.majority(d, 3).decision_correct)
+
+
+def test_abstain_wrong_tie_rule_applies_to_seq():
+    d = hand_draws([[1, 0], [0, 1]], tie_coin=[True, True], w=0.0)
+    assert rules.sequential(d, 2, w=0.0).decision_correct.tolist() == [True, True]
+    assert rules.sequential(d, 2, w=0.0, tie_rule="abstain_wrong").decision_correct.tolist() == [False, False]
+    assert np.array_equal(rules.apply_rule(d, "SEQ", 2, "abstain_wrong").decision_correct, [False, False])
+
+
+def test_unknown_tie_rule_is_rejected():
+    d = hand_draws([[1, 0]], tie_coin=[True])
+    with pytest.raises(ValueError):
+        rules.majority(d, 2, tie_rule="random")

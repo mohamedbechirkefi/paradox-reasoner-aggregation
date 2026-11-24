@@ -1,0 +1,73 @@
+{
+ "schema_version": "1.0.0",
+ "label": "confirmatory",
+ "experiment_id": "EXP-002",
+ "kind": "aggregation",
+ "description": "Confirmatory EXP-002 (protocol v1.0, frozen 2026-11-24): equal-budget aggregation map, S1 to S6 x lambda {0, 0.25, 0.5, 0.75}, 30 seeds of 2000 items. DELIB dropped (owner-approved amendment).",
+ "scenarios": [
+  {
+   "id": "S1",
+   "p_easy": 0.6,
+   "h": 0.0,
+   "p_hard": null
+  },
+  {
+   "id": "S2",
+   "p_easy": 0.55,
+   "h": 0.0,
+   "p_hard": null
+  },
+  {
+   "id": "S3",
+   "p_easy": 0.8,
+   "h": 0.0,
+   "p_hard": null
+  },
+  {
+   "id": "S4",
+   "p_easy": 0.9,
+   "h": 0.4,
+   "p_hard": 0.3
+  },
+  {
+   "id": "S5",
+   "p_easy": 0.7,
+   "h": 0.2,
+   "p_hard": 0.45
+  },
+  {
+   "id": "S6",
+   "p_easy": 0.95,
+   "h": 0.5,
+   "p_hard": 0.35
+  }
+ ],
+ "lambdas": [
+  0.0,
+  0.25,
+  0.5,
+  0.75
+ ],
+ "budgets": [
+  1,
+  3,
+  5,
+  9,
+  15,
+  31
+ ],
+ "delib_budgets": [],
+ "rules": [
+  "SINGLE",
+  "MV",
+  "CW",
+  "SEQ"
+ ],
+ "n_items": 2000,
+ "seed_entropy": 20261124,
+ "n_seeds": 30,
+ "w": 0.5,
+ "delta": 1.0,
+ "tau": 1.0,
+ "tie_rule": "coin"
+}
