@@ -1,0 +1,19 @@
+{
+ "schema_version": "1.0.0",
+ "experiment_id": "PROBE-EXP001",
+ "label": "exploratory",
+ "kind": "validation",
+ "description": "Exploratory run of the EXP-001 draft design (engine against closed forms) with exploratory seeds (entropy 0). Verification work, not a finding; EXP-001 itself awaits the owner freeze.",
+ "ns": [1, 3, 5, 9, 15, 31],
+ "items_per_seed": 20000,
+ "tolerance_se": 4.0,
+ "seed_entropy": 0,
+ "n_seeds": 10,
+ "common_shock": {"ps": [0.45, 0.5, 0.55, 0.6, 0.8], "lambdas": [0.0, 0.25, 0.5, 0.75, 1.0]},
+ "mixture": {"scenarios": [
+   {"id": "S4", "p_easy": 0.9, "h": 0.4, "p_hard": 0.3},
+   {"id": "S5", "p_easy": 0.7, "h": 0.2, "p_hard": 0.45},
+   {"id": "S6", "p_easy": 0.95, "h": 0.5, "p_hard": 0.35}
+  ], "lambdas": [0.0, 0.25, 0.5, 0.75]},
+ "bahadur": {"ps": [0.45, 0.5, 0.55, 0.6, 0.8], "cs": [0.0, 0.1, 0.4]}
+}

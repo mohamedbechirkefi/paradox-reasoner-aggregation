@@ -1,0 +1,21 @@
+{
+ "schema_version": "1.0.0",
+ "experiment_id": "SMOKE",
+ "label": "exploratory",
+ "kind": "aggregation",
+ "description": "Exploratory smoke matrix of research/protocol.md section 6.1: pipeline, schema and invariant check. Not a test of any hypothesis.",
+ "scenarios": [
+  {"id": "S1", "p_easy": 0.6, "h": 0.0, "p_hard": null},
+  {"id": "S4", "p_easy": 0.9, "h": 0.4, "p_hard": 0.3}
+ ],
+ "lambdas": [0.0, 0.5],
+ "budgets": [1, 3, 9],
+ "delib_budgets": [6],
+ "rules": ["SINGLE", "MV", "CW", "SEQ", "DELIB"],
+ "n_items": 200,
+ "seed_entropy": 0,
+ "n_seeds": 2,
+ "w": 0.5,
+ "delta": 1.0,
+ "tau": 1.0
+}

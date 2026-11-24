@@ -46,4 +46,11 @@ Regenerate the lockfile (resolution is bounded by `exclude-newer` in `pyproject.
 
     uv lock
 
-Test, smoke, experiment and report commands are added when the engine exists (milestone M2); see `roadmap.md`.
+Test, smoke, run and report (M2):
+
+    uv run paradox test
+    uv run paradox smoke --pdf
+    uv run paradox run --config configs/exploratory/probe_engine_validation.json --out results/exploratory/probe-engine-validation --pdf
+    uv run paradox report results/exploratory/smoke --pdf
+
+`paradox run` refuses a config labelled `confirmatory` unless the experiment's protocol is frozen (registry SHA-256 matching the protocol file, no DRAFT marker), and refuses exploratory output paths without an `exploratory` component. PDFs need pandoc (`PARADOX_PANDOC`, default the shared `.tools/pandoc`).
