@@ -1,0 +1,3240 @@
+{
+ "claims_boundary": "Synthetic reasoners, not LLMs or people. Values hold only within the stated simulation model. Exploratory results are not findings and do not test any preregistered hypothesis.",
+ "code_revision": "9bfb9d3eaef0fb7676a6b2c1950c121b27e08135",
+ "config": {
+  "budgets": [
+   1,
+   3,
+   9
+  ],
+  "delib_budgets": [
+   6
+  ],
+  "delta": 1.0,
+  "description": "Exploratory smoke matrix of research/protocol.md section 6.1: pipeline, schema and invariant check. Not a test of any hypothesis.",
+  "experiment_id": "SMOKE",
+  "kind": "aggregation",
+  "label": "exploratory",
+  "lambdas": [
+   0.0,
+   0.5
+  ],
+  "n_items": 200,
+  "n_seeds": 2,
+  "rules": [
+   "SINGLE",
+   "MV",
+   "CW",
+   "SEQ",
+   "DELIB"
+  ],
+  "scenarios": [
+   {
+    "h": 0.0,
+    "id": "S1",
+    "p_easy": 0.6,
+    "p_hard": null
+   },
+   {
+    "h": 0.4,
+    "id": "S4",
+    "p_easy": 0.9,
+    "p_hard": 0.3
+   }
+  ],
+  "schema_version": "1.0.0",
+  "seed_entropy": 0,
+  "tau": 1.0,
+  "w": 0.5
+ },
+ "config_sha256": "4d15e19e71aa2ba917002c71a862634252d274c84d08f5a0e98d68628d0a2671",
+ "created_utc": "2026-11-24T16:06:44Z",
+ "experiment_id": "SMOKE",
+ "kind": "aggregation",
+ "label": "exploratory",
+ "records": [
+  {
+   "excluded": false,
+   "exclusion_reason": "",
+   "invariants": {
+    "budget_accounting": true,
+    "marginal_competence_4se": true,
+    "vote_counts": true
+   },
+   "lambda": 0.0,
+   "metrics": [
+    {
+     "accuracy": 0.56,
+     "accuracy_per_call": 0.06000000000000005,
+     "brier": 0.21133202457706446,
+     "budget": 1,
+     "calls_per_item": 1,
+     "delta_vs_single": 0.0,
+     "disagreement_share": 0.0,
+     "ece": 0.23053372709296985,
+     "messages_per_item": 0,
+     "n_reasoners": 1,
+     "pairwise_disagreement": 0.0,
+     "rule": "SINGLE",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.56,
+     "accuracy_per_call": 0.06000000000000005,
+     "brier": 0.44,
+     "budget": 1,
+     "calls_per_item": 1,
+     "delta_vs_single": 0.0,
+     "disagreement_share": 0.0,
+     "ece": 0.43999999999999995,
+     "messages_per_item": 0,
+     "n_reasoners": 1,
+     "pairwise_disagreement": 0.0,
+     "rule": "MV",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.655,
+     "accuracy_per_call": 0.05166666666666667,
+     "brier": 0.22888888888888892,
+     "budget": 3,
+     "calls_per_item": 3,
+     "delta_vs_single": 0.095,
+     "disagreement_share": 0.725,
+     "ece": 0.10333333333333332,
+     "messages_per_item": 0,
+     "n_reasoners": 3,
+     "pairwise_disagreement": 0.4833333333333333,
+     "rule": "MV",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.68,
+     "accuracy_per_call": 0.020000000000000004,
+     "brier": 0.19932098765432102,
+     "budget": 9,
+     "calls_per_item": 9,
+     "delta_vs_single": 0.12,
+     "disagreement_share": 0.995,
+     "ece": 0.0483333333333333,
+     "messages_per_item": 0,
+     "n_reasoners": 9,
+     "pairwise_disagreement": 0.4827777777777778,
+     "rule": "MV",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.56,
+     "accuracy_per_call": 0.06000000000000005,
+     "brier": 0.44,
+     "budget": 1,
+     "calls_per_item": 1,
+     "delta_vs_single": 0.0,
+     "disagreement_share": 0.0,
+     "ece": 0.43999999999999995,
+     "messages_per_item": 0,
+     "n_reasoners": 1,
+     "pairwise_disagreement": 0.0,
+     "rule": "CW",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.845,
+     "accuracy_per_call": 0.11499999999999999,
+     "brier": 0.1246201368481156,
+     "budget": 3,
+     "calls_per_item": 3,
+     "delta_vs_single": 0.285,
+     "disagreement_share": 0.725,
+     "ece": 0.10348512403358058,
+     "messages_per_item": 0,
+     "n_reasoners": 3,
+     "pairwise_disagreement": 0.4833333333333333,
+     "rule": "CW",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.975,
+     "accuracy_per_call": 0.05277777777777778,
+     "brier": 0.06645655590345191,
+     "budget": 9,
+     "calls_per_item": 9,
+     "delta_vs_single": 0.415,
+     "disagreement_share": 0.995,
+     "ece": 0.19448235715298173,
+     "messages_per_item": 0,
+     "n_reasoners": 9,
+     "pairwise_disagreement": 0.4827777777777778,
+     "rule": "CW",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.56,
+     "accuracy_per_call": 0.06000000000000005,
+     "brier": 0.44,
+     "budget": 1,
+     "calls_per_item": 1,
+     "delta_vs_single": 0.0,
+     "disagreement_share": 0.0,
+     "ece": 0.43999999999999995,
+     "messages_per_item": 0,
+     "n_reasoners": 1,
+     "pairwise_disagreement": 0.0,
+     "rule": "SEQ",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.61,
+     "accuracy_per_call": 0.03666666666666666,
+     "brier": 0.30944444444444447,
+     "budget": 3,
+     "calls_per_item": 3,
+     "delta_vs_single": 0.05,
+     "disagreement_share": 0.445,
+     "ece": 0.24166666666666675,
+     "messages_per_item": 3,
+     "n_reasoners": 3,
+     "pairwise_disagreement": 0.29666666666666663,
+     "rule": "SEQ",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.655,
+     "accuracy_per_call": 0.017222222222222226,
+     "brier": 0.23882716049382718,
+     "budget": 9,
+     "calls_per_item": 9,
+     "delta_vs_single": 0.095,
+     "disagreement_share": 0.905,
+     "ece": 0.1361111111111111,
+     "messages_per_item": 36,
+     "n_reasoners": 9,
+     "pairwise_disagreement": 0.3413888888888889,
+     "rule": "SEQ",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.655,
+     "accuracy_per_call": 0.025833333333333337,
+     "brier": 0.31000000000000005,
+     "budget": 6,
+     "calls_per_item": 6,
+     "delta_vs_single": 0.095,
+     "disagreement_share": 0.375,
+     "ece": 0.24000000000000005,
+     "messages_per_item": 6,
+     "n_reasoners": 3,
+     "pairwise_disagreement": 0.25,
+     "rule": "DELIB",
+     "tie_share": 0.0
+    }
+   ],
+   "n_items": 200,
+   "record_id": "RUN-0001",
+   "runtime_s": 0.001701874998616404,
+   "scenario": "S1",
+   "seed": 3757552657
+  },
+  {
+   "excluded": false,
+   "exclusion_reason": "",
+   "invariants": {
+    "budget_accounting": true,
+    "marginal_competence_4se": true,
+    "vote_counts": true
+   },
+   "lambda": 0.0,
+   "metrics": [
+    {
+     "accuracy": 0.6,
+     "accuracy_per_call": 0.09999999999999998,
+     "brier": 0.1954259123366638,
+     "budget": 1,
+     "calls_per_item": 1,
+     "delta_vs_single": 0.0,
+     "disagreement_share": 0.0,
+     "ece": 0.2031212550394173,
+     "messages_per_item": 0,
+     "n_reasoners": 1,
+     "pairwise_disagreement": 0.0,
+     "rule": "SINGLE",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.6,
+     "accuracy_per_call": 0.09999999999999998,
+     "brier": 0.4,
+     "budget": 1,
+     "calls_per_item": 1,
+     "delta_vs_single": 0.0,
+     "disagreement_share": 0.0,
+     "ece": 0.4,
+     "messages_per_item": 0,
+     "n_reasoners": 1,
+     "pairwise_disagreement": 0.0,
+     "rule": "MV",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.65,
+     "accuracy_per_call": 0.05000000000000001,
+     "brier": 0.2516666666666667,
+     "budget": 3,
+     "calls_per_item": 3,
+     "delta_vs_single": 0.05,
+     "disagreement_share": 0.705,
+     "ece": 0.11499999999999996,
+     "messages_per_item": 0,
+     "n_reasoners": 3,
+     "pairwise_disagreement": 0.47,
+     "rule": "MV",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.74,
+     "accuracy_per_call": 0.026666666666666665,
+     "brier": 0.1906172839506173,
+     "budget": 9,
+     "calls_per_item": 9,
+     "delta_vs_single": 0.14,
+     "disagreement_share": 0.985,
+     "ece": 0.08000000000000011,
+     "messages_per_item": 0,
+     "n_reasoners": 9,
+     "pairwise_disagreement": 0.4761111111111111,
+     "rule": "MV",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.6,
+     "accuracy_per_call": 0.09999999999999998,
+     "brier": 0.4,
+     "budget": 1,
+     "calls_per_item": 1,
+     "delta_vs_single": 0.0,
+     "disagreement_share": 0.0,
+     "ece": 0.4,
+     "messages_per_item": 0,
+     "n_reasoners": 1,
+     "pairwise_disagreement": 0.0,
+     "rule": "CW",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.845,
+     "accuracy_per_call": 0.11499999999999999,
+     "brier": 0.15302325212747755,
+     "budget": 3,
+     "calls_per_item": 3,
+     "delta_vs_single": 0.245,
+     "disagreement_share": 0.705,
+     "ece": 0.15604362001537259,
+     "messages_per_item": 0,
+     "n_reasoners": 3,
+     "pairwise_disagreement": 0.47,
+     "rule": "CW",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.96,
+     "accuracy_per_call": 0.05111111111111111,
+     "brier": 0.05961298587767728,
+     "budget": 9,
+     "calls_per_item": 9,
+     "delta_vs_single": 0.36,
+     "disagreement_share": 0.985,
+     "ece": 0.15302278753225823,
+     "messages_per_item": 0,
+     "n_reasoners": 9,
+     "pairwise_disagreement": 0.4761111111111111,
+     "rule": "CW",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.6,
+     "accuracy_per_call": 0.09999999999999998,
+     "brier": 0.4,
+     "budget": 1,
+     "calls_per_item": 1,
+     "delta_vs_single": 0.0,
+     "disagreement_share": 0.0,
+     "ece": 0.4,
+     "messages_per_item": 0,
+     "n_reasoners": 1,
+     "pairwise_disagreement": 0.0,
+     "rule": "SEQ",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.635,
+     "accuracy_per_call": 0.045000000000000005,
+     "brier": 0.30722222222222223,
+     "budget": 3,
+     "calls_per_item": 3,
+     "delta_vs_single": 0.035,
+     "disagreement_share": 0.38,
+     "ece": 0.2383333333333333,
+     "messages_per_item": 3,
+     "n_reasoners": 3,
+     "pairwise_disagreement": 0.2533333333333333,
+     "rule": "SEQ",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.645,
+     "accuracy_per_call": 0.016111111111111114,
+     "brier": 0.2369135802469136,
+     "budget": 9,
+     "calls_per_item": 9,
+     "delta_vs_single": 0.045,
+     "disagreement_share": 0.885,
+     "ece": 0.15555555555555559,
+     "messages_per_item": 36,
+     "n_reasoners": 9,
+     "pairwise_disagreement": 0.3269444444444444,
+     "rule": "SEQ",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.65,
+     "accuracy_per_call": 0.025000000000000005,
+     "brier": 0.30388888888888893,
+     "budget": 6,
+     "calls_per_item": 6,
+     "delta_vs_single": 0.05,
+     "disagreement_share": 0.335,
+     "ece": 0.23833333333333334,
+     "messages_per_item": 6,
+     "n_reasoners": 3,
+     "pairwise_disagreement": 0.22333333333333327,
+     "rule": "DELIB",
+     "tie_share": 0.0
+    }
+   ],
+   "n_items": 200,
+   "record_id": "RUN-0002",
+   "runtime_s": 0.0014338749988382915,
+   "scenario": "S1",
+   "seed": 673228719
+  },
+  {
+   "excluded": false,
+   "exclusion_reason": "",
+   "invariants": {
+    "budget_accounting": true,
+    "marginal_competence_4se": true,
+    "vote_counts": true
+   },
+   "lambda": 0.5,
+   "metrics": [
+    {
+     "accuracy": 0.53,
+     "accuracy_per_call": 0.030000000000000027,
+     "brier": 0.22591365896956275,
+     "budget": 1,
+     "calls_per_item": 1,
+     "delta_vs_single": 0.0,
+     "disagreement_share": 0.0,
+     "ece": 0.26219476275042086,
+     "messages_per_item": 0,
+     "n_reasoners": 1,
+     "pairwise_disagreement": 0.0,
+     "rule": "SINGLE",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.53,
+     "accuracy_per_call": 0.030000000000000027,
+     "brier": 0.47,
+     "budget": 1,
+     "calls_per_item": 1,
+     "delta_vs_single": 0.0,
+     "disagreement_share": 0.0,
+     "ece": 0.47,
+     "messages_per_item": 0,
+     "n_reasoners": 1,
+     "pairwise_disagreement": 0.0,
+     "rule": "MV",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.575,
+     "accuracy_per_call": 0.024999999999999984,
+     "brier": 0.3205555555555556,
+     "budget": 3,
+     "calls_per_item": 3,
+     "delta_vs_single": 0.045,
+     "disagreement_share": 0.53,
+     "ece": 0.24833333333333343,
+     "messages_per_item": 0,
+     "n_reasoners": 3,
+     "pairwise_disagreement": 0.3533333333333333,
+     "rule": "MV",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.55,
+     "accuracy_per_call": 0.00555555555555556,
+     "brier": 0.28018518518518526,
+     "budget": 9,
+     "calls_per_item": 9,
+     "delta_vs_single": 0.02,
+     "disagreement_share": 0.925,
+     "ece": 0.19833333333333342,
+     "messages_per_item": 0,
+     "n_reasoners": 9,
+     "pairwise_disagreement": 0.3833333333333333,
+     "rule": "MV",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.53,
+     "accuracy_per_call": 0.030000000000000027,
+     "brier": 0.47,
+     "budget": 1,
+     "calls_per_item": 1,
+     "delta_vs_single": 0.0,
+     "disagreement_share": 0.0,
+     "ece": 0.47,
+     "messages_per_item": 0,
+     "n_reasoners": 1,
+     "pairwise_disagreement": 0.0,
+     "rule": "CW",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.71,
+     "accuracy_per_call": 0.06999999999999999,
+     "brier": 0.24725466966602433,
+     "budget": 3,
+     "calls_per_item": 3,
+     "delta_vs_single": 0.18,
+     "disagreement_share": 0.53,
+     "ece": 0.2466364110068317,
+     "messages_per_item": 0,
+     "n_reasoners": 3,
+     "pairwise_disagreement": 0.3533333333333333,
+     "rule": "CW",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.79,
+     "accuracy_per_call": 0.03222222222222223,
+     "brier": 0.14929922603635304,
+     "budget": 9,
+     "calls_per_item": 9,
+     "delta_vs_single": 0.26,
+     "disagreement_share": 0.925,
+     "ece": 0.02834091617903666,
+     "messages_per_item": 0,
+     "n_reasoners": 9,
+     "pairwise_disagreement": 0.3833333333333333,
+     "rule": "CW",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.53,
+     "accuracy_per_call": 0.030000000000000027,
+     "brier": 0.47,
+     "budget": 1,
+     "calls_per_item": 1,
+     "delta_vs_single": 0.0,
+     "disagreement_share": 0.0,
+     "ece": 0.47,
+     "messages_per_item": 0,
+     "n_reasoners": 1,
+     "pairwise_disagreement": 0.0,
+     "rule": "SEQ",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.555,
+     "accuracy_per_call": 0.01833333333333335,
+     "brier": 0.39000000000000007,
+     "budget": 3,
+     "calls_per_item": 3,
+     "delta_vs_single": 0.025,
+     "disagreement_share": 0.285,
+     "ece": 0.34999999999999987,
+     "messages_per_item": 3,
+     "n_reasoners": 3,
+     "pairwise_disagreement": 0.19,
+     "rule": "SEQ",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.54,
+     "accuracy_per_call": 0.004444444444444449,
+     "brier": 0.3388271604938272,
+     "budget": 9,
+     "calls_per_item": 9,
+     "delta_vs_single": 0.01,
+     "disagreement_share": 0.76,
+     "ece": 0.3050000000000001,
+     "messages_per_item": 36,
+     "n_reasoners": 9,
+     "pairwise_disagreement": 0.2613888888888889,
+     "rule": "SEQ",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.575,
+     "accuracy_per_call": 0.012499999999999992,
+     "brier": 0.3622222222222223,
+     "budget": 6,
+     "calls_per_item": 6,
+     "delta_vs_single": 0.045,
+     "disagreement_share": 0.305,
+     "ece": 0.3233333333333333,
+     "messages_per_item": 6,
+     "n_reasoners": 3,
+     "pairwise_disagreement": 0.2033333333333333,
+     "rule": "DELIB",
+     "tie_share": 0.0
+    }
+   ],
+   "n_items": 200,
+   "record_id": "RUN-0003",
+   "runtime_s": 0.0014059580007597106,
+   "scenario": "S1",
+   "seed": 3757552657
+  },
+  {
+   "excluded": false,
+   "exclusion_reason": "",
+   "invariants": {
+    "budget_accounting": true,
+    "marginal_competence_4se": true,
+    "vote_counts": true
+   },
+   "lambda": 0.5,
+   "metrics": [
+    {
+     "accuracy": 0.58,
+     "accuracy_per_call": 0.07999999999999996,
+     "brier": 0.19553430242261718,
+     "budget": 1,
+     "calls_per_item": 1,
+     "delta_vs_single": 0.0,
+     "disagreement_share": 0.0,
+     "ece": 0.22376964510437006,
+     "messages_per_item": 0,
+     "n_reasoners": 1,
+     "pairwise_disagreement": 0.0,
+     "rule": "SINGLE",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.58,
+     "accuracy_per_call": 0.07999999999999996,
+     "brier": 0.42,
+     "budget": 1,
+     "calls_per_item": 1,
+     "delta_vs_single": 0.0,
+     "disagreement_share": 0.0,
+     "ece": 0.42000000000000004,
+     "messages_per_item": 0,
+     "n_reasoners": 1,
+     "pairwise_disagreement": 0.0,
+     "rule": "MV",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.62,
+     "accuracy_per_call": 0.04,
+     "brier": 0.2838888888888889,
+     "budget": 3,
+     "calls_per_item": 3,
+     "delta_vs_single": 0.04,
+     "disagreement_share": 0.545,
+     "ece": 0.19833333333333347,
+     "messages_per_item": 0,
+     "n_reasoners": 3,
+     "pairwise_disagreement": 0.3633333333333333,
+     "rule": "MV",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.605,
+     "accuracy_per_call": 0.011666666666666665,
+     "brier": 0.25148148148148153,
+     "budget": 9,
+     "calls_per_item": 9,
+     "delta_vs_single": 0.025,
+     "disagreement_share": 0.9,
+     "ece": 0.1711111111111111,
+     "messages_per_item": 0,
+     "n_reasoners": 9,
+     "pairwise_disagreement": 0.3516666666666666,
+     "rule": "MV",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.58,
+     "accuracy_per_call": 0.07999999999999996,
+     "brier": 0.42,
+     "budget": 1,
+     "calls_per_item": 1,
+     "delta_vs_single": 0.0,
+     "disagreement_share": 0.0,
+     "ece": 0.42000000000000004,
+     "messages_per_item": 0,
+     "n_reasoners": 1,
+     "pairwise_disagreement": 0.0,
+     "rule": "CW",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.795,
+     "accuracy_per_call": 0.09833333333333334,
+     "brier": 0.20536641336621247,
+     "budget": 3,
+     "calls_per_item": 3,
+     "delta_vs_single": 0.215,
+     "disagreement_share": 0.545,
+     "ece": 0.2109808354640918,
+     "messages_per_item": 0,
+     "n_reasoners": 3,
+     "pairwise_disagreement": 0.3633333333333333,
+     "rule": "CW",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.825,
+     "accuracy_per_call": 0.03611111111111111,
+     "brier": 0.12599451885139,
+     "budget": 9,
+     "calls_per_item": 9,
+     "delta_vs_single": 0.245,
+     "disagreement_share": 0.9,
+     "ece": 0.04526614740137891,
+     "messages_per_item": 0,
+     "n_reasoners": 9,
+     "pairwise_disagreement": 0.3516666666666666,
+     "rule": "CW",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.58,
+     "accuracy_per_call": 0.07999999999999996,
+     "brier": 0.42,
+     "budget": 1,
+     "calls_per_item": 1,
+     "delta_vs_single": 0.0,
+     "disagreement_share": 0.0,
+     "ece": 0.42000000000000004,
+     "messages_per_item": 0,
+     "n_reasoners": 1,
+     "pairwise_disagreement": 0.0,
+     "rule": "SEQ",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.6,
+     "accuracy_per_call": 0.033333333333333326,
+     "brier": 0.3438888888888889,
+     "budget": 3,
+     "calls_per_item": 3,
+     "delta_vs_single": 0.02,
+     "disagreement_share": 0.305,
+     "ece": 0.29833333333333323,
+     "messages_per_item": 3,
+     "n_reasoners": 3,
+     "pairwise_disagreement": 0.2033333333333333,
+     "rule": "SEQ",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.58,
+     "accuracy_per_call": 0.008888888888888884,
+     "brier": 0.3177160493827161,
+     "budget": 9,
+     "calls_per_item": 9,
+     "delta_vs_single": 0.0,
+     "disagreement_share": 0.725,
+     "ece": 0.29944444444444446,
+     "messages_per_item": 36,
+     "n_reasoners": 9,
+     "pairwise_disagreement": 0.22638888888888892,
+     "rule": "SEQ",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.62,
+     "accuracy_per_call": 0.02,
+     "brier": 0.34,
+     "budget": 6,
+     "calls_per_item": 6,
+     "delta_vs_single": 0.04,
+     "disagreement_share": 0.27,
+     "ece": 0.28999999999999987,
+     "messages_per_item": 6,
+     "n_reasoners": 3,
+     "pairwise_disagreement": 0.18,
+     "rule": "DELIB",
+     "tie_share": 0.0
+    }
+   ],
+   "n_items": 200,
+   "record_id": "RUN-0004",
+   "runtime_s": 0.0013953749985375907,
+   "scenario": "S1",
+   "seed": 673228719
+  },
+  {
+   "excluded": false,
+   "exclusion_reason": "",
+   "invariants": {
+    "budget_accounting": true,
+    "marginal_competence_4se": true,
+    "vote_counts": true
+   },
+   "lambda": 0.0,
+   "metrics": [
+    {
+     "accuracy": 0.645,
+     "accuracy_per_call": 0.14500000000000002,
+     "brier": 0.1770620580918431,
+     "budget": 1,
+     "calls_per_item": 1,
+     "delta_vs_single": 0.0,
+     "disagreement_share": 0.0,
+     "ece": 0.17279065549091852,
+     "messages_per_item": 0,
+     "n_reasoners": 1,
+     "pairwise_disagreement": 0.0,
+     "rule": "SINGLE",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.645,
+     "accuracy_per_call": 0.14500000000000002,
+     "brier": 0.355,
+     "budget": 1,
+     "calls_per_item": 1,
+     "delta_vs_single": 0.0,
+     "disagreement_share": 0.0,
+     "ece": 0.355,
+     "messages_per_item": 0,
+     "n_reasoners": 1,
+     "pairwise_disagreement": 0.0,
+     "rule": "MV",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.715,
+     "accuracy_per_call": 0.07166666666666666,
+     "brier": 0.21555555555555558,
+     "budget": 3,
+     "calls_per_item": 3,
+     "delta_vs_single": 0.07,
+     "disagreement_share": 0.395,
+     "ece": 0.15333333333333324,
+     "messages_per_item": 0,
+     "n_reasoners": 3,
+     "pairwise_disagreement": 0.2633333333333333,
+     "rule": "MV",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.7,
+     "accuracy_per_call": 0.022222222222222216,
+     "brier": 0.17919753086419757,
+     "budget": 9,
+     "calls_per_item": 9,
+     "delta_vs_single": 0.055,
+     "disagreement_share": 0.745,
+     "ece": 0.13055555555555556,
+     "messages_per_item": 0,
+     "n_reasoners": 9,
+     "pairwise_disagreement": 0.26805555555555555,
+     "rule": "MV",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.645,
+     "accuracy_per_call": 0.14500000000000002,
+     "brier": 0.355,
+     "budget": 1,
+     "calls_per_item": 1,
+     "delta_vs_single": 0.0,
+     "disagreement_share": 0.0,
+     "ece": 0.355,
+     "messages_per_item": 0,
+     "n_reasoners": 1,
+     "pairwise_disagreement": 0.0,
+     "rule": "CW",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.835,
+     "accuracy_per_call": 0.11166666666666665,
+     "brier": 0.1546412650705168,
+     "budget": 3,
+     "calls_per_item": 3,
+     "delta_vs_single": 0.19,
+     "disagreement_share": 0.395,
+     "ece": 0.16356747784974499,
+     "messages_per_item": 0,
+     "n_reasoners": 3,
+     "pairwise_disagreement": 0.2633333333333333,
+     "rule": "CW",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.86,
+     "accuracy_per_call": 0.04,
+     "brier": 0.09352371581366667,
+     "budget": 9,
+     "calls_per_item": 9,
+     "delta_vs_single": 0.215,
+     "disagreement_share": 0.745,
+     "ece": 0.031801507395017733,
+     "messages_per_item": 0,
+     "n_reasoners": 9,
+     "pairwise_disagreement": 0.26805555555555555,
+     "rule": "CW",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.645,
+     "accuracy_per_call": 0.14500000000000002,
+     "brier": 0.355,
+     "budget": 1,
+     "calls_per_item": 1,
+     "delta_vs_single": 0.0,
+     "disagreement_share": 0.0,
+     "ece": 0.355,
+     "messages_per_item": 0,
+     "n_reasoners": 1,
+     "pairwise_disagreement": 0.0,
+     "rule": "SEQ",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.705,
+     "accuracy_per_call": 0.06833333333333332,
+     "brier": 0.24833333333333335,
+     "budget": 3,
+     "calls_per_item": 3,
+     "delta_vs_single": 0.06,
+     "disagreement_share": 0.24,
+     "ece": 0.21500000000000002,
+     "messages_per_item": 3,
+     "n_reasoners": 3,
+     "pairwise_disagreement": 0.16,
+     "rule": "SEQ",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.745,
+     "accuracy_per_call": 0.02722222222222222,
+     "brier": 0.19339506172839507,
+     "budget": 9,
+     "calls_per_item": 9,
+     "delta_vs_single": 0.1,
+     "disagreement_share": 0.545,
+     "ece": 0.14944444444444452,
+     "messages_per_item": 36,
+     "n_reasoners": 9,
+     "pairwise_disagreement": 0.1786111111111111,
+     "rule": "SEQ",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.715,
+     "accuracy_per_call": 0.03583333333333333,
+     "brier": 0.2561111111111111,
+     "budget": 6,
+     "calls_per_item": 6,
+     "delta_vs_single": 0.07,
+     "disagreement_share": 0.22,
+     "ece": 0.21166666666666664,
+     "messages_per_item": 6,
+     "n_reasoners": 3,
+     "pairwise_disagreement": 0.14666666666666664,
+     "rule": "DELIB",
+     "tie_share": 0.0
+    }
+   ],
+   "n_items": 200,
+   "record_id": "RUN-0005",
+   "runtime_s": 0.021980666999297682,
+   "scenario": "S4",
+   "seed": 3757552657
+  },
+  {
+   "excluded": false,
+   "exclusion_reason": "",
+   "invariants": {
+    "budget_accounting": true,
+    "marginal_competence_4se": true,
+    "vote_counts": true
+   },
+   "lambda": 0.0,
+   "metrics": [
+    {
+     "accuracy": 0.695,
+     "accuracy_per_call": 0.19499999999999995,
+     "brier": 0.16716339960782192,
+     "budget": 1,
+     "calls_per_item": 1,
+     "delta_vs_single": 0.0,
+     "disagreement_share": 0.0,
+     "ece": 0.12729269041007513,
+     "messages_per_item": 0,
+     "n_reasoners": 1,
+     "pairwise_disagreement": 0.0,
+     "rule": "SINGLE",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.695,
+     "accuracy_per_call": 0.19499999999999995,
+     "brier": 0.305,
+     "budget": 1,
+     "calls_per_item": 1,
+     "delta_vs_single": 0.0,
+     "disagreement_share": 0.0,
+     "ece": 0.30500000000000005,
+     "messages_per_item": 0,
+     "n_reasoners": 1,
+     "pairwise_disagreement": 0.0,
+     "rule": "MV",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.675,
+     "accuracy_per_call": 0.05833333333333335,
+     "brier": 0.23166666666666672,
+     "budget": 3,
+     "calls_per_item": 3,
+     "delta_vs_single": -0.02,
+     "disagreement_share": 0.42,
+     "ece": 0.18499999999999997,
+     "messages_per_item": 0,
+     "n_reasoners": 3,
+     "pairwise_disagreement": 0.27999999999999997,
+     "rule": "MV",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.655,
+     "accuracy_per_call": 0.017222222222222226,
+     "brier": 0.21283950617283956,
+     "budget": 9,
+     "calls_per_item": 9,
+     "delta_vs_single": -0.04,
+     "disagreement_share": 0.76,
+     "ece": 0.17333333333333328,
+     "messages_per_item": 0,
+     "n_reasoners": 9,
+     "pairwise_disagreement": 0.27611111111111114,
+     "rule": "MV",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.695,
+     "accuracy_per_call": 0.19499999999999995,
+     "brier": 0.305,
+     "budget": 1,
+     "calls_per_item": 1,
+     "delta_vs_single": 0.0,
+     "disagreement_share": 0.0,
+     "ece": 0.30500000000000005,
+     "messages_per_item": 0,
+     "n_reasoners": 1,
+     "pairwise_disagreement": 0.0,
+     "rule": "CW",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.845,
+     "accuracy_per_call": 0.11499999999999999,
+     "brier": 0.16052631247876797,
+     "budget": 3,
+     "calls_per_item": 3,
+     "delta_vs_single": 0.15,
+     "disagreement_share": 0.42,
+     "ece": 0.17036528810472407,
+     "messages_per_item": 0,
+     "n_reasoners": 3,
+     "pairwise_disagreement": 0.27999999999999997,
+     "rule": "CW",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.825,
+     "accuracy_per_call": 0.03611111111111111,
+     "brier": 0.10551476841089834,
+     "budget": 9,
+     "calls_per_item": 9,
+     "delta_vs_single": 0.13,
+     "disagreement_share": 0.76,
+     "ece": 0.0393956648298762,
+     "messages_per_item": 0,
+     "n_reasoners": 9,
+     "pairwise_disagreement": 0.27611111111111114,
+     "rule": "CW",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.695,
+     "accuracy_per_call": 0.19499999999999995,
+     "brier": 0.305,
+     "budget": 1,
+     "calls_per_item": 1,
+     "delta_vs_single": 0.0,
+     "disagreement_share": 0.0,
+     "ece": 0.30500000000000005,
+     "messages_per_item": 0,
+     "n_reasoners": 1,
+     "pairwise_disagreement": 0.0,
+     "rule": "SEQ",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.65,
+     "accuracy_per_call": 0.05000000000000001,
+     "brier": 0.2816666666666667,
+     "budget": 3,
+     "calls_per_item": 3,
+     "delta_vs_single": -0.045,
+     "disagreement_share": 0.255,
+     "ece": 0.265,
+     "messages_per_item": 3,
+     "n_reasoners": 3,
+     "pairwise_disagreement": 0.17,
+     "rule": "SEQ",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.66,
+     "accuracy_per_call": 0.01777777777777778,
+     "brier": 0.25203703703703706,
+     "budget": 9,
+     "calls_per_item": 9,
+     "delta_vs_single": -0.035,
+     "disagreement_share": 0.605,
+     "ece": 0.23388888888888887,
+     "messages_per_item": 36,
+     "n_reasoners": 9,
+     "pairwise_disagreement": 0.18666666666666665,
+     "rule": "SEQ",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.675,
+     "accuracy_per_call": 0.029166666666666674,
+     "brier": 0.28,
+     "budget": 6,
+     "calls_per_item": 6,
+     "delta_vs_single": -0.02,
+     "disagreement_share": 0.225,
+     "ece": 0.25,
+     "messages_per_item": 6,
+     "n_reasoners": 3,
+     "pairwise_disagreement": 0.15,
+     "rule": "DELIB",
+     "tie_share": 0.0
+    }
+   ],
+   "n_items": 200,
+   "record_id": "RUN-0006",
+   "runtime_s": 0.001455833000363782,
+   "scenario": "S4",
+   "seed": 673228719
+  },
+  {
+   "excluded": false,
+   "exclusion_reason": "",
+   "invariants": {
+    "budget_accounting": true,
+    "marginal_competence_4se": true,
+    "vote_counts": true
+   },
+   "lambda": 0.5,
+   "metrics": [
+    {
+     "accuracy": 0.635,
+     "accuracy_per_call": 0.135,
+     "brier": 0.17800476334905696,
+     "budget": 1,
+     "calls_per_item": 1,
+     "delta_vs_single": 0.0,
+     "disagreement_share": 0.0,
+     "ece": 0.20051783606672552,
+     "messages_per_item": 0,
+     "n_reasoners": 1,
+     "pairwise_disagreement": 0.0,
+     "rule": "SINGLE",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.635,
+     "accuracy_per_call": 0.135,
+     "brier": 0.365,
+     "budget": 1,
+     "calls_per_item": 1,
+     "delta_vs_single": 0.0,
+     "disagreement_share": 0.0,
+     "ece": 0.365,
+     "messages_per_item": 0,
+     "n_reasoners": 1,
+     "pairwise_disagreement": 0.0,
+     "rule": "MV",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.68,
+     "accuracy_per_call": 0.06000000000000002,
+     "brier": 0.25833333333333336,
+     "budget": 3,
+     "calls_per_item": 3,
+     "delta_vs_single": 0.045,
+     "disagreement_share": 0.285,
+     "ece": 0.22499999999999998,
+     "messages_per_item": 0,
+     "n_reasoners": 3,
+     "pairwise_disagreement": 0.19,
+     "rule": "MV",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.69,
+     "accuracy_per_call": 0.021111111111111105,
+     "brier": 0.23135802469135805,
+     "budget": 9,
+     "calls_per_item": 9,
+     "delta_vs_single": 0.055,
+     "disagreement_share": 0.6,
+     "ece": 0.18888888888888888,
+     "messages_per_item": 0,
+     "n_reasoners": 9,
+     "pairwise_disagreement": 0.19944444444444442,
+     "rule": "MV",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.635,
+     "accuracy_per_call": 0.135,
+     "brier": 0.365,
+     "budget": 1,
+     "calls_per_item": 1,
+     "delta_vs_single": 0.0,
+     "disagreement_share": 0.0,
+     "ece": 0.365,
+     "messages_per_item": 0,
+     "n_reasoners": 1,
+     "pairwise_disagreement": 0.0,
+     "rule": "CW",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.77,
+     "accuracy_per_call": 0.09000000000000001,
+     "brier": 0.21314724642975974,
+     "budget": 3,
+     "calls_per_item": 3,
+     "delta_vs_single": 0.135,
+     "disagreement_share": 0.285,
+     "ece": 0.21144969476921538,
+     "messages_per_item": 0,
+     "n_reasoners": 3,
+     "pairwise_disagreement": 0.19,
+     "rule": "CW",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.795,
+     "accuracy_per_call": 0.03277777777777778,
+     "brier": 0.14752786262957185,
+     "budget": 9,
+     "calls_per_item": 9,
+     "delta_vs_single": 0.16,
+     "disagreement_share": 0.6,
+     "ece": 0.10626329165212306,
+     "messages_per_item": 0,
+     "n_reasoners": 9,
+     "pairwise_disagreement": 0.19944444444444442,
+     "rule": "CW",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.635,
+     "accuracy_per_call": 0.135,
+     "brier": 0.365,
+     "budget": 1,
+     "calls_per_item": 1,
+     "delta_vs_single": 0.0,
+     "disagreement_share": 0.0,
+     "ece": 0.365,
+     "messages_per_item": 0,
+     "n_reasoners": 1,
+     "pairwise_disagreement": 0.0,
+     "rule": "SEQ",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.66,
+     "accuracy_per_call": 0.053333333333333344,
+     "brier": 0.29444444444444445,
+     "budget": 3,
+     "calls_per_item": 3,
+     "delta_vs_single": 0.025,
+     "disagreement_share": 0.19,
+     "ece": 0.2766666666666667,
+     "messages_per_item": 3,
+     "n_reasoners": 3,
+     "pairwise_disagreement": 0.12666666666666665,
+     "rule": "SEQ",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.68,
+     "accuracy_per_call": 0.020000000000000004,
+     "brier": 0.2644444444444444,
+     "budget": 9,
+     "calls_per_item": 9,
+     "delta_vs_single": 0.045,
+     "disagreement_share": 0.42,
+     "ece": 0.24222222222222228,
+     "messages_per_item": 36,
+     "n_reasoners": 9,
+     "pairwise_disagreement": 0.1325,
+     "rule": "SEQ",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.68,
+     "accuracy_per_call": 0.03000000000000001,
+     "brier": 0.28,
+     "budget": 6,
+     "calls_per_item": 6,
+     "delta_vs_single": 0.045,
+     "disagreement_share": 0.18,
+     "ece": 0.26000000000000006,
+     "messages_per_item": 6,
+     "n_reasoners": 3,
+     "pairwise_disagreement": 0.12,
+     "rule": "DELIB",
+     "tie_share": 0.0
+    }
+   ],
+   "n_items": 200,
+   "record_id": "RUN-0007",
+   "runtime_s": 0.0013678750001417939,
+   "scenario": "S4",
+   "seed": 3757552657
+  },
+  {
+   "excluded": false,
+   "exclusion_reason": "",
+   "invariants": {
+    "budget_accounting": true,
+    "marginal_competence_4se": true,
+    "vote_counts": true
+   },
+   "lambda": 0.5,
+   "metrics": [
+    {
+     "accuracy": 0.645,
+     "accuracy_per_call": 0.14500000000000002,
+     "brier": 0.17670888538631377,
+     "budget": 1,
+     "calls_per_item": 1,
+     "delta_vs_single": 0.0,
+     "disagreement_share": 0.0,
+     "ece": 0.16506824773990714,
+     "messages_per_item": 0,
+     "n_reasoners": 1,
+     "pairwise_disagreement": 0.0,
+     "rule": "SINGLE",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.645,
+     "accuracy_per_call": 0.14500000000000002,
+     "brier": 0.355,
+     "budget": 1,
+     "calls_per_item": 1,
+     "delta_vs_single": 0.0,
+     "disagreement_share": 0.0,
+     "ece": 0.355,
+     "messages_per_item": 0,
+     "n_reasoners": 1,
+     "pairwise_disagreement": 0.0,
+     "rule": "MV",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.635,
+     "accuracy_per_call": 0.045000000000000005,
+     "brier": 0.28555555555555556,
+     "budget": 3,
+     "calls_per_item": 3,
+     "delta_vs_single": -0.01,
+     "disagreement_share": 0.335,
+     "ece": 0.2533333333333333,
+     "messages_per_item": 0,
+     "n_reasoners": 3,
+     "pairwise_disagreement": 0.22333333333333333,
+     "rule": "MV",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.645,
+     "accuracy_per_call": 0.016111111111111114,
+     "brier": 0.262037037037037,
+     "budget": 9,
+     "calls_per_item": 9,
+     "delta_vs_single": 0.0,
+     "disagreement_share": 0.6,
+     "ece": 0.23722222222222228,
+     "messages_per_item": 0,
+     "n_reasoners": 9,
+     "pairwise_disagreement": 0.19666666666666668,
+     "rule": "MV",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.645,
+     "accuracy_per_call": 0.14500000000000002,
+     "brier": 0.355,
+     "budget": 1,
+     "calls_per_item": 1,
+     "delta_vs_single": 0.0,
+     "disagreement_share": 0.0,
+     "ece": 0.355,
+     "messages_per_item": 0,
+     "n_reasoners": 1,
+     "pairwise_disagreement": 0.0,
+     "rule": "CW",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.745,
+     "accuracy_per_call": 0.08166666666666667,
+     "brier": 0.23513082389397977,
+     "budget": 3,
+     "calls_per_item": 3,
+     "delta_vs_single": 0.1,
+     "disagreement_share": 0.335,
+     "ece": 0.20527241049146105,
+     "messages_per_item": 0,
+     "n_reasoners": 3,
+     "pairwise_disagreement": 0.22333333333333333,
+     "rule": "CW",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.73,
+     "accuracy_per_call": 0.025555555555555554,
+     "brier": 0.16509621378722136,
+     "budget": 9,
+     "calls_per_item": 9,
+     "delta_vs_single": 0.085,
+     "disagreement_share": 0.6,
+     "ece": 0.14300660301197876,
+     "messages_per_item": 0,
+     "n_reasoners": 9,
+     "pairwise_disagreement": 0.19666666666666668,
+     "rule": "CW",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.645,
+     "accuracy_per_call": 0.14500000000000002,
+     "brier": 0.355,
+     "budget": 1,
+     "calls_per_item": 1,
+     "delta_vs_single": 0.0,
+     "disagreement_share": 0.0,
+     "ece": 0.355,
+     "messages_per_item": 0,
+     "n_reasoners": 1,
+     "pairwise_disagreement": 0.0,
+     "rule": "SEQ",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.61,
+     "accuracy_per_call": 0.03666666666666666,
+     "brier": 0.33111111111111113,
+     "budget": 3,
+     "calls_per_item": 3,
+     "delta_vs_single": -0.035,
+     "disagreement_share": 0.19,
+     "ece": 0.32666666666666677,
+     "messages_per_item": 3,
+     "n_reasoners": 3,
+     "pairwise_disagreement": 0.12666666666666665,
+     "rule": "SEQ",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.625,
+     "accuracy_per_call": 0.013888888888888888,
+     "brier": 0.2973456790123457,
+     "budget": 9,
+     "calls_per_item": 9,
+     "delta_vs_single": -0.02,
+     "disagreement_share": 0.47,
+     "ece": 0.2994444444444444,
+     "messages_per_item": 36,
+     "n_reasoners": 9,
+     "pairwise_disagreement": 0.13972222222222222,
+     "rule": "SEQ",
+     "tie_share": 0.0
+    },
+    {
+     "accuracy": 0.635,
+     "accuracy_per_call": 0.022500000000000003,
+     "brier": 0.3366666666666667,
+     "budget": 6,
+     "calls_per_item": 6,
+     "delta_vs_single": -0.01,
+     "disagreement_share": 0.165,
+     "ece": 0.31,
+     "messages_per_item": 6,
+     "n_reasoners": 3,
+     "pairwise_disagreement": 0.10999999999999999,
+     "rule": "DELIB",
+     "tie_share": 0.0
+    }
+   ],
+   "n_items": 200,
+   "record_id": "RUN-0008",
+   "runtime_s": 0.0013594579995697131,
+   "scenario": "S4",
+   "seed": 673228719
+  }
+ ],
+ "schema_version": "1.0.0",
+ "seeds": [
+  3757552657,
+  673228719
+ ],
+ "summary": [
+  {
+   "accuracy_mean": 0.5800000000000001,
+   "accuracy_per_seed": [
+    0.56,
+    0.6
+   ],
+   "accuracy_theory": 0.6,
+   "brier_mean": 0.20337896845686412,
+   "brier_per_seed": [
+    0.21133202457706446,
+    0.1954259123366638
+   ],
+   "budget": 1,
+   "delta_boot95_high": 0.0,
+   "delta_boot95_low": 0.0,
+   "delta_p_one_sided_negative": 1.0,
+   "delta_sd": 0.0,
+   "delta_t95_high": 0.0,
+   "delta_t95_low": 0.0,
+   "delta_vs_single_mean": 0.0,
+   "delta_vs_single_per_seed": [
+    0.0,
+    0.0
+   ],
+   "disagreement_share_mean": 0.0,
+   "disagreement_share_per_seed": [
+    0.0,
+    0.0
+   ],
+   "ece_mean": 0.2168274910661936,
+   "ece_per_seed": [
+    0.23053372709296985,
+    0.2031212550394173
+   ],
+   "lambda": 0.0,
+   "n_seeds": 2,
+   "rule": "SINGLE",
+   "scenario": "S1"
+  },
+  {
+   "accuracy_mean": 0.5800000000000001,
+   "accuracy_per_seed": [
+    0.56,
+    0.6
+   ],
+   "accuracy_theory": 0.6,
+   "brier_mean": 0.42000000000000004,
+   "brier_per_seed": [
+    0.44,
+    0.4
+   ],
+   "budget": 1,
+   "delta_boot95_high": 0.0,
+   "delta_boot95_low": 0.0,
+   "delta_p_one_sided_negative": 1.0,
+   "delta_sd": 0.0,
+   "delta_t95_high": 0.0,
+   "delta_t95_low": 0.0,
+   "delta_vs_single_mean": 0.0,
+   "delta_vs_single_per_seed": [
+    0.0,
+    0.0
+   ],
+   "disagreement_share_mean": 0.0,
+   "disagreement_share_per_seed": [
+    0.0,
+    0.0
+   ],
+   "ece_mean": 0.42,
+   "ece_per_seed": [
+    0.43999999999999995,
+    0.4
+   ],
+   "lambda": 0.0,
+   "n_seeds": 2,
+   "rule": "MV",
+   "scenario": "S1"
+  },
+  {
+   "accuracy_mean": 0.6525000000000001,
+   "accuracy_per_seed": [
+    0.655,
+    0.65
+   ],
+   "accuracy_theory": 0.648,
+   "brier_mean": 0.2402777777777778,
+   "brier_per_seed": [
+    0.22888888888888892,
+    0.2516666666666667
+   ],
+   "budget": 3,
+   "delta_boot95_high": 0.095,
+   "delta_boot95_low": 0.05,
+   "delta_p_holm": 1.0,
+   "delta_p_one_sided_negative": 0.9042141144503336,
+   "delta_sd": 0.03181980515339464,
+   "delta_t95_high": 0.35838960656393265,
+   "delta_t95_low": -0.21338960656393263,
+   "delta_vs_single_mean": 0.07250000000000001,
+   "delta_vs_single_per_seed": [
+    0.095,
+    0.05
+   ],
+   "disagreement_share_mean": 0.715,
+   "disagreement_share_per_seed": [
+    0.725,
+    0.705
+   ],
+   "ece_mean": 0.10916666666666663,
+   "ece_per_seed": [
+    0.10333333333333332,
+    0.11499999999999996
+   ],
+   "lambda": 0.0,
+   "n_seeds": 2,
+   "primary_family": true,
+   "rule": "MV",
+   "scenario": "S1"
+  },
+  {
+   "accuracy_mean": 0.71,
+   "accuracy_per_seed": [
+    0.68,
+    0.74
+   ],
+   "accuracy_theory": 0.73343232,
+   "brier_mean": 0.19496913580246916,
+   "brier_per_seed": [
+    0.19932098765432102,
+    0.1906172839506173
+   ],
+   "budget": 9,
+   "delta_boot95_high": 0.14,
+   "delta_boot95_low": 0.12,
+   "delta_p_holm": 1.0,
+   "delta_p_one_sided_negative": 0.9755627480278026,
+   "delta_sd": 0.014142135623730963,
+   "delta_t95_high": 0.257062047361748,
+   "delta_t95_low": 0.0029379526382520282,
+   "delta_vs_single_mean": 0.13,
+   "delta_vs_single_per_seed": [
+    0.12,
+    0.14
+   ],
+   "disagreement_share_mean": 0.99,
+   "disagreement_share_per_seed": [
+    0.995,
+    0.985
+   ],
+   "ece_mean": 0.0641666666666667,
+   "ece_per_seed": [
+    0.0483333333333333,
+    0.08000000000000011
+   ],
+   "lambda": 0.0,
+   "n_seeds": 2,
+   "primary_family": true,
+   "rule": "MV",
+   "scenario": "S1"
+  },
+  {
+   "accuracy_mean": 0.5800000000000001,
+   "accuracy_per_seed": [
+    0.56,
+    0.6
+   ],
+   "brier_mean": 0.42000000000000004,
+   "brier_per_seed": [
+    0.44,
+    0.4
+   ],
+   "budget": 1,
+   "delta_boot95_high": 0.0,
+   "delta_boot95_low": 0.0,
+   "delta_p_one_sided_negative": 1.0,
+   "delta_sd": 0.0,
+   "delta_t95_high": 0.0,
+   "delta_t95_low": 0.0,
+   "delta_vs_single_mean": 0.0,
+   "delta_vs_single_per_seed": [
+    0.0,
+    0.0
+   ],
+   "disagreement_share_mean": 0.0,
+   "disagreement_share_per_seed": [
+    0.0,
+    0.0
+   ],
+   "ece_mean": 0.42,
+   "ece_per_seed": [
+    0.43999999999999995,
+    0.4
+   ],
+   "lambda": 0.0,
+   "n_seeds": 2,
+   "rule": "CW",
+   "scenario": "S1"
+  },
+  {
+   "accuracy_mean": 0.845,
+   "accuracy_per_seed": [
+    0.845,
+    0.845
+   ],
+   "brier_mean": 0.13882169448779658,
+   "brier_per_seed": [
+    0.1246201368481156,
+    0.15302325212747755
+   ],
+   "budget": 3,
+   "delta_boot95_high": 0.285,
+   "delta_boot95_low": 0.245,
+   "delta_p_one_sided_negative": 0.9760220693340799,
+   "delta_sd": 0.028284271247461888,
+   "delta_t95_high": 0.5191240947234956,
+   "delta_t95_low": 0.010875905276504394,
+   "delta_vs_single_mean": 0.265,
+   "delta_vs_single_per_seed": [
+    0.285,
+    0.245
+   ],
+   "disagreement_share_mean": 0.715,
+   "disagreement_share_per_seed": [
+    0.725,
+    0.705
+   ],
+   "ece_mean": 0.12976437202447658,
+   "ece_per_seed": [
+    0.10348512403358058,
+    0.15604362001537259
+   ],
+   "lambda": 0.0,
+   "n_seeds": 2,
+   "rule": "CW",
+   "scenario": "S1"
+  },
+  {
+   "accuracy_mean": 0.9675,
+   "accuracy_per_seed": [
+    0.975,
+    0.96
+   ],
+   "brier_mean": 0.0630347708905646,
+   "brier_per_seed": [
+    0.06645655590345191,
+    0.05961298587767728
+   ],
+   "budget": 9,
+   "delta_boot95_high": 0.415,
+   "delta_boot95_low": 0.36,
+   "delta_p_one_sided_negative": 0.9774480757511154,
+   "delta_sd": 0.03889087296526011,
+   "delta_t95_high": 0.7369206302448065,
+   "delta_t95_low": 0.03807936975519344,
+   "delta_vs_single_mean": 0.38749999999999996,
+   "delta_vs_single_per_seed": [
+    0.415,
+    0.36
+   ],
+   "disagreement_share_mean": 0.99,
+   "disagreement_share_per_seed": [
+    0.995,
+    0.985
+   ],
+   "ece_mean": 0.17375257234261998,
+   "ece_per_seed": [
+    0.19448235715298173,
+    0.15302278753225823
+   ],
+   "lambda": 0.0,
+   "n_seeds": 2,
+   "rule": "CW",
+   "scenario": "S1"
+  },
+  {
+   "accuracy_mean": 0.5800000000000001,
+   "accuracy_per_seed": [
+    0.56,
+    0.6
+   ],
+   "brier_mean": 0.42000000000000004,
+   "brier_per_seed": [
+    0.44,
+    0.4
+   ],
+   "budget": 1,
+   "delta_boot95_high": 0.0,
+   "delta_boot95_low": 0.0,
+   "delta_p_one_sided_negative": 1.0,
+   "delta_sd": 0.0,
+   "delta_t95_high": 0.0,
+   "delta_t95_low": 0.0,
+   "delta_vs_single_mean": 0.0,
+   "delta_vs_single_per_seed": [
+    0.0,
+    0.0
+   ],
+   "disagreement_share_mean": 0.0,
+   "disagreement_share_per_seed": [
+    0.0,
+    0.0
+   ],
+   "ece_mean": 0.42,
+   "ece_per_seed": [
+    0.43999999999999995,
+    0.4
+   ],
+   "lambda": 0.0,
+   "n_seeds": 2,
+   "rule": "SEQ",
+   "scenario": "S1"
+  },
+  {
+   "accuracy_mean": 0.6225,
+   "accuracy_per_seed": [
+    0.61,
+    0.635
+   ],
+   "brier_mean": 0.30833333333333335,
+   "brier_per_seed": [
+    0.30944444444444447,
+    0.30722222222222223
+   ],
+   "budget": 3,
+   "delta_boot95_high": 0.05,
+   "delta_boot95_low": 0.035,
+   "delta_p_holm": 1.0,
+   "delta_p_one_sided_negative": 0.9444001122142149,
+   "delta_sd": 0.010606601717798213,
+   "delta_t95_high": 0.1377965355213109,
+   "delta_t95_low": -0.052796535521310896,
+   "delta_vs_single_mean": 0.0425,
+   "delta_vs_single_per_seed": [
+    0.05,
+    0.035
+   ],
+   "disagreement_share_mean": 0.4125,
+   "disagreement_share_per_seed": [
+    0.445,
+    0.38
+   ],
+   "ece_mean": 0.24000000000000005,
+   "ece_per_seed": [
+    0.24166666666666675,
+    0.2383333333333333
+   ],
+   "lambda": 0.0,
+   "n_seeds": 2,
+   "primary_family": true,
+   "rule": "SEQ",
+   "scenario": "S1"
+  },
+  {
+   "accuracy_mean": 0.65,
+   "accuracy_per_seed": [
+    0.655,
+    0.645
+   ],
+   "brier_mean": 0.2378703703703704,
+   "brier_per_seed": [
+    0.23882716049382718,
+    0.2369135802469136
+   ],
+   "budget": 9,
+   "delta_boot95_high": 0.095,
+   "delta_boot95_low": 0.045,
+   "delta_p_holm": 1.0,
+   "delta_p_one_sided_negative": 0.8908120885663706,
+   "delta_sd": 0.03535533905932738,
+   "delta_t95_high": 0.38765511840436967,
+   "delta_t95_low": -0.24765511840436966,
+   "delta_vs_single_mean": 0.07,
+   "delta_vs_single_per_seed": [
+    0.095,
+    0.045
+   ],
+   "disagreement_share_mean": 0.895,
+   "disagreement_share_per_seed": [
+    0.905,
+    0.885
+   ],
+   "ece_mean": 0.14583333333333334,
+   "ece_per_seed": [
+    0.1361111111111111,
+    0.15555555555555559
+   ],
+   "lambda": 0.0,
+   "n_seeds": 2,
+   "primary_family": true,
+   "rule": "SEQ",
+   "scenario": "S1"
+  },
+  {
+   "accuracy_mean": 0.6525000000000001,
+   "accuracy_per_seed": [
+    0.655,
+    0.65
+   ],
+   "brier_mean": 0.30694444444444446,
+   "brier_per_seed": [
+    0.31000000000000005,
+    0.30388888888888893
+   ],
+   "budget": 6,
+   "delta_boot95_high": 0.095,
+   "delta_boot95_low": 0.05,
+   "delta_p_one_sided_negative": 0.9042141144503336,
+   "delta_sd": 0.03181980515339464,
+   "delta_t95_high": 0.35838960656393265,
+   "delta_t95_low": -0.21338960656393263,
+   "delta_vs_single_mean": 0.07250000000000001,
+   "delta_vs_single_per_seed": [
+    0.095,
+    0.05
+   ],
+   "disagreement_share_mean": 0.355,
+   "disagreement_share_per_seed": [
+    0.375,
+    0.335
+   ],
+   "ece_mean": 0.2391666666666667,
+   "ece_per_seed": [
+    0.24000000000000005,
+    0.23833333333333334
+   ],
+   "lambda": 0.0,
+   "n_seeds": 2,
+   "rule": "DELIB",
+   "scenario": "S1"
+  },
+  {
+   "accuracy_mean": 0.5549999999999999,
+   "accuracy_per_seed": [
+    0.53,
+    0.58
+   ],
+   "accuracy_theory": 0.6,
+   "brier_mean": 0.21072398069608997,
+   "brier_per_seed": [
+    0.22591365896956275,
+    0.19553430242261718
+   ],
+   "budget": 1,
+   "delta_boot95_high": 0.0,
+   "delta_boot95_low": 0.0,
+   "delta_p_one_sided_negative": 1.0,
+   "delta_sd": 0.0,
+   "delta_t95_high": 0.0,
+   "delta_t95_low": 0.0,
+   "delta_vs_single_mean": 0.0,
+   "delta_vs_single_per_seed": [
+    0.0,
+    0.0
+   ],
+   "disagreement_share_mean": 0.0,
+   "disagreement_share_per_seed": [
+    0.0,
+    0.0
+   ],
+   "ece_mean": 0.24298220392739545,
+   "ece_per_seed": [
+    0.26219476275042086,
+    0.22376964510437006
+   ],
+   "lambda": 0.5,
+   "n_seeds": 2,
+   "rule": "SINGLE",
+   "scenario": "S1"
+  },
+  {
+   "accuracy_mean": 0.5549999999999999,
+   "accuracy_per_seed": [
+    0.53,
+    0.58
+   ],
+   "accuracy_theory": 0.6,
+   "brier_mean": 0.44499999999999995,
+   "brier_per_seed": [
+    0.47,
+    0.42
+   ],
+   "budget": 1,
+   "delta_boot95_high": 0.0,
+   "delta_boot95_low": 0.0,
+   "delta_p_one_sided_negative": 1.0,
+   "delta_sd": 0.0,
+   "delta_t95_high": 0.0,
+   "delta_t95_low": 0.0,
+   "delta_vs_single_mean": 0.0,
+   "delta_vs_single_per_seed": [
+    0.0,
+    0.0
+   ],
+   "disagreement_share_mean": 0.0,
+   "disagreement_share_per_seed": [
+    0.0,
+    0.0
+   ],
+   "ece_mean": 0.445,
+   "ece_per_seed": [
+    0.47,
+    0.42000000000000004
+   ],
+   "lambda": 0.5,
+   "n_seeds": 2,
+   "rule": "MV",
+   "scenario": "S1"
+  },
+  {
+   "accuracy_mean": 0.5974999999999999,
+   "accuracy_per_seed": [
+    0.575,
+    0.62
+   ],
+   "accuracy_theory": 0.6239999999999999,
+   "brier_mean": 0.3022222222222223,
+   "brier_per_seed": [
+    0.3205555555555556,
+    0.2838888888888889
+   ],
+   "budget": 3,
+   "delta_boot95_high": 0.045,
+   "delta_boot95_low": 0.04,
+   "delta_p_holm": 1.0,
+   "delta_p_one_sided_negative": 0.9812974407587234,
+   "delta_sd": 0.003535533905932736,
+   "delta_t95_high": 0.07426551184043695,
+   "delta_t95_low": 0.010734488159563044,
+   "delta_vs_single_mean": 0.042499999999999996,
+   "delta_vs_single_per_seed": [
+    0.045,
+    0.04
+   ],
+   "disagreement_share_mean": 0.5375000000000001,
+   "disagreement_share_per_seed": [
+    0.53,
+    0.545
+   ],
+   "ece_mean": 0.22333333333333344,
+   "ece_per_seed": [
+    0.24833333333333343,
+    0.19833333333333347
+   ],
+   "lambda": 0.5,
+   "n_seeds": 2,
+   "primary_family": true,
+   "rule": "MV",
+   "scenario": "S1"
+  },
+  {
+   "accuracy_mean": 0.5775,
+   "accuracy_per_seed": [
+    0.55,
+    0.605
+   ],
+   "accuracy_theory": 0.6277746,
+   "brier_mean": 0.26583333333333337,
+   "brier_per_seed": [
+    0.28018518518518526,
+    0.25148148148148153
+   ],
+   "budget": 9,
+   "delta_boot95_high": 0.025,
+   "delta_boot95_low": 0.02,
+   "delta_p_holm": 1.0,
+   "delta_p_one_sided_negative": 0.9647767125227228,
+   "delta_sd": 0.0035355339059327385,
+   "delta_t95_high": 0.05426551184043697,
+   "delta_t95_low": -0.009265511840436974,
+   "delta_vs_single_mean": 0.0225,
+   "delta_vs_single_per_seed": [
+    0.02,
+    0.025
+   ],
+   "disagreement_share_mean": 0.9125000000000001,
+   "disagreement_share_per_seed": [
+    0.925,
+    0.9
+   ],
+   "ece_mean": 0.18472222222222226,
+   "ece_per_seed": [
+    0.19833333333333342,
+    0.1711111111111111
+   ],
+   "lambda": 0.5,
+   "n_seeds": 2,
+   "primary_family": true,
+   "rule": "MV",
+   "scenario": "S1"
+  },
+  {
+   "accuracy_mean": 0.5549999999999999,
+   "accuracy_per_seed": [
+    0.53,
+    0.58
+   ],
+   "brier_mean": 0.44499999999999995,
+   "brier_per_seed": [
+    0.47,
+    0.42
+   ],
+   "budget": 1,
+   "delta_boot95_high": 0.0,
+   "delta_boot95_low": 0.0,
+   "delta_p_one_sided_negative": 1.0,
+   "delta_sd": 0.0,
+   "delta_t95_high": 0.0,
+   "delta_t95_low": 0.0,
+   "delta_vs_single_mean": 0.0,
+   "delta_vs_single_per_seed": [
+    0.0,
+    0.0
+   ],
+   "disagreement_share_mean": 0.0,
+   "disagreement_share_per_seed": [
+    0.0,
+    0.0
+   ],
+   "ece_mean": 0.445,
+   "ece_per_seed": [
+    0.47,
+    0.42000000000000004
+   ],
+   "lambda": 0.5,
+   "n_seeds": 2,
+   "rule": "CW",
+   "scenario": "S1"
+  },
+  {
+   "accuracy_mean": 0.7525,
+   "accuracy_per_seed": [
+    0.71,
+    0.795
+   ],
+   "brier_mean": 0.2263105415161184,
+   "brier_per_seed": [
+    0.24725466966602433,
+    0.20536641336621247
+   ],
+   "budget": 3,
+   "delta_boot95_high": 0.215,
+   "delta_boot95_low": 0.18,
+   "delta_p_one_sided_negative": 0.9718687952609439,
+   "delta_sd": 0.024748737341529166,
+   "delta_t95_high": 0.4198585828830588,
+   "delta_t95_low": -0.024858582883058783,
+   "delta_vs_single_mean": 0.1975,
+   "delta_vs_single_per_seed": [
+    0.18,
+    0.215
+   ],
+   "disagreement_share_mean": 0.5375000000000001,
+   "disagreement_share_per_seed": [
+    0.53,
+    0.545
+   ],
+   "ece_mean": 0.22880862323546175,
+   "ece_per_seed": [
+    0.2466364110068317,
+    0.2109808354640918
+   ],
+   "lambda": 0.5,
+   "n_seeds": 2,
+   "rule": "CW",
+   "scenario": "S1"
+  },
+  {
+   "accuracy_mean": 0.8075,
+   "accuracy_per_seed": [
+    0.79,
+    0.825
+   ],
+   "brier_mean": 0.13764687244387153,
+   "brier_per_seed": [
+    0.14929922603635304,
+    0.12599451885139
+   ],
+   "budget": 9,
+   "delta_boot95_high": 0.26,
+   "delta_boot95_low": 0.245,
+   "delta_p_one_sided_negative": 0.9905480299704105,
+   "delta_sd": 0.010606601717798222,
+   "delta_t95_high": 0.34779653552131096,
+   "delta_t95_low": 0.15720346447868905,
+   "delta_vs_single_mean": 0.2525,
+   "delta_vs_single_per_seed": [
+    0.26,
+    0.245
+   ],
+   "disagreement_share_mean": 0.9125000000000001,
+   "disagreement_share_per_seed": [
+    0.925,
+    0.9
+   ],
+   "ece_mean": 0.03680353179020779,
+   "ece_per_seed": [
+    0.02834091617903666,
+    0.04526614740137891
+   ],
+   "lambda": 0.5,
+   "n_seeds": 2,
+   "rule": "CW",
+   "scenario": "S1"
+  },
+  {
+   "accuracy_mean": 0.5549999999999999,
+   "accuracy_per_seed": [
+    0.53,
+    0.58
+   ],
+   "brier_mean": 0.44499999999999995,
+   "brier_per_seed": [
+    0.47,
+    0.42
+   ],
+   "budget": 1,
+   "delta_boot95_high": 0.0,
+   "delta_boot95_low": 0.0,
+   "delta_p_one_sided_negative": 1.0,
+   "delta_sd": 0.0,
+   "delta_t95_high": 0.0,
+   "delta_t95_low": 0.0,
+   "delta_vs_single_mean": 0.0,
+   "delta_vs_single_per_seed": [
+    0.0,
+    0.0
+   ],
+   "disagreement_share_mean": 0.0,
+   "disagreement_share_per_seed": [
+    0.0,
+    0.0
+   ],
+   "ece_mean": 0.445,
+   "ece_per_seed": [
+    0.47,
+    0.42000000000000004
+   ],
+   "lambda": 0.5,
+   "n_seeds": 2,
+   "rule": "SEQ",
+   "scenario": "S1"
+  },
+  {
+   "accuracy_mean": 0.5775,
+   "accuracy_per_seed": [
+    0.555,
+    0.6
+   ],
+   "brier_mean": 0.3669444444444445,
+   "brier_per_seed": [
+    0.39000000000000007,
+    0.3438888888888889
+   ],
+   "budget": 3,
+   "delta_boot95_high": 0.025,
+   "delta_boot95_low": 0.02,
+   "delta_p_holm": 1.0,
+   "delta_p_one_sided_negative": 0.9647767125227228,
+   "delta_sd": 0.0035355339059327385,
+   "delta_t95_high": 0.05426551184043697,
+   "delta_t95_low": -0.009265511840436974,
+   "delta_vs_single_mean": 0.0225,
+   "delta_vs_single_per_seed": [
+    0.025,
+    0.02
+   ],
+   "disagreement_share_mean": 0.295,
+   "disagreement_share_per_seed": [
+    0.285,
+    0.305
+   ],
+   "ece_mean": 0.32416666666666655,
+   "ece_per_seed": [
+    0.34999999999999987,
+    0.29833333333333323
+   ],
+   "lambda": 0.5,
+   "n_seeds": 2,
+   "primary_family": true,
+   "rule": "SEQ",
+   "scenario": "S1"
+  },
+  {
+   "accuracy_mean": 0.56,
+   "accuracy_per_seed": [
+    0.54,
+    0.58
+   ],
+   "brier_mean": 0.3282716049382717,
+   "brier_per_seed": [
+    0.3388271604938272,
+    0.3177160493827161
+   ],
+   "budget": 9,
+   "delta_boot95_high": 0.01,
+   "delta_boot95_low": 0.0,
+   "delta_p_holm": 1.0,
+   "delta_p_one_sided_negative": 0.7499999999999998,
+   "delta_sd": 0.007071067811865475,
+   "delta_t95_high": 0.06853102368087394,
+   "delta_t95_low": -0.058531023680873935,
+   "delta_vs_single_mean": 0.005,
+   "delta_vs_single_per_seed": [
+    0.01,
+    0.0
+   ],
+   "disagreement_share_mean": 0.7424999999999999,
+   "disagreement_share_per_seed": [
+    0.76,
+    0.725
+   ],
+   "ece_mean": 0.3022222222222223,
+   "ece_per_seed": [
+    0.3050000000000001,
+    0.29944444444444446
+   ],
+   "lambda": 0.5,
+   "n_seeds": 2,
+   "primary_family": true,
+   "rule": "SEQ",
+   "scenario": "S1"
+  },
+  {
+   "accuracy_mean": 0.5974999999999999,
+   "accuracy_per_seed": [
+    0.575,
+    0.62
+   ],
+   "brier_mean": 0.35111111111111115,
+   "brier_per_seed": [
+    0.3622222222222223,
+    0.34
+   ],
+   "budget": 6,
+   "delta_boot95_high": 0.045,
+   "delta_boot95_low": 0.04,
+   "delta_p_one_sided_negative": 0.9812974407587234,
+   "delta_sd": 0.003535533905932736,
+   "delta_t95_high": 0.07426551184043695,
+   "delta_t95_low": 0.010734488159563044,
+   "delta_vs_single_mean": 0.042499999999999996,
+   "delta_vs_single_per_seed": [
+    0.045,
+    0.04
+   ],
+   "disagreement_share_mean": 0.2875,
+   "disagreement_share_per_seed": [
+    0.305,
+    0.27
+   ],
+   "ece_mean": 0.3066666666666666,
+   "ece_per_seed": [
+    0.3233333333333333,
+    0.28999999999999987
+   ],
+   "lambda": 0.5,
+   "n_seeds": 2,
+   "rule": "DELIB",
+   "scenario": "S1"
+  },
+  {
+   "accuracy_mean": 0.6699999999999999,
+   "accuracy_per_seed": [
+    0.645,
+    0.695
+   ],
+   "accuracy_theory": 0.66,
+   "brier_mean": 0.17211272884983253,
+   "brier_per_seed": [
+    0.1770620580918431,
+    0.16716339960782192
+   ],
+   "budget": 1,
+   "delta_boot95_high": 0.0,
+   "delta_boot95_low": 0.0,
+   "delta_p_one_sided_negative": 1.0,
+   "delta_sd": 0.0,
+   "delta_t95_high": 0.0,
+   "delta_t95_low": 0.0,
+   "delta_vs_single_mean": 0.0,
+   "delta_vs_single_per_seed": [
+    0.0,
+    0.0
+   ],
+   "disagreement_share_mean": 0.0,
+   "disagreement_share_per_seed": [
+    0.0,
+    0.0
+   ],
+   "ece_mean": 0.1500416729504968,
+   "ece_per_seed": [
+    0.17279065549091852,
+    0.12729269041007513
+   ],
+   "lambda": 0.0,
+   "n_seeds": 2,
+   "rule": "SINGLE",
+   "scenario": "S4"
+  },
+  {
+   "accuracy_mean": 0.6699999999999999,
+   "accuracy_per_seed": [
+    0.645,
+    0.695
+   ],
+   "accuracy_theory": 0.66,
+   "brier_mean": 0.32999999999999996,
+   "brier_per_seed": [
+    0.355,
+    0.305
+   ],
+   "budget": 1,
+   "delta_boot95_high": 0.0,
+   "delta_boot95_low": 0.0,
+   "delta_p_one_sided_negative": 1.0,
+   "delta_sd": 0.0,
+   "delta_t95_high": 0.0,
+   "delta_t95_low": 0.0,
+   "delta_vs_single_mean": 0.0,
+   "delta_vs_single_per_seed": [
+    0.0,
+    0.0
+   ],
+   "disagreement_share_mean": 0.0,
+   "disagreement_share_per_seed": [
+    0.0,
+    0.0
+   ],
+   "ece_mean": 0.33,
+   "ece_per_seed": [
+    0.355,
+    0.30500000000000005
+   ],
+   "lambda": 0.0,
+   "n_seeds": 2,
+   "rule": "MV",
+   "scenario": "S4"
+  },
+  {
+   "accuracy_mean": 0.6950000000000001,
+   "accuracy_per_seed": [
+    0.715,
+    0.675
+   ],
+   "accuracy_theory": 0.6696000000000001,
+   "brier_mean": 0.22361111111111115,
+   "brier_per_seed": [
+    0.21555555555555558,
+    0.23166666666666672
+   ],
+   "budget": 3,
+   "delta_boot95_high": 0.07,
+   "delta_boot95_low": -0.02,
+   "delta_p_holm": 1.0,
+   "delta_p_one_sided_negative": 0.6614144672170952,
+   "delta_sd": 0.06363961030678927,
+   "delta_t95_high": 0.5967792131278653,
+   "delta_t95_low": -0.5467792131278653,
+   "delta_vs_single_mean": 0.025,
+   "delta_vs_single_per_seed": [
+    0.07,
+    -0.02
+   ],
+   "disagreement_share_mean": 0.4075,
+   "disagreement_share_per_seed": [
+    0.395,
+    0.42
+   ],
+   "ece_mean": 0.1691666666666666,
+   "ece_per_seed": [
+    0.15333333333333324,
+    0.18499999999999997
+   ],
+   "lambda": 0.0,
+   "n_seeds": 2,
+   "primary_family": true,
+   "rule": "MV",
+   "scenario": "S4"
+  },
+  {
+   "accuracy_mean": 0.6775,
+   "accuracy_per_seed": [
+    0.7,
+    0.655
+   ],
+   "accuracy_theory": 0.638988912,
+   "brier_mean": 0.19601851851851856,
+   "brier_per_seed": [
+    0.17919753086419757,
+    0.21283950617283956
+   ],
+   "budget": 9,
+   "delta_boot95_high": 0.055,
+   "delta_boot95_low": -0.04,
+   "delta_p_holm": 1.0,
+   "delta_p_one_sided_negative": 0.5498479256383133,
+   "delta_sd": 0.06717514421272201,
+   "delta_t95_high": 0.6110447249683022,
+   "delta_t95_low": -0.5960447249683023,
+   "delta_vs_single_mean": 0.0075,
+   "delta_vs_single_per_seed": [
+    0.055,
+    -0.04
+   ],
+   "disagreement_share_mean": 0.7525,
+   "disagreement_share_per_seed": [
+    0.745,
+    0.76
+   ],
+   "ece_mean": 0.15194444444444444,
+   "ece_per_seed": [
+    0.13055555555555556,
+    0.17333333333333328
+   ],
+   "lambda": 0.0,
+   "n_seeds": 2,
+   "primary_family": true,
+   "rule": "MV",
+   "scenario": "S4"
+  },
+  {
+   "accuracy_mean": 0.6699999999999999,
+   "accuracy_per_seed": [
+    0.645,
+    0.695
+   ],
+   "brier_mean": 0.32999999999999996,
+   "brier_per_seed": [
+    0.355,
+    0.305
+   ],
+   "budget": 1,
+   "delta_boot95_high": 0.0,
+   "delta_boot95_low": 0.0,
+   "delta_p_one_sided_negative": 1.0,
+   "delta_sd": 0.0,
+   "delta_t95_high": 0.0,
+   "delta_t95_low": 0.0,
+   "delta_vs_single_mean": 0.0,
+   "delta_vs_single_per_seed": [
+    0.0,
+    0.0
+   ],
+   "disagreement_share_mean": 0.0,
+   "disagreement_share_per_seed": [
+    0.0,
+    0.0
+   ],
+   "ece_mean": 0.33,
+   "ece_per_seed": [
+    0.355,
+    0.30500000000000005
+   ],
+   "lambda": 0.0,
+   "n_seeds": 2,
+   "rule": "CW",
+   "scenario": "S4"
+  },
+  {
+   "accuracy_mean": 0.84,
+   "accuracy_per_seed": [
+    0.835,
+    0.845
+   ],
+   "brier_mean": 0.15758378877464238,
+   "brier_per_seed": [
+    0.1546412650705168,
+    0.16052631247876797
+   ],
+   "budget": 3,
+   "delta_boot95_high": 0.19,
+   "delta_boot95_low": 0.15,
+   "delta_p_one_sided_negative": 0.9627231288457948,
+   "delta_sd": 0.02828427124746191,
+   "delta_t95_high": 0.42412409472349577,
+   "delta_t95_low": -0.0841240947234958,
+   "delta_vs_single_mean": 0.16999999999999998,
+   "delta_vs_single_per_seed": [
+    0.19,
+    0.15
+   ],
+   "disagreement_share_mean": 0.4075,
+   "disagreement_share_per_seed": [
+    0.395,
+    0.42
+   ],
+   "ece_mean": 0.16696638297723454,
+   "ece_per_seed": [
+    0.16356747784974499,
+    0.17036528810472407
+   ],
+   "lambda": 0.0,
+   "n_seeds": 2,
+   "rule": "CW",
+   "scenario": "S4"
+  },
+  {
+   "accuracy_mean": 0.8425,
+   "accuracy_per_seed": [
+    0.86,
+    0.825
+   ],
+   "brier_mean": 0.0995192421122825,
+   "brier_per_seed": [
+    0.09352371581366667,
+    0.10551476841089834
+   ],
+   "budget": 9,
+   "delta_boot95_high": 0.215,
+   "delta_boot95_low": 0.13,
+   "delta_p_one_sided_negative": 0.9231072472685798,
+   "delta_sd": 0.060104076400856535,
+   "delta_t95_high": 0.7125137012874284,
+   "delta_t95_low": -0.36751370128742844,
+   "delta_vs_single_mean": 0.1725,
+   "delta_vs_single_per_seed": [
+    0.215,
+    0.13
+   ],
+   "disagreement_share_mean": 0.7525,
+   "disagreement_share_per_seed": [
+    0.745,
+    0.76
+   ],
+   "ece_mean": 0.03559858611244697,
+   "ece_per_seed": [
+    0.031801507395017733,
+    0.0393956648298762
+   ],
+   "lambda": 0.0,
+   "n_seeds": 2,
+   "rule": "CW",
+   "scenario": "S4"
+  },
+  {
+   "accuracy_mean": 0.6699999999999999,
+   "accuracy_per_seed": [
+    0.645,
+    0.695
+   ],
+   "brier_mean": 0.32999999999999996,
+   "brier_per_seed": [
+    0.355,
+    0.305
+   ],
+   "budget": 1,
+   "delta_boot95_high": 0.0,
+   "delta_boot95_low": 0.0,
+   "delta_p_one_sided_negative": 1.0,
+   "delta_sd": 0.0,
+   "delta_t95_high": 0.0,
+   "delta_t95_low": 0.0,
+   "delta_vs_single_mean": 0.0,
+   "delta_vs_single_per_seed": [
+    0.0,
+    0.0
+   ],
+   "disagreement_share_mean": 0.0,
+   "disagreement_share_per_seed": [
+    0.0,
+    0.0
+   ],
+   "ece_mean": 0.33,
+   "ece_per_seed": [
+    0.355,
+    0.30500000000000005
+   ],
+   "lambda": 0.0,
+   "n_seeds": 2,
+   "rule": "SEQ",
+   "scenario": "S4"
+  },
+  {
+   "accuracy_mean": 0.6775,
+   "accuracy_per_seed": [
+    0.705,
+    0.65
+   ],
+   "brier_mean": 0.265,
+   "brier_per_seed": [
+    0.24833333333333335,
+    0.2816666666666667
+   ],
+   "budget": 3,
+   "delta_boot95_high": 0.06,
+   "delta_boot95_low": -0.045,
+   "delta_p_holm": 1.0,
+   "delta_p_one_sided_negative": 0.5451672353008665,
+   "delta_sd": 0.07424621202458749,
+   "delta_t95_high": 0.6745757486491762,
+   "delta_t95_low": -0.6595757486491763,
+   "delta_vs_single_mean": 0.0075,
+   "delta_vs_single_per_seed": [
+    0.06,
+    -0.045
+   ],
+   "disagreement_share_mean": 0.2475,
+   "disagreement_share_per_seed": [
+    0.24,
+    0.255
+   ],
+   "ece_mean": 0.24000000000000002,
+   "ece_per_seed": [
+    0.21500000000000002,
+    0.265
+   ],
+   "lambda": 0.0,
+   "n_seeds": 2,
+   "primary_family": true,
+   "rule": "SEQ",
+   "scenario": "S4"
+  },
+  {
+   "accuracy_mean": 0.7025,
+   "accuracy_per_seed": [
+    0.745,
+    0.66
+   ],
+   "brier_mean": 0.22271604938271605,
+   "brier_per_seed": [
+    0.19339506172839507,
+    0.25203703703703706
+   ],
+   "budget": 9,
+   "delta_boot95_high": 0.1,
+   "delta_boot95_low": -0.035,
+   "delta_p_holm": 1.0,
+   "delta_p_one_sided_negative": 0.6428330765600625,
+   "delta_sd": 0.09545941546018392,
+   "delta_t95_high": 0.8901688196917982,
+   "delta_t95_low": -0.8251688196917982,
+   "delta_vs_single_mean": 0.0325,
+   "delta_vs_single_per_seed": [
+    0.1,
+    -0.035
+   ],
+   "disagreement_share_mean": 0.575,
+   "disagreement_share_per_seed": [
+    0.545,
+    0.605
+   ],
+   "ece_mean": 0.1916666666666667,
+   "ece_per_seed": [
+    0.14944444444444452,
+    0.23388888888888887
+   ],
+   "lambda": 0.0,
+   "n_seeds": 2,
+   "primary_family": true,
+   "rule": "SEQ",
+   "scenario": "S4"
+  },
+  {
+   "accuracy_mean": 0.6950000000000001,
+   "accuracy_per_seed": [
+    0.715,
+    0.675
+   ],
+   "brier_mean": 0.2680555555555556,
+   "brier_per_seed": [
+    0.2561111111111111,
+    0.28
+   ],
+   "budget": 6,
+   "delta_boot95_high": 0.07,
+   "delta_boot95_low": -0.02,
+   "delta_p_one_sided_negative": 0.6614144672170952,
+   "delta_sd": 0.06363961030678927,
+   "delta_t95_high": 0.5967792131278653,
+   "delta_t95_low": -0.5467792131278653,
+   "delta_vs_single_mean": 0.025,
+   "delta_vs_single_per_seed": [
+    0.07,
+    -0.02
+   ],
+   "disagreement_share_mean": 0.2225,
+   "disagreement_share_per_seed": [
+    0.22,
+    0.225
+   ],
+   "ece_mean": 0.23083333333333333,
+   "ece_per_seed": [
+    0.21166666666666664,
+    0.25
+   ],
+   "lambda": 0.0,
+   "n_seeds": 2,
+   "rule": "DELIB",
+   "scenario": "S4"
+  },
+  {
+   "accuracy_mean": 0.64,
+   "accuracy_per_seed": [
+    0.635,
+    0.645
+   ],
+   "accuracy_theory": 0.66,
+   "brier_mean": 0.17735682436768535,
+   "brier_per_seed": [
+    0.17800476334905696,
+    0.17670888538631377
+   ],
+   "budget": 1,
+   "delta_boot95_high": 0.0,
+   "delta_boot95_low": 0.0,
+   "delta_p_one_sided_negative": 1.0,
+   "delta_sd": 0.0,
+   "delta_t95_high": 0.0,
+   "delta_t95_low": 0.0,
+   "delta_vs_single_mean": 0.0,
+   "delta_vs_single_per_seed": [
+    0.0,
+    0.0
+   ],
+   "disagreement_share_mean": 0.0,
+   "disagreement_share_per_seed": [
+    0.0,
+    0.0
+   ],
+   "ece_mean": 0.18279304190331633,
+   "ece_per_seed": [
+    0.20051783606672552,
+    0.16506824773990714
+   ],
+   "lambda": 0.5,
+   "n_seeds": 2,
+   "rule": "SINGLE",
+   "scenario": "S4"
+  },
+  {
+   "accuracy_mean": 0.64,
+   "accuracy_per_seed": [
+    0.635,
+    0.645
+   ],
+   "accuracy_theory": 0.66,
+   "brier_mean": 0.36,
+   "brier_per_seed": [
+    0.365,
+    0.355
+   ],
+   "budget": 1,
+   "delta_boot95_high": 0.0,
+   "delta_boot95_low": 0.0,
+   "delta_p_one_sided_negative": 1.0,
+   "delta_sd": 0.0,
+   "delta_t95_high": 0.0,
+   "delta_t95_low": 0.0,
+   "delta_vs_single_mean": 0.0,
+   "delta_vs_single_per_seed": [
+    0.0,
+    0.0
+   ],
+   "disagreement_share_mean": 0.0,
+   "disagreement_share_per_seed": [
+    0.0,
+    0.0
+   ],
+   "ece_mean": 0.36,
+   "ece_per_seed": [
+    0.365,
+    0.355
+   ],
+   "lambda": 0.5,
+   "n_seeds": 2,
+   "rule": "MV",
+   "scenario": "S4"
+  },
+  {
+   "accuracy_mean": 0.6575,
+   "accuracy_per_seed": [
+    0.68,
+    0.635
+   ],
+   "accuracy_theory": 0.6648,
+   "brier_mean": 0.27194444444444443,
+   "brier_per_seed": [
+    0.25833333333333336,
+    0.28555555555555556
+   ],
+   "budget": 3,
+   "delta_boot95_high": 0.045,
+   "delta_boot95_low": -0.01,
+   "delta_p_holm": 1.0,
+   "delta_p_one_sided_negative": 0.6803955127269358,
+   "delta_sd": 0.038890872965260115,
+   "delta_t95_high": 0.36692063024480664,
+   "delta_t95_low": -0.3319206302448066,
+   "delta_vs_single_mean": 0.017499999999999998,
+   "delta_vs_single_per_seed": [
+    0.045,
+    -0.01
+   ],
+   "disagreement_share_mean": 0.31,
+   "disagreement_share_per_seed": [
+    0.285,
+    0.335
+   ],
+   "ece_mean": 0.23916666666666664,
+   "ece_per_seed": [
+    0.22499999999999998,
+    0.2533333333333333
+   ],
+   "lambda": 0.5,
+   "n_seeds": 2,
+   "primary_family": true,
+   "rule": "MV",
+   "scenario": "S4"
+  },
+  {
+   "accuracy_mean": 0.6675,
+   "accuracy_per_seed": [
+    0.69,
+    0.645
+   ],
+   "accuracy_theory": 0.6636665146874999,
+   "brier_mean": 0.24669753086419755,
+   "brier_per_seed": [
+    0.23135802469135805,
+    0.262037037037037
+   ],
+   "budget": 9,
+   "delta_boot95_high": 0.055,
+   "delta_boot95_low": 0.0,
+   "delta_p_holm": 1.0,
+   "delta_p_one_sided_negative": 0.7499999999999998,
+   "delta_sd": 0.038890872965260115,
+   "delta_t95_high": 0.37692063024480665,
+   "delta_t95_low": -0.3219206302448066,
+   "delta_vs_single_mean": 0.0275,
+   "delta_vs_single_per_seed": [
+    0.055,
+    0.0
+   ],
+   "disagreement_share_mean": 0.6,
+   "disagreement_share_per_seed": [
+    0.6,
+    0.6
+   ],
+   "ece_mean": 0.21305555555555558,
+   "ece_per_seed": [
+    0.18888888888888888,
+    0.23722222222222228
+   ],
+   "lambda": 0.5,
+   "n_seeds": 2,
+   "primary_family": true,
+   "rule": "MV",
+   "scenario": "S4"
+  },
+  {
+   "accuracy_mean": 0.64,
+   "accuracy_per_seed": [
+    0.635,
+    0.645
+   ],
+   "brier_mean": 0.36,
+   "brier_per_seed": [
+    0.365,
+    0.355
+   ],
+   "budget": 1,
+   "delta_boot95_high": 0.0,
+   "delta_boot95_low": 0.0,
+   "delta_p_one_sided_negative": 1.0,
+   "delta_sd": 0.0,
+   "delta_t95_high": 0.0,
+   "delta_t95_low": 0.0,
+   "delta_vs_single_mean": 0.0,
+   "delta_vs_single_per_seed": [
+    0.0,
+    0.0
+   ],
+   "disagreement_share_mean": 0.0,
+   "disagreement_share_per_seed": [
+    0.0,
+    0.0
+   ],
+   "ece_mean": 0.36,
+   "ece_per_seed": [
+    0.365,
+    0.355
+   ],
+   "lambda": 0.5,
+   "n_seeds": 2,
+   "rule": "CW",
+   "scenario": "S4"
+  },
+  {
+   "accuracy_mean": 0.7575000000000001,
+   "accuracy_per_seed": [
+    0.77,
+    0.745
+   ],
+   "brier_mean": 0.22413903516186975,
+   "brier_per_seed": [
+    0.21314724642975974,
+    0.23513082389397977
+   ],
+   "budget": 3,
+   "delta_boot95_high": 0.135,
+   "delta_boot95_low": 0.1,
+   "delta_p_one_sided_negative": 0.9529380853721399,
+   "delta_sd": 0.024748737341529166,
+   "delta_t95_high": 0.3398585828830588,
+   "delta_t95_low": -0.10485858288305878,
+   "delta_vs_single_mean": 0.11750000000000001,
+   "delta_vs_single_per_seed": [
+    0.135,
+    0.1
+   ],
+   "disagreement_share_mean": 0.31,
+   "disagreement_share_per_seed": [
+    0.285,
+    0.335
+   ],
+   "ece_mean": 0.20836105263033822,
+   "ece_per_seed": [
+    0.21144969476921538,
+    0.20527241049146105
+   ],
+   "lambda": 0.5,
+   "n_seeds": 2,
+   "rule": "CW",
+   "scenario": "S4"
+  },
+  {
+   "accuracy_mean": 0.7625,
+   "accuracy_per_seed": [
+    0.795,
+    0.73
+   ],
+   "brier_mean": 0.15631203820839662,
+   "brier_per_seed": [
+    0.14752786262957185,
+    0.16509621378722136
+   ],
+   "budget": 9,
+   "delta_boot95_high": 0.16,
+   "delta_boot95_low": 0.085,
+   "delta_p_one_sided_negative": 0.9054415243804452,
+   "delta_sd": 0.053033008588991064,
+   "delta_t95_high": 0.5989826776065545,
+   "delta_t95_low": -0.3539826776065545,
+   "delta_vs_single_mean": 0.1225,
+   "delta_vs_single_per_seed": [
+    0.16,
+    0.085
+   ],
+   "disagreement_share_mean": 0.6,
+   "disagreement_share_per_seed": [
+    0.6,
+    0.6
+   ],
+   "ece_mean": 0.12463494733205091,
+   "ece_per_seed": [
+    0.10626329165212306,
+    0.14300660301197876
+   ],
+   "lambda": 0.5,
+   "n_seeds": 2,
+   "rule": "CW",
+   "scenario": "S4"
+  },
+  {
+   "accuracy_mean": 0.64,
+   "accuracy_per_seed": [
+    0.635,
+    0.645
+   ],
+   "brier_mean": 0.36,
+   "brier_per_seed": [
+    0.365,
+    0.355
+   ],
+   "budget": 1,
+   "delta_boot95_high": 0.0,
+   "delta_boot95_low": 0.0,
+   "delta_p_one_sided_negative": 1.0,
+   "delta_sd": 0.0,
+   "delta_t95_high": 0.0,
+   "delta_t95_low": 0.0,
+   "delta_vs_single_mean": 0.0,
+   "delta_vs_single_per_seed": [
+    0.0,
+    0.0
+   ],
+   "disagreement_share_mean": 0.0,
+   "disagreement_share_per_seed": [
+    0.0,
+    0.0
+   ],
+   "ece_mean": 0.36,
+   "ece_per_seed": [
+    0.365,
+    0.355
+   ],
+   "lambda": 0.5,
+   "n_seeds": 2,
+   "rule": "SEQ",
+   "scenario": "S4"
+  },
+  {
+   "accuracy_mean": 0.635,
+   "accuracy_per_seed": [
+    0.66,
+    0.61
+   ],
+   "brier_mean": 0.3127777777777778,
+   "brier_per_seed": [
+    0.29444444444444445,
+    0.33111111111111113
+   ],
+   "budget": 3,
+   "delta_boot95_high": 0.025,
+   "delta_boot95_low": -0.035,
+   "delta_p_holm": 1.0,
+   "delta_p_one_sided_negative": 0.44743154328874646,
+   "delta_sd": 0.042426406871192854,
+   "delta_t95_high": 0.3761861420852436,
+   "delta_t95_low": -0.3861861420852436,
+   "delta_vs_single_mean": -0.005000000000000001,
+   "delta_vs_single_per_seed": [
+    0.025,
+    -0.035
+   ],
+   "disagreement_share_mean": 0.19,
+   "disagreement_share_per_seed": [
+    0.19,
+    0.19
+   ],
+   "ece_mean": 0.30166666666666675,
+   "ece_per_seed": [
+    0.2766666666666667,
+    0.32666666666666677
+   ],
+   "lambda": 0.5,
+   "n_seeds": 2,
+   "primary_family": true,
+   "rule": "SEQ",
+   "scenario": "S4"
+  },
+  {
+   "accuracy_mean": 0.6525000000000001,
+   "accuracy_per_seed": [
+    0.68,
+    0.625
+   ],
+   "brier_mean": 0.28089506172839507,
+   "brier_per_seed": [
+    0.2644444444444444,
+    0.2973456790123457
+   ],
+   "budget": 9,
+   "delta_boot95_high": 0.045,
+   "delta_boot95_low": -0.02,
+   "delta_p_holm": 1.0,
+   "delta_p_one_sided_negative": 0.6168750612523435,
+   "delta_sd": 0.04596194077712559,
+   "delta_t95_high": 0.4254516539256806,
+   "delta_t95_low": -0.40045165392568055,
+   "delta_vs_single_mean": 0.012499999999999999,
+   "delta_vs_single_per_seed": [
+    0.045,
+    -0.02
+   ],
+   "disagreement_share_mean": 0.44499999999999995,
+   "disagreement_share_per_seed": [
+    0.42,
+    0.47
+   ],
+   "ece_mean": 0.27083333333333337,
+   "ece_per_seed": [
+    0.24222222222222228,
+    0.2994444444444444
+   ],
+   "lambda": 0.5,
+   "n_seeds": 2,
+   "primary_family": true,
+   "rule": "SEQ",
+   "scenario": "S4"
+  },
+  {
+   "accuracy_mean": 0.6575,
+   "accuracy_per_seed": [
+    0.68,
+    0.635
+   ],
+   "brier_mean": 0.30833333333333335,
+   "brier_per_seed": [
+    0.28,
+    0.3366666666666667
+   ],
+   "budget": 6,
+   "delta_boot95_high": 0.045,
+   "delta_boot95_low": -0.01,
+   "delta_p_one_sided_negative": 0.6803955127269358,
+   "delta_sd": 0.038890872965260115,
+   "delta_t95_high": 0.36692063024480664,
+   "delta_t95_low": -0.3319206302448066,
+   "delta_vs_single_mean": 0.017499999999999998,
+   "delta_vs_single_per_seed": [
+    0.045,
+    -0.01
+   ],
+   "disagreement_share_mean": 0.1725,
+   "disagreement_share_per_seed": [
+    0.18,
+    0.165
+   ],
+   "ece_mean": 0.28500000000000003,
+   "ece_per_seed": [
+    0.26000000000000006,
+    0.31
+   ],
+   "lambda": 0.5,
+   "n_seeds": 2,
+   "rule": "DELIB",
+   "scenario": "S4"
+  }
+ ]
+}

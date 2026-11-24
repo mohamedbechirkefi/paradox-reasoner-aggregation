@@ -54,6 +54,8 @@ def main(argv: list[str] | None = None) -> int:
     rep.add_argument("--pdf", action="store_true")
     tp = sub.add_parser("test", help="run the test suite (pytest)")
     tp.add_argument("pytest_args", nargs="*")
+    if argv[:1] == ["test"]:  # forward every remaining argument to pytest unchanged
+        return subprocess.run([sys.executable, "-m", "pytest", str(REPO_ROOT / "tests"), *argv[1:]], cwd=REPO_ROOT).returncode
     try:
         args = ap.parse_args(argv)
     except SystemExit as exc:

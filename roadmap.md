@@ -7,7 +7,7 @@ Milestones from master prompt section 5 with the section 11.6 additions. Effort 
 |---|---|---|---|---|---|---|
 | M0 | Bootstrap and feasibility | none | P0 | 0.5 | done (this session; owner review pending) | none |
 | M1 | Research and preregistration | M0 | P0 | 0.5 | in progress (drafts written; freeze pending) | owner freeze (G-FREEZE); owner decisions O-1 to O-6 |
-| M2 | Core implementation | M1 drafts (implementation may start before freeze; exploratory only) | P0 | 1 | not started | none |
+| M2 | Core implementation | M1 drafts (implementation may start before freeze; exploratory only) | P0 | 1 | in progress (engine, tests, schemas, manifests, CLI, reports done; open items below) | owner decisions on amendments A-1 to A-5 |
 | M3 | Experiments | M1 freeze, M2 | P0 | 0.75 | not started | owner freeze |
 | M4 | Interpretation | M3 | P0 | 0.75 | not started | none |
 | M5 | Interactive experience | M3 results (demo shell can start in M2) | P1 | 0.75 | not started | none |
@@ -35,9 +35,9 @@ Acceptance criteria:
 - [x] EXP-001 to EXP-004 registered with draft protocols following 11.2.
 - [ ] Unverified foundational sources (Boland 1989, Ladha 1992, Lorenz et al. 2011) opened or recorded as permanently unverified.
 - [ ] Owner decisions O-1 to O-6 taken (see `progress.md`).
-- [ ] Smoke run (exploratory, after M2) measures between-seed SD; seed count confirmed.
+- [x] Smoke run (exploratory, after M2) measures between-seed SD (J-0006). [ ] Seed count confirmed by the owner (amendment A-1).
 - [ ] Owner freezes each protocol; version and SHA-256 recorded in the registry and decision log.
-- [ ] Fixture manifest for golden values committed with tests.
+- [x] Golden values committed with tests (`tests/test_theory.py`, sources in J-0002 and the test comments).
 
 ## M2: Core implementation
 
@@ -45,10 +45,15 @@ Additions (11.6): versioned output schemas, reproducibility manifests and report
 
 Acceptance criteria:
 
-- [ ] Package `src/paradox`: generator, rules (SINGLE first, then MV, CW, SEQ, DELIB), closed-form theory, metrics, runner, JSON schema, manifest writer, report generator; CLI commands smoke, run, analyse, report, test.
-- [ ] Tests actually run: majority ties, perfect correlation, independent errors, budget accounting, seeded sampling, Kaniovski golden fixtures, symmetry and bound invariants, invalid inputs, integration from config to results.
-- [ ] Run manifests record runtime, peak memory, OS, CPU, package versions, git revision and config hash.
-- [ ] Deterministic rerun check.
+- [x] Package `src/paradox`: generator, rules (SINGLE first, then MV, CW, SEQ, DELIB), closed-form theory, dependence models, metrics, statistics, runner, JSON schema 1.0.0, manifest writer, report generator; CLI commands smoke, run, report, test (2026-11-24). The planned `analyse` step is part of `run` (seed-level summaries in `results.json`) and `report`.
+- [x] Tests actually run: majority ties, perfect correlation, independent errors, budget accounting, seeded sampling, Kaniovski golden fixtures, symmetry and bound invariants, invalid inputs, differential tests, integration from config to results. 302 passed, 0 failed (`progress.md`, J-0003).
+- [x] Run manifests record runtime, peak memory, OS, CPU, package versions, git revision and config hash.
+- [x] Deterministic rerun check (`test_rerun_is_deterministic`; same seed gives bit-identical draws).
+- [x] `paradox run` refuses confirmatory configs while protocols are unfrozen (D-007; tested).
+- [x] Exploratory smoke run and probes, labelled exploratory, in `results/exploratory/` (J-0004 to J-0007).
+- [ ] DELIB rule redefined or dropped (amendment A-2): as drafted it is identical to MV at half the budget.
+- [ ] EXP-004 tie-rule level "abstain counted as wrong" implemented (not done; EXP-004 is optional, O-5).
+- [ ] Per-experiment `config.json` files written at freeze, with the owner's seed count (A-1).
 
 ## M3: Experiments
 

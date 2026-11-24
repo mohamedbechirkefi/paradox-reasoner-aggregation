@@ -3,7 +3,7 @@
 
 **Question.** Under equal compute budgets, when does aggregation of fallible reasoners improve or degrade accuracy?
 
-**Status: M0 (bootstrap and feasibility), 2026-11-24.** No experiment has run. There are no findings. The protocol is a draft awaiting the owner's freeze; until then, any run is exploratory.
+**Status: M2 (core implementation), 2026-11-24.** The simulation engine, tests, schemas and report generator exist. No registered experiment has run and there are no findings. The protocol is a draft awaiting the owner's freeze; the only runs so far are exploratory smoke and probe runs in `results/exploratory/`, which are not results.
 
 ## Why it matters
 
@@ -11,13 +11,13 @@ Sampling several answers and voting, or letting several agents exchange answers,
 
 ## What is implemented
 
-Nothing yet beyond control files, the draft protocol and the dependency lockfile. Planned: a Python simulation engine with exact theoretical baselines, an experiment runner, report generators and a static offline demo.
+A Python package `paradox` (`src/paradox/`): seeded synthetic reasoners with a common-shock correlation model, the rules SINGLE (baseline), MV, CW, SEQ and DELIB, closed-form theoretical baselines, a versioned JSON result schema, run manifests, an experiment runner that refuses confirmatory runs before the protocol freeze, and a report generator (Markdown, figures, PDF through pandoc and Typst). Planned: the frozen experiments (M3) and a static offline demo (M5).
 
 ## Registered experiments
 
 | Id | Title | Status |
 |---|---|---|
-| EXP-001 | Engine and theoretical-baseline validation | planned (protocol draft, awaiting owner freeze) |
+| EXP-001 | Engine and theoretical-baseline validation | planned (protocol draft, awaiting owner freeze); exploratory design probe run, see `results/exploratory/probe-engine-validation` |
 | EXP-002 | Equal-budget aggregation map (primary) | planned (protocol draft, awaiting owner freeze) |
 | EXP-003 | Dependence-structure sensitivity | planned (protocol draft, awaiting owner freeze) |
 | EXP-004 | Robustness to secondary design choices (optional) | planned (protocol draft, awaiting owner freeze) |
@@ -36,7 +36,12 @@ Nothing yet beyond control files, the draft protocol and the dependency lockfile
 /Users/bechir/research/labs/.tools/py/bin/uv sync --frozen
 ```
 
-Experiment, test and report commands will be added at M2.
+```
+uv run paradox test            # full test suite
+uv run paradox smoke --pdf     # exploratory smoke matrix -> results/exploratory/smoke/
+uv run paradox run --config <config.json> --out <dir> [--pdf]
+uv run paradox report <dir> [--pdf]
+```
 
 ## Data
 

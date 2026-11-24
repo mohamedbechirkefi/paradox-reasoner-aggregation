@@ -1,0 +1,9064 @@
+{
+ "claims_boundary": "Synthetic reasoners, not LLMs or people. Values hold only within the stated simulation model. Exploratory results are not findings and do not test any preregistered hypothesis.",
+ "code_revision": "9bfb9d3eaef0fb7676a6b2c1950c121b27e08135",
+ "config": {
+  "bahadur": {
+   "cs": [
+    0.0,
+    0.1,
+    0.4
+   ],
+   "ps": [
+    0.45,
+    0.5,
+    0.55,
+    0.6,
+    0.8
+   ]
+  },
+  "common_shock": {
+   "lambdas": [
+    0.0,
+    0.25,
+    0.5,
+    0.75,
+    1.0
+   ],
+   "ps": [
+    0.45,
+    0.5,
+    0.55,
+    0.6,
+    0.8
+   ]
+  },
+  "description": "Exploratory run of the EXP-001 draft design (engine against closed forms) with exploratory seeds (entropy 0). Verification work, not a finding; EXP-001 itself awaits the owner freeze.",
+  "experiment_id": "PROBE-EXP001",
+  "items_per_seed": 20000,
+  "kind": "validation",
+  "label": "exploratory",
+  "mixture": {
+   "lambdas": [
+    0.0,
+    0.25,
+    0.5,
+    0.75
+   ],
+   "scenarios": [
+    {
+     "h": 0.4,
+     "id": "S4",
+     "p_easy": 0.9,
+     "p_hard": 0.3
+    },
+    {
+     "h": 0.2,
+     "id": "S5",
+     "p_easy": 0.7,
+     "p_hard": 0.45
+    },
+    {
+     "h": 0.5,
+     "id": "S6",
+     "p_easy": 0.95,
+     "p_hard": 0.35
+    }
+   ]
+  },
+  "n_seeds": 10,
+  "ns": [
+   1,
+   3,
+   5,
+   9,
+   15,
+   31
+  ],
+  "schema_version": "1.0.0",
+  "seed_entropy": 0,
+  "tolerance_se": 4.0
+ },
+ "config_sha256": "0ca8c9a392000395b7efc227a3abf5ef5d06a978140d04b1ab463c7d36e385db",
+ "created_utc": "2026-11-24T16:07:27Z",
+ "experiment_id": "PROBE-EXP001",
+ "kind": "validation",
+ "label": "exploratory",
+ "records": [
+  {
+   "accuracy_sim": 0.45088,
+   "accuracy_theory": 0.45000000000000007,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "independent",
+   "n": 1,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.0,
+    "p": 0.45
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.4508,
+    0.45015,
+    0.4504,
+    0.4455,
+    0.4594,
+    0.4476,
+    0.45,
+    0.4512,
+    0.45405,
+    0.4497
+   ],
+   "record_id": "CELL-0001",
+   "se_mc": 0.0011124297730643494,
+   "z": 0.7910611719568136
+  },
+  {
+   "accuracy_sim": 0.42577,
+   "accuracy_theory": 0.42525000000000013,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "independent",
+   "n": 3,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.0,
+    "p": 0.45
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.425,
+    0.4218,
+    0.42265,
+    0.4213,
+    0.43065,
+    0.42565,
+    0.42875,
+    0.42535,
+    0.4312,
+    0.42535
+   ],
+   "record_id": "CELL-0002",
+   "se_mc": 0.001105469215989301,
+   "z": 0.47038849429606056
+  },
+  {
+   "accuracy_sim": 0.40617,
+   "accuracy_theory": 0.40687312500000006,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "independent",
+   "n": 5,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.0,
+    "p": 0.45
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.4039,
+    0.40385,
+    0.40095,
+    0.4024,
+    0.41265,
+    0.4056,
+    0.402,
+    0.40805,
+    0.41135,
+    0.41095
+   ],
+   "record_id": "CELL-0003",
+   "se_mc": 0.0010984702662173757,
+   "z": -0.6400947040845447
+  },
+  {
+   "accuracy_sim": 0.37981,
+   "accuracy_theory": 0.37857905455078145,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "independent",
+   "n": 9,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.0,
+    "p": 0.45
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.3783,
+    0.37815,
+    0.3777,
+    0.3806,
+    0.38235,
+    0.37715,
+    0.3769,
+    0.37695,
+    0.38705,
+    0.38295
+   ],
+   "record_id": "CELL-0004",
+   "se_mc": 0.00108456662775096,
+   "z": 1.1349652642098316
+  },
+  {
+   "accuracy_sim": 0.34706,
+   "accuracy_theory": 0.34649607485290645,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "independent",
+   "n": 15,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.0,
+    "p": 0.45
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.34375,
+    0.33875,
+    0.34485,
+    0.3463,
+    0.35555,
+    0.349,
+    0.34775,
+    0.34265,
+    0.3519,
+    0.3501
+   ],
+   "record_id": "CELL-0005",
+   "se_mc": 0.0010640407533652916,
+   "z": 0.5299845380075643
+  },
+  {
+   "accuracy_sim": 0.287485,
+   "accuracy_theory": 0.286820089611558,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "independent",
+   "n": 31,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.0,
+    "p": 0.45
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.29205,
+    0.28615,
+    0.28485,
+    0.28935,
+    0.2884,
+    0.29245,
+    0.28535,
+    0.2849,
+    0.28615,
+    0.2852
+   ],
+   "record_id": "CELL-0006",
+   "se_mc": 0.001011321723802015,
+   "z": 0.6574667316966805
+  },
+  {
+   "accuracy_sim": 0.45115,
+   "accuracy_theory": 0.45,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 1,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.25,
+    "p": 0.45
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.45375,
+    0.4486,
+    0.45025,
+    0.44635,
+    0.4571,
+    0.44935,
+    0.4513,
+    0.44905,
+    0.45545,
+    0.4503
+   ],
+   "record_id": "CELL-0007",
+   "se_mc": 0.0011124297730643496,
+   "z": 1.0337731224436237
+  },
+  {
+   "accuracy_sim": 0.429295,
+   "accuracy_theory": 0.42911718750000005,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 3,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.25,
+    "p": 0.45
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.4289,
+    0.4265,
+    0.4275,
+    0.42095,
+    0.4321,
+    0.4328,
+    0.42895,
+    0.42925,
+    0.43595,
+    0.43005
+   ],
+   "record_id": "CELL-0008",
+   "se_mc": 0.001106742126450624,
+   "z": 0.1606629907277345
+  },
+  {
+   "accuracy_sim": 0.416805,
+   "accuracy_theory": 0.41618289550781257,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 5,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.25,
+    "p": 0.45
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.41335,
+    0.4109,
+    0.41765,
+    0.414,
+    0.4211,
+    0.41665,
+    0.41175,
+    0.41755,
+    0.42385,
+    0.42125
+   ],
+   "record_id": "CELL-0009",
+   "se_mc": 0.0011022129853039877,
+   "z": 0.5644140474500391
+  },
+  {
+   "accuracy_sim": 0.4021,
+   "accuracy_theory": 0.4012800764476715,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 9,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.25,
+    "p": 0.45
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.39825,
+    0.39895,
+    0.4003,
+    0.4013,
+    0.4055,
+    0.4074,
+    0.39795,
+    0.3993,
+    0.40965,
+    0.4024
+   ],
+   "record_id": "CELL-0010",
+   "se_mc": 0.0010960254939868471,
+   "z": 0.7480880297282172
+  },
+  {
+   "accuracy_sim": 0.393105,
+   "accuracy_theory": 0.3921028996813726,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 15,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.25,
+    "p": 0.45
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.38655,
+    0.39095,
+    0.39505,
+    0.3895,
+    0.3995,
+    0.39585,
+    0.39155,
+    0.38945,
+    0.3982,
+    0.39445
+   ],
+   "record_id": "CELL-0011",
+   "se_mc": 0.0010916918423777657,
+   "z": 0.9179333212244012
+  },
+  {
+   "accuracy_sim": 0.393915,
+   "accuracy_theory": 0.3942024724945399,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 31,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.25,
+    "p": 0.45
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.39525,
+    0.3911,
+    0.39675,
+    0.39165,
+    0.39615,
+    0.3986,
+    0.3892,
+    0.39175,
+    0.3962,
+    0.3925
+   ],
+   "record_id": "CELL-0012",
+   "se_mc": 0.0010927188183007819,
+   "z": -0.2630800254606164
+  },
+  {
+   "accuracy_sim": 0.450095,
+   "accuracy_theory": 0.45000000000000007,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 1,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.5,
+    "p": 0.45
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.45275,
+    0.44835,
+    0.4541,
+    0.44425,
+    0.45225,
+    0.44445,
+    0.45195,
+    0.4496,
+    0.45395,
+    0.4493
+   ],
+   "record_id": "CELL-0013",
+   "se_mc": 0.0011124297730643494,
+   "z": 0.08539864924530466
+  },
+  {
+   "accuracy_sim": 0.436775,
+   "accuracy_theory": 0.43762500000000004,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 3,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.5,
+    "p": 0.45
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.4378,
+    0.43555,
+    0.44165,
+    0.4299,
+    0.43865,
+    0.43545,
+    0.4357,
+    0.43645,
+    0.4406,
+    0.436
+   ],
+   "record_id": "CELL-0014",
+   "se_mc": 0.0011093001383192017,
+   "z": -0.7662488903029682
+  },
+  {
+   "accuracy_sim": 0.43193,
+   "accuracy_theory": 0.4341793359375,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 5,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.5,
+    "p": 0.45
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.4317,
+    0.4276,
+    0.4364,
+    0.42665,
+    0.43645,
+    0.4331,
+    0.42825,
+    0.43425,
+    0.4337,
+    0.4312
+   ],
+   "record_id": "CELL-0015",
+   "se_mc": 0.001108304200529736,
+   "z": -2.029529380494025
+  },
+  {
+   "accuracy_sim": 0.43408,
+   "accuracy_theory": 0.4355990011264802,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 9,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.5,
+    "p": 0.45
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.43385,
+    0.4312,
+    0.43885,
+    0.4295,
+    0.43735,
+    0.43405,
+    0.43125,
+    0.4356,
+    0.43695,
+    0.4322
+   ],
+   "record_id": "CELL-0016",
+   "se_mc": 0.0011087211356876282,
+   "z": -1.3700479566830805
+  },
+  {
+   "accuracy_sim": 0.44005,
+   "accuracy_theory": 0.4412461096796031,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 15,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.5,
+    "p": 0.45
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.4398,
+    0.43755,
+    0.4447,
+    0.4353,
+    0.44415,
+    0.44005,
+    0.43745,
+    0.4409,
+    0.4405,
+    0.4401
+   ],
+   "record_id": "CELL-0017",
+   "se_mc": 0.0011102882066657712,
+   "z": -1.0772965725674508
+  },
+  {
+   "accuracy_sim": 0.44736,
+   "accuracy_theory": 0.4485019515728152,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 31,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.5,
+    "p": 0.45
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.44685,
+    0.44415,
+    0.45145,
+    0.4428,
+    0.4519,
+    0.44745,
+    0.44485,
+    0.4496,
+    0.44835,
+    0.4462
+   ],
+   "record_id": "CELL-0018",
+   "se_mc": 0.0011120880158696778,
+   "z": -1.0268535911900663
+  },
+  {
+   "accuracy_sim": 0.450725,
+   "accuracy_theory": 0.45000000000000007,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 1,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.75,
+    "p": 0.45
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.4505,
+    0.44895,
+    0.4546,
+    0.44255,
+    0.45645,
+    0.45,
+    0.4516,
+    0.4517,
+    0.451,
+    0.4499
+   ],
+   "record_id": "CELL-0019",
+   "se_mc": 0.0011124297730643494,
+   "z": 0.6517265337143956
+  },
+  {
+   "accuracy_sim": 0.44472,
+   "accuracy_theory": 0.44613281250000003,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 3,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.75,
+    "p": 0.45
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.4466,
+    0.4439,
+    0.4484,
+    0.4375,
+    0.4495,
+    0.4469,
+    0.44205,
+    0.44355,
+    0.4461,
+    0.4427
+   ],
+   "record_id": "CELL-0020",
+   "se_mc": 0.001111526711579258,
+   "z": -1.2710558237441743
+  },
+  {
+   "accuracy_sim": 0.44567,
+   "accuracy_theory": 0.447150849609375,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 5,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.75,
+    "p": 0.45
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.4442,
+    0.4427,
+    0.4496,
+    0.44185,
+    0.4493,
+    0.4473,
+    0.4425,
+    0.448,
+    0.44745,
+    0.4438
+   ],
+   "record_id": "CELL-0021",
+   "se_mc": 0.0011117710360118874,
+   "z": -1.3319735461782327
+  },
+  {
+   "accuracy_sim": 0.44794,
+   "accuracy_theory": 0.44912618048761815,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 9,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.75,
+    "p": 0.45
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.44765,
+    0.44455,
+    0.45165,
+    0.4436,
+    0.45165,
+    0.44865,
+    0.4449,
+    0.4505,
+    0.4493,
+    0.44695
+   ],
+   "record_id": "CELL-0022",
+   "se_mc": 0.0011122316631174947,
+   "z": -1.066486890234164
+  },
+  {
+   "accuracy_sim": 0.44878,
+   "accuracy_theory": 0.4498942427108214,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 15,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.75,
+    "p": 0.45
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.4485,
+    0.44505,
+    0.4525,
+    0.4448,
+    0.45305,
+    0.449,
+    0.4464,
+    0.4515,
+    0.4496,
+    0.4474
+   ],
+   "record_id": "CELL-0023",
+   "se_mc": 0.0011124059804911107,
+   "z": -1.0016511330957314
+  },
+  {
+   "accuracy_sim": 0.448845,
+   "accuracy_theory": 0.4499997418801962,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 31,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.75,
+    "p": 0.45
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.4485,
+    0.44515,
+    0.4527,
+    0.4449,
+    0.453,
+    0.44905,
+    0.44635,
+    0.4515,
+    0.44975,
+    0.44755
+   ],
+   "record_id": "CELL-0024",
+   "se_mc": 0.0011124297150560862,
+   "z": -1.0380358098740547
+  },
+  {
+   "accuracy_sim": 0.448845,
+   "accuracy_theory": 0.45,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "perfect_correlation",
+   "n": 1,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 1.0,
+    "p": 0.45
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.4485,
+    0.44515,
+    0.4527,
+    0.4449,
+    0.453,
+    0.44905,
+    0.44635,
+    0.4515,
+    0.44975,
+    0.44755
+   ],
+   "record_id": "CELL-0025",
+   "se_mc": 0.0011124297730643496,
+   "z": -1.0382677881934081
+  },
+  {
+   "accuracy_sim": 0.448845,
+   "accuracy_theory": 0.45,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "perfect_correlation",
+   "n": 3,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 1.0,
+    "p": 0.45
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.4485,
+    0.44515,
+    0.4527,
+    0.4449,
+    0.453,
+    0.44905,
+    0.44635,
+    0.4515,
+    0.44975,
+    0.44755
+   ],
+   "record_id": "CELL-0026",
+   "se_mc": 0.0011124297730643496,
+   "z": -1.0382677881934081
+  },
+  {
+   "accuracy_sim": 0.448845,
+   "accuracy_theory": 0.45,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "perfect_correlation",
+   "n": 5,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 1.0,
+    "p": 0.45
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.4485,
+    0.44515,
+    0.4527,
+    0.4449,
+    0.453,
+    0.44905,
+    0.44635,
+    0.4515,
+    0.44975,
+    0.44755
+   ],
+   "record_id": "CELL-0027",
+   "se_mc": 0.0011124297730643496,
+   "z": -1.0382677881934081
+  },
+  {
+   "accuracy_sim": 0.448845,
+   "accuracy_theory": 0.45,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "perfect_correlation",
+   "n": 9,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 1.0,
+    "p": 0.45
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.4485,
+    0.44515,
+    0.4527,
+    0.4449,
+    0.453,
+    0.44905,
+    0.44635,
+    0.4515,
+    0.44975,
+    0.44755
+   ],
+   "record_id": "CELL-0028",
+   "se_mc": 0.0011124297730643496,
+   "z": -1.0382677881934081
+  },
+  {
+   "accuracy_sim": 0.448845,
+   "accuracy_theory": 0.45,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "perfect_correlation",
+   "n": 15,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 1.0,
+    "p": 0.45
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.4485,
+    0.44515,
+    0.4527,
+    0.4449,
+    0.453,
+    0.44905,
+    0.44635,
+    0.4515,
+    0.44975,
+    0.44755
+   ],
+   "record_id": "CELL-0029",
+   "se_mc": 0.0011124297730643496,
+   "z": -1.0382677881934081
+  },
+  {
+   "accuracy_sim": 0.448845,
+   "accuracy_theory": 0.45,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "perfect_correlation",
+   "n": 31,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 1.0,
+    "p": 0.45
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.4485,
+    0.44515,
+    0.4527,
+    0.4449,
+    0.453,
+    0.44905,
+    0.44635,
+    0.4515,
+    0.44975,
+    0.44755
+   ],
+   "record_id": "CELL-0030",
+   "se_mc": 0.0011124297730643496,
+   "z": -1.0382677881934081
+  },
+  {
+   "accuracy_sim": 0.500975,
+   "accuracy_theory": 0.5,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "independent",
+   "n": 1,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.0,
+    "p": 0.5
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.50055,
+    0.50085,
+    0.50085,
+    0.4962,
+    0.5087,
+    0.49585,
+    0.4986,
+    0.50075,
+    0.5063,
+    0.5011
+   ],
+   "record_id": "CELL-0031",
+   "se_mc": 0.001118033988749895,
+   "z": 0.8720665112248716
+  },
+  {
+   "accuracy_sim": 0.50179,
+   "accuracy_theory": 0.5,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "independent",
+   "n": 3,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.0,
+    "p": 0.5
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.49935,
+    0.4986,
+    0.4988,
+    0.4984,
+    0.50555,
+    0.49975,
+    0.5047,
+    0.5008,
+    0.50965,
+    0.5023
+   ],
+   "record_id": "CELL-0032",
+   "se_mc": 0.001118033988749895,
+   "z": 1.601024671889812
+  },
+  {
+   "accuracy_sim": 0.49987,
+   "accuracy_theory": 0.5,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "independent",
+   "n": 5,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.0,
+    "p": 0.5
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.49945,
+    0.49925,
+    0.4948,
+    0.49705,
+    0.50485,
+    0.49445,
+    0.5,
+    0.50115,
+    0.5059,
+    0.5018
+   ],
+   "record_id": "CELL-0033",
+   "se_mc": 0.001118033988749895,
+   "z": -0.11627553483000604
+  },
+  {
+   "accuracy_sim": 0.500765,
+   "accuracy_theory": 0.5,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "independent",
+   "n": 9,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.0,
+    "p": 0.5
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.49845,
+    0.4975,
+    0.50015,
+    0.5029,
+    0.50555,
+    0.49495,
+    0.49655,
+    0.498,
+    0.50835,
+    0.50525
+   ],
+   "record_id": "CELL-0034",
+   "se_mc": 0.001118033988749895,
+   "z": 0.6842368011149496
+  },
+  {
+   "accuracy_sim": 0.50063,
+   "accuracy_theory": 0.5,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "independent",
+   "n": 15,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.0,
+    "p": 0.5
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.4961,
+    0.49535,
+    0.4974,
+    0.50105,
+    0.50675,
+    0.5048,
+    0.5024,
+    0.4927,
+    0.50505,
+    0.5047
+   ],
+   "record_id": "CELL-0035",
+   "se_mc": 0.001118033988749895,
+   "z": 0.5634891303299644
+  },
+  {
+   "accuracy_sim": 0.501345,
+   "accuracy_theory": 0.5,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "independent",
+   "n": 31,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.0,
+    "p": 0.5
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.50195,
+    0.5042,
+    0.4992,
+    0.50055,
+    0.5009,
+    0.5052,
+    0.49955,
+    0.4976,
+    0.50345,
+    0.50085
+   ],
+   "record_id": "CELL-0036",
+   "se_mc": 0.001118033988749895,
+   "z": 1.2030045718949232
+  },
+  {
+   "accuracy_sim": 0.501765,
+   "accuracy_theory": 0.5,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 1,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.25,
+    "p": 0.5
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.5059,
+    0.49865,
+    0.50245,
+    0.4975,
+    0.5053,
+    0.4988,
+    0.50075,
+    0.4983,
+    0.5073,
+    0.5027
+   ],
+   "record_id": "CELL-0037",
+   "se_mc": 0.001118033988749895,
+   "z": 1.5786639921148662
+  },
+  {
+   "accuracy_sim": 0.501795,
+   "accuracy_theory": 0.5,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 3,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.25,
+    "p": 0.5
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.5025,
+    0.4985,
+    0.50035,
+    0.49285,
+    0.5039,
+    0.5026,
+    0.50385,
+    0.5002,
+    0.51045,
+    0.50275
+   ],
+   "record_id": "CELL-0038",
+   "se_mc": 0.001118033988749895,
+   "z": 1.6054968078448408
+  },
+  {
+   "accuracy_sim": 0.50063,
+   "accuracy_theory": 0.5,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 5,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.25,
+    "p": 0.5
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.5011,
+    0.4958,
+    0.50165,
+    0.49765,
+    0.50295,
+    0.4968,
+    0.5,
+    0.49755,
+    0.5072,
+    0.5056
+   ],
+   "record_id": "CELL-0039",
+   "se_mc": 0.001118033988749895,
+   "z": 0.5634891303299644
+  },
+  {
+   "accuracy_sim": 0.500955,
+   "accuracy_theory": 0.5,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 9,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.25,
+    "p": 0.5
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.5016,
+    0.49875,
+    0.49965,
+    0.49965,
+    0.50225,
+    0.5045,
+    0.49895,
+    0.4943,
+    0.50705,
+    0.50285
+   ],
+   "record_id": "CELL-0040",
+   "se_mc": 0.001118033988749895,
+   "z": 0.8541779674049547
+  },
+  {
+   "accuracy_sim": 0.50051,
+   "accuracy_theory": 0.5,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 15,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.25,
+    "p": 0.5
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.4986,
+    0.49865,
+    0.50175,
+    0.4961,
+    0.5044,
+    0.50315,
+    0.49855,
+    0.49545,
+    0.50425,
+    0.5042
+   ],
+   "record_id": "CELL-0041",
+   "se_mc": 0.001118033988749895,
+   "z": 0.4561578674099664
+  },
+  {
+   "accuracy_sim": 0.499485,
+   "accuracy_theory": 0.5,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 31,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.25,
+    "p": 0.5
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.5041,
+    0.49465,
+    0.5028,
+    0.496,
+    0.5005,
+    0.5035,
+    0.4964,
+    0.4959,
+    0.5029,
+    0.4981
+   ],
+   "record_id": "CELL-0042",
+   "se_mc": 0.001118033988749895,
+   "z": -0.46063000336494564
+  },
+  {
+   "accuracy_sim": 0.500605,
+   "accuracy_theory": 0.5,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 1,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.5,
+    "p": 0.5
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.5065,
+    0.4985,
+    0.50525,
+    0.4941,
+    0.50085,
+    0.4948,
+    0.5013,
+    0.4981,
+    0.50595,
+    0.5007
+   ],
+   "record_id": "CELL-0043",
+   "se_mc": 0.001118033988749895,
+   "z": 0.5411284505549192
+  },
+  {
+   "accuracy_sim": 0.50002,
+   "accuracy_theory": 0.5,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 3,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.5,
+    "p": 0.5
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.50355,
+    0.4988,
+    0.50485,
+    0.4923,
+    0.50035,
+    0.49785,
+    0.4991,
+    0.49915,
+    0.5058,
+    0.49845
+   ],
+   "record_id": "CELL-0044",
+   "se_mc": 0.001118033988749895,
+   "z": 0.017888543820016208
+  },
+  {
+   "accuracy_sim": 0.49791,
+   "accuracy_theory": 0.5,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 5,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.5,
+    "p": 0.5
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.5007,
+    0.4927,
+    0.50325,
+    0.4921,
+    0.5009,
+    0.4984,
+    0.495,
+    0.49875,
+    0.4996,
+    0.4977
+   ],
+   "record_id": "CELL-0045",
+   "se_mc": 0.001118033988749895,
+   "z": -1.8693528291898067
+  },
+  {
+   "accuracy_sim": 0.49862,
+   "accuracy_theory": 0.5,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 9,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.5,
+    "p": 0.5
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.50155,
+    0.4948,
+    0.50435,
+    0.4933,
+    0.50145,
+    0.4988,
+    0.4975,
+    0.498,
+    0.5012,
+    0.49525
+   ],
+   "record_id": "CELL-0046",
+   "se_mc": 0.001118033988749895,
+   "z": -1.2343095235798769
+  },
+  {
+   "accuracy_sim": 0.4988,
+   "accuracy_theory": 0.5,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 15,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.5,
+    "p": 0.5
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.5009,
+    0.4958,
+    0.5045,
+    0.49425,
+    0.50225,
+    0.4973,
+    0.49775,
+    0.4982,
+    0.49955,
+    0.4975
+   ],
+   "record_id": "CELL-0047",
+   "se_mc": 0.001118033988749895,
+   "z": -1.07331262919988
+  },
+  {
+   "accuracy_sim": 0.498435,
+   "accuracy_theory": 0.5,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 31,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.5,
+    "p": 0.5
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.50125,
+    0.49525,
+    0.50345,
+    0.49375,
+    0.5007,
+    0.49705,
+    0.49725,
+    0.4984,
+    0.49985,
+    0.4974
+   ],
+   "record_id": "CELL-0048",
+   "se_mc": 0.001118033988749895,
+   "z": -1.399778553914853
+  },
+  {
+   "accuracy_sim": 0.50076,
+   "accuracy_theory": 0.5,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 1,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.75,
+    "p": 0.5
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.50485,
+    0.4994,
+    0.50515,
+    0.49185,
+    0.5047,
+    0.4989,
+    0.50225,
+    0.4992,
+    0.50225,
+    0.49905
+   ],
+   "record_id": "CELL-0049",
+   "se_mc": 0.001118033988749895,
+   "z": 0.6797646651599207
+  },
+  {
+   "accuracy_sim": 0.49843,
+   "accuracy_theory": 0.5,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 3,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.75,
+    "p": 0.5
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.50295,
+    0.49715,
+    0.503,
+    0.49185,
+    0.5004,
+    0.4985,
+    0.49665,
+    0.49625,
+    0.5007,
+    0.49685
+   ],
+   "record_id": "CELL-0050",
+   "se_mc": 0.001118033988749895,
+   "z": -1.4042506898698819
+  },
+  {
+   "accuracy_sim": 0.49831,
+   "accuracy_theory": 0.5,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 5,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.75,
+    "p": 0.5
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.49975,
+    0.49525,
+    0.50315,
+    0.494,
+    0.49945,
+    0.49795,
+    0.4965,
+    0.4984,
+    0.5011,
+    0.49755
+   ],
+   "record_id": "CELL-0051",
+   "se_mc": 0.001118033988749895,
+   "z": -1.51158195278988
+  },
+  {
+   "accuracy_sim": 0.498545,
+   "accuracy_theory": 0.5,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 9,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.75,
+    "p": 0.5
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.50125,
+    0.4957,
+    0.50335,
+    0.49345,
+    0.5004,
+    0.49765,
+    0.4971,
+    0.4983,
+    0.5003,
+    0.49795
+   ],
+   "record_id": "CELL-0052",
+   "se_mc": 0.001118033988749895,
+   "z": -1.3013915629048634
+  },
+  {
+   "accuracy_sim": 0.498535,
+   "accuracy_theory": 0.5,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 15,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.75,
+    "p": 0.5
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.5015,
+    0.49545,
+    0.50325,
+    0.49395,
+    0.5006,
+    0.49715,
+    0.49745,
+    0.4986,
+    0.49985,
+    0.49755
+   ],
+   "record_id": "CELL-0053",
+   "se_mc": 0.001118033988749895,
+   "z": -1.3103358348148713
+  },
+  {
+   "accuracy_sim": 0.49851,
+   "accuracy_theory": 0.5,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 31,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.75,
+    "p": 0.5
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.5014,
+    0.49545,
+    0.5032,
+    0.49395,
+    0.5004,
+    0.49725,
+    0.4974,
+    0.4985,
+    0.49995,
+    0.4976
+   ],
+   "record_id": "CELL-0054",
+   "se_mc": 0.001118033988749895,
+   "z": -1.3326965145898668
+  },
+  {
+   "accuracy_sim": 0.49851,
+   "accuracy_theory": 0.5,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "perfect_correlation",
+   "n": 1,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 1.0,
+    "p": 0.5
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.5014,
+    0.49545,
+    0.5032,
+    0.49395,
+    0.5004,
+    0.49725,
+    0.4974,
+    0.4985,
+    0.49995,
+    0.4976
+   ],
+   "record_id": "CELL-0055",
+   "se_mc": 0.001118033988749895,
+   "z": -1.3326965145898668
+  },
+  {
+   "accuracy_sim": 0.49851,
+   "accuracy_theory": 0.5,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "perfect_correlation",
+   "n": 3,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 1.0,
+    "p": 0.5
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.5014,
+    0.49545,
+    0.5032,
+    0.49395,
+    0.5004,
+    0.49725,
+    0.4974,
+    0.4985,
+    0.49995,
+    0.4976
+   ],
+   "record_id": "CELL-0056",
+   "se_mc": 0.001118033988749895,
+   "z": -1.3326965145898668
+  },
+  {
+   "accuracy_sim": 0.49851,
+   "accuracy_theory": 0.5,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "perfect_correlation",
+   "n": 5,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 1.0,
+    "p": 0.5
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.5014,
+    0.49545,
+    0.5032,
+    0.49395,
+    0.5004,
+    0.49725,
+    0.4974,
+    0.4985,
+    0.49995,
+    0.4976
+   ],
+   "record_id": "CELL-0057",
+   "se_mc": 0.001118033988749895,
+   "z": -1.3326965145898668
+  },
+  {
+   "accuracy_sim": 0.49851,
+   "accuracy_theory": 0.5,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "perfect_correlation",
+   "n": 9,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 1.0,
+    "p": 0.5
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.5014,
+    0.49545,
+    0.5032,
+    0.49395,
+    0.5004,
+    0.49725,
+    0.4974,
+    0.4985,
+    0.49995,
+    0.4976
+   ],
+   "record_id": "CELL-0058",
+   "se_mc": 0.001118033988749895,
+   "z": -1.3326965145898668
+  },
+  {
+   "accuracy_sim": 0.49851,
+   "accuracy_theory": 0.5,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "perfect_correlation",
+   "n": 15,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 1.0,
+    "p": 0.5
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.5014,
+    0.49545,
+    0.5032,
+    0.49395,
+    0.5004,
+    0.49725,
+    0.4974,
+    0.4985,
+    0.49995,
+    0.4976
+   ],
+   "record_id": "CELL-0059",
+   "se_mc": 0.001118033988749895,
+   "z": -1.3326965145898668
+  },
+  {
+   "accuracy_sim": 0.49851,
+   "accuracy_theory": 0.5,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "perfect_correlation",
+   "n": 31,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 1.0,
+    "p": 0.5
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.5014,
+    0.49545,
+    0.5032,
+    0.49395,
+    0.5004,
+    0.49725,
+    0.4974,
+    0.4985,
+    0.49995,
+    0.4976
+   ],
+   "record_id": "CELL-0060",
+   "se_mc": 0.001118033988749895,
+   "z": -1.3326965145898668
+  },
+  {
+   "accuracy_sim": 0.551095,
+   "accuracy_theory": 0.55,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "independent",
+   "n": 1,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.0,
+    "p": 0.55
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.5514,
+    0.5493,
+    0.5519,
+    0.5472,
+    0.55905,
+    0.5442,
+    0.5469,
+    0.55265,
+    0.5566,
+    0.55175
+   ],
+   "record_id": "CELL-0061",
+   "se_mc": 0.0011124297730643494,
+   "z": 0.984331799196295
+  },
+  {
+   "accuracy_sim": 0.57651,
+   "accuracy_theory": 0.5747500000000001,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "independent",
+   "n": 3,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.0,
+    "p": 0.55
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.57405,
+    0.57395,
+    0.57585,
+    0.57165,
+    0.5823,
+    0.57515,
+    0.5773,
+    0.5747,
+    0.5837,
+    0.57645
+   ],
+   "record_id": "CELL-0062",
+   "se_mc": 0.001105469215989301,
+   "z": 1.592084134540845
+  },
+  {
+   "accuracy_sim": 0.59396,
+   "accuracy_theory": 0.593126875,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "independent",
+   "n": 5,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.0,
+    "p": 0.55
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.5934,
+    0.5934,
+    0.5898,
+    0.59,
+    0.6013,
+    0.58985,
+    0.5931,
+    0.59595,
+    0.5982,
+    0.5946
+   ],
+   "record_id": "CELL-0063",
+   "se_mc": 0.0010984702662173754,
+   "z": 0.7584411027063008
+  },
+  {
+   "accuracy_sim": 0.621985,
+   "accuracy_theory": 0.6214209454492188,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "independent",
+   "n": 9,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.0,
+    "p": 0.55
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.62015,
+    0.6231,
+    0.619,
+    0.62185,
+    0.62965,
+    0.61635,
+    0.6198,
+    0.6207,
+    0.62545,
+    0.6238
+   ],
+   "record_id": "CELL-0064",
+   "se_mc": 0.0010845666277509599,
+   "z": 0.5200736739898599
+  },
+  {
+   "accuracy_sim": 0.654295,
+   "accuracy_theory": 0.653503925147094,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "independent",
+   "n": 15,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.0,
+    "p": 0.55
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.6516,
+    0.6511,
+    0.6529,
+    0.654,
+    0.66115,
+    0.6576,
+    0.6548,
+    0.6462,
+    0.65795,
+    0.65565
+   ],
+   "record_id": "CELL-0065",
+   "se_mc": 0.0010640407533652914,
+   "z": 0.7434629269640297
+  },
+  {
+   "accuracy_sim": 0.715155,
+   "accuracy_theory": 0.7131799103884426,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "independent",
+   "n": 31,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.0,
+    "p": 0.55
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.7151,
+    0.71705,
+    0.7187,
+    0.7146,
+    0.718,
+    0.7143,
+    0.71085,
+    0.71135,
+    0.7153,
+    0.7163
+   ],
+   "record_id": "CELL-0066",
+   "se_mc": 0.0010113217238020143,
+   "z": 1.9529785280712584
+  },
+  {
+   "accuracy_sim": 0.5517,
+   "accuracy_theory": 0.55,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 1,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.25,
+    "p": 0.55
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.5573,
+    0.5468,
+    0.5538,
+    0.54805,
+    0.5561,
+    0.5468,
+    0.54745,
+    0.55015,
+    0.5575,
+    0.55305
+   ],
+   "record_id": "CELL-0067",
+   "se_mc": 0.0011124297730643494,
+   "z": 1.5281863549166137
+  },
+  {
+   "accuracy_sim": 0.57261,
+   "accuracy_theory": 0.5708828125000001,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 3,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.25,
+    "p": 0.55
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.57325,
+    0.5719,
+    0.57125,
+    0.5638,
+    0.5779,
+    0.5723,
+    0.5698,
+    0.57145,
+    0.58,
+    0.57445
+   ],
+   "record_id": "CELL-0068",
+   "se_mc": 0.001106742126450624,
+   "z": 1.56060518409927
+  },
+  {
+   "accuracy_sim": 0.584805,
+   "accuracy_theory": 0.5838171044921876,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 5,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.25,
+    "p": 0.55
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.58705,
+    0.5813,
+    0.58335,
+    0.58055,
+    0.5892,
+    0.5828,
+    0.5799,
+    0.58455,
+    0.5895,
+    0.58985
+   ],
+   "record_id": "CELL-0069",
+   "se_mc": 0.0011022129853039877,
+   "z": 0.8962836774599969
+  },
+  {
+   "accuracy_sim": 0.60017,
+   "accuracy_theory": 0.5987199235523286,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 9,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.25,
+    "p": 0.55
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.5986,
+    0.6002,
+    0.5965,
+    0.603,
+    0.60475,
+    0.602,
+    0.5949,
+    0.5955,
+    0.6024,
+    0.60385
+   ],
+   "record_id": "CELL-0070",
+   "se_mc": 0.0010960254939868471,
+   "z": 1.3230316772985287
+  },
+  {
+   "accuracy_sim": 0.60899,
+   "accuracy_theory": 0.6078971003186278,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 15,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.25,
+    "p": 0.55
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.61105,
+    0.6037,
+    0.60865,
+    0.6063,
+    0.61265,
+    0.61045,
+    0.6043,
+    0.60755,
+    0.61315,
+    0.6121
+   ],
+   "record_id": "CELL-0071",
+   "se_mc": 0.0010916918423777655,
+   "z": 1.0011063918842484
+  },
+  {
+   "accuracy_sim": 0.60641,
+   "accuracy_theory": 0.6057975275054609,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 31,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.25,
+    "p": 0.55
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.6066,
+    0.60215,
+    0.61035,
+    0.60505,
+    0.60815,
+    0.60915,
+    0.6023,
+    0.6064,
+    0.6064,
+    0.60755
+   ],
+   "record_id": "CELL-0072",
+   "se_mc": 0.0010927188183007814,
+   "z": 0.5605032916807678
+  },
+  {
+   "accuracy_sim": 0.550555,
+   "accuracy_theory": 0.55,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 1,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.5,
+    "p": 0.55
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.55635,
+    0.5468,
+    0.55715,
+    0.5447,
+    0.55295,
+    0.54465,
+    0.54755,
+    0.54835,
+    0.55525,
+    0.5518
+   ],
+   "record_id": "CELL-0073",
+   "se_mc": 0.0011124297730643494,
+   "z": 0.49890789822277415
+  },
+  {
+   "accuracy_sim": 0.562885,
+   "accuracy_theory": 0.5623750000000001,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 3,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.5,
+    "p": 0.55
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.5641,
+    0.56365,
+    0.5689,
+    0.55535,
+    0.56565,
+    0.56155,
+    0.5572,
+    0.5612,
+    0.56825,
+    0.563
+   ],
+   "record_id": "CELL-0074",
+   "se_mc": 0.0011093001383192017,
+   "z": 0.45974933418168085
+  },
+  {
+   "accuracy_sim": 0.565415,
+   "accuracy_theory": 0.5658206640625001,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 5,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.5,
+    "p": 0.55
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.56675,
+    0.56105,
+    0.57025,
+    0.55925,
+    0.569,
+    0.56835,
+    0.55965,
+    0.5665,
+    0.56635,
+    0.567
+   ],
+   "record_id": "CELL-0075",
+   "se_mc": 0.001108304200529736,
+   "z": -0.3660223089528969
+  },
+  {
+   "accuracy_sim": 0.564305,
+   "accuracy_theory": 0.5644009988735199,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 9,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.5,
+    "p": 0.55
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.56555,
+    0.5616,
+    0.568,
+    0.5579,
+    0.5681,
+    0.5662,
+    0.5597,
+    0.5636,
+    0.56715,
+    0.56525
+   ],
+   "record_id": "CELL-0076",
+   "se_mc": 0.0011087211356876282,
+   "z": -0.0865852290805534
+  },
+  {
+   "accuracy_sim": 0.558555,
+   "accuracy_theory": 0.558753890320397,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 15,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.5,
+    "p": 0.55
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.5595,
+    0.5561,
+    0.56455,
+    0.55345,
+    0.5623,
+    0.5583,
+    0.553,
+    0.559,
+    0.559,
+    0.56035
+   ],
+   "record_id": "CELL-0077",
+   "se_mc": 0.001110288206665771,
+   "z": -0.17913395747421967
+  },
+  {
+   "accuracy_sim": 0.550955,
+   "accuracy_theory": 0.551498048427185,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 31,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.5,
+    "p": 0.55
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.55325,
+    0.54815,
+    0.55545,
+    0.54575,
+    0.55395,
+    0.5509,
+    0.5464,
+    0.551,
+    0.5528,
+    0.5519
+   ],
+   "record_id": "CELL-0078",
+   "se_mc": 0.0011120880158696778,
+   "z": -0.48831425160204067
+  },
+  {
+   "accuracy_sim": 0.55108,
+   "accuracy_theory": 0.55,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 1,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.75,
+    "p": 0.55
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.55405,
+    0.5478,
+    0.55625,
+    0.54355,
+    0.55655,
+    0.5491,
+    0.5499,
+    0.5493,
+    0.5528,
+    0.5515
+   ],
+   "record_id": "CELL-0079",
+   "se_mc": 0.0011124297730643494,
+   "z": 0.9708478019470416
+  },
+  {
+   "accuracy_sim": 0.55329,
+   "accuracy_theory": 0.5538671875000001,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 3,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.75,
+    "p": 0.55
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.556,
+    0.5526,
+    0.5592,
+    0.5471,
+    0.557,
+    0.554,
+    0.54845,
+    0.55095,
+    0.5549,
+    0.5527
+   ],
+   "record_id": "CELL-0080",
+   "se_mc": 0.001111526711579258,
+   "z": -0.5192745203397433
+  },
+  {
+   "accuracy_sim": 0.552095,
+   "accuracy_theory": 0.552849150390625,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 5,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.75,
+    "p": 0.55
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.55305,
+    0.549,
+    0.5576,
+    0.5471,
+    0.554,
+    0.55275,
+    0.5478,
+    0.55255,
+    0.5541,
+    0.553
+   ],
+   "record_id": "CELL-0081",
+   "se_mc": 0.0011117710360118874,
+   "z": -0.6783324679245576
+  },
+  {
+   "accuracy_sim": 0.55035,
+   "accuracy_theory": 0.5508738195123819,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 9,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.75,
+    "p": 0.55
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.5519,
+    0.5478,
+    0.5546,
+    0.54485,
+    0.5533,
+    0.55035,
+    0.54585,
+    0.5506,
+    0.5523,
+    0.55195
+   ],
+   "record_id": "CELL-0082",
+   "se_mc": 0.0011122316631174945,
+   "z": -0.47096259686913816
+  },
+  {
+   "accuracy_sim": 0.54945,
+   "accuracy_theory": 0.5501057572891787,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 15,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.75,
+    "p": 0.55
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.55175,
+    0.5466,
+    0.55405,
+    0.5443,
+    0.5526,
+    0.54865,
+    0.5453,
+    0.54975,
+    0.55105,
+    0.55045
+   ],
+   "record_id": "CELL-0083",
+   "se_mc": 0.001112405980491111,
+   "z": -0.5894945736350256
+  },
+  {
+   "accuracy_sim": 0.549345,
+   "accuracy_theory": 0.5500002581198038,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 31,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.75,
+    "p": 0.55
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.55165,
+    0.5466,
+    0.55395,
+    0.5442,
+    0.55225,
+    0.5486,
+    0.54515,
+    0.54955,
+    0.5511,
+    0.5504
+   ],
+   "record_id": "CELL-0084",
+   "se_mc": 0.0011124297150560862,
+   "z": -0.5890332763816802
+  },
+  {
+   "accuracy_sim": 0.549345,
+   "accuracy_theory": 0.55,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "perfect_correlation",
+   "n": 1,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 1.0,
+    "p": 0.55
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.55165,
+    0.5466,
+    0.55395,
+    0.5442,
+    0.55225,
+    0.5486,
+    0.54515,
+    0.54955,
+    0.5511,
+    0.5504
+   ],
+   "record_id": "CELL-0085",
+   "se_mc": 0.0011124297730643494,
+   "z": -0.588801213217963
+  },
+  {
+   "accuracy_sim": 0.549345,
+   "accuracy_theory": 0.55,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "perfect_correlation",
+   "n": 3,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 1.0,
+    "p": 0.55
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.55165,
+    0.5466,
+    0.55395,
+    0.5442,
+    0.55225,
+    0.5486,
+    0.54515,
+    0.54955,
+    0.5511,
+    0.5504
+   ],
+   "record_id": "CELL-0086",
+   "se_mc": 0.0011124297730643494,
+   "z": -0.588801213217963
+  },
+  {
+   "accuracy_sim": 0.549345,
+   "accuracy_theory": 0.55,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "perfect_correlation",
+   "n": 5,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 1.0,
+    "p": 0.55
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.55165,
+    0.5466,
+    0.55395,
+    0.5442,
+    0.55225,
+    0.5486,
+    0.54515,
+    0.54955,
+    0.5511,
+    0.5504
+   ],
+   "record_id": "CELL-0087",
+   "se_mc": 0.0011124297730643494,
+   "z": -0.588801213217963
+  },
+  {
+   "accuracy_sim": 0.549345,
+   "accuracy_theory": 0.55,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "perfect_correlation",
+   "n": 9,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 1.0,
+    "p": 0.55
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.55165,
+    0.5466,
+    0.55395,
+    0.5442,
+    0.55225,
+    0.5486,
+    0.54515,
+    0.54955,
+    0.5511,
+    0.5504
+   ],
+   "record_id": "CELL-0088",
+   "se_mc": 0.0011124297730643494,
+   "z": -0.588801213217963
+  },
+  {
+   "accuracy_sim": 0.549345,
+   "accuracy_theory": 0.55,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "perfect_correlation",
+   "n": 15,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 1.0,
+    "p": 0.55
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.55165,
+    0.5466,
+    0.55395,
+    0.5442,
+    0.55225,
+    0.5486,
+    0.54515,
+    0.54955,
+    0.5511,
+    0.5504
+   ],
+   "record_id": "CELL-0089",
+   "se_mc": 0.0011124297730643494,
+   "z": -0.588801213217963
+  },
+  {
+   "accuracy_sim": 0.549345,
+   "accuracy_theory": 0.55,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "perfect_correlation",
+   "n": 31,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 1.0,
+    "p": 0.55
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.55165,
+    0.5466,
+    0.55395,
+    0.5442,
+    0.55225,
+    0.5486,
+    0.54515,
+    0.54955,
+    0.5511,
+    0.5504
+   ],
+   "record_id": "CELL-0090",
+   "se_mc": 0.0011124297730643494,
+   "z": -0.588801213217963
+  },
+  {
+   "accuracy_sim": 0.60026,
+   "accuracy_theory": 0.6,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "independent",
+   "n": 1,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.0,
+    "p": 0.6
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.6013,
+    0.60115,
+    0.6031,
+    0.59435,
+    0.6046,
+    0.59545,
+    0.59585,
+    0.6019,
+    0.60325,
+    0.60165
+   ],
+   "record_id": "CELL-0091",
+   "se_mc": 0.0010954451150103322,
+   "z": 0.23734644158560667
+  },
+  {
+   "accuracy_sim": 0.64892,
+   "accuracy_theory": 0.648,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "independent",
+   "n": 3,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.0,
+    "p": 0.6
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.6499,
+    0.64805,
+    0.6523,
+    0.64135,
+    0.65325,
+    0.6486,
+    0.64975,
+    0.6454,
+    0.6542,
+    0.6464
+   ],
+   "record_id": "CELL-0092",
+   "se_mc": 0.0010679325821417755,
+   "z": 0.8614776020363948
+  },
+  {
+   "accuracy_sim": 0.682685,
+   "accuracy_theory": 0.68256,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "independent",
+   "n": 5,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.0,
+    "p": 0.6
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.6848,
+    0.68185,
+    0.68435,
+    0.6781,
+    0.6868,
+    0.6795,
+    0.6817,
+    0.6826,
+    0.68485,
+    0.6823
+   ],
+   "record_id": "CELL-0093",
+   "se_mc": 0.0010408454409757484,
+   "z": 0.12009467984301257
+  },
+  {
+   "accuracy_sim": 0.73352,
+   "accuracy_theory": 0.73343232,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "independent",
+   "n": 9,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.0,
+    "p": 0.6
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.73275,
+    0.73405,
+    0.7318,
+    0.73225,
+    0.73765,
+    0.7319,
+    0.7316,
+    0.731,
+    0.7363,
+    0.7359
+   ],
+   "record_id": "CELL-0094",
+   "se_mc": 0.0009887096438778616,
+   "z": 0.08868124281263182
+  },
+  {
+   "accuracy_sim": 0.787745,
+   "accuracy_theory": 0.786896817389568,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "independent",
+   "n": 15,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.0,
+    "p": 0.6
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.7876,
+    0.78605,
+    0.7851,
+    0.7868,
+    0.7954,
+    0.79085,
+    0.78705,
+    0.7811,
+    0.7871,
+    0.7904
+   ],
+   "record_id": "CELL-0095",
+   "se_mc": 0.0009156697444268236,
+   "z": 0.926297516756984
+  },
+  {
+   "accuracy_sim": 0.87245,
+   "accuracy_theory": 0.8716182723048189,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "independent",
+   "n": 31,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.0,
+    "p": 0.6
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.87195,
+    0.8729,
+    0.87385,
+    0.87245,
+    0.873,
+    0.8739,
+    0.87005,
+    0.872,
+    0.87255,
+    0.87185
+   ],
+   "record_id": "CELL-0096",
+   "se_mc": 0.0007479968572433358,
+   "z": 1.1119400932328427
+  },
+  {
+   "accuracy_sim": 0.60097,
+   "accuracy_theory": 0.6,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 1,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.25,
+    "p": 0.6
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.6062,
+    0.59705,
+    0.605,
+    0.59655,
+    0.6038,
+    0.5965,
+    0.59805,
+    0.5994,
+    0.60455,
+    0.6026
+   ],
+   "record_id": "CELL-0097",
+   "se_mc": 0.0010954451150103322,
+   "z": 0.8854848013000427
+  },
+  {
+   "accuracy_sim": 0.64192,
+   "accuracy_theory": 0.6405000000000001,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 3,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.25,
+    "p": 0.6
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.6445,
+    0.6382,
+    0.644,
+    0.63315,
+    0.64505,
+    0.64235,
+    0.64005,
+    0.641,
+    0.64805,
+    0.64285
+   ],
+   "record_id": "CELL-0098",
+   "se_mc": 0.001072985903914865,
+   "z": 1.3234097436126666
+  },
+  {
+   "accuracy_sim": 0.66636,
+   "accuracy_theory": 0.66490125,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 5,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.25,
+    "p": 0.6
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.67015,
+    0.6645,
+    0.66645,
+    0.66165,
+    0.67055,
+    0.66335,
+    0.6636,
+    0.6654,
+    0.66895,
+    0.669
+   ],
+   "record_id": "CELL-0099",
+   "se_mc": 0.0010554799328941255,
+   "z": 1.3820726993833614
+  },
+  {
+   "accuracy_sim": 0.693735,
+   "accuracy_theory": 0.6921464258203125,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 9,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.25,
+    "p": 0.6
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.69475,
+    0.69385,
+    0.6925,
+    0.69665,
+    0.69715,
+    0.6913,
+    0.68875,
+    0.69145,
+    0.69555,
+    0.6954
+   ],
+   "record_id": "CELL-0100",
+   "se_mc": 0.001032181551483263,
+   "z": 1.5390453136899098
+  },
+  {
+   "accuracy_sim": 0.709855,
+   "accuracy_theory": 0.7085909059088968,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 15,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.25,
+    "p": 0.6
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.71285,
+    0.7067,
+    0.7104,
+    0.7093,
+    0.7129,
+    0.709,
+    0.7058,
+    0.709,
+    0.71015,
+    0.71245
+   ],
+   "record_id": "CELL-0101",
+   "se_mc": 0.001016095059460742,
+   "z": 1.2440706992257684
+  },
+  {
+   "accuracy_sim": 0.70922,
+   "accuracy_theory": 0.7090037742974932,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 31,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.25,
+    "p": 0.6
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.71,
+    0.70715,
+    0.71325,
+    0.7047,
+    0.71075,
+    0.7109,
+    0.7072,
+    0.7098,
+    0.70905,
+    0.7094
+   ],
+   "record_id": "CELL-0102",
+   "se_mc": 0.0010156707693179973,
+   "z": 0.21288955933228298
+  },
+  {
+   "accuracy_sim": 0.600165,
+   "accuracy_theory": 0.6,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 1,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.5,
+    "p": 0.6
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.60655,
+    0.5976,
+    0.6084,
+    0.5947,
+    0.6019,
+    0.5939,
+    0.5978,
+    0.59815,
+    0.6024,
+    0.60025
+   ],
+   "record_id": "CELL-0103",
+   "se_mc": 0.0010954451150103322,
+   "z": 0.15062370331389396
+  },
+  {
+   "accuracy_sim": 0.624505,
+   "accuracy_theory": 0.6239999999999999,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 3,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.5,
+    "p": 0.6
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.62645,
+    0.62625,
+    0.6308,
+    0.61805,
+    0.62755,
+    0.62325,
+    0.61905,
+    0.6238,
+    0.6269,
+    0.62295
+   ],
+   "record_id": "CELL-0104",
+   "se_mc": 0.0010831066429488835,
+   "z": 0.4662514105030024
+  },
+  {
+   "accuracy_sim": 0.63035,
+   "accuracy_theory": 0.63048,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 5,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.5,
+    "p": 0.6
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.6335,
+    0.6291,
+    0.6344,
+    0.6257,
+    0.6363,
+    0.63125,
+    0.6243,
+    0.63035,
+    0.6291,
+    0.6295
+   ],
+   "record_id": "CELL-0105",
+   "se_mc": 0.0010792936801445657,
+   "z": -0.1204491440945542
+  },
+  {
+   "accuracy_sim": 0.627415,
+   "accuracy_theory": 0.6277746,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 9,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.5,
+    "p": 0.6
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.63,
+    0.62745,
+    0.6308,
+    0.6227,
+    0.63035,
+    0.62735,
+    0.62245,
+    0.62885,
+    0.62685,
+    0.62735
+   ],
+   "record_id": "CELL-0106",
+   "se_mc": 0.001080910846450437,
+   "z": -0.3326823865084642
+  },
+  {
+   "accuracy_sim": 0.61767,
+   "accuracy_theory": 0.6174611661956159,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 15,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.5,
+    "p": 0.6
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.6191,
+    0.6165,
+    0.6224,
+    0.6158,
+    0.6221,
+    0.6145,
+    0.61165,
+    0.6202,
+    0.6164,
+    0.61805
+   ],
+   "record_id": "CELL-0107",
+   "se_mc": 0.001086744851462306,
+   "z": 0.19216452150952124
+  },
+  {
+   "accuracy_sim": 0.603365,
+   "accuracy_theory": 0.6037632813935362,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 31,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.5,
+    "p": 0.6
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.60605,
+    0.6014,
+    0.60875,
+    0.5995,
+    0.60705,
+    0.6009,
+    0.59835,
+    0.605,
+    0.6042,
+    0.60245
+   ],
+   "record_id": "CELL-0108",
+   "se_mc": 0.0010936936989725365,
+   "z": -0.36416173368312477
+  },
+  {
+   "accuracy_sim": 0.600815,
+   "accuracy_theory": 0.6,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 1,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.75,
+    "p": 0.6
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.6058,
+    0.59945,
+    0.60735,
+    0.59425,
+    0.6063,
+    0.59695,
+    0.59955,
+    0.59965,
+    0.59915,
+    0.5997
+   ],
+   "record_id": "CELL-0109",
+   "se_mc": 0.0010954451150103322,
+   "z": 0.7439898072778599
+  },
+  {
+   "accuracy_sim": 0.606595,
+   "accuracy_theory": 0.6074999999999999,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 3,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.75,
+    "p": 0.6
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.61,
+    0.6075,
+    0.6135,
+    0.6012,
+    0.61145,
+    0.605,
+    0.60095,
+    0.60585,
+    0.60565,
+    0.60485
+   ],
+   "record_id": "CELL-0110",
+   "se_mc": 0.0010918877002695836,
+   "z": -0.8288398154649897
+  },
+  {
+   "accuracy_sim": 0.604695,
+   "accuracy_theory": 0.6055087499999999,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 5,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.75,
+    "p": 0.6
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.60685,
+    0.60295,
+    0.61035,
+    0.60115,
+    0.6082,
+    0.6028,
+    0.6006,
+    0.60595,
+    0.60465,
+    0.60345
+   ],
+   "record_id": "CELL-0111",
+   "se_mc": 0.001092858416432425,
+   "z": -0.7446069753997848
+  },
+  {
+   "accuracy_sim": 0.601105,
+   "accuracy_theory": 0.6017169132421875,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 9,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.75,
+    "p": 0.6
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.60355,
+    0.59975,
+    0.60615,
+    0.59695,
+    0.60515,
+    0.59895,
+    0.596,
+    0.60225,
+    0.6014,
+    0.6009
+   ],
+   "record_id": "CELL-0112",
+   "se_mc": 0.0010946544421882216,
+   "z": -0.5590012871680652
+  },
+  {
+   "accuracy_sim": 0.599425,
+   "accuracy_theory": 0.6002236677902945,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 15,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.75,
+    "p": 0.6
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.60255,
+    0.5977,
+    0.60475,
+    0.5958,
+    0.60335,
+    0.5965,
+    0.5948,
+    0.6006,
+    0.5995,
+    0.5987
+   ],
+   "record_id": "CELL-0113",
+   "se_mc": 0.0010953429061592098,
+   "z": -0.7291486399405084
+  },
+  {
+   "accuracy_sim": 0.59919,
+   "accuracy_theory": 0.6000008097962085,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 31,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.75,
+    "p": 0.6
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.60245,
+    0.59765,
+    0.6045,
+    0.5955,
+    0.6029,
+    0.5961,
+    0.5945,
+    0.6003,
+    0.59945,
+    0.59855
+   ],
+   "record_id": "CELL-0114",
+   "se_mc": 0.0010954447453890646,
+   "z": -0.7401649417931522
+  },
+  {
+   "accuracy_sim": 0.59919,
+   "accuracy_theory": 0.6,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "perfect_correlation",
+   "n": 1,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 1.0,
+    "p": 0.6
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.60245,
+    0.59765,
+    0.6045,
+    0.5955,
+    0.6029,
+    0.5961,
+    0.5945,
+    0.6003,
+    0.59945,
+    0.59855
+   ],
+   "record_id": "CELL-0115",
+   "se_mc": 0.0010954451150103322,
+   "z": -0.7394254526319536
+  },
+  {
+   "accuracy_sim": 0.59919,
+   "accuracy_theory": 0.6,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "perfect_correlation",
+   "n": 3,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 1.0,
+    "p": 0.6
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.60245,
+    0.59765,
+    0.6045,
+    0.5955,
+    0.6029,
+    0.5961,
+    0.5945,
+    0.6003,
+    0.59945,
+    0.59855
+   ],
+   "record_id": "CELL-0116",
+   "se_mc": 0.0010954451150103322,
+   "z": -0.7394254526319536
+  },
+  {
+   "accuracy_sim": 0.59919,
+   "accuracy_theory": 0.6,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "perfect_correlation",
+   "n": 5,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 1.0,
+    "p": 0.6
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.60245,
+    0.59765,
+    0.6045,
+    0.5955,
+    0.6029,
+    0.5961,
+    0.5945,
+    0.6003,
+    0.59945,
+    0.59855
+   ],
+   "record_id": "CELL-0117",
+   "se_mc": 0.0010954451150103322,
+   "z": -0.7394254526319536
+  },
+  {
+   "accuracy_sim": 0.59919,
+   "accuracy_theory": 0.6,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "perfect_correlation",
+   "n": 9,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 1.0,
+    "p": 0.6
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.60245,
+    0.59765,
+    0.6045,
+    0.5955,
+    0.6029,
+    0.5961,
+    0.5945,
+    0.6003,
+    0.59945,
+    0.59855
+   ],
+   "record_id": "CELL-0118",
+   "se_mc": 0.0010954451150103322,
+   "z": -0.7394254526319536
+  },
+  {
+   "accuracy_sim": 0.59919,
+   "accuracy_theory": 0.6,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "perfect_correlation",
+   "n": 15,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 1.0,
+    "p": 0.6
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.60245,
+    0.59765,
+    0.6045,
+    0.5955,
+    0.6029,
+    0.5961,
+    0.5945,
+    0.6003,
+    0.59945,
+    0.59855
+   ],
+   "record_id": "CELL-0119",
+   "se_mc": 0.0010954451150103322,
+   "z": -0.7394254526319536
+  },
+  {
+   "accuracy_sim": 0.59919,
+   "accuracy_theory": 0.6,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "perfect_correlation",
+   "n": 31,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 1.0,
+    "p": 0.6
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.60245,
+    0.59765,
+    0.6045,
+    0.5955,
+    0.6029,
+    0.5961,
+    0.5945,
+    0.6003,
+    0.59945,
+    0.59855
+   ],
+   "record_id": "CELL-0120",
+   "se_mc": 0.0010954451150103322,
+   "z": -0.7394254526319536
+  },
+  {
+   "accuracy_sim": 0.79944,
+   "accuracy_theory": 0.8,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "independent",
+   "n": 1,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.0,
+    "p": 0.8
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.80075,
+    0.79925,
+    0.79935,
+    0.79885,
+    0.8011,
+    0.79925,
+    0.7963,
+    0.8011,
+    0.8004,
+    0.79805
+   ],
+   "record_id": "CELL-0121",
+   "se_mc": 0.0008944271909999158,
+   "z": -0.6260990336999467
+  },
+  {
+   "accuracy_sim": 0.89642,
+   "accuracy_theory": 0.8960000000000001,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "independent",
+   "n": 3,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.0,
+    "p": 0.8
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.8992,
+    0.89665,
+    0.8984,
+    0.8933,
+    0.89685,
+    0.89525,
+    0.8939,
+    0.8952,
+    0.8985,
+    0.89695
+   ],
+   "record_id": "CELL-0122",
+   "se_mc": 0.000682583328246449,
+   "z": 0.6153094906065777
+  },
+  {
+   "accuracy_sim": 0.94266,
+   "accuracy_theory": 0.94208,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "independent",
+   "n": 5,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.0,
+    "p": 0.8
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.94555,
+    0.94275,
+    0.9447,
+    0.9397,
+    0.9421,
+    0.94015,
+    0.9426,
+    0.9421,
+    0.9431,
+    0.94385
+   ],
+   "record_id": "CELL-0123",
+   "se_mc": 0.0005223278357506901,
+   "z": 1.1104137292749263
+  },
+  {
+   "accuracy_sim": 0.98084,
+   "accuracy_theory": 0.98041856,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "independent",
+   "n": 9,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.0,
+    "p": 0.8
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.98155,
+    0.9807,
+    0.98045,
+    0.9802,
+    0.98255,
+    0.9804,
+    0.98015,
+    0.98005,
+    0.9815,
+    0.98085
+   ],
+   "record_id": "CELL-0124",
+   "se_mc": 0.0003098225880042186,
+   "z": 1.3602623447011448
+  },
+  {
+   "accuracy_sim": 0.99577,
+   "accuracy_theory": 0.995760250290176,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "independent",
+   "n": 15,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.0,
+    "p": 0.8
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.9965,
+    0.99565,
+    0.9961,
+    0.9949,
+    0.99575,
+    0.9955,
+    0.9959,
+    0.9952,
+    0.99585,
+    0.99635
+   ],
+   "record_id": "CELL-0125",
+   "se_mc": 0.00014528892305028005,
+   "z": 0.06710566517629253
+  },
+  {
+   "accuracy_sim": 0.99992,
+   "accuracy_theory": 0.9999118450479717,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "independent",
+   "n": 31,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.0,
+    "p": 0.8
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.99995,
+    0.9999,
+    0.99995,
+    1.0,
+    0.99985,
+    1.0,
+    0.9998,
+    0.9998,
+    0.99995,
+    1.0
+   ],
+   "record_id": "CELL-0126",
+   "se_mc": 2.0993711050303774e-05,
+   "z": 0.3884473787786795
+  },
+  {
+   "accuracy_sim": 0.80033,
+   "accuracy_theory": 0.8,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 1,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.25,
+    "p": 0.8
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.8039,
+    0.79805,
+    0.8006,
+    0.79975,
+    0.802,
+    0.7989,
+    0.79745,
+    0.79925,
+    0.8016,
+    0.8018
+   ],
+   "record_id": "CELL-0127",
+   "se_mc": 0.0008944271909999158,
+   "z": 0.36895121628739985
+  },
+  {
+   "accuracy_sim": 0.881895,
+   "accuracy_theory": 0.8810000000000001,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 3,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.25,
+    "p": 0.8
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.8845,
+    0.8823,
+    0.8824,
+    0.87655,
+    0.88305,
+    0.88065,
+    0.87925,
+    0.8801,
+    0.8848,
+    0.88535
+   ],
+   "record_id": "CELL-0128",
+   "se_mc": 0.0007240131214280577,
+   "z": 1.2361654416353014
+  },
+  {
+   "accuracy_sim": 0.91592,
+   "accuracy_theory": 0.9152225,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 5,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.25,
+    "p": 0.8
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.91885,
+    0.91785,
+    0.9151,
+    0.91315,
+    0.9158,
+    0.913,
+    0.91495,
+    0.91505,
+    0.9175,
+    0.91795
+   ],
+   "record_id": "CELL-0129",
+   "se_mc": 0.0006228574294882816,
+   "z": 1.1198389342051338
+  },
+  {
+   "accuracy_sim": 0.94345,
+   "accuracy_theory": 0.9421835335156249,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 9,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.25,
+    "p": 0.8
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.9443,
+    0.94355,
+    0.94165,
+    0.94275,
+    0.94155,
+    0.94275,
+    0.9411,
+    0.9441,
+    0.9465,
+    0.94625
+   ],
+   "record_id": "CELL-0130",
+   "se_mc": 0.000521889464770253,
+   "z": 2.426694865229064
+  },
+  {
+   "accuracy_sim": 0.95668,
+   "accuracy_theory": 0.9568916780317632,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 15,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.25,
+    "p": 0.8
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.9577,
+    0.956,
+    0.9567,
+    0.95715,
+    0.95585,
+    0.9551,
+    0.95385,
+    0.95665,
+    0.9584,
+    0.9594
+   ],
+   "record_id": "CELL-0131",
+   "se_mc": 0.00045414752308759544,
+   "z": -0.4660997165064873
+  },
+  {
+   "accuracy_sim": 0.973995,
+   "accuracy_theory": 0.9743220266471035,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 31,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.25,
+    "p": 0.8
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.97395,
+    0.9748,
+    0.97365,
+    0.97555,
+    0.9729,
+    0.97355,
+    0.97225,
+    0.975,
+    0.97465,
+    0.97365
+   ],
+   "record_id": "CELL-0132",
+   "se_mc": 0.00035368499429142025,
+   "z": -0.9246268639659475
+  },
+  {
+   "accuracy_sim": 0.80004,
+   "accuracy_theory": 0.8,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 1,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.5,
+    "p": 0.8
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.8048,
+    0.7998,
+    0.8006,
+    0.79725,
+    0.8016,
+    0.79795,
+    0.7985,
+    0.79865,
+    0.80035,
+    0.8009
+   ],
+   "record_id": "CELL-0133",
+   "se_mc": 0.0008944271909999158,
+   "z": 0.0447213595499164
+  },
+  {
+   "accuracy_sim": 0.84914,
+   "accuracy_theory": 0.8480000000000001,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 3,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.5,
+    "p": 0.8
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.8522,
+    0.8511,
+    0.84915,
+    0.8447,
+    0.8494,
+    0.8459,
+    0.84605,
+    0.8486,
+    0.85205,
+    0.85225
+   ],
+   "record_id": "CELL-0134",
+   "se_mc": 0.0008027951170753343,
+   "z": 1.4200385325624014
+  },
+  {
+   "accuracy_sim": 0.85738,
+   "accuracy_theory": 0.8566400000000001,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 5,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.5,
+    "p": 0.8
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.8596,
+    0.85715,
+    0.85785,
+    0.85195,
+    0.8561,
+    0.8556,
+    0.85545,
+    0.8598,
+    0.86045,
+    0.85985
+   ],
+   "record_id": "CELL-0135",
+   "se_mc": 0.0007836067585211346,
+   "z": 0.9443512220294414
+  },
+  {
+   "accuracy_sim": 0.85391,
+   "accuracy_theory": 0.8526008,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 9,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.5,
+    "p": 0.8
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.8559,
+    0.85375,
+    0.85315,
+    0.85025,
+    0.85335,
+    0.8516,
+    0.8497,
+    0.8579,
+    0.85445,
+    0.85905
+   ],
+   "record_id": "CELL-0136",
+   "se_mc": 0.000792693748680283,
+   "z": 1.6515836061272366
+  },
+  {
+   "accuracy_sim": 0.84309,
+   "accuracy_theory": 0.842593736611712,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 15,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.5,
+    "p": 0.8
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.84555,
+    0.8437,
+    0.84415,
+    0.8407,
+    0.84385,
+    0.83915,
+    0.83845,
+    0.8449,
+    0.84325,
+    0.8472
+   ],
+   "record_id": "CELL-0137",
+   "se_mc": 0.0008143387858699378,
+   "z": 0.6094065478630787
+  },
+  {
+   "accuracy_sim": 0.825745,
+   "accuracy_theory": 0.8256763400580737,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 31,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.5,
+    "p": 0.8
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.8275,
+    0.8264,
+    0.82615,
+    0.8201,
+    0.8275,
+    0.823,
+    0.8227,
+    0.8281,
+    0.8274,
+    0.8286
+   ],
+   "record_id": "CELL-0138",
+   "se_mc": 0.0008483363764638941,
+   "z": 0.08093480820954503
+  },
+  {
+   "accuracy_sim": 0.800215,
+   "accuracy_theory": 0.8,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 1,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.75,
+    "p": 0.8
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.8024,
+    0.80095,
+    0.80045,
+    0.7959,
+    0.80265,
+    0.79645,
+    0.8004,
+    0.79965,
+    0.8022,
+    0.8011
+   ],
+   "record_id": "CELL-0139",
+   "se_mc": 0.0008944271909999158,
+   "z": 0.24037730758118853
+  },
+  {
+   "accuracy_sim": 0.814845,
+   "accuracy_theory": 0.8150000000000001,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 3,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.75,
+    "p": 0.8
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.8164,
+    0.81655,
+    0.81515,
+    0.8093,
+    0.81705,
+    0.81205,
+    0.813,
+    0.8153,
+    0.81645,
+    0.8172
+   ],
+   "record_id": "CELL-0140",
+   "se_mc": 0.0008682597537603594,
+   "z": -0.1785180060790845
+  },
+  {
+   "accuracy_sim": 0.810295,
+   "accuracy_theory": 0.8106574999999999,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 5,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.75,
+    "p": 0.8
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.8115,
+    0.81105,
+    0.8113,
+    0.80325,
+    0.81245,
+    0.8072,
+    0.8086,
+    0.8116,
+    0.81305,
+    0.81295
+   ],
+   "record_id": "CELL-0141",
+   "se_mc": 0.0008760477090140412,
+   "z": -0.41379024940081455
+  },
+  {
+   "accuracy_sim": 0.80393,
+   "accuracy_theory": 0.803889710234375,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 9,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.75,
+    "p": 0.8
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.8051,
+    0.8048,
+    0.8051,
+    0.79755,
+    0.80585,
+    0.801,
+    0.80095,
+    0.80505,
+    0.8069,
+    0.807
+   ],
+   "record_id": "CELL-0142",
+   "se_mc": 0.000887837383797471,
+   "z": 0.04537966789892426
+  },
+  {
+   "accuracy_sim": 0.800825,
+   "accuracy_theory": 0.8008478035760945,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 15,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.75,
+    "p": 0.8
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.8025,
+    0.80105,
+    0.8021,
+    0.79525,
+    0.80305,
+    0.79695,
+    0.7983,
+    0.80215,
+    0.8032,
+    0.8037
+   ],
+   "record_id": "CELL-0143",
+   "se_mc": 0.0008930022370728968,
+   "z": -0.025535855508343617
+  },
+  {
+   "accuracy_sim": 0.799905,
+   "accuracy_theory": 0.8000176309902277,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "common_shock",
+   "n": 31,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 0.75,
+    "p": 0.8
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.80175,
+    0.8001,
+    0.8011,
+    0.79415,
+    0.8018,
+    0.796,
+    0.79765,
+    0.8012,
+    0.80245,
+    0.80285
+   ],
+   "record_id": "CELL-0144",
+   "se_mc": 0.0008943976215727866,
+   "z": -0.12592943844112137
+  },
+  {
+   "accuracy_sim": 0.799895,
+   "accuracy_theory": 0.8,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "perfect_correlation",
+   "n": 1,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 1.0,
+    "p": 0.8
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.80175,
+    0.8001,
+    0.80105,
+    0.79415,
+    0.8018,
+    0.796,
+    0.79765,
+    0.8012,
+    0.8024,
+    0.80285
+   ],
+   "record_id": "CELL-0145",
+   "se_mc": 0.0008944271909999158,
+   "z": -0.11739356881876328
+  },
+  {
+   "accuracy_sim": 0.799895,
+   "accuracy_theory": 0.8,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "perfect_correlation",
+   "n": 3,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 1.0,
+    "p": 0.8
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.80175,
+    0.8001,
+    0.80105,
+    0.79415,
+    0.8018,
+    0.796,
+    0.79765,
+    0.8012,
+    0.8024,
+    0.80285
+   ],
+   "record_id": "CELL-0146",
+   "se_mc": 0.0008944271909999158,
+   "z": -0.11739356881876328
+  },
+  {
+   "accuracy_sim": 0.799895,
+   "accuracy_theory": 0.8,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "perfect_correlation",
+   "n": 5,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 1.0,
+    "p": 0.8
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.80175,
+    0.8001,
+    0.80105,
+    0.79415,
+    0.8018,
+    0.796,
+    0.79765,
+    0.8012,
+    0.8024,
+    0.80285
+   ],
+   "record_id": "CELL-0147",
+   "se_mc": 0.0008944271909999158,
+   "z": -0.11739356881876328
+  },
+  {
+   "accuracy_sim": 0.799895,
+   "accuracy_theory": 0.8,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "perfect_correlation",
+   "n": 9,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 1.0,
+    "p": 0.8
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.80175,
+    0.8001,
+    0.80105,
+    0.79415,
+    0.8018,
+    0.796,
+    0.79765,
+    0.8012,
+    0.8024,
+    0.80285
+   ],
+   "record_id": "CELL-0148",
+   "se_mc": 0.0008944271909999158,
+   "z": -0.11739356881876328
+  },
+  {
+   "accuracy_sim": 0.799895,
+   "accuracy_theory": 0.8,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "perfect_correlation",
+   "n": 15,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 1.0,
+    "p": 0.8
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.80175,
+    0.8001,
+    0.80105,
+    0.79415,
+    0.8018,
+    0.796,
+    0.79765,
+    0.8012,
+    0.8024,
+    0.80285
+   ],
+   "record_id": "CELL-0149",
+   "se_mc": 0.0008944271909999158,
+   "z": -0.11739356881876328
+  },
+  {
+   "accuracy_sim": 0.799895,
+   "accuracy_theory": 0.8,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "perfect_correlation",
+   "n": 31,
+   "n_items_total": 200000,
+   "params": {
+    "lambda": 1.0,
+    "p": 0.8
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.80175,
+    0.8001,
+    0.80105,
+    0.79415,
+    0.8018,
+    0.796,
+    0.79765,
+    0.8012,
+    0.8024,
+    0.80285
+   ],
+   "record_id": "CELL-0150",
+   "se_mc": 0.0008944271909999158,
+   "z": -0.11739356881876328
+  },
+  {
+   "accuracy_sim": 0.65974,
+   "accuracy_theory": 0.66,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "mixture",
+   "n": 1,
+   "n_items_total": 200000,
+   "params": {
+    "h": 0.4,
+    "lambda": 0.0,
+    "p_easy": 0.9,
+    "p_hard": 0.3,
+    "scenario": "S4"
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.6601,
+    0.6612,
+    0.6586,
+    0.65845,
+    0.66585,
+    0.6587,
+    0.66145,
+    0.6577,
+    0.65565,
+    0.6597
+   ],
+   "record_id": "CELL-0151",
+   "se_mc": 0.0010592450141492288,
+   "z": -0.2454578464160782
+  },
+  {
+   "accuracy_sim": 0.66981,
+   "accuracy_theory": 0.6696000000000001,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "mixture",
+   "n": 3,
+   "n_items_total": 200000,
+   "params": {
+    "h": 0.4,
+    "lambda": 0.0,
+    "p_easy": 0.9,
+    "p_hard": 0.3,
+    "scenario": "S4"
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.6695,
+    0.66735,
+    0.6691,
+    0.6619,
+    0.67505,
+    0.6691,
+    0.67035,
+    0.6723,
+    0.67,
+    0.67345
+   ],
+   "record_id": "CELL-0152",
+   "se_mc": 0.001051750540765252,
+   "z": 0.19966711863740694
+  },
+  {
+   "accuracy_sim": 0.659155,
+   "accuracy_theory": 0.6600959999999999,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "mixture",
+   "n": 5,
+   "n_items_total": 200000,
+   "params": {
+    "h": 0.4,
+    "lambda": 0.0,
+    "p_easy": 0.9,
+    "p_hard": 0.3,
+    "scenario": "S4"
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.65605,
+    0.65765,
+    0.6585,
+    0.65135,
+    0.6623,
+    0.6603,
+    0.66285,
+    0.66145,
+    0.65725,
+    0.66385
+   ],
+   "record_id": "CELL-0153",
+   "se_mc": 0.0010591724854432352,
+   "z": -0.8884294229056332
+  },
+  {
+   "accuracy_sim": 0.63861,
+   "accuracy_theory": 0.638988912,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "mixture",
+   "n": 9,
+   "n_items_total": 200000,
+   "params": {
+    "h": 0.4,
+    "lambda": 0.0,
+    "p_easy": 0.9,
+    "p_hard": 0.3,
+    "scenario": "S4"
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.63545,
+    0.63595,
+    0.6377,
+    0.6316,
+    0.6435,
+    0.6423,
+    0.642,
+    0.63985,
+    0.6364,
+    0.64135
+   ],
+   "record_id": "CELL-0154",
+   "se_mc": 0.0010739694649780696,
+   "z": -0.3528145001847803
+  },
+  {
+   "accuracy_sim": 0.618375,
+   "accuracy_theory": 0.6199848410887295,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "mixture",
+   "n": 15,
+   "n_items_total": 200000,
+   "params": {
+    "h": 0.4,
+    "lambda": 0.0,
+    "p_easy": 0.9,
+    "p_hard": 0.3,
+    "scenario": "S4"
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.61565,
+    0.6148,
+    0.61675,
+    0.60985,
+    0.6231,
+    0.62585,
+    0.6222,
+    0.61995,
+    0.61495,
+    0.62065
+   ],
+   "record_id": "CELL-0155",
+   "se_mc": 0.0010853654635856816,
+   "z": -1.48322490694623
+  },
+  {
+   "accuracy_sim": 0.601745,
+   "accuracy_theory": 0.6038161702540314,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "mixture",
+   "n": 31,
+   "n_items_total": 200000,
+   "params": {
+    "h": 0.4,
+    "lambda": 0.0,
+    "p_easy": 0.9,
+    "p_hard": 0.3,
+    "scenario": "S4"
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.59965,
+    0.59855,
+    0.6009,
+    0.59395,
+    0.6063,
+    0.60625,
+    0.60525,
+    0.60505,
+    0.59765,
+    0.6039
+   ],
+   "record_id": "CELL-0156",
+   "se_mc": 0.001093668603357036,
+   "z": -1.893782309992239
+  },
+  {
+   "accuracy_sim": 0.659335,
+   "accuracy_theory": 0.66,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "mixture",
+   "n": 1,
+   "n_items_total": 200000,
+   "params": {
+    "h": 0.4,
+    "lambda": 0.25,
+    "p_easy": 0.9,
+    "p_hard": 0.3,
+    "scenario": "S4"
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.65975,
+    0.6591,
+    0.6569,
+    0.6581,
+    0.6624,
+    0.65785,
+    0.6603,
+    0.65945,
+    0.6583,
+    0.6612
+   ],
+   "record_id": "CELL-0157",
+   "se_mc": 0.0010592450141492288,
+   "z": -0.6278056456410566
+  },
+  {
+   "accuracy_sim": 0.66697,
+   "accuracy_theory": 0.6681,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "mixture",
+   "n": 3,
+   "n_items_total": 200000,
+   "params": {
+    "h": 0.4,
+    "lambda": 0.25,
+    "p_easy": 0.9,
+    "p_hard": 0.3,
+    "scenario": "S4"
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.66705,
+    0.66385,
+    0.6659,
+    0.658,
+    0.67,
+    0.66645,
+    0.6665,
+    0.6707,
+    0.66965,
+    0.6716
+   ],
+   "record_id": "CELL-0158",
+   "se_mc": 0.0010529539163705124,
+   "z": -1.073171372869895
+  },
+  {
+   "accuracy_sim": 0.660975,
+   "accuracy_theory": 0.662592,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "mixture",
+   "n": 5,
+   "n_items_total": 200000,
+   "params": {
+    "h": 0.4,
+    "lambda": 0.25,
+    "p_easy": 0.9,
+    "p_hard": 0.3,
+    "scenario": "S4"
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.65825,
+    0.66105,
+    0.66005,
+    0.6542,
+    0.6629,
+    0.662,
+    0.6621,
+    0.6638,
+    0.6591,
+    0.6663
+   ],
+   "record_id": "CELL-0159",
+   "se_mc": 0.001057269694865033,
+   "z": -1.5294110933600529
+  },
+  {
+   "accuracy_sim": 0.652005,
+   "accuracy_theory": 0.6535247302932128,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "mixture",
+   "n": 9,
+   "n_items_total": 200000,
+   "params": {
+    "h": 0.4,
+    "lambda": 0.25,
+    "p_easy": 0.9,
+    "p_hard": 0.3,
+    "scenario": "S4"
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.64995,
+    0.64905,
+    0.649,
+    0.6448,
+    0.65515,
+    0.65665,
+    0.6546,
+    0.65595,
+    0.64935,
+    0.65555
+   ],
+   "record_id": "CELL-0160",
+   "se_mc": 0.00106402574496202,
+   "z": -1.4282833854429773
+  },
+  {
+   "accuracy_sim": 0.64655,
+   "accuracy_theory": 0.6485170853074915,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "mixture",
+   "n": 15,
+   "n_items_total": 200000,
+   "params": {
+    "h": 0.4,
+    "lambda": 0.25,
+    "p_easy": 0.9,
+    "p_hard": 0.3,
+    "scenario": "S4"
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.6442,
+    0.6439,
+    0.6455,
+    0.63905,
+    0.6505,
+    0.65175,
+    0.65015,
+    0.65025,
+    0.6428,
+    0.6474
+   ],
+   "record_id": "CELL-0161",
+   "se_mc": 0.0010675735931816768,
+   "z": -1.842575837445629
+  },
+  {
+   "accuracy_sim": 0.643435,
+   "accuracy_theory": 0.6455631716372754,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "mixture",
+   "n": 31,
+   "n_items_total": 200000,
+   "params": {
+    "h": 0.4,
+    "lambda": 0.25,
+    "p_easy": 0.9,
+    "p_hard": 0.3,
+    "scenario": "S4"
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.6409,
+    0.64145,
+    0.6433,
+    0.6358,
+    0.647,
+    0.64645,
+    0.6486,
+    0.6479,
+    0.6385,
+    0.64445
+   ],
+   "record_id": "CELL-0162",
+   "se_mc": 0.0010696059158935526,
+   "z": -1.989678259677097
+  },
+  {
+   "accuracy_sim": 0.65939,
+   "accuracy_theory": 0.66,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "mixture",
+   "n": 1,
+   "n_items_total": 200000,
+   "params": {
+    "h": 0.4,
+    "lambda": 0.5,
+    "p_easy": 0.9,
+    "p_hard": 0.3,
+    "scenario": "S4"
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.65835,
+    0.66055,
+    0.65705,
+    0.6567,
+    0.6612,
+    0.65785,
+    0.6641,
+    0.6626,
+    0.6568,
+    0.6587
+   ],
+   "record_id": "CELL-0163",
+   "se_mc": 0.0010592450141492288,
+   "z": -0.5758818704376373
+  },
+  {
+   "accuracy_sim": 0.66349,
+   "accuracy_theory": 0.6648,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "mixture",
+   "n": 3,
+   "n_items_total": 200000,
+   "params": {
+    "h": 0.4,
+    "lambda": 0.5,
+    "p_easy": 0.9,
+    "p_hard": 0.3,
+    "scenario": "S4"
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.6635,
+    0.66085,
+    0.6618,
+    0.65755,
+    0.66545,
+    0.6643,
+    0.66505,
+    0.66785,
+    0.6626,
+    0.66595
+   ],
+   "record_id": "CELL-0164",
+   "se_mc": 0.0010555589988247933,
+   "z": -1.2410485832231177
+  },
+  {
+   "accuracy_sim": 0.66129,
+   "accuracy_theory": 0.6630179999999999,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "mixture",
+   "n": 5,
+   "n_items_total": 200000,
+   "params": {
+    "h": 0.4,
+    "lambda": 0.5,
+    "p_easy": 0.9,
+    "p_hard": 0.3,
+    "scenario": "S4"
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.6584,
+    0.6605,
+    0.6595,
+    0.65565,
+    0.662,
+    0.6636,
+    0.66145,
+    0.6667,
+    0.6589,
+    0.6662
+   ],
+   "record_id": "CELL-0165",
+   "se_mc": 0.0010569416532524396,
+   "z": -1.6349057629457677
+  },
+  {
+   "accuracy_sim": 0.66203,
+   "accuracy_theory": 0.6636665146874999,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "mixture",
+   "n": 9,
+   "n_items_total": 200000,
+   "params": {
+    "h": 0.4,
+    "lambda": 0.5,
+    "p_easy": 0.9,
+    "p_hard": 0.3,
+    "scenario": "S4"
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.6608,
+    0.65985,
+    0.6603,
+    0.65725,
+    0.66485,
+    0.66405,
+    0.66105,
+    0.669,
+    0.65845,
+    0.6647
+   ],
+   "record_id": "CELL-0166",
+   "se_mc": 0.0010564404194512021,
+   "z": -1.5490837508376076
+  },
+  {
+   "accuracy_sim": 0.66547,
+   "accuracy_theory": 0.6673726199072969,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "mixture",
+   "n": 15,
+   "n_items_total": 200000,
+   "params": {
+    "h": 0.4,
+    "lambda": 0.5,
+    "p_easy": 0.9,
+    "p_hard": 0.3,
+    "scenario": "S4"
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.66595,
+    0.6632,
+    0.6658,
+    0.6614,
+    0.66585,
+    0.66765,
+    0.66545,
+    0.67135,
+    0.6611,
+    0.66695
+   ],
+   "record_id": "CELL-0167",
+   "se_mc": 0.0010535331179069966,
+   "z": -1.805942191050189
+  },
+  {
+   "accuracy_sim": 0.67019,
+   "accuracy_theory": 0.6721252772165786,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "mixture",
+   "n": 31,
+   "n_items_total": 200000,
+   "params": {
+    "h": 0.4,
+    "lambda": 0.5,
+    "p_easy": 0.9,
+    "p_hard": 0.3,
+    "scenario": "S4"
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.669,
+    0.668,
+    0.6702,
+    0.66585,
+    0.6707,
+    0.67255,
+    0.6703,
+    0.6776,
+    0.66705,
+    0.67065
+   ],
+   "record_id": "CELL-0168",
+   "se_mc": 0.0010496973109975943,
+   "z": -1.843652638053711
+  },
+  {
+   "accuracy_sim": 0.658445,
+   "accuracy_theory": 0.66,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "mixture",
+   "n": 1,
+   "n_items_total": 200000,
+   "params": {
+    "h": 0.4,
+    "lambda": 0.75,
+    "p_easy": 0.9,
+    "p_hard": 0.3,
+    "scenario": "S4"
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.65495,
+    0.65945,
+    0.6562,
+    0.65675,
+    0.66045,
+    0.6591,
+    0.6623,
+    0.66255,
+    0.65605,
+    0.65665
+   ],
+   "record_id": "CELL-0169",
+   "se_mc": 0.0010592450141492288,
+   "z": -1.468026735296025
+  },
+  {
+   "accuracy_sim": 0.65988,
+   "accuracy_theory": 0.6615,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "mixture",
+   "n": 3,
+   "n_items_total": 200000,
+   "params": {
+    "h": 0.4,
+    "lambda": 0.75,
+    "p_easy": 0.9,
+    "p_hard": 0.3,
+    "scenario": "S4"
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.6597,
+    0.6581,
+    0.65775,
+    0.65595,
+    0.66295,
+    0.66085,
+    0.65985,
+    0.66375,
+    0.6585,
+    0.6614
+   ],
+   "record_id": "CELL-0170",
+   "se_mc": 0.0010581062092247639,
+   "z": -1.5310372303616573
+  },
+  {
+   "accuracy_sim": 0.65886,
+   "accuracy_theory": 0.6608452499999999,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "mixture",
+   "n": 5,
+   "n_items_total": 200000,
+   "params": {
+    "h": 0.4,
+    "lambda": 0.75,
+    "p_easy": 0.9,
+    "p_hard": 0.3,
+    "scenario": "S4"
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.658,
+    0.65645,
+    0.6581,
+    0.6545,
+    0.6604,
+    0.6603,
+    0.65835,
+    0.66395,
+    0.65805,
+    0.6605
+   ],
+   "record_id": "CELL-0171",
+   "se_mc": 0.0010586047552142337,
+   "z": -1.8753458174275592
+  },
+  {
+   "accuracy_sim": 0.659135,
+   "accuracy_theory": 0.6606541108762208,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "mixture",
+   "n": 9,
+   "n_items_total": 200000,
+   "params": {
+    "h": 0.4,
+    "lambda": 0.75,
+    "p_easy": 0.9,
+    "p_hard": 0.3,
+    "scenario": "S4"
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.65885,
+    0.657,
+    0.65815,
+    0.6555,
+    0.6609,
+    0.6599,
+    0.65815,
+    0.66515,
+    0.6575,
+    0.66025
+   ],
+   "record_id": "CELL-0172",
+   "se_mc": 0.0010587498681430166,
+   "z": -1.4348156461971866
+  },
+  {
+   "accuracy_sim": 0.65874,
+   "accuracy_theory": 0.6603323970965809,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "mixture",
+   "n": 15,
+   "n_items_total": 200000,
+   "params": {
+    "h": 0.4,
+    "lambda": 0.75,
+    "p_easy": 0.9,
+    "p_hard": 0.3,
+    "scenario": "S4"
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.6585,
+    0.6566,
+    0.658,
+    0.6553,
+    0.6604,
+    0.65925,
+    0.658,
+    0.66475,
+    0.6571,
+    0.6595
+   ],
+   "record_id": "CELL-0173",
+   "se_mc": 0.0010589936790209476,
+   "z": -1.5036889531324378
+  },
+  {
+   "accuracy_sim": 0.65842,
+   "accuracy_theory": 0.6600206707512959,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "mixture",
+   "n": 31,
+   "n_items_total": 200000,
+   "params": {
+    "h": 0.4,
+    "lambda": 0.75,
+    "p_easy": 0.9,
+    "p_hard": 0.3,
+    "scenario": "S4"
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.6582,
+    0.65635,
+    0.6577,
+    0.65515,
+    0.66005,
+    0.6587,
+    0.6576,
+    0.6643,
+    0.65665,
+    0.6595
+   ],
+   "record_id": "CELL-0174",
+   "se_mc": 0.0010592294013392599,
+   "z": -1.511165333281008
+  },
+  {
+   "accuracy_sim": 0.65068,
+   "accuracy_theory": 0.6499999999999999,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "mixture",
+   "n": 1,
+   "n_items_total": 200000,
+   "params": {
+    "h": 0.2,
+    "lambda": 0.0,
+    "p_easy": 0.7,
+    "p_hard": 0.45,
+    "scenario": "S5"
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.64985,
+    0.65125,
+    0.6534,
+    0.64665,
+    0.6561,
+    0.64785,
+    0.6478,
+    0.6503,
+    0.65195,
+    0.65165
+   ],
+   "record_id": "CELL-0175",
+   "se_mc": 0.0010665364503850772,
+   "z": 0.6375778340764708
+  },
+  {
+   "accuracy_sim": 0.71199,
+   "accuracy_theory": 0.7122500000000002,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "mixture",
+   "n": 3,
+   "n_items_total": 200000,
+   "params": {
+    "h": 0.2,
+    "lambda": 0.0,
+    "p_easy": 0.7,
+    "p_hard": 0.45,
+    "scenario": "S5"
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.7146,
+    0.7108,
+    0.7139,
+    0.7057,
+    0.7176,
+    0.70925,
+    0.7125,
+    0.709,
+    0.7152,
+    0.71135
+   ],
+   "record_id": "CELL-0176",
+   "se_mc": 0.001012299208485317,
+   "z": -0.25684105827681303
+  },
+  {
+   "accuracy_sim": 0.75037,
+   "accuracy_theory": 0.7509106249999999,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "mixture",
+   "n": 5,
+   "n_items_total": 200000,
+   "params": {
+    "h": 0.2,
+    "lambda": 0.0,
+    "p_easy": 0.7,
+    "p_hard": 0.45,
+    "scenario": "S5"
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.7513,
+    0.74995,
+    0.7506,
+    0.7471,
+    0.7544,
+    0.74785,
+    0.7465,
+    0.75135,
+    0.7562,
+    0.74845
+   ],
+   "record_id": "CELL-0177",
+   "se_mc": 0.0009670673664799919,
+   "z": -0.559035511629113
+  },
+  {
+   "accuracy_sim": 0.79616,
+   "accuracy_theory": 0.7966688829101564,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "mixture",
+   "n": 9,
+   "n_items_total": 200000,
+   "params": {
+    "h": 0.2,
+    "lambda": 0.0,
+    "p_easy": 0.7,
+    "p_hard": 0.45,
+    "scenario": "S5"
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.7942,
+    0.7962,
+    0.79495,
+    0.7921,
+    0.8016,
+    0.7962,
+    0.79445,
+    0.7976,
+    0.79615,
+    0.79815
+   ],
+   "record_id": "CELL-0178",
+   "se_mc": 0.0008999654824292983,
+   "z": -0.5654471422423261
+  },
+  {
+   "accuracy_sim": 0.828905,
+   "accuracy_theory": 0.8292891829275605,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "mixture",
+   "n": 15,
+   "n_items_total": 200000,
+   "params": {
+    "h": 0.2,
+    "lambda": 0.0,
+    "p_easy": 0.7,
+    "p_hard": 0.45,
+    "scenario": "S5"
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.82555,
+    0.8263,
+    0.82915,
+    0.82835,
+    0.8328,
+    0.8324,
+    0.8278,
+    0.83025,
+    0.8306,
+    0.82585
+   ],
+   "record_id": "CELL-0179",
+   "se_mc": 0.0008413341607438141,
+   "z": -0.4566353602245649
+  },
+  {
+   "accuracy_sim": 0.849215,
+   "accuracy_theory": 0.8497316691928047,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "mixture",
+   "n": 31,
+   "n_items_total": 200000,
+   "params": {
+    "h": 0.2,
+    "lambda": 0.0,
+    "p_easy": 0.7,
+    "p_hard": 0.45,
+    "scenario": "S5"
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.84865,
+    0.8459,
+    0.8512,
+    0.84755,
+    0.85105,
+    0.85025,
+    0.8489,
+    0.85135,
+    0.84885,
+    0.84845
+   ],
+   "record_id": "CELL-0180",
+   "se_mc": 0.0007990236528527006,
+   "z": -0.6466256548977705
+  },
+  {
+   "accuracy_sim": 0.650425,
+   "accuracy_theory": 0.6499999999999999,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "mixture",
+   "n": 1,
+   "n_items_total": 200000,
+   "params": {
+    "h": 0.2,
+    "lambda": 0.25,
+    "p_easy": 0.7,
+    "p_hard": 0.45,
+    "scenario": "S5"
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.65285,
+    0.6481,
+    0.65305,
+    0.6462,
+    0.6546,
+    0.6488,
+    0.6472,
+    0.64975,
+    0.65125,
+    0.65245
+   ],
+   "record_id": "CELL-0181",
+   "se_mc": 0.0010665364503850772,
+   "z": 0.3984861462978333
+  },
+  {
+   "accuracy_sim": 0.702375,
+   "accuracy_theory": 0.7025234375,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "mixture",
+   "n": 3,
+   "n_items_total": 200000,
+   "params": {
+    "h": 0.2,
+    "lambda": 0.25,
+    "p_easy": 0.7,
+    "p_hard": 0.45,
+    "scenario": "S5"
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.70455,
+    0.69995,
+    0.7017,
+    0.6922,
+    0.70925,
+    0.70125,
+    0.6999,
+    0.70155,
+    0.7063,
+    0.7071
+   ],
+   "record_id": "CELL-0182",
+   "se_mc": 0.0010222139141666572,
+   "z": -0.14521177802696397
+  },
+  {
+   "accuracy_sim": 0.73008,
+   "accuracy_theory": 0.7302710791015625,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "mixture",
+   "n": 5,
+   "n_items_total": 200000,
+   "params": {
+    "h": 0.2,
+    "lambda": 0.25,
+    "p_easy": 0.7,
+    "p_hard": 0.45,
+    "scenario": "S5"
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.73085,
+    0.7298,
+    0.7296,
+    0.72535,
+    0.73475,
+    0.72785,
+    0.72465,
+    0.7312,
+    0.73405,
+    0.7327
+   ],
+   "record_id": "CELL-0183",
+   "se_mc": 0.0009924092656998975,
+   "z": -0.19254062629878396
+  },
+  {
+   "accuracy_sim": 0.757445,
+   "accuracy_theory": 0.7570732123014973,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "mixture",
+   "n": 9,
+   "n_items_total": 200000,
+   "params": {
+    "h": 0.2,
+    "lambda": 0.25,
+    "p_easy": 0.7,
+    "p_hard": 0.45,
+    "scenario": "S5"
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.75435,
+    0.75695,
+    0.7548,
+    0.7587,
+    0.7568,
+    0.7575,
+    0.7547,
+    0.76015,
+    0.75945,
+    0.76105
+   ],
+   "record_id": "CELL-0184",
+   "se_mc": 0.0009589404661317336,
+   "z": 0.3877067572323034
+  },
+  {
+   "accuracy_sim": 0.77168,
+   "accuracy_theory": 0.7721122680290039,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "mixture",
+   "n": 15,
+   "n_items_total": 200000,
+   "params": {
+    "h": 0.2,
+    "lambda": 0.25,
+    "p_easy": 0.7,
+    "p_hard": 0.45,
+    "scenario": "S5"
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.77145,
+    0.76545,
+    0.7723,
+    0.77145,
+    0.7736,
+    0.77145,
+    0.7703,
+    0.7741,
+    0.77265,
+    0.77405
+   ],
+   "record_id": "CELL-0185",
+   "se_mc": 0.0009379629885771387,
+   "z": -0.4608583006666454
+  },
+  {
+   "accuracy_sim": 0.78302,
+   "accuracy_theory": 0.7851677910679944,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "mixture",
+   "n": 31,
+   "n_items_total": 200000,
+   "params": {
+    "h": 0.2,
+    "lambda": 0.25,
+    "p_easy": 0.7,
+    "p_hard": 0.45,
+    "scenario": "S5"
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.784,
+    0.78115,
+    0.7844,
+    0.77965,
+    0.7821,
+    0.78265,
+    0.7839,
+    0.7847,
+    0.7832,
+    0.78445
+   ],
+   "record_id": "CELL-0186",
+   "se_mc": 0.0009183662965761557,
+   "z": -2.338708504440675
+  },
+  {
+   "accuracy_sim": 0.65069,
+   "accuracy_theory": 0.6499999999999999,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "mixture",
+   "n": 1,
+   "n_items_total": 200000,
+   "params": {
+    "h": 0.2,
+    "lambda": 0.5,
+    "p_easy": 0.7,
+    "p_hard": 0.45,
+    "scenario": "S5"
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.65485,
+    0.64955,
+    0.6544,
+    0.6482,
+    0.6535,
+    0.64565,
+    0.6498,
+    0.6492,
+    0.6506,
+    0.65115
+   ],
+   "record_id": "CELL-0187",
+   "se_mc": 0.0010665364503850772,
+   "z": 0.6469539786951981
+  },
+  {
+   "accuracy_sim": 0.68106,
+   "accuracy_theory": 0.681125,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "mixture",
+   "n": 3,
+   "n_items_total": 200000,
+   "params": {
+    "h": 0.2,
+    "lambda": 0.5,
+    "p_easy": 0.7,
+    "p_hard": 0.45,
+    "scenario": "S5"
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.68295,
+    0.6826,
+    0.68145,
+    0.6756,
+    0.68465,
+    0.67975,
+    0.67855,
+    0.67985,
+    0.683,
+    0.6822
+   ],
+   "record_id": "CELL-0188",
+   "se_mc": 0.001042098206444575,
+   "z": -0.06237415974618015
+  },
+  {
+   "accuracy_sim": 0.688225,
+   "accuracy_theory": 0.6883738671875,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "mixture",
+   "n": 5,
+   "n_items_total": 200000,
+   "params": {
+    "h": 0.2,
+    "lambda": 0.5,
+    "p_easy": 0.7,
+    "p_hard": 0.45,
+    "scenario": "S5"
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.6889,
+    0.68875,
+    0.6885,
+    0.68395,
+    0.6919,
+    0.68675,
+    0.6847,
+    0.68975,
+    0.6897,
+    0.68935
+   ],
+   "record_id": "CELL-0189",
+   "se_mc": 0.0010356526593429528,
+   "z": -0.14374238906943332
+  },
+  {
+   "accuracy_sim": 0.68534,
+   "accuracy_theory": 0.6851803774127961,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "mixture",
+   "n": 9,
+   "n_items_total": 200000,
+   "params": {
+    "h": 0.2,
+    "lambda": 0.5,
+    "p_easy": 0.7,
+    "p_hard": 0.45,
+    "scenario": "S5"
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.68675,
+    0.6844,
+    0.68455,
+    0.6825,
+    0.68715,
+    0.6824,
+    0.68245,
+    0.68915,
+    0.68575,
+    0.6883
+   ],
+   "record_id": "CELL-0190",
+   "se_mc": 0.0010385283525769877,
+   "z": 0.15370075049730378
+  },
+  {
+   "accuracy_sim": 0.674425,
+   "accuracy_theory": 0.6750833135097508,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "mixture",
+   "n": 15,
+   "n_items_total": 200000,
+   "params": {
+    "h": 0.2,
+    "lambda": 0.5,
+    "p_easy": 0.7,
+    "p_hard": 0.45,
+    "scenario": "S5"
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.67625,
+    0.67285,
+    0.6751,
+    0.67295,
+    0.6762,
+    0.6705,
+    0.672,
+    0.6774,
+    0.67455,
+    0.67645
+   ],
+   "record_id": "CELL-0191",
+   "se_mc": 0.0010472483786820733,
+   "z": -0.6286125843223824
+  },
+  {
+   "accuracy_sim": 0.658615,
+   "accuracy_theory": 0.6598682466345523,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "mixture",
+   "n": 31,
+   "n_items_total": 200000,
+   "params": {
+    "h": 0.2,
+    "lambda": 0.5,
+    "p_easy": 0.7,
+    "p_hard": 0.45,
+    "scenario": "S5"
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.6615,
+    0.6573,
+    0.66195,
+    0.6547,
+    0.6622,
+    0.6559,
+    0.65515,
+    0.6613,
+    0.65805,
+    0.6581
+   ],
+   "record_id": "CELL-0192",
+   "se_mc": 0.0010593444758858989,
+   "z": -1.1830397600406068
+  },
+  {
+   "accuracy_sim": 0.650355,
+   "accuracy_theory": 0.6499999999999999,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "mixture",
+   "n": 1,
+   "n_items_total": 200000,
+   "params": {
+    "h": 0.2,
+    "lambda": 0.75,
+    "p_easy": 0.7,
+    "p_hard": 0.45,
+    "scenario": "S5"
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.6545,
+    0.64995,
+    0.6523,
+    0.6476,
+    0.6536,
+    0.64615,
+    0.64915,
+    0.64975,
+    0.6495,
+    0.65105
+   ],
+   "record_id": "CELL-0193",
+   "se_mc": 0.0010665364503850772,
+   "z": 0.3328531339664304
+  },
+  {
+   "accuracy_sim": 0.65848,
+   "accuracy_theory": 0.6597265625000001,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "mixture",
+   "n": 3,
+   "n_items_total": 200000,
+   "params": {
+    "h": 0.2,
+    "lambda": 0.75,
+    "p_easy": 0.7,
+    "p_hard": 0.45,
+    "scenario": "S5"
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.66155,
+    0.65845,
+    0.66005,
+    0.6541,
+    0.66245,
+    0.65665,
+    0.65515,
+    0.65885,
+    0.65935,
+    0.6582
+   ],
+   "record_id": "CELL-0194",
+   "se_mc": 0.0010594513326055463,
+   "z": -1.176611385191605
+  },
+  {
+   "accuracy_sim": 0.655795,
+   "accuracy_theory": 0.6570479199218751,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "mixture",
+   "n": 5,
+   "n_items_total": 200000,
+   "params": {
+    "h": 0.2,
+    "lambda": 0.75,
+    "p_easy": 0.7,
+    "p_hard": 0.45,
+    "scenario": "S5"
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.65795,
+    0.65475,
+    0.6587,
+    0.65235,
+    0.65855,
+    0.65305,
+    0.6524,
+    0.65725,
+    0.6574,
+    0.65555
+   ],
+   "record_id": "CELL-0195",
+   "se_mc": 0.0010614517201649172,
+   "z": -1.1803833354571927
+  },
+  {
+   "accuracy_sim": 0.651475,
+   "accuracy_theory": 0.6523513612120255,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "mixture",
+   "n": 9,
+   "n_items_total": 200000,
+   "params": {
+    "h": 0.2,
+    "lambda": 0.75,
+    "p_easy": 0.7,
+    "p_hard": 0.45,
+    "scenario": "S5"
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.65385,
+    0.65105,
+    0.65355,
+    0.64815,
+    0.65445,
+    0.64825,
+    0.64805,
+    0.6535,
+    0.65195,
+    0.65195
+   ],
+   "record_id": "CELL-0196",
+   "se_mc": 0.0010648686837747717,
+   "z": -0.8229758517444183
+  },
+  {
+   "accuracy_sim": 0.649165,
+   "accuracy_theory": 0.6503964901358693,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "mixture",
+   "n": 15,
+   "n_items_total": 200000,
+   "params": {
+    "h": 0.2,
+    "lambda": 0.75,
+    "p_easy": 0.7,
+    "p_hard": 0.45,
+    "scenario": "S5"
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.65235,
+    0.64805,
+    0.6513,
+    0.6461,
+    0.6523,
+    0.6456,
+    0.64595,
+    0.651,
+    0.64965,
+    0.64935
+   ],
+   "record_id": "CELL-0197",
+   "se_mc": 0.0010662572291778643,
+   "z": -1.1549653331015217
+  },
+  {
+   "accuracy_sim": 0.64872,
+   "accuracy_theory": 0.6500037591322823,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "mixture",
+   "n": 31,
+   "n_items_total": 200000,
+   "params": {
+    "h": 0.2,
+    "lambda": 0.75,
+    "p_easy": 0.7,
+    "p_hard": 0.45,
+    "scenario": "S5"
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.6521,
+    0.64745,
+    0.6507,
+    0.6458,
+    0.65165,
+    0.6449,
+    0.64575,
+    0.65055,
+    0.6494,
+    0.6489
+   ],
+   "record_id": "CELL-0198",
+   "se_mc": 0.0010665338068860833,
+   "z": -1.203674111400587
+  },
+  {
+   "accuracy_sim": 0.64948,
+   "accuracy_theory": 0.6499999999999999,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "mixture",
+   "n": 1,
+   "n_items_total": 200000,
+   "params": {
+    "h": 0.5,
+    "lambda": 0.0,
+    "p_easy": 0.95,
+    "p_hard": 0.35,
+    "scenario": "S6"
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.6488,
+    0.64895,
+    0.6512,
+    0.643,
+    0.65925,
+    0.6488,
+    0.65025,
+    0.6464,
+    0.6467,
+    0.65145
+   ],
+   "record_id": "CELL-0199",
+   "se_mc": 0.0010665364503850772,
+   "z": -0.4875595201760023
+  },
+  {
+   "accuracy_sim": 0.63669,
+   "accuracy_theory": 0.63725,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "mixture",
+   "n": 3,
+   "n_items_total": 200000,
+   "params": {
+    "h": 0.5,
+    "lambda": 0.0,
+    "p_easy": 0.95,
+    "p_hard": 0.35,
+    "scenario": "S6"
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.6367,
+    0.6319,
+    0.6355,
+    0.62985,
+    0.6437,
+    0.63675,
+    0.63935,
+    0.6391,
+    0.6364,
+    0.63765
+   ],
+   "record_id": "CELL-0200",
+   "se_mc": 0.0010750870604281312,
+   "z": -0.5208880476870371
+  },
+  {
+   "accuracy_sim": 0.615585,
+   "accuracy_theory": 0.6170056249999999,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "mixture",
+   "n": 5,
+   "n_items_total": 200000,
+   "params": {
+    "h": 0.5,
+    "lambda": 0.0,
+    "p_easy": 0.95,
+    "p_hard": 0.35,
+    "scenario": "S6"
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.6119,
+    0.61105,
+    0.6153,
+    0.60925,
+    0.62315,
+    0.61805,
+    0.6166,
+    0.61775,
+    0.6142,
+    0.6186
+   ],
+   "record_id": "CELL-0201",
+   "se_mc": 0.001086990532889683,
+   "z": -1.3069341056938342
+  },
+  {
+   "accuracy_sim": 0.5853,
+   "accuracy_theory": 0.5858430316601562,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "mixture",
+   "n": 9,
+   "n_items_total": 200000,
+   "params": {
+    "h": 0.5,
+    "lambda": 0.0,
+    "p_easy": 0.95,
+    "p_hard": 0.35,
+    "scenario": "S6"
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.5814,
+    0.58035,
+    0.58425,
+    0.58095,
+    0.59105,
+    0.58985,
+    0.58515,
+    0.58475,
+    0.5866,
+    0.58865
+   ],
+   "record_id": "CELL-0202",
+   "se_mc": 0.001101433098094009,
+   "z": -0.4930228273472267
+  },
+  {
+   "accuracy_sim": 0.55674,
+   "accuracy_theory": 0.5566154739091133,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "mixture",
+   "n": 15,
+   "n_items_total": 200000,
+   "params": {
+    "h": 0.5,
+    "lambda": 0.0,
+    "p_easy": 0.95,
+    "p_hard": 0.35,
+    "scenario": "S6"
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.5526,
+    0.55115,
+    0.5542,
+    0.5498,
+    0.5634,
+    0.56375,
+    0.55825,
+    0.5577,
+    0.5567,
+    0.55985
+   ],
+   "record_id": "CELL-0203",
+   "se_mc": 0.0011108435716023352,
+   "z": 0.11210047397324695
+  },
+  {
+   "accuracy_sim": 0.520475,
+   "accuracy_theory": 0.5211854078950796,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "mixture",
+   "n": 31,
+   "n_items_total": 200000,
+   "params": {
+    "h": 0.5,
+    "lambda": 0.0,
+    "p_easy": 0.95,
+    "p_hard": 0.35,
+    "scenario": "S6"
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.51635,
+    0.51565,
+    0.5193,
+    0.5149,
+    0.5272,
+    0.5278,
+    0.5204,
+    0.52115,
+    0.5186,
+    0.5234
+   ],
+   "record_id": "CELL-0204",
+   "se_mc": 0.0011170299425089711,
+   "z": -0.6359792768705343
+  },
+  {
+   "accuracy_sim": 0.64923,
+   "accuracy_theory": 0.6499999999999999,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "mixture",
+   "n": 1,
+   "n_items_total": 200000,
+   "params": {
+    "h": 0.5,
+    "lambda": 0.25,
+    "p_easy": 0.95,
+    "p_hard": 0.35,
+    "scenario": "S6"
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.6472,
+    0.64735,
+    0.6498,
+    0.64605,
+    0.6551,
+    0.6486,
+    0.65075,
+    0.64695,
+    0.64865,
+    0.65185
+   ],
+   "record_id": "CELL-0205",
+   "se_mc": 0.0010665364503850772,
+   "z": -0.7219631356452242
+  },
+  {
+   "accuracy_sim": 0.63764,
+   "accuracy_theory": 0.6392421875000001,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "mixture",
+   "n": 3,
+   "n_items_total": 200000,
+   "params": {
+    "h": 0.5,
+    "lambda": 0.25,
+    "p_easy": 0.95,
+    "p_hard": 0.35,
+    "scenario": "S6"
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.6366,
+    0.63195,
+    0.63795,
+    0.63085,
+    0.6431,
+    0.6374,
+    0.6386,
+    0.6401,
+    0.63935,
+    0.6405
+   ],
+   "record_id": "CELL-0206",
+   "se_mc": 0.001073805413518238,
+   "z": -1.4920650239140014
+  },
+  {
+   "accuracy_sim": 0.624195,
+   "accuracy_theory": 0.6257589306640625,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "mixture",
+   "n": 5,
+   "n_items_total": 200000,
+   "params": {
+    "h": 0.5,
+    "lambda": 0.25,
+    "p_easy": 0.95,
+    "p_hard": 0.35,
+    "scenario": "S6"
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.61925,
+    0.61915,
+    0.62425,
+    0.62125,
+    0.6287,
+    0.62625,
+    0.6237,
+    0.62635,
+    0.6239,
+    0.62915
+   ],
+   "record_id": "CELL-0207",
+   "se_mc": 0.0010820921664956074,
+   "z": -1.4452841564571213
+  },
+  {
+   "accuracy_sim": 0.608985,
+   "accuracy_theory": 0.6100483278382252,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "mixture",
+   "n": 9,
+   "n_items_total": 200000,
+   "params": {
+    "h": 0.5,
+    "lambda": 0.25,
+    "p_easy": 0.95,
+    "p_hard": 0.35,
+    "scenario": "S6"
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.6042,
+    0.6036,
+    0.60685,
+    0.6064,
+    0.61335,
+    0.6136,
+    0.6091,
+    0.61375,
+    0.60785,
+    0.61115
+   ],
+   "record_id": "CELL-0208",
+   "se_mc": 0.0010906176358834716,
+   "z": -0.9749776670022336
+  },
+  {
+   "accuracy_sim": 0.60021,
+   "accuracy_theory": 0.6009143579917113,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "mixture",
+   "n": 15,
+   "n_items_total": 200000,
+   "params": {
+    "h": 0.5,
+    "lambda": 0.25,
+    "p_easy": 0.95,
+    "p_hard": 0.35,
+    "scenario": "S6"
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.594,
+    0.59545,
+    0.60055,
+    0.59665,
+    0.60515,
+    0.6047,
+    0.6014,
+    0.603,
+    0.59885,
+    0.60235
+   ],
+   "record_id": "CELL-0209",
+   "se_mc": 0.001095025781320058,
+   "z": -0.6432341628177982
+  },
+  {
+   "accuracy_sim": 0.596215,
+   "accuracy_theory": 0.597849198484806,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "mixture",
+   "n": 31,
+   "n_items_total": 200000,
+   "params": {
+    "h": 0.5,
+    "lambda": 0.25,
+    "p_easy": 0.95,
+    "p_hard": 0.35,
+    "scenario": "S6"
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.59145,
+    0.5898,
+    0.59785,
+    0.5923,
+    0.6016,
+    0.60255,
+    0.59595,
+    0.59925,
+    0.5936,
+    0.5978
+   ],
+   "record_id": "CELL-0210",
+   "se_mc": 0.0010964158297741807,
+   "z": -1.490491509177253
+  },
+  {
+   "accuracy_sim": 0.649585,
+   "accuracy_theory": 0.6499999999999999,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "mixture",
+   "n": 1,
+   "n_items_total": 200000,
+   "params": {
+    "h": 0.5,
+    "lambda": 0.5,
+    "p_easy": 0.95,
+    "p_hard": 0.35,
+    "scenario": "S6"
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.64505,
+    0.64885,
+    0.6514,
+    0.64595,
+    0.6528,
+    0.64785,
+    0.6531,
+    0.6507,
+    0.64835,
+    0.6518
+   ],
+   "record_id": "CELL-0211",
+   "se_mc": 0.0010665364503850772,
+   "z": -0.3891100016788979
+  },
+  {
+   "accuracy_sim": 0.64243,
+   "accuracy_theory": 0.643625,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "mixture",
+   "n": 3,
+   "n_items_total": 200000,
+   "params": {
+    "h": 0.5,
+    "lambda": 0.5,
+    "p_easy": 0.95,
+    "p_hard": 0.35,
+    "scenario": "S6"
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.64025,
+    0.6375,
+    0.6459,
+    0.6369,
+    0.6454,
+    0.6428,
+    0.6449,
+    0.6447,
+    0.6425,
+    0.64345
+   ],
+   "record_id": "CELL-0212",
+   "se_mc": 0.0010709151679171418,
+   "z": -1.1158680311945268
+  },
+  {
+   "accuracy_sim": 0.63838,
+   "accuracy_theory": 0.6398291796875,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "mixture",
+   "n": 5,
+   "n_items_total": 200000,
+   "params": {
+    "h": 0.5,
+    "lambda": 0.5,
+    "p_easy": 0.95,
+    "p_hard": 0.35,
+    "scenario": "S6"
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.633,
+    0.63235,
+    0.64225,
+    0.63465,
+    0.6416,
+    0.63935,
+    0.6379,
+    0.64375,
+    0.6381,
+    0.64085
+   ],
+   "record_id": "CELL-0213",
+   "se_mc": 0.0010734239621601543,
+   "z": -1.3500534165305014
+  },
+  {
+   "accuracy_sim": 0.640175,
+   "accuracy_theory": 0.6413988478473662,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "mixture",
+   "n": 9,
+   "n_items_total": 200000,
+   "params": {
+    "h": 0.5,
+    "lambda": 0.5,
+    "p_easy": 0.95,
+    "p_hard": 0.35,
+    "scenario": "S6"
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.63525,
+    0.63475,
+    0.6417,
+    0.63835,
+    0.64405,
+    0.6416,
+    0.64,
+    0.6448,
+    0.64,
+    0.64125
+   ],
+   "record_id": "CELL-0214",
+   "se_mc": 0.0010723953697854103,
+   "z": -1.141228209154869
+  },
+  {
+   "accuracy_sim": 0.646665,
+   "accuracy_theory": 0.6475976513150488,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "mixture",
+   "n": 15,
+   "n_items_total": 200000,
+   "params": {
+    "h": 0.5,
+    "lambda": 0.5,
+    "p_easy": 0.95,
+    "p_hard": 0.35,
+    "scenario": "S6"
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.6433,
+    0.64165,
+    0.6495,
+    0.64535,
+    0.64915,
+    0.64785,
+    0.6461,
+    0.65045,
+    0.6451,
+    0.6482
+   ],
+   "record_id": "CELL-0215",
+   "se_mc": 0.001068210965414326,
+   "z": -0.873096556059944
+  },
+  {
+   "accuracy_sim": 0.654735,
+   "accuracy_theory": 0.6560273429986488,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "mixture",
+   "n": 31,
+   "n_items_total": 200000,
+   "params": {
+    "h": 0.5,
+    "lambda": 0.5,
+    "p_easy": 0.95,
+    "p_hard": 0.35,
+    "scenario": "S6"
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.6498,
+    0.6502,
+    0.65855,
+    0.65255,
+    0.65705,
+    0.6569,
+    0.65295,
+    0.65995,
+    0.6538,
+    0.6556
+   ],
+   "record_id": "CELL-0216",
+   "se_mc": 0.0010622040016794842,
+   "z": -1.2166617679895044
+  },
+  {
+   "accuracy_sim": 0.64976,
+   "accuracy_theory": 0.6499999999999999,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "mixture",
+   "n": 1,
+   "n_items_total": 200000,
+   "params": {
+    "h": 0.5,
+    "lambda": 0.75,
+    "p_easy": 0.95,
+    "p_hard": 0.35,
+    "scenario": "S6"
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.6422,
+    0.6496,
+    0.6526,
+    0.64745,
+    0.65285,
+    0.6505,
+    0.65115,
+    0.65225,
+    0.6494,
+    0.6496
+   ],
+   "record_id": "CELL-0217",
+   "se_mc": 0.0010665364503850772,
+   "z": -0.22502747085039054
+  },
+  {
+   "accuracy_sim": 0.647215,
+   "accuracy_theory": 0.6480078125,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "mixture",
+   "n": 3,
+   "n_items_total": 200000,
+   "params": {
+    "h": 0.5,
+    "lambda": 0.75,
+    "p_easy": 0.95,
+    "p_hard": 0.35,
+    "scenario": "S6"
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.64315,
+    0.643,
+    0.65005,
+    0.6434,
+    0.64995,
+    0.64895,
+    0.64695,
+    0.6497,
+    0.648,
+    0.649
+   ],
+   "record_id": "CELL-0218",
+   "se_mc": 0.0010679271684880126,
+   "z": -0.7423844278841953
+  },
+  {
+   "accuracy_sim": 0.647325,
+   "accuracy_theory": 0.6483638574218751,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "mixture",
+   "n": 5,
+   "n_items_total": 200000,
+   "params": {
+    "h": 0.5,
+    "lambda": 0.75,
+    "p_easy": 0.95,
+    "p_hard": 0.35,
+    "scenario": "S6"
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.642,
+    0.64205,
+    0.65115,
+    0.6455,
+    0.6498,
+    0.6494,
+    0.64565,
+    0.6506,
+    0.64865,
+    0.64845
+   ],
+   "record_id": "CELL-0219",
+   "se_mc": 0.0010676801155095601,
+   "z": -0.9730043734861867
+  },
+  {
+   "accuracy_sim": 0.648975,
+   "accuracy_theory": 0.6497490457357606,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "mixture",
+   "n": 9,
+   "n_items_total": 200000,
+   "params": {
+    "h": 0.5,
+    "lambda": 0.75,
+    "p_easy": 0.95,
+    "p_hard": 0.35,
+    "scenario": "S6"
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.6446,
+    0.6441,
+    0.652,
+    0.6479,
+    0.65085,
+    0.65025,
+    0.64755,
+    0.65325,
+    0.6494,
+    0.64985
+   ],
+   "record_id": "CELL-0220",
+   "se_mc": 0.0010667127619496007,
+   "z": -0.725636519381257
+  },
+  {
+   "accuracy_sim": 0.64939,
+   "accuracy_theory": 0.6501348861839004,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "mixture",
+   "n": 15,
+   "n_items_total": 200000,
+   "params": {
+    "h": 0.5,
+    "lambda": 0.75,
+    "p_easy": 0.95,
+    "p_hard": 0.35,
+    "scenario": "S6"
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.64505,
+    0.64435,
+    0.6525,
+    0.6484,
+    0.65185,
+    0.65045,
+    0.64805,
+    0.65355,
+    0.64965,
+    0.65005
+   ],
+   "record_id": "CELL-0221",
+   "se_mc": 0.0010664415500873624,
+   "z": -0.6984782089926249
+  },
+  {
+   "accuracy_sim": 0.64923,
+   "accuracy_theory": 0.6500168701636005,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "mixture",
+   "n": 31,
+   "n_items_total": 200000,
+   "params": {
+    "h": 0.5,
+    "lambda": 0.75,
+    "p_easy": 0.95,
+    "p_hard": 0.35,
+    "scenario": "S6"
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.6447,
+    0.6444,
+    0.6524,
+    0.64835,
+    0.65145,
+    0.6505,
+    0.6476,
+    0.6533,
+    0.6494,
+    0.6502
+   ],
+   "record_id": "CELL-0222",
+   "se_mc": 0.0010665245863699473,
+   "z": -0.7377890520825082
+  },
+  {
+   "accuracy_sim": 0.45102,
+   "accuracy_theory": 0.45,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "bahadur",
+   "n": 1,
+   "n_items_total": 200000,
+   "params": {
+    "c": 0.0,
+    "p": 0.45
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.4496,
+    0.45785,
+    0.4456,
+    0.451,
+    0.4494,
+    0.4502,
+    0.4536,
+    0.4568,
+    0.449,
+    0.44715
+   ],
+   "record_id": "CELL-0223",
+   "se_mc": 0.0011124297730643496,
+   "z": 0.916911812949978
+  },
+  {
+   "accuracy_sim": 0.42571,
+   "accuracy_theory": 0.4252500000000001,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "bahadur",
+   "n": 3,
+   "n_items_total": 200000,
+   "params": {
+    "c": 0.0,
+    "p": 0.45
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.42365,
+    0.4329,
+    0.4211,
+    0.42505,
+    0.42425,
+    0.42475,
+    0.42755,
+    0.432,
+    0.42505,
+    0.4208
+   ],
+   "record_id": "CELL-0224",
+   "se_mc": 0.001105469215989301,
+   "z": 0.4161128988003922
+  },
+  {
+   "accuracy_sim": 0.407115,
+   "accuracy_theory": 0.40687312500000006,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "bahadur",
+   "n": 5,
+   "n_items_total": 200000,
+   "params": {
+    "c": 0.0,
+    "p": 0.45
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.40545,
+    0.41395,
+    0.40275,
+    0.40565,
+    0.40495,
+    0.40665,
+    0.40935,
+    0.41265,
+    0.40745,
+    0.4023
+   ],
+   "record_id": "CELL-0225",
+   "se_mc": 0.0010984702662173757,
+   "z": 0.2201925782050094
+  },
+  {
+   "accuracy_sim": 0.37861,
+   "accuracy_theory": 0.3785790545507814,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "bahadur",
+   "n": 9,
+   "n_items_total": 200000,
+   "params": {
+    "c": 0.0,
+    "p": 0.45
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.377,
+    0.38525,
+    0.3735,
+    0.37685,
+    0.3756,
+    0.3783,
+    0.37995,
+    0.38555,
+    0.37995,
+    0.37415
+   ],
+   "record_id": "CELL-0226",
+   "se_mc": 0.0010845666277509599,
+   "z": 0.028532547864562312
+  },
+  {
+   "accuracy_sim": 0.346605,
+   "accuracy_theory": 0.34649607485290645,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "bahadur",
+   "n": 15,
+   "n_items_total": 200000,
+   "params": {
+    "c": 0.0,
+    "p": 0.45
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.3469,
+    0.35225,
+    0.3409,
+    0.34415,
+    0.3438,
+    0.3467,
+    0.3474,
+    0.3522,
+    0.34725,
+    0.3445
+   ],
+   "record_id": "CELL-0227",
+   "se_mc": 0.0010640407533652916,
+   "z": 0.1023693375926052
+  },
+  {
+   "accuracy_sim": 0.28749,
+   "accuracy_theory": 0.286820089611558,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "bahadur",
+   "n": 31,
+   "n_items_total": 200000,
+   "params": {
+    "c": 0.0,
+    "p": 0.45
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.2861,
+    0.2913,
+    0.28505,
+    0.2865,
+    0.2854,
+    0.2866,
+    0.28955,
+    0.29045,
+    0.28855,
+    0.2854
+   ],
+   "record_id": "CELL-0228",
+   "se_mc": 0.001011321723802015,
+   "z": 0.662410756809911
+  },
+  {
+   "accuracy_sim": 0.45102,
+   "accuracy_theory": 0.45,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "bahadur",
+   "n": 1,
+   "n_items_total": 200000,
+   "params": {
+    "c": 0.1,
+    "p": 0.45
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.4496,
+    0.45785,
+    0.4456,
+    0.451,
+    0.4494,
+    0.4502,
+    0.4536,
+    0.4568,
+    0.449,
+    0.44715
+   ],
+   "record_id": "CELL-0229",
+   "se_mc": 0.0011124297730643496,
+   "z": 0.916911812949978
+  },
+  {
+   "accuracy_sim": 0.43362,
+   "accuracy_theory": 0.4326750000000001,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "bahadur",
+   "n": 3,
+   "n_items_total": 200000,
+   "params": {
+    "c": 0.1,
+    "p": 0.45
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.4324,
+    0.43975,
+    0.42925,
+    0.43345,
+    0.43215,
+    0.43275,
+    0.43555,
+    0.4394,
+    0.43235,
+    0.42915
+   ],
+   "record_id": "CELL-0230",
+   "se_mc": 0.0011078523014711843,
+   "z": 0.8530017934204724
+  },
+  {
+   "accuracy_sim": 0.42571,
+   "accuracy_theory": 0.4252500000000001,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "bahadur",
+   "n": 5,
+   "n_items_total": 200000,
+   "params": {
+    "c": 0.1,
+    "p": 0.45
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.42365,
+    0.4329,
+    0.4211,
+    0.42505,
+    0.42425,
+    0.42475,
+    0.42755,
+    0.432,
+    0.42505,
+    0.4208
+   ],
+   "record_id": "CELL-0231",
+   "se_mc": 0.001105469215989301,
+   "z": 0.4161128988003922
+  },
+  {
+   "accuracy_sim": 0.4263,
+   "accuracy_theory": 0.4258583894179689,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "bahadur",
+   "n": 9,
+   "n_items_total": 200000,
+   "params": {
+    "c": 0.1,
+    "p": 0.45
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.4242,
+    0.4331,
+    0.4216,
+    0.42605,
+    0.4251,
+    0.42515,
+    0.42815,
+    0.4326,
+    0.42585,
+    0.4212
+   ],
+   "record_id": "CELL-0232",
+   "se_mc": 0.0011056740513829167,
+   "z": 0.39940394864000317
+  },
+  {
+   "accuracy_sim": 0.449905,
+   "accuracy_theory": 0.44899823207085177,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "bahadur",
+   "n": 15,
+   "n_items_total": 200000,
+   "params": {
+    "c": 0.1,
+    "p": 0.45
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.44855,
+    0.4564,
+    0.44445,
+    0.45,
+    0.44835,
+    0.4494,
+    0.4525,
+    0.45565,
+    0.448,
+    0.44575
+   ],
+   "record_id": "CELL-0233",
+   "se_mc": 0.0011122023639340579,
+   "z": 0.8152904170611845
+  },
+  {
+   "excluded": true,
+   "exclusion_reason": "inadmissible Bahadur cell (negative profile probability)",
+   "model": "bahadur",
+   "n": 31,
+   "params": {
+    "c": 0.1,
+    "p": 0.45
+   },
+   "pass": null,
+   "record_id": "CELL-0234"
+  },
+  {
+   "accuracy_sim": 0.45102,
+   "accuracy_theory": 0.45,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "bahadur",
+   "n": 1,
+   "n_items_total": 200000,
+   "params": {
+    "c": 0.4,
+    "p": 0.45
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.4496,
+    0.45785,
+    0.4456,
+    0.451,
+    0.4494,
+    0.4502,
+    0.4536,
+    0.4568,
+    0.449,
+    0.44715
+   ],
+   "record_id": "CELL-0235",
+   "se_mc": 0.0011124297730643496,
+   "z": 0.916911812949978
+  },
+  {
+   "accuracy_sim": 0.45593,
+   "accuracy_theory": 0.4549500000000001,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "bahadur",
+   "n": 3,
+   "n_items_total": 200000,
+   "params": {
+    "c": 0.4,
+    "p": 0.45
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.4542,
+    0.46195,
+    0.451,
+    0.45535,
+    0.4546,
+    0.45595,
+    0.45885,
+    0.4608,
+    0.45415,
+    0.45245
+   ],
+   "record_id": "CELL-0236",
+   "se_mc": 0.0011134866355282402,
+   "z": 0.8801183316717686
+  },
+  {
+   "accuracy_sim": 0.48119,
+   "accuracy_theory": 0.48038062500000006,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "bahadur",
+   "n": 5,
+   "n_items_total": 200000,
+   "params": {
+    "c": 0.4,
+    "p": 0.45
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.4786,
+    0.4856,
+    0.47705,
+    0.4807,
+    0.4786,
+    0.4812,
+    0.48545,
+    0.4882,
+    0.4792,
+    0.4773
+   ],
+   "record_id": "CELL-0237",
+   "se_mc": 0.0011171729501841007,
+   "z": 0.7244849598860833
+  },
+  {
+   "excluded": true,
+   "exclusion_reason": "inadmissible Bahadur cell (negative profile probability)",
+   "model": "bahadur",
+   "n": 9,
+   "params": {
+    "c": 0.4,
+    "p": 0.45
+   },
+   "pass": null,
+   "record_id": "CELL-0238"
+  },
+  {
+   "excluded": true,
+   "exclusion_reason": "inadmissible Bahadur cell (negative profile probability)",
+   "model": "bahadur",
+   "n": 15,
+   "params": {
+    "c": 0.4,
+    "p": 0.45
+   },
+   "pass": null,
+   "record_id": "CELL-0239"
+  },
+  {
+   "excluded": true,
+   "exclusion_reason": "inadmissible Bahadur cell (negative profile probability)",
+   "model": "bahadur",
+   "n": 31,
+   "params": {
+    "c": 0.4,
+    "p": 0.45
+   },
+   "pass": null,
+   "record_id": "CELL-0240"
+  },
+  {
+   "accuracy_sim": 0.50086,
+   "accuracy_theory": 0.5,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "bahadur",
+   "n": 1,
+   "n_items_total": 200000,
+   "params": {
+    "c": 0.0,
+    "p": 0.5
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.49755,
+    0.50575,
+    0.4956,
+    0.50255,
+    0.4992,
+    0.5008,
+    0.5054,
+    0.50835,
+    0.4981,
+    0.4953
+   ],
+   "record_id": "CELL-0241",
+   "se_mc": 0.001118033988749895,
+   "z": 0.7692073842599024
+  },
+  {
+   "accuracy_sim": 0.50086,
+   "accuracy_theory": 0.5,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "bahadur",
+   "n": 3,
+   "n_items_total": 200000,
+   "params": {
+    "c": 0.0,
+    "p": 0.5
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.49755,
+    0.50575,
+    0.4956,
+    0.50255,
+    0.4992,
+    0.5008,
+    0.5054,
+    0.50835,
+    0.4981,
+    0.4953
+   ],
+   "record_id": "CELL-0242",
+   "se_mc": 0.001118033988749895,
+   "z": 0.7692073842599024
+  },
+  {
+   "accuracy_sim": 0.50086,
+   "accuracy_theory": 0.5,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "bahadur",
+   "n": 5,
+   "n_items_total": 200000,
+   "params": {
+    "c": 0.0,
+    "p": 0.5
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.49755,
+    0.50575,
+    0.4956,
+    0.50255,
+    0.4992,
+    0.5008,
+    0.5054,
+    0.50835,
+    0.4981,
+    0.4953
+   ],
+   "record_id": "CELL-0243",
+   "se_mc": 0.001118033988749895,
+   "z": 0.7692073842599024
+  },
+  {
+   "accuracy_sim": 0.50086,
+   "accuracy_theory": 0.5,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "bahadur",
+   "n": 9,
+   "n_items_total": 200000,
+   "params": {
+    "c": 0.0,
+    "p": 0.5
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.49755,
+    0.50575,
+    0.4956,
+    0.50255,
+    0.4992,
+    0.5008,
+    0.5054,
+    0.50835,
+    0.4981,
+    0.4953
+   ],
+   "record_id": "CELL-0244",
+   "se_mc": 0.001118033988749895,
+   "z": 0.7692073842599024
+  },
+  {
+   "accuracy_sim": 0.50086,
+   "accuracy_theory": 0.5,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "bahadur",
+   "n": 15,
+   "n_items_total": 200000,
+   "params": {
+    "c": 0.0,
+    "p": 0.5
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.49755,
+    0.50575,
+    0.4956,
+    0.50255,
+    0.4992,
+    0.5008,
+    0.5054,
+    0.50835,
+    0.4981,
+    0.4953
+   ],
+   "record_id": "CELL-0245",
+   "se_mc": 0.001118033988749895,
+   "z": 0.7692073842599024
+  },
+  {
+   "accuracy_sim": 0.50086,
+   "accuracy_theory": 0.5,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "bahadur",
+   "n": 31,
+   "n_items_total": 200000,
+   "params": {
+    "c": 0.0,
+    "p": 0.5
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.49755,
+    0.50575,
+    0.4956,
+    0.50255,
+    0.4992,
+    0.5008,
+    0.5054,
+    0.50835,
+    0.4981,
+    0.4953
+   ],
+   "record_id": "CELL-0246",
+   "se_mc": 0.001118033988749895,
+   "z": 0.7692073842599024
+  },
+  {
+   "accuracy_sim": 0.50086,
+   "accuracy_theory": 0.5,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "bahadur",
+   "n": 1,
+   "n_items_total": 200000,
+   "params": {
+    "c": 0.1,
+    "p": 0.5
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.49755,
+    0.50575,
+    0.4956,
+    0.50255,
+    0.4992,
+    0.5008,
+    0.5054,
+    0.50835,
+    0.4981,
+    0.4953
+   ],
+   "record_id": "CELL-0247",
+   "se_mc": 0.001118033988749895,
+   "z": 0.7692073842599024
+  },
+  {
+   "accuracy_sim": 0.50086,
+   "accuracy_theory": 0.5,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "bahadur",
+   "n": 3,
+   "n_items_total": 200000,
+   "params": {
+    "c": 0.1,
+    "p": 0.5
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.49755,
+    0.50575,
+    0.4956,
+    0.50255,
+    0.4992,
+    0.5008,
+    0.5054,
+    0.50835,
+    0.4981,
+    0.4953
+   ],
+   "record_id": "CELL-0248",
+   "se_mc": 0.001118033988749895,
+   "z": 0.7692073842599024
+  },
+  {
+   "accuracy_sim": 0.50086,
+   "accuracy_theory": 0.5,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "bahadur",
+   "n": 5,
+   "n_items_total": 200000,
+   "params": {
+    "c": 0.1,
+    "p": 0.5
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.49755,
+    0.50575,
+    0.4956,
+    0.50255,
+    0.4992,
+    0.5008,
+    0.5054,
+    0.50835,
+    0.4981,
+    0.4953
+   ],
+   "record_id": "CELL-0249",
+   "se_mc": 0.001118033988749895,
+   "z": 0.7692073842599024
+  },
+  {
+   "accuracy_sim": 0.50086,
+   "accuracy_theory": 0.5,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "bahadur",
+   "n": 9,
+   "n_items_total": 200000,
+   "params": {
+    "c": 0.1,
+    "p": 0.5
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.49755,
+    0.50575,
+    0.4956,
+    0.50255,
+    0.4992,
+    0.5008,
+    0.5054,
+    0.50835,
+    0.4981,
+    0.4953
+   ],
+   "record_id": "CELL-0250",
+   "se_mc": 0.001118033988749895,
+   "z": 0.7692073842599024
+  },
+  {
+   "accuracy_sim": 0.50086,
+   "accuracy_theory": 0.5,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "bahadur",
+   "n": 15,
+   "n_items_total": 200000,
+   "params": {
+    "c": 0.1,
+    "p": 0.5
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.49755,
+    0.50575,
+    0.4956,
+    0.50255,
+    0.4992,
+    0.5008,
+    0.5054,
+    0.50835,
+    0.4981,
+    0.4953
+   ],
+   "record_id": "CELL-0251",
+   "se_mc": 0.001118033988749895,
+   "z": 0.7692073842599024
+  },
+  {
+   "excluded": true,
+   "exclusion_reason": "inadmissible Bahadur cell (negative profile probability)",
+   "model": "bahadur",
+   "n": 31,
+   "params": {
+    "c": 0.1,
+    "p": 0.5
+   },
+   "pass": null,
+   "record_id": "CELL-0252"
+  },
+  {
+   "accuracy_sim": 0.50086,
+   "accuracy_theory": 0.5,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "bahadur",
+   "n": 1,
+   "n_items_total": 200000,
+   "params": {
+    "c": 0.4,
+    "p": 0.5
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.49755,
+    0.50575,
+    0.4956,
+    0.50255,
+    0.4992,
+    0.5008,
+    0.5054,
+    0.50835,
+    0.4981,
+    0.4953
+   ],
+   "record_id": "CELL-0253",
+   "se_mc": 0.001118033988749895,
+   "z": 0.7692073842599024
+  },
+  {
+   "accuracy_sim": 0.50086,
+   "accuracy_theory": 0.5,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "bahadur",
+   "n": 3,
+   "n_items_total": 200000,
+   "params": {
+    "c": 0.4,
+    "p": 0.5
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.49755,
+    0.50575,
+    0.4956,
+    0.50255,
+    0.4992,
+    0.5008,
+    0.5054,
+    0.50835,
+    0.4981,
+    0.4953
+   ],
+   "record_id": "CELL-0254",
+   "se_mc": 0.001118033988749895,
+   "z": 0.7692073842599024
+  },
+  {
+   "accuracy_sim": 0.50086,
+   "accuracy_theory": 0.5,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "bahadur",
+   "n": 5,
+   "n_items_total": 200000,
+   "params": {
+    "c": 0.4,
+    "p": 0.5
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.49755,
+    0.50575,
+    0.4956,
+    0.50255,
+    0.4992,
+    0.5008,
+    0.5054,
+    0.50835,
+    0.4981,
+    0.4953
+   ],
+   "record_id": "CELL-0255",
+   "se_mc": 0.001118033988749895,
+   "z": 0.7692073842599024
+  },
+  {
+   "excluded": true,
+   "exclusion_reason": "inadmissible Bahadur cell (negative profile probability)",
+   "model": "bahadur",
+   "n": 9,
+   "params": {
+    "c": 0.4,
+    "p": 0.5
+   },
+   "pass": null,
+   "record_id": "CELL-0256"
+  },
+  {
+   "excluded": true,
+   "exclusion_reason": "inadmissible Bahadur cell (negative profile probability)",
+   "model": "bahadur",
+   "n": 15,
+   "params": {
+    "c": 0.4,
+    "p": 0.5
+   },
+   "pass": null,
+   "record_id": "CELL-0257"
+  },
+  {
+   "excluded": true,
+   "exclusion_reason": "inadmissible Bahadur cell (negative profile probability)",
+   "model": "bahadur",
+   "n": 31,
+   "params": {
+    "c": 0.4,
+    "p": 0.5
+   },
+   "pass": null,
+   "record_id": "CELL-0258"
+  },
+  {
+   "accuracy_sim": 0.551065,
+   "accuracy_theory": 0.55,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "bahadur",
+   "n": 1,
+   "n_items_total": 200000,
+   "params": {
+    "c": 0.0,
+    "p": 0.55
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.54815,
+    0.5543,
+    0.54455,
+    0.55065,
+    0.55195,
+    0.5513,
+    0.55735,
+    0.5573,
+    0.55055,
+    0.54455
+   ],
+   "record_id": "CELL-0259",
+   "se_mc": 0.0011124297730643494,
+   "z": 0.9573638046977883
+  },
+  {
+   "accuracy_sim": 0.57594,
+   "accuracy_theory": 0.5747500000000001,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "bahadur",
+   "n": 3,
+   "n_items_total": 200000,
+   "params": {
+    "c": 0.0,
+    "p": 0.55
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.57385,
+    0.5794,
+    0.56935,
+    0.57635,
+    0.57615,
+    0.5763,
+    0.58215,
+    0.58265,
+    0.57495,
+    0.56825
+   ],
+   "record_id": "CELL-0260",
+   "se_mc": 0.001105469215989301,
+   "z": 1.0764659773315934
+  },
+  {
+   "accuracy_sim": 0.59364,
+   "accuracy_theory": 0.593126875,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "bahadur",
+   "n": 5,
+   "n_items_total": 200000,
+   "params": {
+    "c": 0.0,
+    "p": 0.55
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.59165,
+    0.59755,
+    0.5871,
+    0.59415,
+    0.594,
+    0.59305,
+    0.59935,
+    0.6,
+    0.59345,
+    0.5861
+   ],
+   "record_id": "CELL-0261",
+   "se_mc": 0.0010984702662173754,
+   "z": 0.46712689071399066
+  },
+  {
+   "accuracy_sim": 0.621825,
+   "accuracy_theory": 0.6214209454492188,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "bahadur",
+   "n": 9,
+   "n_items_total": 200000,
+   "params": {
+    "c": 0.0,
+    "p": 0.55
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.62245,
+    0.626,
+    0.6143,
+    0.6221,
+    0.62225,
+    0.62175,
+    0.62825,
+    0.625,
+    0.6209,
+    0.61525
+   ],
+   "record_id": "CELL-0262",
+   "se_mc": 0.0010845666277509599,
+   "z": 0.37254931181043605
+  },
+  {
+   "accuracy_sim": 0.653745,
+   "accuracy_theory": 0.653503925147094,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "bahadur",
+   "n": 15,
+   "n_items_total": 200000,
+   "params": {
+    "c": 0.0,
+    "p": 0.55
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.6545,
+    0.65765,
+    0.64745,
+    0.65415,
+    0.6509,
+    0.65485,
+    0.65975,
+    0.65805,
+    0.65315,
+    0.647
+   ],
+   "record_id": "CELL-0263",
+   "se_mc": 0.0010640407533652914,
+   "z": 0.22656543195697407
+  },
+  {
+   "accuracy_sim": 0.71261,
+   "accuracy_theory": 0.7131799103884426,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "bahadur",
+   "n": 31,
+   "n_items_total": 200000,
+   "params": {
+    "c": 0.0,
+    "p": 0.55
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.71435,
+    0.71665,
+    0.70575,
+    0.7136,
+    0.7112,
+    0.714,
+    0.71655,
+    0.7169,
+    0.71145,
+    0.70565
+   ],
+   "record_id": "CELL-0264",
+   "se_mc": 0.0010113217238020143,
+   "z": -0.5635302545466181
+  },
+  {
+   "accuracy_sim": 0.551065,
+   "accuracy_theory": 0.55,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "bahadur",
+   "n": 1,
+   "n_items_total": 200000,
+   "params": {
+    "c": 0.1,
+    "p": 0.55
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.54815,
+    0.5543,
+    0.54455,
+    0.55065,
+    0.55195,
+    0.5513,
+    0.55735,
+    0.5573,
+    0.55055,
+    0.54455
+   ],
+   "record_id": "CELL-0265",
+   "se_mc": 0.0011124297730643494,
+   "z": 0.9573638046977883
+  },
+  {
+   "accuracy_sim": 0.56814,
+   "accuracy_theory": 0.5673250000000001,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "bahadur",
+   "n": 3,
+   "n_items_total": 200000,
+   "params": {
+    "c": 0.1,
+    "p": 0.55
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.56475,
+    0.5715,
+    0.5618,
+    0.56855,
+    0.5691,
+    0.56875,
+    0.57445,
+    0.57555,
+    0.566,
+    0.56095
+   ],
+   "record_id": "CELL-0266",
+   "se_mc": 0.0011078523014711843,
+   "z": 0.7356576313626024
+  },
+  {
+   "accuracy_sim": 0.57594,
+   "accuracy_theory": 0.5747500000000001,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "bahadur",
+   "n": 5,
+   "n_items_total": 200000,
+   "params": {
+    "c": 0.1,
+    "p": 0.55
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.57385,
+    0.5794,
+    0.56935,
+    0.57635,
+    0.57615,
+    0.5763,
+    0.58215,
+    0.58265,
+    0.57495,
+    0.56825
+   ],
+   "record_id": "CELL-0267",
+   "se_mc": 0.001105469215989301,
+   "z": 1.0764659773315934
+  },
+  {
+   "accuracy_sim": 0.57527,
+   "accuracy_theory": 0.5741416105820313,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "bahadur",
+   "n": 9,
+   "n_items_total": 200000,
+   "params": {
+    "c": 0.1,
+    "p": 0.55
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.5734,
+    0.57855,
+    0.56855,
+    0.57595,
+    0.57565,
+    0.5757,
+    0.58135,
+    0.582,
+    0.5739,
+    0.56765
+   ],
+   "record_id": "CELL-0268",
+   "se_mc": 0.0011056740513829164,
+   "z": 1.0205443607520133
+  },
+  {
+   "accuracy_sim": 0.552145,
+   "accuracy_theory": 0.5510017679291487,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "bahadur",
+   "n": 15,
+   "n_items_total": 200000,
+   "params": {
+    "c": 0.1,
+    "p": 0.55
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.54905,
+    0.5559,
+    0.54575,
+    0.55185,
+    0.5527,
+    0.55235,
+    0.55815,
+    0.55875,
+    0.5515,
+    0.54545
+   ],
+   "record_id": "CELL-0269",
+   "se_mc": 0.0011122023639340579,
+   "z": 1.027899335519755
+  },
+  {
+   "excluded": true,
+   "exclusion_reason": "inadmissible Bahadur cell (negative profile probability)",
+   "model": "bahadur",
+   "n": 31,
+   "params": {
+    "c": 0.1,
+    "p": 0.55
+   },
+   "pass": null,
+   "record_id": "CELL-0270"
+  },
+  {
+   "accuracy_sim": 0.551065,
+   "accuracy_theory": 0.55,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "bahadur",
+   "n": 1,
+   "n_items_total": 200000,
+   "params": {
+    "c": 0.4,
+    "p": 0.55
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.54815,
+    0.5543,
+    0.54455,
+    0.55065,
+    0.55195,
+    0.5513,
+    0.55735,
+    0.5573,
+    0.55055,
+    0.54455
+   ],
+   "record_id": "CELL-0271",
+   "se_mc": 0.0011124297730643494,
+   "z": 0.9573638046977883
+  },
+  {
+   "accuracy_sim": 0.54615,
+   "accuracy_theory": 0.54505,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "bahadur",
+   "n": 3,
+   "n_items_total": 200000,
+   "params": {
+    "c": 0.4,
+    "p": 0.55
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.54335,
+    0.54995,
+    0.5401,
+    0.5454,
+    0.54755,
+    0.5462,
+    0.5511,
+    0.55295,
+    0.5449,
+    0.54
+   ],
+   "record_id": "CELL-0272",
+   "se_mc": 0.0011134866355282402,
+   "z": 0.9878879233051124
+  },
+  {
+   "accuracy_sim": 0.52094,
+   "accuracy_theory": 0.519619375,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "bahadur",
+   "n": 5,
+   "n_items_total": 200000,
+   "params": {
+    "c": 0.4,
+    "p": 0.55
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.5187,
+    0.52545,
+    0.51475,
+    0.52145,
+    0.52005,
+    0.51995,
+    0.52535,
+    0.52875,
+    0.51935,
+    0.5156
+   ],
+   "record_id": "CELL-0273",
+   "se_mc": 0.0011171729501841005,
+   "z": 1.182113297482128
+  },
+  {
+   "excluded": true,
+   "exclusion_reason": "inadmissible Bahadur cell (negative profile probability)",
+   "model": "bahadur",
+   "n": 9,
+   "params": {
+    "c": 0.4,
+    "p": 0.55
+   },
+   "pass": null,
+   "record_id": "CELL-0274"
+  },
+  {
+   "excluded": true,
+   "exclusion_reason": "inadmissible Bahadur cell (negative profile probability)",
+   "model": "bahadur",
+   "n": 15,
+   "params": {
+    "c": 0.4,
+    "p": 0.55
+   },
+   "pass": null,
+   "record_id": "CELL-0275"
+  },
+  {
+   "excluded": true,
+   "exclusion_reason": "inadmissible Bahadur cell (negative profile probability)",
+   "model": "bahadur",
+   "n": 31,
+   "params": {
+    "c": 0.4,
+    "p": 0.55
+   },
+   "pass": null,
+   "record_id": "CELL-0276"
+  },
+  {
+   "accuracy_sim": 0.600185,
+   "accuracy_theory": 0.6,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "bahadur",
+   "n": 1,
+   "n_items_total": 200000,
+   "params": {
+    "c": 0.0,
+    "p": 0.6
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.59925,
+    0.6038,
+    0.5935,
+    0.601,
+    0.60045,
+    0.59955,
+    0.60635,
+    0.6067,
+    0.5995,
+    0.59175
+   ],
+   "record_id": "CELL-0277",
+   "se_mc": 0.0010954451150103322,
+   "z": 0.16888112189741775
+  },
+  {
+   "accuracy_sim": 0.64835,
+   "accuracy_theory": 0.648,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "bahadur",
+   "n": 3,
+   "n_items_total": 200000,
+   "params": {
+    "c": 0.0,
+    "p": 0.6
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.64905,
+    0.6524,
+    0.64155,
+    0.64865,
+    0.64565,
+    0.6495,
+    0.65535,
+    0.6515,
+    0.64865,
+    0.6412
+   ],
+   "record_id": "CELL-0278",
+   "se_mc": 0.0010679325821417755,
+   "z": 0.3277360442529288
+  },
+  {
+   "accuracy_sim": 0.682375,
+   "accuracy_theory": 0.68256,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "bahadur",
+   "n": 5,
+   "n_items_total": 200000,
+   "params": {
+    "c": 0.0,
+    "p": 0.6
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.6832,
+    0.6868,
+    0.6769,
+    0.68325,
+    0.6813,
+    0.6839,
+    0.6857,
+    0.6872,
+    0.681,
+    0.6745
+   ],
+   "record_id": "CELL-0279",
+   "se_mc": 0.0010408454409757484,
+   "z": -0.17774012616759033
+  },
+  {
+   "accuracy_sim": 0.733515,
+   "accuracy_theory": 0.73343232,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "bahadur",
+   "n": 9,
+   "n_items_total": 200000,
+   "params": {
+    "c": 0.0,
+    "p": 0.6
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.73725,
+    0.7362,
+    0.7257,
+    0.73355,
+    0.7322,
+    0.73675,
+    0.73815,
+    0.73705,
+    0.73195,
+    0.72635
+   ],
+   "record_id": "CELL-0280",
+   "se_mc": 0.0009887096438778616,
+   "z": 0.0836241463931906
+  },
+  {
+   "accuracy_sim": 0.78616,
+   "accuracy_theory": 0.786896817389568,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "bahadur",
+   "n": 15,
+   "n_items_total": 200000,
+   "params": {
+    "c": 0.0,
+    "p": 0.6
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.7899,
+    0.78635,
+    0.78105,
+    0.78645,
+    0.78505,
+    0.78945,
+    0.7888,
+    0.7902,
+    0.7849,
+    0.77945
+   ],
+   "record_id": "CELL-0281",
+   "se_mc": 0.0009156697444268236,
+   "z": -0.8046759151458159
+  },
+  {
+   "accuracy_sim": 0.87069,
+   "accuracy_theory": 0.8716182723048189,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "bahadur",
+   "n": 31,
+   "n_items_total": 200000,
+   "params": {
+    "c": 0.0,
+    "p": 0.6
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.87475,
+    0.8705,
+    0.86795,
+    0.8719,
+    0.8696,
+    0.8702,
+    0.87355,
+    0.8721,
+    0.86815,
+    0.8682
+   ],
+   "record_id": "CELL-0282",
+   "se_mc": 0.0007479968572433358,
+   "z": -1.2410109692706546
+  },
+  {
+   "accuracy_sim": 0.600185,
+   "accuracy_theory": 0.6,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "bahadur",
+   "n": 1,
+   "n_items_total": 200000,
+   "params": {
+    "c": 0.1,
+    "p": 0.6
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.59925,
+    0.6038,
+    0.5935,
+    0.601,
+    0.60045,
+    0.59955,
+    0.60635,
+    0.6067,
+    0.5995,
+    0.59175
+   ],
+   "record_id": "CELL-0283",
+   "se_mc": 0.0010954451150103322,
+   "z": 0.16888112189741775
+  },
+  {
+   "accuracy_sim": 0.63399,
+   "accuracy_theory": 0.6336,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "bahadur",
+   "n": 3,
+   "n_items_total": 200000,
+   "params": {
+    "c": 0.1,
+    "p": 0.6
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.6337,
+    0.63775,
+    0.627,
+    0.6347,
+    0.6337,
+    0.63415,
+    0.6405,
+    0.6369,
+    0.63415,
+    0.62735
+   ],
+   "record_id": "CELL-0284",
+   "se_mc": 0.001077383497181946,
+   "z": 0.36198809525122994
+  },
+  {
+   "accuracy_sim": 0.64835,
+   "accuracy_theory": 0.6479999999999999,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "bahadur",
+   "n": 5,
+   "n_items_total": 200000,
+   "params": {
+    "c": 0.1,
+    "p": 0.6
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.64905,
+    0.6524,
+    0.64155,
+    0.64865,
+    0.64565,
+    0.6495,
+    0.65535,
+    0.6515,
+    0.64865,
+    0.6412
+   ],
+   "record_id": "CELL-0285",
+   "se_mc": 0.0010679325821417755,
+   "z": 0.32773604425303277
+  },
+  {
+   "accuracy_sim": 0.65015,
+   "accuracy_theory": 0.649824768,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "bahadur",
+   "n": 9,
+   "n_items_total": 200000,
+   "params": {
+    "c": 0.1,
+    "p": 0.6
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.6509,
+    0.65415,
+    0.6438,
+    0.6505,
+    0.6469,
+    0.65145,
+    0.6566,
+    0.65365,
+    0.65055,
+    0.643
+   ],
+   "record_id": "CELL-0286",
+   "se_mc": 0.0010666595963421184,
+   "z": 0.30490702105462925
+  },
+  {
+   "accuracy_sim": 0.622045,
+   "accuracy_theory": 0.621618733154304,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "bahadur",
+   "n": 15,
+   "n_items_total": 200000,
+   "params": {
+    "c": 0.1,
+    "p": 0.6
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.62275,
+    0.6262,
+    0.61465,
+    0.6222,
+    0.6225,
+    0.6219,
+    0.6284,
+    0.62545,
+    0.6211,
+    0.6153
+   ],
+   "record_id": "CELL-0287",
+   "se_mc": 0.0010844558168637904,
+   "z": 0.3930698135113148
+  },
+  {
+   "excluded": true,
+   "exclusion_reason": "inadmissible Bahadur cell (negative profile probability)",
+   "model": "bahadur",
+   "n": 31,
+   "params": {
+    "c": 0.1,
+    "p": 0.6
+   },
+   "pass": null,
+   "record_id": "CELL-0288"
+  },
+  {
+   "accuracy_sim": 0.600185,
+   "accuracy_theory": 0.6,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "bahadur",
+   "n": 1,
+   "n_items_total": 200000,
+   "params": {
+    "c": 0.4,
+    "p": 0.6
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.59925,
+    0.6038,
+    0.5935,
+    0.601,
+    0.60045,
+    0.59955,
+    0.60635,
+    0.6067,
+    0.5995,
+    0.59175
+   ],
+   "record_id": "CELL-0289",
+   "se_mc": 0.0010954451150103322,
+   "z": 0.16888112189741775
+  },
+  {
+   "accuracy_sim": 0.590975,
+   "accuracy_theory": 0.5904,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "bahadur",
+   "n": 3,
+   "n_items_total": 200000,
+   "params": {
+    "c": 0.4,
+    "p": 0.6
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.58865,
+    0.59495,
+    0.58425,
+    0.59165,
+    0.59145,
+    0.59045,
+    0.59665,
+    0.5977,
+    0.59065,
+    0.58335
+   ],
+   "record_id": "CELL-0290",
+   "se_mc": 0.0010996086576596238,
+   "z": 0.52291330737956
+  },
+  {
+   "accuracy_sim": 0.545475,
+   "accuracy_theory": 0.5443199999999999,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "bahadur",
+   "n": 5,
+   "n_items_total": 200000,
+   "params": {
+    "c": 0.4,
+    "p": 0.6
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.54245,
+    0.5494,
+    0.5392,
+    0.5446,
+    0.54695,
+    0.5454,
+    0.55045,
+    0.55265,
+    0.54455,
+    0.5391
+   ],
+   "record_id": "CELL-0291",
+   "se_mc": 0.0011136331029562654,
+   "z": 1.0371458938622151
+  },
+  {
+   "excluded": true,
+   "exclusion_reason": "inadmissible Bahadur cell (negative profile probability)",
+   "model": "bahadur",
+   "n": 9,
+   "params": {
+    "c": 0.4,
+    "p": 0.6
+   },
+   "pass": null,
+   "record_id": "CELL-0292"
+  },
+  {
+   "excluded": true,
+   "exclusion_reason": "inadmissible Bahadur cell (negative profile probability)",
+   "model": "bahadur",
+   "n": 15,
+   "params": {
+    "c": 0.4,
+    "p": 0.6
+   },
+   "pass": null,
+   "record_id": "CELL-0293"
+  },
+  {
+   "excluded": true,
+   "exclusion_reason": "inadmissible Bahadur cell (negative profile probability)",
+   "model": "bahadur",
+   "n": 31,
+   "params": {
+    "c": 0.4,
+    "p": 0.6
+   },
+   "pass": null,
+   "record_id": "CELL-0294"
+  },
+  {
+   "accuracy_sim": 0.79941,
+   "accuracy_theory": 0.8,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "bahadur",
+   "n": 1,
+   "n_items_total": 200000,
+   "params": {
+    "c": 0.0,
+    "p": 0.8
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.80275,
+    0.79845,
+    0.79545,
+    0.7996,
+    0.79905,
+    0.8032,
+    0.8024,
+    0.8029,
+    0.79785,
+    0.79245
+   ],
+   "record_id": "CELL-0295",
+   "se_mc": 0.0008944271909999158,
+   "z": -0.6596400533625392
+  },
+  {
+   "accuracy_sim": 0.895665,
+   "accuracy_theory": 0.8960000000000001,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "bahadur",
+   "n": 3,
+   "n_items_total": 200000,
+   "params": {
+    "c": 0.0,
+    "p": 0.8
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.89705,
+    0.89665,
+    0.89505,
+    0.8959,
+    0.89485,
+    0.89485,
+    0.89905,
+    0.8959,
+    0.8931,
+    0.89425
+   ],
+   "record_id": "CELL-0296",
+   "se_mc": 0.000682583328246449,
+   "z": -0.49078256988886254
+  },
+  {
+   "accuracy_sim": 0.94197,
+   "accuracy_theory": 0.94208,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "bahadur",
+   "n": 5,
+   "n_items_total": 200000,
+   "params": {
+    "c": 0.0,
+    "p": 0.8
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.94115,
+    0.94155,
+    0.9417,
+    0.9417,
+    0.9413,
+    0.9425,
+    0.94435,
+    0.94295,
+    0.94045,
+    0.94205
+   ],
+   "record_id": "CELL-0297",
+   "se_mc": 0.0005223278357506901,
+   "z": -0.21059570727637442
+  },
+  {
+   "accuracy_sim": 0.980705,
+   "accuracy_theory": 0.98041856,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "bahadur",
+   "n": 9,
+   "n_items_total": 200000,
+   "params": {
+    "c": 0.0,
+    "p": 0.8
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.98095,
+    0.98055,
+    0.97865,
+    0.9806,
+    0.9797,
+    0.9813,
+    0.98225,
+    0.982,
+    0.98065,
+    0.9804
+   ],
+   "record_id": "CELL-0298",
+   "se_mc": 0.0003098225880042186,
+   "z": 0.9245291050118616
+  },
+  {
+   "accuracy_sim": 0.99598,
+   "accuracy_theory": 0.995760250290176,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "bahadur",
+   "n": 15,
+   "n_items_total": 200000,
+   "params": {
+    "c": 0.0,
+    "p": 0.8
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.99595,
+    0.99615,
+    0.99515,
+    0.9963,
+    0.9953,
+    0.9964,
+    0.99655,
+    0.9962,
+    0.99615,
+    0.99565
+   ],
+   "record_id": "CELL-0299",
+   "se_mc": 0.00014528892305028005,
+   "z": 1.5125014709340232
+  },
+  {
+   "accuracy_sim": 0.99992,
+   "accuracy_theory": 0.9999118450479717,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "bahadur",
+   "n": 31,
+   "n_items_total": 200000,
+   "params": {
+    "c": 0.0,
+    "p": 0.8
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.99995,
+    1.0,
+    0.99985,
+    1.0,
+    0.99995,
+    0.99985,
+    0.9999,
+    0.99985,
+    0.99995,
+    0.9999
+   ],
+   "record_id": "CELL-0300",
+   "se_mc": 2.0993711050303774e-05,
+   "z": 0.3884473787786795
+  },
+  {
+   "accuracy_sim": 0.79941,
+   "accuracy_theory": 0.8,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "bahadur",
+   "n": 1,
+   "n_items_total": 200000,
+   "params": {
+    "c": 0.1,
+    "p": 0.8
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.80275,
+    0.79845,
+    0.79545,
+    0.7996,
+    0.79905,
+    0.8032,
+    0.8024,
+    0.8029,
+    0.79785,
+    0.79245
+   ],
+   "record_id": "CELL-0301",
+   "se_mc": 0.0008944271909999158,
+   "z": -0.6596400533625392
+  },
+  {
+   "accuracy_sim": 0.866385,
+   "accuracy_theory": 0.8672000000000001,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "bahadur",
+   "n": 3,
+   "n_items_total": 200000,
+   "params": {
+    "c": 0.1,
+    "p": 0.8
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.87045,
+    0.8657,
+    0.86405,
+    0.86705,
+    0.86585,
+    0.866,
+    0.86885,
+    0.8682,
+    0.86405,
+    0.86365
+   ],
+   "record_id": "CELL-0302",
+   "se_mc": 0.0007588285708906852,
+   "z": -1.0740238721421678
+  },
+  {
+   "accuracy_sim": 0.895665,
+   "accuracy_theory": 0.896,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "bahadur",
+   "n": 5,
+   "n_items_total": 200000,
+   "params": {
+    "c": 0.1,
+    "p": 0.8
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.89705,
+    0.89665,
+    0.89505,
+    0.8959,
+    0.89485,
+    0.89485,
+    0.89905,
+    0.8959,
+    0.8931,
+    0.89425
+   ],
+   "record_id": "CELL-0303",
+   "se_mc": 0.0006825833282464493,
+   "z": -0.4907825698886996
+  },
+  {
+   "accuracy_sim": 0.930705,
+   "accuracy_theory": 0.9308733440000001,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "bahadur",
+   "n": 9,
+   "n_items_total": 200000,
+   "params": {
+    "c": 0.1,
+    "p": 0.8
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.9294,
+    0.93045,
+    0.93105,
+    0.9302,
+    0.93075,
+    0.9314,
+    0.9326,
+    0.9325,
+    0.9287,
+    0.93
+   ],
+   "record_id": "CELL-0304",
+   "se_mc": 0.0005672220086979065,
+   "z": -0.29678679144792375
+  },
+  {
+   "accuracy_sim": 0.96657,
+   "accuracy_theory": 0.9667402300129281,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "bahadur",
+   "n": 15,
+   "n_items_total": 200000,
+   "params": {
+    "c": 0.1,
+    "p": 0.8
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.9658,
+    0.96585,
+    0.96545,
+    0.96745,
+    0.9643,
+    0.9671,
+    0.9689,
+    0.9684,
+    0.9669,
+    0.96555
+   ],
+   "record_id": "CELL-0305",
+   "se_mc": 0.0004009585869356023,
+   "z": -0.4245575939127636
+  },
+  {
+   "excluded": true,
+   "exclusion_reason": "inadmissible Bahadur cell (negative profile probability)",
+   "model": "bahadur",
+   "n": 31,
+   "params": {
+    "c": 0.1,
+    "p": 0.8
+   },
+   "pass": null,
+   "record_id": "CELL-0306"
+  },
+  {
+   "accuracy_sim": 0.79941,
+   "accuracy_theory": 0.8,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "bahadur",
+   "n": 1,
+   "n_items_total": 200000,
+   "params": {
+    "c": 0.4,
+    "p": 0.8
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.80275,
+    0.79845,
+    0.79545,
+    0.7996,
+    0.79905,
+    0.8032,
+    0.8024,
+    0.8029,
+    0.79785,
+    0.79245
+   ],
+   "record_id": "CELL-0307",
+   "se_mc": 0.0008944271909999158,
+   "z": -0.6596400533625392
+  },
+  {
+   "accuracy_sim": 0.78014,
+   "accuracy_theory": 0.7808000000000002,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "bahadur",
+   "n": 3,
+   "n_items_total": 200000,
+   "params": {
+    "c": 0.4,
+    "p": 0.8
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.78455,
+    0.7806,
+    0.7748,
+    0.7793,
+    0.77885,
+    0.7834,
+    0.7828,
+    0.7843,
+    0.7797,
+    0.7731
+   ],
+   "record_id": "CELL-0308",
+   "se_mc": 0.0009250712404998869,
+   "z": -0.7134585652490584
+  },
+  {
+   "accuracy_sim": 0.75763,
+   "accuracy_theory": 0.7577600000000001,
+   "excluded": false,
+   "exclusion_reason": "",
+   "model": "bahadur",
+   "n": 5,
+   "n_items_total": 200000,
+   "params": {
+    "c": 0.4,
+    "p": 0.8
+   },
+   "pass": true,
+   "per_seed_accuracy": [
+    0.7625,
+    0.75875,
+    0.7517,
+    0.7575,
+    0.75615,
+    0.76085,
+    0.76185,
+    0.76135,
+    0.7556,
+    0.75005
+   ],
+   "record_id": "CELL-0309",
+   "se_mc": 0.0009580182211210807,
+   "z": -0.13569679274779078
+  },
+  {
+   "excluded": true,
+   "exclusion_reason": "inadmissible Bahadur cell (negative profile probability)",
+   "model": "bahadur",
+   "n": 9,
+   "params": {
+    "c": 0.4,
+    "p": 0.8
+   },
+   "pass": null,
+   "record_id": "CELL-0310"
+  },
+  {
+   "excluded": true,
+   "exclusion_reason": "inadmissible Bahadur cell (negative profile probability)",
+   "model": "bahadur",
+   "n": 15,
+   "params": {
+    "c": 0.4,
+    "p": 0.8
+   },
+   "pass": null,
+   "record_id": "CELL-0311"
+  },
+  {
+   "excluded": true,
+   "exclusion_reason": "inadmissible Bahadur cell (negative profile probability)",
+   "model": "bahadur",
+   "n": 31,
+   "params": {
+    "c": 0.4,
+    "p": 0.8
+   },
+   "pass": null,
+   "record_id": "CELL-0312"
+  }
+ ],
+ "schema_version": "1.0.0",
+ "seeds": [
+  3757552657,
+  673228719,
+  3241444873,
+  3685993406,
+  1216546553,
+  2078861726,
+  2471122328,
+  23012616,
+  3031610183,
+  2976135721
+ ],
+ "summary": [
+  {
+   "abs_tol": 1e-09,
+   "check": "golden bahadur_mv(3, 0.55, 0.4)",
+   "expected": 0.54505,
+   "got": 0.54505,
+   "pass": true
+  },
+  {
+   "abs_tol": 5e-08,
+   "check": "golden bahadur_mv(5, 0.55, 0.4)",
+   "expected": 0.5196194,
+   "got": 0.519619375,
+   "pass": true
+  },
+  {
+   "abs_tol": 1e-09,
+   "check": "golden condorcet(3, 0.55)",
+   "expected": 0.57475,
+   "got": 0.5747500000000001,
+   "pass": true
+  },
+  {
+   "abs_tol": 5e-08,
+   "check": "golden condorcet(5, 0.55)",
+   "expected": 0.5931269,
+   "got": 0.593126875,
+   "pass": true
+  },
+  {
+   "check": "monte_carlo_cells",
+   "max_abs_z": 2.426694865229064,
+   "n_cells": 292,
+   "n_excluded": 20,
+   "n_fail": 0,
+   "pass": true,
+   "tolerance_se": 4.0
+  }
+ ]
+}

@@ -43,3 +43,26 @@ Append-only. Each entry: id, date, decision, decided by, context, alternatives, 
 - **Context:** dependencies must have been released at least two weeks before 2026-11-24.
 - **Decision:** `pyproject.toml` sets `[tool.uv] exclude-newer = "2026-11-10T00:00:00Z"`, so the resolver cannot pick a release from the last two weeks.
 - **Consequences:** reproducible resolution; see `progress.md` for the `uv lock` outcome.
+
+## D-006: Packaged layout, uv_build backend and a `report` dependency group with typst
+
+- **Date:** 2026-11-24
+- **Decided by:** session (M2); open to owner review
+- **Context:** M2 needs a `paradox` CLI entry point and PDF generation from inside the project environment.
+- **Decision:** `pyproject.toml` switches to `package = true` with the `uv_build` backend (`>=0.9.0,<0.10.0`) and a `[project.scripts]` entry `paradox`. A `report` dependency group adds `typst` (resolved to 0.15.2, uploaded 2026-11-05, inside the `exclude-newer` bound of D-005); `default-groups = ["dev", "report"]`. pandoc stays external (shared `.tools/pandoc`, overridable with `PARADOX_PANDOC`).
+- **Consequences:** `uv sync` installs everything needed for tests and PDFs; `uv.lock` changed accordingly.
+
+## D-007: Guards for exploratory and confirmatory runs
+
+- **Date:** 2026-11-24
+- **Decided by:** session (M2), implementing G-FREEZE mechanically; open to owner review
+- **Decision:** `paradox run` refuses a `confirmatory` config unless the registry row holds a 64-hex SHA-256 equal to the protocol file's hash, the protocol header no longer says DRAFT, and the seed entropy is the confirmatory value 20261124. Exploratory configs may not use entropy 20261124 (held-out seeds stay unseen) and must write under a path with an `exploratory` component.
+- **Consequences:** no confirmatory output can be produced before the owner freezes; exploratory outputs are physically separated (`results/exploratory/`).
+
+## D-008: Common random numbers across cells, not only within runs
+
+- **Date:** 2026-11-24
+- **Decided by:** session (M2); open to owner review
+- **Context:** protocol section 2.6 requires common random numbers across rules and budgets within a run. It does not say whether different `(scenario, lambda)` cells share seeds.
+- **Decision:** every cell uses the same seed list, and each random component (labels, difficulty, leader, adoption, private answers, signals, speaking order, herding, switching, ties) has its own child stream, so cells are matched by seed. Rules and budgets use prefixes of one 31-reasoner table.
+- **Consequences:** comparisons across `lambda` and scenarios are also paired by seed. Cells are therefore not independent of one another; analyses that pool cells must account for this. The owner may prefer independent seeds per cell at freeze.
