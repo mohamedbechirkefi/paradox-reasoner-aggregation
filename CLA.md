@@ -14,9 +14,9 @@ and
 **Contributor:** The individual accepting this Agreement.
 
 The Agreement concerns contributions intentionally submitted
-for inclusion in PARADOX (research repository), planned at:
+for inclusion in PARADOX (research repository), at:
 
-https://github.com/mohamedbechirkefi/paradox-research
+https://github.com/mohamedbechirkefi/paradox-reasoner-aggregation
 
 ## 1. Ownership of contributions
 
