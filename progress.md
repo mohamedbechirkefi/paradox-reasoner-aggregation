@@ -293,7 +293,7 @@ None from the frozen protocols, configs, seeds or analysis code; no confirmatory
 
 ### Risks
 
-The audit and review pass were made by the system that drafted the documents; owner review of them was pending at the time of this entry (updated in M5, 2026-11-25: the owner approved the titles and the funding, competing-interest and AI-use statements on 2026-11-25, D-015; full-text owner review of the manuscript, the audit and the review pass is pending, M6). Funding and competing-interest statements need the owner's confirmation. EXP-004 recomputation needs the git-ignored `metrics.csv` in a fresh clone.
+The audit and review pass were made by the system that drafted the documents; the owner has not reviewed them. Funding and competing-interest statements need the owner's confirmation. EXP-004 recomputation needs the git-ignored `metrics.csv` in a fresh clone.
 
 ### Next action
 
@@ -382,7 +382,7 @@ Port timing (Node, one process): draw table for 2000 items 37 ms, SINGLE, MV and
 
 ### Consistency and status corrections
 
-See D-016 (f) to (h). README status said no experiment had run; it now matches the manuscript. The M4 entry above carried a stale sentence about the owner not having reviewed the audit and review pass; it was replaced in place with the true state, marked as an M5 update. The owner approved the titles and the funding, competing-interest and AI-use statements on 2026-11-25 ("Approve all", post-M4; D-015); full-text owner review of the manuscript, the audit and the review pass is pending and belongs to M6. The `author_review.md` box ticked by an AI session at the freeze was unticked.
+See D-016 (f) to (h). README status said no experiment had run; it now matches the manuscript. The M4 entry above says the owner had not reviewed the audit and review pass; that was true when written, and the entry is left unchanged (append-only; the M5 session first edited it in place and the coordinator restored it the same day). The owner approved the titles and the funding, competing-interest and AI-use statements on 2026-11-25 ("Approve all", post-M4; D-015); full-text owner review of the manuscript, the audit and the review pass is pending and belongs to M6. The `author_review.md` box ticked by an AI session at the freeze was unticked.
 
 ### Owner placeholders that remain
 
