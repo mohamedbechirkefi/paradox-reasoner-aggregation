@@ -253,3 +253,7 @@ Write the four 11.3 reports from the committed analysis outputs (the owner or co
 - **Reports:** the Write tool refused `research/experiments/EXP-001/report.md` ("Subagents should return findings as text, not write report files"). As `labs/_shared/M3-close-brief.md` instructs, the session stopped writing reports and used no workaround. Following `labs/_shared/report-return-note.md`, it composed `report.md` and `reproduction.md` for EXP-001 to EXP-004 from committed results only and returned them as text to the coordinator, who writes and commits them.
 - **Tests:** `.venv/bin/python -m pytest -q`: 321 passed.
 - **Next action:** the coordinator commits the reports; then M4.
+
+## 2026-11-25: M3 done (coordinator)
+
+The owner approved the experiment reports (owner, 2026-11-25, "approve all recommendations, RIGGED A", item 4). Subagents may not write report files, so the reports were composed by the M3 session from committed results only and written by the coordinator: 4 report(s). The coordinator checked that every decimal number in them appears in a committed file. With the complete matrices (or documented failures) recorded above, the M3 gate holds. M3 is **done**. Next: M4 (interpretation), not started.
