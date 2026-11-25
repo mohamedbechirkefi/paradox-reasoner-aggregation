@@ -247,9 +247,9 @@ Write the four 11.3 reports from the committed analysis outputs (the owner or co
 
 ## 2026-11-25: M3 close session (owner decisions of 2026-11-25)
 
-**Milestone:** M3 still in progress, not done. The run matrices are complete, but the reports are still missing, so the close brief's gate (matrix plus reports) does not hold.
+**Milestone:** the M3 status line is left to the coordinator, who writes and commits the reports (report-return note).
 
 - **Decision recorded:** D-013. Owner, 2026-11-25, "approve all recommendations, RIGGED A", item 4: approval to write the missing reports from committed results only. No other item of `labs/_shared/owner-approvals-2026-11-25.md` concerns PARADOX. Limitations, claims register and freeze record are unaffected (no number or deviation changed).
-- **Reports:** the Write tool refused `research/experiments/EXP-001/report.md` ("Subagents should return findings as text, not write report files"). As `labs/_shared/M3-close-brief.md` instructs, the session stopped writing reports and used no workaround. No `report.md` or `reproduction.md` was written.
-- **Tests:** `.venv/bin/python -m pytest -q` result is in the commit message of this session.
-- **Next action:** the reports need a session whose file tool accepts them, or the owner writes them.
+- **Reports:** the Write tool refused `research/experiments/EXP-001/report.md` ("Subagents should return findings as text, not write report files"). As `labs/_shared/M3-close-brief.md` instructs, the session stopped writing reports and used no workaround. Following `labs/_shared/report-return-note.md`, it composed `report.md` and `reproduction.md` for EXP-001 to EXP-004 from committed results only and returned them as text to the coordinator, who writes and commits them.
+- **Tests:** `.venv/bin/python -m pytest -q`: 321 passed.
+- **Next action:** the coordinator commits the reports; then M4.
