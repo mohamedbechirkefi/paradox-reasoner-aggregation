@@ -20,7 +20,7 @@ Status: revised in M4 (2026-11-25) after all four confirmatory experiments, the 
 - **P2 concerns one SEQ rule.** Its disconfirmation is not a statement about herding in general.
 - **Unadjusted intervals can mislead.** In S6 at `lambda = 0.75`, `B = 31`, the unadjusted interval lies below 0 around an exact value of +0.00002 (shared-seed artefact).
 - **EXP-004 is weak evidence.** 15 of its 18 frozen-rule checks could not fail by construction (MV does not depend on `tau` or `w`); it covers no S6 cell.
-- **Audit by the drafting system.** The evidence audit and second review pass were performed by the AI assistant that drafted the documents; the owner's review is pending.
+- **Audit by the drafting system.** The evidence audit and second review pass were performed by the AI assistant that drafted the documents. The owner approved the titles and the funding, competing-interest and AI-use statements on 2026-11-25 (D-015); full-text owner review of the manuscript, the audit and the review pass is pending (M6).
 
 ## Construct validity
 

@@ -5,12 +5,12 @@ Milestones from master prompt section 5 with the section 11.6 additions. Effort 
 
 | Id | Milestone | Depends on | Priority | Effort | Status | Blockers |
 |---|---|---|---|---|---|---|
-| M0 | Bootstrap and feasibility | none | P0 | 0.5 | done (this session; owner review pending) | none |
+| M0 | Bootstrap and feasibility | none | P0 | 0.5 | done (2026-11-24); the owner's gate confirmation box below is still open | none |
 | M1 | Research and preregistration | M0 | P0 | 0.5 | done; M1 gate passed (protocols frozen at v1.0, owner-approved 2026-11-24) | none (foundational sources still unverified, see below) |
 | M2 | Core implementation | M1 drafts (implementation may start before freeze; exploratory only) | P0 | 1 | done (amendments applied, EXP-004 tie rule and variants, confirmatory configs, freeze guard) | none |
 | M3 | Experiments | M1 freeze, M2 | P0 | 0.75 | done (2026-11-25): all four frozen matrices complete; reports written by the coordinator from committed results (D-013) | none |
-| M4 | Interpretation | M3 | P0 | 0.75 | done (2026-11-25): confounders and sensitivity examined, evidence audit, manuscript and second review pass (D-014); owner review pending | none |
-| M5 | Interactive experience | M3 results (demo shell can start in M2) | P1 | 0.75 | not started | none |
+| M4 | Interpretation | M3 | P0 | 0.75 | done (2026-11-25): confounders and sensitivity examined, evidence audit, manuscript and second review pass (D-014); titles and section 11 statements owner-approved 2026-11-25 (D-015); full-text owner review pending (M6) | none |
+| M5 | Interactive experience | M3 results (demo shell can start in M2) | P1 | 0.75 | done (2026-11-25): static offline page, exact engine port in the sandbox, consistency tests, README and articles aligned (D-016) | none |
 | M6 | Release candidate | M4, M5 | P0 | 0.75 | not started | owner approval for any publication (G-PUBLIC) |
 
 ## M0: Bootstrap and feasibility
@@ -65,7 +65,7 @@ Acceptance criteria:
 - [x] EXP-001 passes before EXP-002 to EXP-004 start (stop rule): PASS, 292 cells, 0 failing (J-0010).
 - [x] Frozen matrices run in full, or failures documented; no silently dropped runs: EXP-001 292 + 20 excluded cells, EXP-002 720 runs, EXP-003 183 + 9 excluded cells, EXP-004 1440 runs; 0 failures (J-0010 to J-0014).
 - [x] Raw machine-readable results with SHA-256 manifests and provenance tables, plots with uncertainty (`results/EXP-00N/`).
-- [ ] Per-experiment 11.3 report drafts (`research/experiments/EXP-NNN/report.md`): not written in the M3 session (D-012).
+- [x] Per-experiment 11.3 reports (`research/experiments/EXP-NNN/report.md`): not written in the M3 session (D-012); written by the coordinator from committed results on 2026-11-25 (D-013, commit `2f689ed`).
 
 ## M4: Interpretation
 
@@ -84,8 +84,9 @@ Additions (11.6): demo, paper, reports and articles use identical verified resul
 
 Acceptance criteria:
 
-- [ ] Static page: reasoning network, error propagation, accuracy/cost curves, seeded sandbox; measured versus sandbox results visibly distinguished.
-- [ ] Offline after load, keyboard usable, reduced motion, mobile layout, fail-closed data loading, accessibility checks recorded.
+- [x] Static page: reasoning network, error propagation, accuracy/cost curves, seeded sandbox; measured versus sandbox results visibly distinguished (`demo/`, 2026-11-25).
+- [x] Offline after load, keyboard usable, reduced motion, mobile layout, fail-closed data loading, accessibility checks recorded (`progress.md`, M5 entry: A11Y-CHECK PASS).
+- [x] Demo, paper, reports and articles use identical verified numbers (`tests/test_demo_export.py`).
 
 ## M6: Release candidate
 

@@ -80,4 +80,4 @@ Boland (1989), Boland, Proschan and Tong (1989), Ladha (1992), Lorenz et al. (20
 - The number trace matches a token when some committed value rounds to it; one- and two-decimal tokens (mostly design parameters such as 0.95 or 0.4) can match by coincidence and were reviewed by hand. Tokens with three or more decimals were matched at their stated precision.
 - Integer counts are covered by the recomputation script and by hand, not by the trace.
 - EXP-004 recomputation uses `results/EXP-004/metrics.csv`, which is git-ignored (D-012); in a fresh clone those checks are reported as skipped until `scripts/m3_run.sh EXP-004` regenerates it.
-- The audit was performed by the same AI system that drafted the documents. The owner's review is pending.
+- The audit was performed by the same AI system that drafted the documents. The owner approved the titles and the funding, competing-interest and AI-use statements on 2026-11-25 (D-015); full-text owner review of the manuscript and of this audit is pending (M6).

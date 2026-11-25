@@ -54,3 +54,11 @@ Test, smoke, run and report (M2):
     uv run paradox report results/exploratory/smoke --pdf
 
 `paradox run` refuses a config labelled `confirmatory` unless the experiment's protocol is frozen (registry SHA-256 matching the protocol file, no DRAFT marker) and the config, the protocol and `research/protocol.md` match the hashes in `research/freeze.json`, and refuses exploratory output paths without an `exploratory` component. PDFs need pandoc (`PARADOX_PANDOC`, default the shared `.tools/pandoc`).
+
+Demo and consistency checks (M5):
+
+    uv run python scripts/export_demo_data.py          # writes demo/public/data/results.json from committed results
+    uv run python scripts/export_sandbox_fixture.py    # writes the engine-port fixture
+    cd demo && npm ci && npm test && npm run build && node tools/a11y_check.mjs dist
+
+`tests/test_demo_export.py` fails if the committed demo data differ from a fresh export or if a displayed number is not printed in the manuscript.

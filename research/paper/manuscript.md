@@ -215,7 +215,7 @@ All code, configurations, frozen protocols, raw outputs (except two regenerable 
 
 - **Funding:** none (to be confirmed by the owner before any release).
 - **Competing interests:** none declared (to be confirmed by the owner before any release).
-- **AI assistance:** an AI system (Claude, Anthropic) acted as a research and development assistant. It drafted protocols, wrote and tested code, executed the runs, drafted the reports and this manuscript, and performed the internal evidence audit and the second review pass. The owner set the research question, approved every amendment and the freeze, and made every recorded decision. Every number was checked by script against committed outputs (`research/publication/evidence_audit.md`). AI review is internal quality control, not peer review. These statements are subject to the owner's review before any release.
+- **AI assistance:** an AI system (Claude, Anthropic) acted as a research and development assistant. It drafted protocols, wrote and tested code, executed the runs, drafted the reports and this manuscript, and performed the internal evidence audit and the second review pass. The owner set the research question, approved every amendment and the freeze, and made every recorded decision. Every number was checked by script against committed outputs (`research/publication/evidence_audit.md`). AI review is internal quality control, not peer review. The owner approved these statements and the title on 2026-11-25 (decision D-015); full-text owner review of the manuscript is pending (M6).
 
 ## References
 

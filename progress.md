@@ -293,7 +293,7 @@ None from the frozen protocols, configs, seeds or analysis code; no confirmatory
 
 ### Risks
 
-The audit and review pass were made by the system that drafted the documents; the owner has not reviewed them. Funding and competing-interest statements need the owner's confirmation. EXP-004 recomputation needs the git-ignored `metrics.csv` in a fresh clone.
+The audit and review pass were made by the system that drafted the documents; owner review of them was pending at the time of this entry (updated in M5, 2026-11-25: the owner approved the titles and the funding, competing-interest and AI-use statements on 2026-11-25, D-015; full-text owner review of the manuscript, the audit and the review pass is pending, M6). Funding and competing-interest statements need the owner's confirmation. EXP-004 recomputation needs the git-ignored `metrics.csv` in a fresh clone.
 
 ### Next action
 
@@ -322,3 +322,80 @@ Note, not a placeholder: section 11 ends "These statements are subject to the ow
 ### Next action
 
 M5, with the placeholders above put to the owner.
+
+## 2026-11-25: M5 session (interactive experience)
+
+**Milestone:** M5 **done**. The master prompt M5 gate holds: offline after the initial load, responsive (no horizontal scroll at 360 px; screenshots inspected), usable with the keyboard, no fabricated data (every number exported from committed files and checked against the manuscript), no runtime service. Nothing pushed.
+
+### Authority
+
+Owner, 2026-11-25, "Next" (`/Users/bechir/research/labs/_shared/owner-approvals-2026-11-25d.md`; stack: TypeScript, React and Vite from the shared template) and `/Users/bechir/research/labs/_shared/M5-brief.md`. Decision D-016.
+
+### Starting state
+
+`git status`: on `main`, clean; HEAD `6b2164c`.
+
+### What was built
+
+- `demo/`: the shared template (pinned versions, lockfile and `.npmrc` unchanged; no dependency added) with the PARADOX page: overview with the status label and verdicts, EXP-002 accuracy and cost curves (hand-written SVG, seed-level t 95% bars, Holm-rejected cells circled, axis switch between calls and calls plus messages read), published results for EXP-001 to EXP-004 and the exploratory checks J-0015 and J-0016 in one format, a sandbox with a reasoning-network view (shared answer, adopters, SEQ speaking order and herding), assumptions, method and limitations. Labels: measured confirmatory, measured exploratory, sandbox output, assumption.
+- `demo/src/engine.ts`: exact port of NumPy SeedSequence, PCG64, `Generator.random()`, the draw table and SINGLE, MV, SEQ (D-016 c).
+- `scripts/export_demo_data.py`, `scripts/export_sandbox_fixture.py`, `tests/test_demo_export.py`, `docs/demo.png` (178,583 bytes), `articles/medium.md`, `articles/linkedin.md`; README, demo README and articles README rewritten; CONTRIBUTING development commands appended.
+
+### Commands and actual outputs
+
+| Command | Output |
+|---|---|
+| `../.tools/py/bin/uv sync --frozen --all-groups --all-extras` | `Audited 25 packages in 11ms` |
+| `npm ci --prefer-offline` (in `demo/`, Node v22.23.3 from helix, read-only; scratch npm cache) | `added 53 packages in 627ms` |
+| `.venv/bin/python scripts/export_sandbox_fixture.py` | `wrote demo/src/fixtures/engine_fixture.json: 3 cases, committed seed-run of S6` |
+| `.venv/bin/python scripts/export_demo_data.py` | `wrote demo/public/data/results.json: 6 entries, 59 estimates, 456 curve points` |
+| `.venv/bin/python scripts/export_sandbox_fixture.py --check` | `fixture up to date` |
+| `.venv/bin/python scripts/m4_number_trace.py` (after the manuscript section 11 edit) | `TOTAL 1153 decimal tokens, 0 unmatched` |
+| `.venv/bin/python -m pytest -q` | `327 passed in 7.58s` (321 before plus 6 in `tests/test_demo_export.py`) |
+| `npm test` | `Test Files 2 passed (2)`, `Tests 21 passed (21)` (13 loader tests, 8 engine-port tests) |
+| `npm run build` | `tsc --noEmit` clean; `dist/assets/index-*.js 254.79 kB`, `sandbox.worker-*.js 4.30 kB`; `built in 88ms` |
+| `node tools/a11y_check.mjs dist --screenshots <scratch>/paradox/shots` | see below |
+| same checker on a copy of `dist` with one curve display string corrupted | `FAIL results render (no fail-closed panel): 0 experiment panels`, `A11Y-CHECK FAIL (2)` (fails closed as intended) |
+| `grep -rn REPLACE demo/ --exclude-dir=node_modules` | no output |
+
+Checker output (final build):
+
+```
+PASS results render (no fail-closed panel): 6 experiment panels
+PASS text contrast, light scheme (WCAG AA)
+PASS text contrast, dark scheme (WCAG AA)
+PASS keyboard reaches every focusable element: 36 reached of 36
+PASS visible focus indicator
+PASS no horizontal page scroll at 360 px: overflow 0px
+PASS reduced motion: no running animations: 0 running
+PASS no request leaves the local origin
+PASS offline after first load: results stay, sandbox runs: Sandbox output (seed 4081218282, 2000 items, lambda 0.5, w 0.5): at 31 calls MV 
+A11Y-CHECK PASS
+```
+
+Port timing (Node, one process): draw table for 2000 items 37 ms, SINGLE, MV and SEQ at six budgets 20 ms.
+
+### Failures and fixes during the session
+
+- First checker run: `FAIL keyboard reaches every focusable element: 19 reached of 37`. Causes: unnamed inputs shared the checker's identity key, and radio groups are reached by one Tab stop each. Fixed with element ids and toggle buttons. Second run: 36 of 37, a scroll region inside a closed `details` element; it is now rendered only when open.
+- Screenshots inspected (desktop light, desktop dark, mobile): legend icons were drawn full width, the mobile chart text was too small, and the mobile estimate and sandbox tables were clipped. Fixed (scoped SVG sizing, a narrow chart layout, wrapping interval cells, a five-column sandbox table).
+
+### Consistency and status corrections
+
+See D-016 (f) to (h). README status said no experiment had run; it now matches the manuscript. The M4 entry above carried a stale sentence about the owner not having reviewed the audit and review pass; it was replaced in place with the true state, marked as an M5 update. The owner approved the titles and the funding, competing-interest and AI-use statements on 2026-11-25 ("Approve all", post-M4; D-015); full-text owner review of the manuscript, the audit and the review pass is pending and belongs to M6. The `author_review.md` box ticked by an AI session at the freeze was unticked.
+
+### Owner placeholders that remain
+
+1. Repository URL (manuscript section 10, README, articles).
+2. Demo URL (README, demo README, articles).
+3. Funding: "none (to be confirmed by the owner before any release)" (manuscript section 11).
+4. Competing interests: "none declared (to be confirmed by the owner before any release)" (manuscript section 11).
+5. Author line and affiliation: as recorded under owner decision C3 (2026-11-24); unchanged.
+
+### Risks
+
+The sandbox does not include CW. The page's screenshots were taken in headless Chrome only. The articles are drafts; owner review of them is pending (M6).
+
+### Next action
+
+M6 (release candidate): clean-clone reproduction including the demo build, PDFs, owner review checklist; any publication is the owner's decision.
