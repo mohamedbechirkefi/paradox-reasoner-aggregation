@@ -8,8 +8,8 @@ Milestones from master prompt section 5 with the section 11.6 additions. Effort 
 | M0 | Bootstrap and feasibility | none | P0 | 0.5 | done (this session; owner review pending) | none |
 | M1 | Research and preregistration | M0 | P0 | 0.5 | done; M1 gate passed (protocols frozen at v1.0, owner-approved 2026-11-24) | none (foundational sources still unverified, see below) |
 | M2 | Core implementation | M1 drafts (implementation may start before freeze; exploratory only) | P0 | 1 | done (amendments applied, EXP-004 tie rule and variants, confirmatory configs, freeze guard) | none |
-| M3 | Experiments | M1 freeze, M2 | P0 | 0.75 | in progress: all four frozen matrices complete (2026-11-25), master prompt M3 gate holds; 11.3 standalone reports not yet written | the four standalone reports (D-012) |
-| M4 | Interpretation | M3 | P0 | 0.75 | not started | none |
+| M3 | Experiments | M1 freeze, M2 | P0 | 0.75 | done (2026-11-25): all four frozen matrices complete; reports written by the coordinator from committed results (D-013) | none |
+| M4 | Interpretation | M3 | P0 | 0.75 | done (2026-11-25): confounders and sensitivity examined, evidence audit, manuscript and second review pass (D-014); owner review pending | none |
 | M5 | Interactive experience | M3 results (demo shell can start in M2) | P1 | 0.75 | not started | none |
 | M6 | Release candidate | M4, M5 | P0 | 0.75 | not started | owner approval for any publication (G-PUBLIC) |
 
@@ -73,10 +73,10 @@ Additions (11.6): finish reports and evidence audit; synthesise into the manuscr
 
 Acceptance criteria:
 
-- [ ] Confounders and EXP-003 sensitivity examined; expected versus observed compared.
-- [ ] Claims register filled; every numeric claim maps to result id, config and figure.
-- [ ] Second review pass challenges the preferred hypothesis.
-- [ ] Manuscript draft complete; limitations updated.
+- [x] Confounders and EXP-003 sensitivity examined; expected versus observed compared.
+- [x] Claims register filled; every numeric claim maps to result id, config and figure.
+- [x] Second review pass challenges the preferred hypothesis.
+- [x] Manuscript draft complete; limitations updated.
 
 ## M5: Interactive experience
 

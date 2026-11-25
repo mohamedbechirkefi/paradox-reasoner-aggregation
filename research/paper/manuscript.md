@@ -1,7 +1,7 @@
 <!-- SPDX-License-Identifier: LicenseRef-PARADOX-NC-Research-1.0 -->
-<!-- Canonical manuscript (master prompt section 11.4). Synthesised in M4 (2026-11-25) from committed results only; every number maps to research/publication/artifact_manifest.json. Revised after the second review pass (research/publication/review_pass_2.md). -->
+<!-- Canonical manuscript (master prompt section 11.4). Synthesised in M4 (2026-11-25) from committed results only; every number maps to research/publication/artifact_manifest.json. Draft v1 committed in 7b9b696; revised after the second review pass (research/publication/review_pass_2.md, changes R1 to R14 and R20). -->
 
-# When more reasoners make worse decisions: an equal-budget simulation study of majority, confidence-weighted and sequential aggregation
+# When more reasoners make worse decisions: a preregistered equal-budget simulation of majority, confidence-weighted and sequential aggregation among synthetic reasoners
 
 **Status: independent research manuscript / preprint draft, not peer-reviewed.**
 
@@ -14,7 +14,7 @@
 
 ## Abstract
 
-Aggregating the answers of several fallible reasoners is often assumed to help, yet group accuracy can fall below that of a single reasoner when errors are correlated or items vary in difficulty. We ask, for deterministic synthetic reasoners on binary decisions and a fixed budget of `B` reasoner calls per item, when majority voting (MV), confidence-weighted voting (CW) and sequential public voting (SEQ) are more or less accurate than one reasoner making one call. Four experiments were preregistered and frozen before any confirmatory run. The simulation engine reproduced closed-form majority accuracy in all 292 admissible validation cells (largest deviation 3.116 Monte Carlo standard errors against a tolerance of 4). In the primary experiment (720 runs, 30 seeds per cell), the hypothesis of no degradation was rejected in 32 of 240 MV and SEQ cells after Holm adjustment, all in the two scenarios with substantial below-chance item mass, as theory predicted. The largest loss was MV at `B = 31`: -0.1313 accuracy (95% interval -0.1350 to -0.1276). Contrary to a preregistered prediction, sequential voting lost less than MV in exactly those scenarios. A sensitivity experiment showed that, at matched competence and pairwise correlation, the sign of the majority effect differs between dependence models in 16 of 48 cells, so the degradation result holds only for the common-shock and two-class mixture families. A robustness experiment found no sign reversal, but it covered only 3 of the 32 significant cells. CW's apparent superiority depends on an assumed confidence model. No statement about language models, people or products follows.
+The Condorcet jury theorem gives conditions under which a majority of independent, competent reasoners beats one reasoner; correlated errors and heterogeneous item difficulty violate them. We ask, for deterministic synthetic reasoners on binary decisions and a fixed budget of `B` reasoner calls per item, when majority voting (MV), confidence-weighted voting (CW) and sequential public voting (SEQ) are more or less accurate than one reasoner making one call. Four experiments were preregistered and frozen before any confirmatory run. The simulation engine reproduced closed-form majority accuracy in all 292 admissible validation cells (largest deviation 3.116 Monte Carlo standard errors against a tolerance of 4). In the primary experiment (720 runs, 30 seeds per cell), the hypothesis of no degradation was rejected in 32 of 240 MV and SEQ cells after Holm adjustment, all in the two scenarios with substantial below-chance item mass, where closed forms predicted it. The largest loss was MV at `B = 31`: -0.1313 accuracy (95% interval -0.1350 to -0.1276). Contrary to a preregistered prediction, sequential voting lost less than MV in exactly those scenarios. A sensitivity experiment showed that, at matched competence and pairwise correlation, the sign of the majority effect differs between dependence models in 16 of 48 cells, so the degradation result holds only for the common-shock and two-class mixture families. A robustness experiment found no sign reversal but covered only 3 of the 32 significant cells. CW's apparent superiority depends on an assumed confidence model. Nothing follows about language models, people or products.
 
 ## Keywords
 
@@ -36,7 +36,7 @@ The study tests three preregistered directional predictions and one sensitivity 
 **Contributions.** We do not claim novelty; whether this combination of elements is new has not been established (section 2).
 
 1. A seeded, tested simulation engine whose majority-vote accuracy is validated against four closed forms (EXP-001).
-2. A preregistered equal-budget map of 240 rule-by-cell contrasts with paired, seed-level uncertainty and Holm control (EXP-002), including a disconfirmed prediction (P2).
+2. A preregistered equal-budget map of 240 rule-by-cell contrasts with paired, seed-level uncertainty and Holm control (EXP-002). Its MV part confirms closed-form predictions rather than discovering new effects; its SEQ part has no closed form and includes a disconfirmed prediction (P2).
 3. A matched-moment comparison of four dependence models (EXP-003) showing that the degradation result is model-dependent, which restricts the main claim.
 4. A one-factor robustness check (EXP-004) and exploratory sensitivity analyses that delimit what the results do and do not show.
 
@@ -109,11 +109,11 @@ Everything in section 5.1 to 5.4 marked "frozen rule" is confirmatory. Section 5
 
 ### 5.1 EXP-001: engine validation (frozen rule: PASS)
 
-All 292 admissible cells were within tolerance; 20 Bahadur cells were excluded as inadmissible, exactly as the protocol listed. The largest absolute standardised deviation was 3.116 (S6 mixture, `lambda = 0.5`, `n = 5`), and 30 cells exceeded 2. The four golden fixtures were reproduced, including Kaniovski's `M^B_3(0.55, 0.4) = 0.54505` and `M^B_5(0.55, 0.4) = 0.5196194`. The S6 mixture cells all deviate in the same direction; a post-hoc diagnostic traced this to the shared realised share of hard items (0.49886 against `h = 0.5`, z = -1.76), an expected consequence of common random numbers (J-0011). Agreement validates the engine and the formulas against each other within the grid; it cannot detect an error shared by the model definition and its formula (Figure FIG-001-1 in the EXP-001 report).
+All 292 admissible cells were within tolerance; 20 Bahadur cells were excluded as inadmissible, exactly as the protocol listed. The largest absolute standardised deviation was 3.116 (S6 mixture, `lambda = 0.5`, `n = 5`), and 30 cells exceeded 2. The four golden fixtures were reproduced, including Kaniovski's `M^B_3(0.55, 0.4) = 0.54505` and `M^B_5(0.55, 0.4) = 0.5196194`. The S6 mixture cells all deviate in the same direction; a post-hoc diagnostic (journal J-0011, exploratory) traced this to the realised share of hard items that all S6 cells share, slightly below `h = 0.5`, an expected consequence of common random numbers. Agreement validates the engine and the formulas against each other within the grid; it cannot detect an error shared by the model definition and its formula (Figure FIG-001-1 in the EXP-001 report).
 
 ### 5.2 EXP-002: equal-budget aggregation map
 
-**Primary decision (frozen rule: H0 rejected).** 32 of 240 MV and SEQ cells have a Holm-adjusted one-sided upper bound below 0: 20 MV and 12 SEQ cells, all in S4 and S6. No cell in S1, S2, S3 or S5 is rejected. Because the cells share seeds and nested budgets, these 32 cells describe three connected patterns (MV in S4, MV in S6, SEQ in S6) rather than 32 independent findings.
+**Primary decision (frozen rule: H0 rejected).** 32 of 240 MV and SEQ cells have a Holm-adjusted one-sided upper bound below 0: 20 MV and 12 SEQ cells, all in S4 and S6. No cell in S1, S2, S3 or S5 is rejected. Because the cells share seeds and nested budgets, these 32 cells describe three connected patterns (MV in S4, MV in S6, SEQ in S6) rather than 32 independent findings. Six of the rejected effects are smaller than 0.01 in absolute value (the smallest is -0.0036, S6, `lambda = 0.75`, MV, `B = 3`); statistical detection does not make them practically large.
 
 Table 1. Accuracy change against SINGLE at `B = 31`, mean over 30 seed-runs of 2000 items, seed-level t 95% interval (source: `results/EXP-002/report.md`, `analysis.json`; CW descriptive).
 
@@ -140,9 +140,9 @@ The largest degradation is MV in S6 at `lambda = 0`, `B = 31`: -0.1313 (t 95% in
 
 ### 5.3 EXP-003: dependence-structure sensitivity (frozen rule: H0 rejected)
 
-At matched `p` and `r`, the exact sign of `Delta_MV = A_MV(n) - p` differs between models in 16 of 48 matched cells, all at `r >= 0.2`. The common-shock and Beta models are never negative in the grid (0 of 48 each); the Bahadur model is negative in 8 of 39 admissible cells (9 excluded as inadmissible) and the symmetric mixture in 14 of 48. For example, at `p = 0.7`, `r = 0.4`, `n = 5`, the Bahadur value is -0.07476 and the mixture value -0.03242, while common-shock and Beta are positive (Figure FIG-003-1 in the EXP-003 report; the 16 cells are listed in supplementary Table S3). The Monte Carlo check agreed in sign with every exact value; the exact value fell outside the seed-level interval in 3 of 183 model cells, all Beta.
+At matched `p` and `r`, the exact sign of `Delta_MV = A_MV(n) - p` differs between models in 16 of 48 matched cells, all at `r >= 0.2`. The common-shock and Beta models are never negative in the grid (0 of 48 each); the Bahadur model is negative in 8 of 39 admissible cells (9 excluded as inadmissible) and the symmetric mixture in 14 of 48. For example, at `p = 0.7`, `r = 0.4`, `n = 5`, the Bahadur value is -0.07476 and the mixture value -0.03242, while common-shock and Beta are positive (Figure FIG-003-1 in the EXP-003 report; the 16 cells are listed in supplementary Table S3). In the Monte Carlo check, every seed-level interval that excludes 0 has the sign of the exact value (160 above 0, 22 below 0) and one interval includes 0; the exact value fell outside the interval in 3 of 183 model cells, all Beta.
 
-The protocol registered in advance that the reading "MV degrades because of below-chance item mass; correlation alone only shrinks the gain" is invalidated if a homogeneous model with no below-chance item degrades at matched `p` and `r`. The Bahadur model does so. Conversely, the Beta model has below-chance mass at every tested `(p, r)` and never degrades. Below-chance mass is therefore neither necessary nor sufficient across models, and the EXP-002 degradation claims are restricted to the common-shock and two-class mixture families.
+The protocol registered in advance that the reading "MV degrades because of below-chance item mass; correlation alone only shrinks the gain" is invalidated if a homogeneous model with no below-chance item degrades at matched `p` and `r`. The Bahadur model does so. Conversely, the Beta model has below-chance mass at every tested `(p, r)` and never degrades. Below-chance mass is therefore neither necessary nor sufficient across models (not sufficient shown for `n <= 15`; extended to `n <= 1001` only by the exploratory check of section 5.5), and the EXP-002 degradation claims are restricted to the common-shock and two-class mixture families.
 
 ### 5.4 EXP-004: robustness to secondary choices (frozen rule: H0 retained)
 
@@ -156,19 +156,35 @@ Descriptively (outside the frozen rule), the sign of the mean `Delta` changed in
 
 **Group sizes beyond EXP-003 (J-0015).** The Beta model stays above `p` up to `n = 1001` and in the limit for all 12 `(p, r)` pairs, while the symmetric mixture becomes negative at larger `n` even at `r = 0.05` (at `p = 0.55`: +0.05682 at `n = 31`, -0.04181 at `n = 301`). The confirmatory pattern "all disagreements at `r >= 0.2`" is thus specific to `n <= 15`.
 
-**Confidence informativeness (J-0016).** With 10 exploratory seeds at `lambda = 0`, setting `delta = 0` (uninformative confidence) makes CW degrade like MV: at `B = 31`, -0.0529 [-0.0591, -0.0467] in S4 and -0.1197 [-0.1252, -0.1143] in S6. At `delta = 0.5` CW is above SINGLE in both (+0.0312 and +0.0554). CW's superiority in EXP-002 is a consequence of the assumed `delta = 1`, not evidence about confidence weighting in general.
+**Confidence informativeness (J-0016).** With 10 exploratory seeds at `lambda = 0`, setting `delta = 0` (uninformative confidence) makes CW degrade like MV: at `B = 31`, -0.0529 [-0.0591, -0.0467] in S4 and -0.1197 [-0.1252, -0.1143] in S6. At `delta = 0.5` CW is above SINGLE in both (+0.0312 and +0.0554). In this exploratory check, CW's superiority in EXP-002 is explained by the assumed `delta = 1`; it is not evidence about confidence weighting in general.
+
+### 5.6 Expected versus observed
+
+Table 2. Every preregistered prediction, what was observed and the verdict under the frozen rule (sources: `results/EXP-00N/analysis/analysis.json`; claims CLM-001 to CLM-010).
+
+| Experiment | Prediction (before any run) | Observed | Verdict under the frozen rule |
+|---|---|---|---|
+| EXP-001 | Engine correct: every admissible cell within 4 Monte Carlo SE, every fixture to 1e-9 | 292 of 292 cells within tolerance (max abs z 3.116); 4 of 4 fixtures | PASS; stop rule not triggered |
+| EXP-002 H0 | No MV or SEQ cell degrades (H1 expected from theory in S4 and S6) | 32 of 240 cells rejected (20 MV, 12 SEQ), all in S4 and S6 | H0 rejected |
+| EXP-002 P1 | At `lambda = 0`, `B = 31`: gain in S1, S2, S3, S5; loss in S4, S6 | All six signs, each interval excluding 0 | Not disconfirmed (6 of 6 supported) |
+| EXP-002 P2 | SEQ below MV at `lambda = 0` and every `B >= 3` | SEQ below MV in 21 of 30 cells; above MV in S4 (`B >= 5`) and S6 (all `B`) | Disconfirmed (9 of 30 cells) |
+| EXP-002 P3 | MV gain decreases with `lambda` in S1 to S3 | Decrease in 43 of 45 steps, 2 inconclusive, no increase | Not disconfirmed |
+| EXP-003 | Outcome registered as uncertain; H0: same sign across models in every matched cell | Signs differ in 16 of 48 cells, all at `r >= 0.2`; Bahadur negative in 8 of 39 | H0 rejected; protocol section 7 restriction applies |
+| EXP-004 | No sign reversal in Holm-significant cells | 0 of 18 checks reversed (3 cells in scope) | H0 retained |
+
+The exploratory checks of section 5.5 have no frozen prediction and are not in this table.
 
 ## 6. Discussion
 
-**What the evidence supports.** Within the common-shock and two-class mixture models, equal-budget majority voting is less accurate than a single call when a large share of items is answered correctly less than half the time, and the loss grows over the tested budgets. The sign follows the asymptotic condition of P1 in all six scenarios, and the magnitude follows the margin `h p_hard - (1 - h)(1 - p_easy)` (+0.06 in S4, +0.15 in S6). Mean competence cannot explain the sign, because S4 to S6 are matched on it and S5 gains. These MV results are consequences of closed forms; the experiment confirms them under a preregistered rule with paired uncertainty, and its value lies in the comparison with the rules that have no closed form.
+**What the evidence supports.** Within the common-shock and two-class mixture models, equal-budget majority voting is less accurate than a single call when a large share of items is answered correctly less than half the time, and the loss grows over the tested budgets. The sign follows the asymptotic condition of P1 in all six scenarios, and the loss is larger in S6, where the margin `h p_hard - (1 - h)(1 - p_easy)` is larger (+0.15 against +0.06 in S4); two scenarios do not establish a trend. Mean competence cannot explain the sign, because S4 to S6 are matched on it and S5 gains. These MV results are consequences of closed forms that were derived before the runs: the experiment confirms them under a preregistered rule with paired uncertainty, and does not discover them. Its empirical content lies in the rules without a closed form, chiefly SEQ.
 
-**A disconfirmed prediction.** P2 assumed that herding always erodes the benefit of aggregation. It does where aggregation helps, but where MV degrades SEQ degrades less. A reading consistent with this is that herding makes the public tally follow a few early voters, so SEQ behaves like a smaller group and stays closer to SINGLE in both directions. The EXP-004 herding levels are consistent with this reading (weaker herding moves SEQ towards MV, including MV's degradation), but the mechanism was not tested and the evidence is descriptive.
+**A disconfirmed prediction.** P2 assumed that herding always erodes the benefit of aggregation. It does where aggregation helps, but where MV degrades SEQ degrades less. A reading consistent with this is that herding makes the public tally follow a few early voters, so SEQ behaves like a smaller group and stays closer to SINGLE in both directions. The EXP-004 herding levels are consistent with this reading (weaker herding moves SEQ towards MV, including MV's degradation), but the mechanism was not tested and the evidence is descriptive. The disconfirmation concerns one sequential rule (a strict leader, `w = 0.5`, seeded order); it is not a statement about herding or information sharing in general.
 
 **Competing explanations.** The EXP-002 protocol named four: below-chance item mass, correlation, herding, and finite-budget effects, plus the confidence model behind CW. EXP-003 shows that below-chance mass is not the general cause: at the same `p` and pairwise correlation, a model without below-chance items degrades and a model with them does not. What determines the sign is the full distribution of the number of correct votes, of which `p` and `r` are only two moments. Finite-budget effects matter once correlation is present (section 5.5). The confidence model fully determines whether CW looks good. SEQ order effects are averaged over seeds rather than separated, and the near-ceiling accuracy of MV in S3 (0.9999 at `B = 31`) limits contrasts there.
 
 **Relation to prior work.** The S4 and S6 results are a controlled instance of the difficulty-diversity mechanism that Chen et al. propose for language-model voting [chen2024]; we do not test that mechanism on language models. The Bahadur results replicate the qualitative point of Kaniovski [kaniovski2008] that correlation can make a larger jury worse, and EXP-003 adds that matching correlation does not fix the sign across models.
 
-**Practical significance.** In this model, whether to spend a budget on more votes depends on the structure of item difficulty and dependence, not on average accuracy or average pairwise correlation alone. That is a statement about a synthetic model; it is a reason to measure item-level difficulty and the distribution of agreement before assuming that more calls help, not evidence that they do not.
+**Practical significance.** Within the four models studied, whether spending a budget on more votes helps depends on the structure of item difficulty and dependence, not on mean competence or pairwise correlation alone. This is a property of synthetic models; no recommendation for real systems follows from it.
 
 ## 7. Limitations and threats to validity
 
@@ -176,7 +192,7 @@ Descriptively (outside the frozen rule), the sign of the mean `Delta` changed in
 - **Model dependence.** The degradation claims hold for the common-shock and mixture families only (EXP-003). The Bahadur model is admissible only in part of the grid and sets higher-order correlations to zero.
 - **Range.** Budgets are at most 31; with correlation, signs at `B = 31` can differ from the large-`B` limit (section 5.5). Parameter ranges are design choices, not estimates of any population.
 - **Rules.** SEQ uses one herding rule; DELIB was dropped because it was degenerate as specified, so nothing follows about deliberation in general. CW depends entirely on the assumed confidence model (A-3 not adopted).
-- **Statistics.** Cells share seeds (D-008), so counts of significant cells are not counts of independent findings; the P1 to P3 intervals are unadjusted; 30 seed-runs give approximate t intervals. Non-rejection is not evidence of no effect.
+- **Statistics.** Cells share seeds (D-008), so counts of significant cells are not counts of independent findings. The P1 to P3 intervals are unadjusted, and unadjusted intervals produced at least one artefact (S6, `lambda = 0.75`, `B = 31`: an interval below 0 around an exact value of +0.00002). 30 seed-runs give approximate t intervals. Non-rejection is not evidence of no effect.
 - **Robustness.** EXP-004 covered 3 of the 32 significant cells and none in S6; most of its checks were insensitive by construction.
 - **Exposure.** Exploratory values of the primary contrast for S1 and S4 were seen before the freeze, with seeds distinct from the confirmatory ones (`research/freeze.json`).
 - **Literature.** The literature pass was targeted; several foundational sources were not opened and are not cited; most sources were read at abstract level only.
@@ -189,7 +205,7 @@ The study uses no human participants, no personal data and no external dataset. 
 
 ## 9. Conclusion and future work
 
-In a preregistered equal-budget simulation, majority voting over more reasoners reduced accuracy relative to one call in the scenarios where theory predicted it, by up to 0.1313; sequential public voting lost less than majority voting there, contradicting our prediction; and at matched competence and pairwise correlation the direction of the majority effect depended on the dependence model. The bounded conclusion is that pairwise statistics do not decide whether aggregation helps. Feasible extensions, each needing a new, separately frozen protocol: characterising degradation through the distribution of the vote count; a robustness check covering S6; a confidence model calibrated to a stated target; a non-degenerate deliberation rule; and, separately, a test on locally run language models.
+In a preregistered equal-budget simulation, majority voting over more reasoners reduced accuracy relative to one call in the scenarios where theory predicted it, by up to 0.1313; sequential public voting lost less than majority voting there, contradicting our prediction; and at matched competence and pairwise correlation the direction of the majority effect depended on the dependence model. The bounded conclusion is that, in the four dependence models studied and for budgets up to 31 calls, mean competence and pairwise correlation do not determine whether aggregation helps. Feasible extensions, each needing a new, separately frozen protocol: characterising degradation through the distribution of the vote count; a robustness check covering S6; a confidence model calibrated to a stated target; a non-degenerate deliberation rule; and, separately, a test on locally run language models.
 
 ## 10. Data and code availability
 
@@ -197,8 +213,8 @@ All code, configurations, frozen protocols, raw outputs (except two regenerable 
 
 ## 11. Funding, competing interests and AI assistance
 
-- **Funding:** none.
-- **Competing interests:** none declared.
+- **Funding:** none (to be confirmed by the owner before any release).
+- **Competing interests:** none declared (to be confirmed by the owner before any release).
 - **AI assistance:** an AI system (Claude, Anthropic) acted as a research and development assistant. It drafted protocols, wrote and tested code, executed the runs, drafted the reports and this manuscript, and performed the internal evidence audit and the second review pass. The owner set the research question, approved every amendment and the freeze, and made every recorded decision. Every number was checked by script against committed outputs (`research/publication/evidence_audit.md`). AI review is internal quality control, not peer review. These statements are subject to the owner's review before any release.
 
 ## References

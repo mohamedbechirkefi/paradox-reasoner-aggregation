@@ -257,3 +257,44 @@ Write the four 11.3 reports from the committed analysis outputs (the owner or co
 ## 2026-11-25: M3 done (coordinator)
 
 The owner approved the experiment reports (owner, 2026-11-25, "approve all recommendations, RIGGED A", item 4). Subagents may not write report files, so the reports were composed by the M3 session from committed results only and written by the coordinator: 4 report(s). The coordinator checked that every decimal number in them appears in a committed file. With the complete matrices (or documented failures) recorded above, the M3 gate holds. M3 is **done**. Next: M4 (interpretation), not started.
+
+## 2026-11-25: M4 session (interpretation, evidence audit, manuscript)
+
+**Milestone:** M4 **done** (owner review pending). The M4 gate holds: every numerical claim in the manuscript maps through `research/claims_register.csv` and `research/publication/artifact_manifest.json` to a result id, config hash and figure or table, and every external claim to a source actually opened (abstract-only sources marked). Nothing pushed.
+
+### Authority
+
+Owner, 2026-11-25, "Approve all recommendations, push then next" (`labs/_shared/owner-approvals-2026-11-25b.md`, item 5) and `labs/_shared/M4-brief.md`. Neither approval record (`-25.md`, `-25b.md`) has an item specific to PARADOX.
+
+### Work and outputs
+
+- **Confounders and sensitivity.** Competing explanations named in the EXP-001 and EXP-002 protocols were checked against committed results, then by three cheap exploratory checks after all verdicts (J-0015 closed forms, 36.3 s; J-0016 CW `delta` sweep, 4 exploratory runs of 10 seeds, entropy 0). Findings: the `lambda = 0` degradation in S4 and S6 is the large-`n` limit, not a finite-budget artefact; with correlation the sign can change beyond `B = 31` (S6, `lambda = 0.25`: -0.05215 at `n = 31`, limit +0.02500); the EXP-003 pattern "disagreement only at `r >= 0.2`" is specific to `n <= 15`; CW's dominance is explained by the assumed `delta = 1`. No frozen verdict changed.
+- **Evidence audit (J-0017).** `scripts/m4_recompute_checks.py`: 31 of 31 checks pass after one fix. Mismatch fixed: the EXP-002 report and CLM-002 said 24 MV and 8 SEQ rejected cells; raw outputs give 20 and 12. `scripts/m4_number_trace.py`: 1153 decimal tokens in manuscript, supplementary and four reports, 0 unmatched. `scripts/m4_build_manifest.py`: 42 manifest entries, all paths present, all figure copies byte-identical. Record: `research/publication/evidence_audit.md`.
+- **Manuscript.** `research/paper/manuscript.md` (body about 5,100 words, abstract 248) and `research/paper/supplementary.md` to the section 11.4 structure; draft v1 committed in `7b9b696`.
+- **Second review pass.** `research/publication/review_pass_2.md`: 22 challenges; the manuscript was revised for R1 to R14 and R20 (MV degradation presented as analytic and confirmed, P2 restricted to one SEQ rule, conclusion restricted to the four models and `B <= 31`, practical advice removed, a factual error on the Monte Carlo sign check corrected, abstract shortened, funding statements marked for owner confirmation).
+- **Records.** Claims register restructured (result ids, config hash, figure or table, manuscript section; 24 rows including 8 external); limitations (M4 section; stale "reports pending" removed); decision D-014; journal J-0015 to J-0017; registry statuses; `results/README.md`; `research/publication/claims_audit.md`; roadmap (M3 and M4 done).
+
+### Commands and actual outputs
+
+| Command | Output |
+|---|---|
+| `.venv/bin/python -m pytest -q` (start) | `321 passed in 8.12s` |
+| `.venv/bin/python scripts/m4_exploratory_analytic.py` | `X1 inside t95 116/120; negative finite-n X2 cells 32; negative X2 limits 10` |
+| `paradox run --config configs/exploratory/m4_cw_delta_{0,0p25,0p5,1}.json --out results/exploratory/m4-cw-delta/delta_*` | 4 reports written, 0 excluded |
+| `.venv/bin/python scripts/m4_cw_delta_summary.py` | `72 rows` |
+| `.venv/bin/python scripts/m4_recompute_checks.py` | `31 checks, 0 failed` |
+| `.venv/bin/python scripts/m4_number_trace.py` | `TOTAL 1153 decimal tokens, 0 unmatched` |
+| `.venv/bin/python scripts/m4_build_manifest.py` | `42 entries; missing paths []; copies not identical []` |
+| `.venv/bin/python -m pytest -q` (end) | `321 passed in 7.58s` |
+
+### Deviations
+
+None from the frozen protocols, configs, seeds or analysis code; no confirmatory run. Exploratory runs used entropy 0 under the guard.
+
+### Risks
+
+The audit and review pass were made by the system that drafted the documents; the owner has not reviewed them. Funding and competing-interest statements need the owner's confirmation. EXP-004 recomputation needs the git-ignored `metrics.csv` in a fresh clone.
+
+### Next action
+
+Owner review of the manuscript and `review_pass_2.md`; then M5 (demo, README and articles from the same verified results).
