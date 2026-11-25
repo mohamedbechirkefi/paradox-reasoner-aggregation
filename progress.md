@@ -298,3 +298,27 @@ The audit and review pass were made by the system that drafted the documents; th
 ### Next action
 
 Owner review of the manuscript and `review_pass_2.md`; then M5 (demo, README and articles from the same verified results).
+
+
+## 2026-11-25: post-M4 owner decisions (statements)
+
+**Starting state:** `07a5054`, working tree clean. Authority: owner, 2026-11-25, "Approve all" (post-M4) (`/Users/bechir/research/labs/_shared/owner-approvals-2026-11-25c.md`, item 2; coordinator brief `/Users/bechir/research/labs/_shared/POST-M4-brief.md`, item 2 only).
+
+- Item 2: the funding, competing-interest and AI-use wording in manuscript section 11 is recorded as owner-approved (D-015). No wording changed.
+- No frozen protocol, config, seed or result changed. No computation. No manuscript rebuild (the manuscript text did not change).
+
+### Owner placeholders for M5
+
+1. Manuscript section 11: "Funding: none (to be confirmed by the owner before any release)". Only the owner can confirm that no funding was received.
+2. Manuscript section 11: "Competing interests: none declared (to be confirmed by the owner before any release)". Only the owner can confirm the absence of competing interests.
+3. Manuscript section 10: "`<repository URL: not yet published; release requires the owner's approval>`". Only the owner can supply it, at a release decision (G-PUBLIC).
+
+Note, not a placeholder: section 11 ends "These statements are subject to the owner's review before any release." The owner has now approved the wording (D-015); the sentence is left unchanged as instructed, for the owner to keep or drop at M6.
+
+### Tests
+
+`.venv/bin/python -m pytest -q`: 321 passed in 8.39s (after the changes; src/ and tests/ unchanged).
+
+### Next action
+
+M5, with the placeholders above put to the owner.
