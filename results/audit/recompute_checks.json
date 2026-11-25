@@ -1,0 +1,218 @@
+{
+ "label": "audit",
+ "generator": "scripts/m4_recompute_checks.py",
+ "checks": [
+  {
+   "check": "EXP-001 cells run",
+   "got": 292,
+   "expected": 292,
+   "pass": true
+  },
+  {
+   "check": "EXP-001 cells excluded",
+   "got": 20,
+   "expected": 20,
+   "pass": true
+  },
+  {
+   "check": "EXP-001 max abs z (report 3.116)",
+   "got": 3.116,
+   "expected": 3.116,
+   "pass": true
+  },
+  {
+   "check": "EXP-001 cells abs z > 2 (report 30)",
+   "got": 30,
+   "expected": 30,
+   "pass": true
+  },
+  {
+   "check": "EXP-001 cells abs z > 4 (report 0)",
+   "got": 0,
+   "expected": 0,
+   "pass": true
+  },
+  {
+   "check": "EXP-002 primary family size",
+   "got": 240,
+   "expected": 240,
+   "pass": true
+  },
+  {
+   "check": "EXP-002 seeds per cell",
+   "got": [
+    30
+   ],
+   "expected": [
+    30
+   ],
+   "pass": true
+  },
+  {
+   "check": "EXP-002 rejected cells (report 32)",
+   "got": 32,
+   "expected": 32,
+   "pass": true
+  },
+  {
+   "check": "EXP-002 rejected MV cells",
+   "got": 20,
+   "expected": 20,
+   "pass": true
+  },
+  {
+   "check": "EXP-002 rejected SEQ cells",
+   "got": 12,
+   "expected": 12,
+   "pass": true
+  },
+  {
+   "check": "EXP-002 rejected scenarios",
+   "got": [
+    "S4",
+    "S6"
+   ],
+   "expected": [
+    "S4",
+    "S6"
+   ],
+   "pass": true
+  },
+  {
+   "check": "EXP-002 headline Delta S6 lam0 MV B31",
+   "got": -0.1313,
+   "expected": -0.1313,
+   "pass": true
+  },
+  {
+   "check": "EXP-002 headline t95 low",
+   "got": -0.135,
+   "expected": -0.135,
+   "pass": true
+  },
+  {
+   "check": "EXP-002 headline t95 high",
+   "got": -0.1276,
+   "expected": -0.1276,
+   "pass": true
+  },
+  {
+   "check": "EXP-002 P2 disconfirmed cells (report 9)",
+   "got": 9,
+   "expected": 9,
+   "pass": true
+  },
+  {
+   "check": "EXP-002 P2 supported cells (report 21)",
+   "got": 21,
+   "expected": 21,
+   "pass": true
+  },
+  {
+   "check": "EXP-002 P3 supported (report 43)",
+   "got": 43,
+   "expected": 43,
+   "pass": true
+  },
+  {
+   "check": "EXP-002 P3 inconclusive (report 2)",
+   "got": 2,
+   "expected": 2,
+   "pass": true
+  },
+  {
+   "check": "EXP-002 P3 disconfirmed (report 0)",
+   "got": 0,
+   "expected": 0,
+   "pass": true
+  },
+  {
+   "check": "EXP-002 non-baseline cells (report 432)",
+   "got": 432,
+   "expected": 432,
+   "pass": true
+  },
+  {
+   "check": "EXP-002 max between-seed SD (report 0.0162)",
+   "got": 0.0162,
+   "expected": 0.0162,
+   "pass": true
+  },
+  {
+   "check": "EXP-002 median between-seed SD (report 0.0087)",
+   "got": 0.0087,
+   "expected": 0.0087,
+   "pass": true
+  },
+  {
+   "check": "EXP-002 CW cells above SINGLE (all 120)",
+   "got": 120,
+   "expected": 120,
+   "pass": true
+  },
+  {
+   "check": "EXP-002 CW max mean Delta (report 0.4478)",
+   "got": 0.4478,
+   "expected": 0.4478,
+   "pass": true
+  },
+  {
+   "check": "EXP-003 matched cells disagreeing (report 16 of 48)",
+   "got": [
+    16,
+    48
+   ],
+   "expected": [
+    16,
+    48
+   ],
+   "pass": true
+  },
+  {
+   "check": "EXP-003 disagreements all at r >= 0.2",
+   "got": true,
+   "expected": true,
+   "pass": true
+  },
+  {
+   "check": "EXP-003 negative cells by model",
+   "got": {
+    "common_shock": 0,
+    "bahadur": 8,
+    "mixture": 14,
+    "beta": 0
+   },
+   "expected": {
+    "common_shock": 0,
+    "bahadur": 8,
+    "mixture": 14,
+    "beta": 0
+   },
+   "pass": true
+  },
+  {
+   "check": "EXP-003 analysis.json agrees",
+   "got": 16,
+   "expected": 16,
+   "pass": true
+  },
+  {
+   "check": "EXP-004 primary variant equals EXP-002 per seed",
+   "got": true,
+   "expected": true,
+   "pass": true
+  },
+  {
+   "check": "EXP-004 frozen-rule checks (report 18)",
+   "got": 18,
+   "expected": 18,
+   "pass": true
+  },
+  {
+   "check": "EXP-004 reversals (report 0)",
+   "got": "0",
+   "expected": 0,
+   "pass": true
+  }
+ ]
+}

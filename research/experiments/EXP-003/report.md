@@ -124,6 +124,16 @@ Signs agree in the other 32 matched cells, including every cell with `r <= 0.1` 
 
 **Model-dependent inference.** Dependence beyond pairs (the full distribution of the number of correct votes) determines the outcome. The Bahadur model sets all higher-order correlations to zero, which is a strong assumption, and it is admissible only in part of the grid.
 
+### 9.1 M4 addendum: group sizes beyond the grid (EXPLORATORY, 2026-11-25)
+
+This check was made in M4, after the confirmatory verdict, from exact closed forms only (journal J-0015, `results/exploratory/m4-analytic/`). It changes no verdict.
+
+- **Beta.** The Beta model stays above `p` at every tested `(p, r)` for `n` in {31, 101, 301, 1001}, and its large-`n` limit `P(p_i > 0.5) - p` is positive in all 12 `(p, r)` pairs (smallest +0.01372 at `p = 0.55, r = 0.4`). The statement "below-chance mass is not sufficient" therefore extends beyond `n <= 15` for this grid.
+- **Mixture.** The symmetric mixture turns negative at larger `n` even at low correlation: at `p = 0.55, r = 0.05` it is +0.05682 at `n = 31` and -0.04181 at `n = 301`, with limit -0.05000. Its large-`n` limit is negative in 10 of 12 `(p, r)` pairs. The confirmatory observation "every disagreement occurs at `r >= 0.2`" is a property of the group sizes `n <= 15`, not of low correlation as such.
+- **Common-shock.** Its large-`n` limit equals `p` whenever `(1 - lambda) p < 0.5`, which holds in 11 of 12 `(p, r)` pairs, so the gain tends to 0; the exception is `p = 0.7, r = 0.05` (limit +0.30000). In this model correlation caps the gain without reversing it.
+- **Bahadur.** It is inadmissible at `n >= 101` everywhere in the grid and at `n = 31` except for `r = 0.05`, so it cannot be followed to large groups.
+- **Algebraic check of section 9.** At `n = 3`, the symmetric mixture gives `3 E[p_i^2] - 2 E[p_i^3] = M_3(p) + 6 r p q (0.5 - p)`, which is Kaniovski's Theorem 1 at `n = 3` with `c = r`. This confirms that the coincidence of the Bahadur and mixture values at `n = 3` is exact.
+
 ## 10. Threats to validity
 
 - **Construct:** four parametric families only; the symmetric mixture fixes `h = 0.5`; matching is on two moments only, by design.

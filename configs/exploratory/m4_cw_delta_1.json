@@ -1,0 +1,48 @@
+{
+ "schema_version": "1.0.0",
+ "experiment_id": "PROBE-M4-CW-DELTA1",
+ "label": "exploratory",
+ "kind": "aggregation",
+ "description": "M4 exploratory check (J-0016): does CW's advantage over SINGLE depend on the assumed confidence informativeness delta? delta=1.0; S1, S4, S6 at lambda 0; exploratory seeds (entropy 0). Not a test of any hypothesis; changes no frozen verdict.",
+ "scenarios": [
+  {
+   "id": "S1",
+   "p_easy": 0.6,
+   "h": 0.0,
+   "p_hard": null
+  },
+  {
+   "id": "S4",
+   "p_easy": 0.9,
+   "h": 0.4,
+   "p_hard": 0.3
+  },
+  {
+   "id": "S6",
+   "p_easy": 0.95,
+   "h": 0.5,
+   "p_hard": 0.35
+  }
+ ],
+ "lambdas": [
+  0.0
+ ],
+ "budgets": [
+  1,
+  3,
+  9,
+  31
+ ],
+ "delib_budgets": [],
+ "rules": [
+  "SINGLE",
+  "MV",
+  "CW"
+ ],
+ "n_items": 2000,
+ "seed_entropy": 0,
+ "n_seeds": 10,
+ "w": 0.5,
+ "delta": 1.0,
+ "tau": 1.0
+}

@@ -119,7 +119,7 @@ The gap addressed is a controlled, equal-budget map that separates difficulty he
 | S6 | 0.5 | SEQ | 31 | -0.0102 | -0.0134 | -0.0069 |
 | S6 | 0.75 | MV | 3 | -0.0036 | -0.0054 | -0.0018 |
 
-24 of the rejected cells are MV and 8 are SEQ. None are in S1, S2, S3 or S5.
+20 of the rejected cells are MV and 12 are SEQ. None are in S1, S2, S3 or S5. (Corrected in the M4 evidence audit, 2026-11-25: the first version of this report said 24 MV and 8 SEQ; the table above and `analysis.json` give 20 and 12. No verdict changes.)
 
 ### 8.2 Accuracy change at the largest budget (B = 31)
 
@@ -189,6 +189,16 @@ Across the 432 non-baseline cells, the between-seed SD of `Delta` ranges from 0.
 - No statement about LLMs, people or products follows (protocol section 9).
 - MV values follow closed forms, so the simulation adds paired uncertainty rather than independent evidence for MV.
 - EXP-003 restricts the interpretation of these degradations (see its report).
+
+### 9.1 M4 addendum: competing explanations and exploratory checks (EXPLORATORY, 2026-11-25)
+
+These checks were made in M4, after every confirmatory verdict. They are exploratory (journal J-0015 and J-0016), kept in `results/exploratory/m4-analytic/` and `results/exploratory/m4-cw-delta/`, and change no verdict above.
+
+- **Finite budget (protocol competing explanation "convergence not reached at `B = 31`").** Exact closed-form MV values (no simulation) show that the `lambda = 0` signs at `B = 31` are those of the large-`n` limit: S4 -0.05618 at `n = 31` against a limit of -0.06000, S6 -0.12881 against -0.15000. At `lambda > 0` this is not so. In S6 at `lambda = 0.25` the exact value is -0.05215 at `n = 31` and -0.03311 at `n = 301`, but the limit is +0.02500: the degradation in that row is a finite-budget property. In S1 at `lambda = 0.25` the gain peaks near `B = 31` (+0.10900) and falls towards 0. Statements such as "the loss grows with `B`" and "correlation pulls MV towards SINGLE" therefore hold for `B <= 31` in this grid, not in general; in S5 the large-`n` limit is higher at `lambda = 0.25` (+0.24000) than at `lambda = 0` (+0.15000).
+- **Agreement with theory.** The exact MV value lies inside the seed-level t 95% interval in 116 of 120 MV cells. All 20 Holm-rejected MV cells have a negative exact value. In S6 at `lambda = 0.75` and `B = 31`, the interval -0.0040 to -0.0002 (not rejected after Holm) surrounds an observed -0.0021 while the exact value is +0.00002: that interval reflects the realised samples shared by the cells (D-008), not a real degradation.
+- **Confidence model behind CW.** With 10 exploratory seeds (entropy 0) at `lambda = 0`, setting the confidence informativeness `delta` to 0 makes CW degrade like MV: at `B = 31`, CW -0.0529 [-0.0591, -0.0467] in S4 and -0.1197 [-0.1252, -0.1143] in S6, against MV -0.0573 and -0.1304 on the same seeds. At `delta = 0.5` CW is above SINGLE in both (+0.0312 and +0.0554). CW's dominance in this experiment is thus a consequence of the assumed `delta = 1`, as section 9 states.
+- **Below-chance mass versus mean competence.** Mean competence is matched across S4 to S6 (0.66, 0.65, 0.65) by design, yet S5 gains and S4 and S6 degrade, so mean competence does not explain the sign. The P1 margin `h p_hard - (1 - h)(1 - p_easy)` is +0.06 in S4 and +0.15 in S6, matching the order of the degradation at `B = 31` (design arithmetic).
+- **Not addressed.** SEQ order effects remain averaged over seeds rather than separated; the S3 ceiling (MV at `B = 31`, `lambda = 0` has mean accuracy 0.9999) limits contrasts there.
 
 ## 10. Threats to validity
 

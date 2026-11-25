@@ -1,0 +1,44 @@
+{
+ "label": "audit",
+ "generator": "scripts/m4_number_trace.py",
+ "documents": [
+  {
+   "path": "research/paper/manuscript.md",
+   "n_tokens": 202,
+   "n_unmatched": 0,
+   "unmatched": []
+  },
+  {
+   "path": "research/paper/supplementary.md",
+   "n_tokens": 358,
+   "n_unmatched": 0,
+   "unmatched": []
+  },
+  {
+   "path": "research/experiments/EXP-001/report.md",
+   "n_tokens": 44,
+   "n_unmatched": 0,
+   "unmatched": []
+  },
+  {
+   "path": "research/experiments/EXP-002/report.md",
+   "n_tokens": 348,
+   "n_unmatched": 0,
+   "unmatched": []
+  },
+  {
+   "path": "research/experiments/EXP-003/report.md",
+   "n_tokens": 99,
+   "n_unmatched": 0,
+   "unmatched": []
+  },
+  {
+   "path": "research/experiments/EXP-004/report.md",
+   "n_tokens": 96,
+   "n_unmatched": 0,
+   "unmatched": []
+  }
+ ],
+ "n_tokens": 1147,
+ "n_unmatched": 0
+}
