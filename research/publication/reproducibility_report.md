@@ -79,3 +79,7 @@ SPDX headers: every file added since the initial commit carries the header where
 - PDF title metadata missing: fixed in `src/paradox/report.py`.
 - Home-directory paths in current files: removed where safe (section 4).
 - No frozen protocol, config, seed or result changed; no confirmatory run.
+
+## 6. Re-check of the M6 commit in a fresh clone
+
+Fresh local clone of `77a0219`: `uv sync --frozen --all-groups --all-extras`, then `pytest -q`: `329 passed in 13.69s`; `scripts/m6_check_links.py`: `62 Markdown files, 61 relative links, 0 broken`; both exports left `git status` empty; `npm ci --prefer-offline`: `added 53 packages in 659ms`; `npm test`: `Tests 21 passed (21)`; `npm run build` succeeded; `node tools/a11y_check.mjs dist`: `A11Y-CHECK PASS`. The clone was deleted.

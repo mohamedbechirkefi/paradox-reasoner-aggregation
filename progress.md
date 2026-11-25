@@ -448,3 +448,14 @@ The source checks verify the cited claim only, not the whole paper. The `CITATIO
 ### Next action
 
 Owner review of `research/publication/author_review.md` ("Prepared for the owner (M6, 2026-11-25)"): full-text review, owner-only facts, sign-off, then any G-PUBLIC decision.
+
+### M6 re-check in a fresh clone of `77a0219` (2026-11-25)
+
+| Command (fresh clone of the M6 commit) | Output |
+|---|---|
+| `uv sync --frozen --all-groups --all-extras`; `.venv/bin/python -m pytest -q` | `329 passed in 13.69s` |
+| `.venv/bin/python scripts/m6_check_links.py` | `62 Markdown files, 61 relative links, 0 broken` |
+| both export scripts, then `git status --short` | 0 lines |
+| `npm ci --prefer-offline`; `npm test`; `npm run build`; `node tools/a11y_check.mjs dist` | `added 53 packages in 659ms`; `Tests 21 passed (21)`; build ok; `A11Y-CHECK PASS` |
+
+Both scratch clones were deleted at the end of the session.
