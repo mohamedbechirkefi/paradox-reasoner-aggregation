@@ -35,8 +35,8 @@ Then inspect `git status` and the existing files. Never overwrite changes made b
 
 ### Scope
 
-- Work only inside this repository. Read-only use of the shared tools listed in `research/feasibility.md`. Never modify `/Users/bechir/research/helix/.tools/`.
-- Do not touch any other folder under `/Users/bechir/research` (hive, helix, cogkt, trading, the other labs).
+- Work only inside this repository. Read-only use of the shared tools listed in `research/feasibility.md`. Never modify the shared Helix tools folder (`../../helix/.tools/` from this repository).
+- Do not touch any other folder of the research workspace (hive, helix, cogkt, trading, the other labs).
 - Never kill processes this session did not start. Never delete anything this session did not create.
 
 ### Truthfulness

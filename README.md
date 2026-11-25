@@ -3,7 +3,7 @@
 
 **Question.** Under an equal compute budget, when does aggregation of fallible reasoners improve or degrade accuracy?
 
-**Status (2026-11-25): independent research manuscript / preprint draft, not peer-reviewed.** The four registered experiments (EXP-001 to EXP-004) ran in full under protocols frozen by the owner on 2026-11-24; each has a standalone report, and the manuscript, evidence audit and second review pass are complete (M4). The interactive demo is built (M5). The owner approved the titles and the funding, competing-interest and AI-use statements on 2026-11-25; full-text owner review of the manuscript is pending (M6). Nothing has been published.
+**Status (2026-11-25): independent research manuscript / preprint draft, not peer-reviewed.** The four registered experiments (EXP-001 to EXP-004) ran in full under protocols frozen by the owner on 2026-11-24; each has a standalone report, and the manuscript, evidence audit and second review pass are complete (M4). The interactive demo is built (M5). The owner approved the titles and the funding, competing-interest and AI-use statements on 2026-11-25; a release candidate was prepared on 2026-11-25 (M6: PDFs compiled and inspected, clean-clone reproduction recorded in [`research/publication/reproducibility_report.md`](research/publication/reproducibility_report.md)); full-text owner review is pending. Nothing has been published.
 
 Repository: `<repository URL: not yet published; release requires the owner's approval>`. Demo: `<demo URL: not yet published; release requires the owner's approval>`.
 
@@ -46,7 +46,7 @@ Exploratory checks made after the verdicts (journal J-0015, J-0016) are in `resu
 
 ## Demo quick start
 
-Node 22 is required (in this workspace, `/Users/bechir/research/helix/.tools/node/bin`, used read-only).
+Node 22 is required (in the development workspace, a shared Node 22 install outside this repository, used read-only).
 
 ```
 cd demo && npm ci && npm run build && npm run preview
@@ -57,7 +57,7 @@ cd demo && npm ci && npm run build && npm run preview
 ## Reproduction
 
 ```
-/Users/bechir/research/labs/.tools/py/bin/uv sync --frozen
+uv sync --frozen                                      # locked dependencies (uv.lock)
 uv run paradox test                                   # full Python test suite
 scripts/m3_run.sh EXP-001                             # one frozen experiment (likewise EXP-002 to EXP-004)
 uv run python scripts/export_demo_data.py --check     # demo data matches committed results
@@ -68,7 +68,7 @@ Each experiment folder has a `reproduction.md`. The evidence audit is reproduced
 
 ## Navigation
 
-- Manuscript: [`research/paper/manuscript.md`](research/paper/manuscript.md); supplementary: [`research/paper/supplementary.md`](research/paper/supplementary.md)
+- Manuscript: [`research/paper/manuscript.md`](research/paper/manuscript.md) ([PDF](research/paper/manuscript.pdf)); supplementary: [`research/paper/supplementary.md`](research/paper/supplementary.md) ([PDF](research/paper/supplementary.pdf)); each experiment folder has `report.md` and `report.pdf`
 - Protocol (frozen v1.0): [`research/protocol.md`](research/protocol.md); freeze record: [`research/freeze.json`](research/freeze.json)
 - Registry: [`research/experiment_registry.csv`](research/experiment_registry.csv); claims: [`research/claims_register.csv`](research/claims_register.csv); evidence audit: [`research/publication/evidence_audit.md`](research/publication/evidence_audit.md)
 - Plan and status: [`roadmap.md`](roadmap.md), [`progress.md`](progress.md); decisions: [`research/decision_log.md`](research/decision_log.md)

@@ -36,9 +36,9 @@
 ## 3. Rationale and literature
 
 - **Condorcet-type amplification** predicts gains from majority voting when competence exceeds one half and votes are independent.
-- **Difficulty diversity.** Chen et al. (2024, arXiv:2403.02419, abstract verified) report that majority-vote performance of LLM systems can rise and then fall with the number of calls, and attribute this to query difficulty diversity.
+- **Difficulty diversity.** Chen et al. (2024, arXiv:2403.02419; full text of v2 opened at M6, claim checked at the abstract, section 1 and Theorem 2) report that majority-vote performance of LLM systems can rise and then fall with the number of calls, and attribute this to query difficulty diversity.
 - **Correlation.** Kaniovski (2008, verified) shows that positive correlation lowers jury competence.
-- **Information sharing.** Golub and Jackson (2010, abstract verified) and Mavrodiev, Tessone and Schweitzer (2012, abstract verified) show that information sharing can help or hurt. Lorenz et al. (2011) is relevant but unverified.
+- **Information sharing.** Golub and Jackson (2010; full text of the authors' version opened at M6, claim checked at the abstract and section III) and Mavrodiev, Tessone and Schweitzer (2012; full text opened at M6, claim checked at the abstract) show that information sharing can help or hurt. Lorenz et al. (2011) is relevant but unverified.
 
 The gap addressed is a controlled, equal-budget map that separates difficulty heterogeneity, correlation and herding within one model, with paired uncertainty.
 
@@ -218,4 +218,4 @@ See [`reproduction.md`](reproduction.md).
 - **Raw outputs:** `results/EXP-002/` (`results.json` SHA-256 `08c5b493cec61c7edd235492f1f906539ec26633362689ea3f225c812fb641bb`). Every file is hashed in `results/EXP-002/sha256_manifest.json`.
 - **Copies in this folder:** `run_manifest.json`, `metrics.csv`, `figures/`.
 - **Records:** claims CLM-002 to CLM-007; journal J-0012.
-- **References** (verified as stated in `research/literature_review.md`): Chen et al. 2024 (abstract), Kaniovski 2008 (full text pp. 1 to 13), Golub and Jackson 2010 (abstract), Mavrodiev et al. 2012 (abstract). Lorenz et al. 2011 is unverified.
+- **References** (verified as stated in `research/literature_review.md`): Chen et al. 2024 (full text opened at M6, claim checked), Kaniovski 2008 (full text pp. 1 to 13), Golub and Jackson 2010 (full text opened at M6, claim checked), Mavrodiev et al. 2012 (full text opened at M6, claim checked). Lorenz et al. 2011 is unverified.

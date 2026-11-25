@@ -81,3 +81,9 @@ Boland (1989), Boland, Proschan and Tong (1989), Ladha (1992), Lorenz et al. (20
 - Integer counts are covered by the recomputation script and by hand, not by the trace.
 - EXP-004 recomputation uses `results/EXP-004/metrics.csv`, which is git-ignored (D-012); in a fresh clone those checks are reported as skipped until `scripts/m3_run.sh EXP-004` regenerates it.
 - The audit was performed by the same AI system that drafted the documents. The owner approved the titles and the funding, competing-interest and AI-use statements on 2026-11-25 (D-015); full-text owner review of the manuscript and of this audit is pending (M6).
+
+## 7. M6 update (2026-11-25)
+
+- **External claims (section 4).** For the seven sources marked "abstract read" above, the full text was opened on 2026-11-25 and each cited claim was checked at the place recorded in `research/literature_review.md` section 4 (with the SHA-256 of each PDF). All seven claims are supported as worded; none needed qualification. The sources were not read cover to cover. Counts: read in full 1 (kaniovski2008, pages 1 to 13); full text opened and the cited claim checked 7; abstract only 0; unverified and cited 0. The table in section 4 is kept as the M4 record.
+- **Recomputation and trace, re-run in M6.** `scripts/m4_recompute_checks.py`: 31 checks, 0 failed (working repository); 29 checks, 0 failed and 2 skipped in a clean clone (EXP-004 `metrics.csv` is git-ignored). `scripts/m4_number_trace.py`: 1153 decimal tokens, 0 unmatched, after the M6 wording changes.
+- **Artifact manifest.** 28 distinct paths, all present and tracked; 18 of 18 result hashes match; copies identical.

@@ -38,3 +38,19 @@ M1 must open the Boland and Ladha papers (or record them as permanently unverifi
 Known: under independence and competence above one half, majority accuracy grows with group size (Condorcet); correlation and heterogeneity weaken or reverse this (Ladha, Boland, Kaniovski); LLM voting can be non-monotonic in the number of calls (chen2024) and LLM errors are correlated (kim2025); information sharing can help or hurt (golub2010, mavrodiev2012).
 
 Proposed narrow contribution (not a novelty claim): a single reproducible engine that compares single-reasoner, independent-voting and information-sharing rules **at matched call budgets**, separates difficulty heterogeneity from conditional correlation, validates against exact closed forms, and tests whether pairwise correlation is a sufficient summary of the dependence (EXP-003). Whether this combination is new has not been established.
+
+## 4. M6 full-text check (2026-11-25)
+
+For each cited source that a manuscript or report claim depends on and that had been opened at abstract level only, a free, legal full text was opened on 2026-11-25 (arXiv PDF, or the authors' version on the second author's web page for golub2010). The cited claim was checked at the place stated below. The sources were not read cover to cover; only the cited claim was checked. The PDFs were not committed; their SHA-256 values are recorded here.
+
+| Key | Full text opened | Pages | SHA-256 of the PDF | Claim checked at | Result |
+|---|---|---|---|---|---|
+| chen2024 | arXiv:2403.02419v2 (4 Jun 2024) | 18 | `73d7d364c09484816ca4e94e4f067c54aeba5f445583fdd26e96ec0d2fe586d5` | abstract, section 1, section 4.1 (Theorem 2) | Supported: Vote and Filter-Vote "can first increase but then decrease" with the number of calls; the non-monotonicity is attributed to "the diversity of query difficulties". The v2 title is "Are More LM Calls All You Need? Towards the Scaling Properties of Compound AI Systems"; the manuscript keeps the v1 title and now names both. |
+| kim2025 | arXiv:2506.07962v1 | 29 | `12b4d40ebd8a7118c3ffd2fe7a458e0bedaef26df67d42486b9bfc32a31a1604` | abstract | Supported: "substantial correlation in model errors" over more than 350 LLMs. |
+| wang2022 | arXiv:2203.11171v1 | 15 | `ed1ef6f3ff521a53b9cb873e8fad7991984a5c747ca0ae92d83d4e01e4f39326` | abstract, Figure 1 | Supported: sample a diverse set of reasoning paths and return the most consistent answer (majority vote in Figure 1). |
+| li2024 | arXiv:2402.05120v2 (11 Oct 2024) | 18 | `d948be6a6068835cffe9b6f8b799861e188eea3a0204a90eec70e5faae0cfe57` | abstract, section 6 (Table 6) | Supported: performance "scales with the number of agents"; the gain is "correlated to the task difficulty". |
+| du2023 | arXiv:2305.14325v1 | 27 | `b302ff15202dc3cda03f40ea1ac92b29e1519978540b345af92991f6d3e619b4` | abstract | Supported: several model instances debate over multiple rounds to reach a common answer. |
+| golub2010 | authors' version (web.stanford.edu, page of M. O. Jackson) | 39 | `c9e0dd62b04a28617554ca29b3a97ccde7820f70e8e8efac873f479b8b14f4db` | abstract, section III | Supported: convergence to the truth holds "if and only if" the influence of the most influential agent vanishes as the society grows. The page numbers of the journal version were not checked. |
+| mavrodiev2012 | arXiv:1204.3463v1 (Proceedings, CI 2012) | 7 | `9a3ee3bbe8e24e4984ed1d380a5eddaa042f4626ee7ac4d00efb4d35784ef079` | abstract | Supported: "the starting configuration of the population, in terms of its diversity and accuracy" determines how beneficial social influence is. |
+
+kaniovski2008 was already read in full (pages 1 to 13). No cited claim needed qualification after the check. The sources in section 2 remain unverified and uncited.

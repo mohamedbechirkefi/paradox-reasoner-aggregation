@@ -3,15 +3,16 @@
 # (custom licence, not on the SPDX list; see LICENSE). No SPDX license field is set on purpose.
 # Authorship (owner decision C3, 2026-11-24): one author, no affiliation. An AI system was used as a
 # research and development assistant and is disclosed in the manuscript; it is not an author.
+# M6 (2026-11-25): title set to the manuscript title (owner-approved 2026-11-25, D-015); version 0.1.0-rc1
+# marks a release candidate; date-released removed until a release exists (owner-approvals-2026-11-25e).
 cff-version: 1.2.0
 message: "If you use this work, please cite it as below. This is an independent research project, not peer reviewed."
-title: "PARADOX: collective reasoning under equal compute budgets"
+title: "When more reasoners make worse decisions: a preregistered equal-budget simulation of majority, confidence-weighted and sequential aggregation among synthetic reasoners"
 type: software
 authors:
   - family-names: Kefi
     given-names: Mohamed Bechir
-version: 0.0.0
-date-released: 2026-11-24
+version: 0.1.0-rc1
 keywords:
   - collective reasoning
   - Condorcet jury theorem

@@ -11,7 +11,7 @@ Milestones from master prompt section 5 with the section 11.6 additions. Effort 
 | M3 | Experiments | M1 freeze, M2 | P0 | 0.75 | done (2026-11-25): all four frozen matrices complete; reports written by the coordinator from committed results (D-013) | none |
 | M4 | Interpretation | M3 | P0 | 0.75 | done (2026-11-25): confounders and sensitivity examined, evidence audit, manuscript and second review pass (D-014); titles and section 11 statements owner-approved 2026-11-25 (D-015); full-text owner review pending (M6) | none |
 | M5 | Interactive experience | M3 results (demo shell can start in M2) | P1 | 0.75 | done (2026-11-25): static offline page, exact engine port in the sandbox, consistency tests, README and articles aligned (D-016) | none |
-| M6 | Release candidate | M4, M5 | P0 | 0.75 | not started | owner approval for any publication (G-PUBLIC) |
+| M6 | Release candidate | M4, M5 | P0 | 0.75 | release candidate prepared, awaiting owner review and G-PUBLIC (2026-11-25, D-017) | owner sign-off of `research/publication/author_review.md`; owner approval for any publication (G-PUBLIC) |
 
 ## M0: Bootstrap and feasibility
 
@@ -94,7 +94,7 @@ Additions (11.6): compile and inspect PDFs; verify references, cross-links, equa
 
 Acceptance criteria:
 
-- [ ] Clean clone, `uv sync --frozen`, tests, smoke reproduction, demo build: actual outputs recorded.
-- [ ] Manuscript and report PDFs compiled (Typst path) and visually inspected.
-- [ ] Data manifest, links, secrets and licences scanned.
+- [x] Clean clone, `uv sync --frozen`, tests, smoke reproduction, demo build: actual outputs recorded (`research/publication/reproducibility_report.md`, 2026-11-25).
+- [x] Manuscript and report PDFs compiled (Typst path) and visually inspected (2026-11-25; 6 PDFs, 40 pages).
+- [x] Data manifest, links, secrets and licences scanned (2026-11-25; `research/publication/dependency_licences.md`).
 - [ ] Publication gate of 11.6 satisfied; owner approves any publication.

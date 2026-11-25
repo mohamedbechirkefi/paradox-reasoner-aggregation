@@ -399,3 +399,52 @@ The sandbox does not include CW. The page's screenshots were taken in headless C
 ### Next action
 
 M6 (release candidate): clean-clone reproduction including the demo build, PDFs, owner review checklist; any publication is the owner's decision.
+
+## 2026-11-25: M6 session (release candidate)
+
+**Milestone:** M6, **release candidate prepared, awaiting owner review and G-PUBLIC**. Not done: M6 is done only when the owner signs off. Nothing pushed, tagged or published.
+
+### Authority
+
+Owner, 2026-11-25, "Next" (second) (`labs/_shared/owner-approvals-2026-11-25e.md`; brief `labs/_shared/M6-brief.md`). Decision D-017.
+
+### Starting state
+
+`git status`: on `main`, clean; HEAD `51bd9fc`.
+
+### Commands and actual outputs
+
+| Command | Output |
+|---|---|
+| clean clone of `51bd9fc` in scratch; `uv sync --frozen --all-groups --all-extras` | locked packages installed; rerun `Audited 25 packages in 4ms` |
+| clone: `.venv/bin/python -m pytest -q` | `327 passed in 47.91s` |
+| clone: `.venv/bin/paradox smoke --out results/exploratory/smoke-m6` | `exploratory run of SMOKE finished in 0.09 s; peak RSS 41.2 MiB`; results identical to the committed smoke run except `runtime_s` (8), `code_revision`, `created_utc`; `metrics.csv` identical except the later-added empty `variant` column (88 rows) |
+| clone: `npm ci --prefer-offline`; `npm test`; `npm run build` | `added 53 packages in 978ms`; `Tests 21 passed (21)`; `built in 412ms` |
+| clone: `node tools/a11y_check.mjs dist` | `A11Y-CHECK PASS` (keyboard 36 of 36, overflow 0px) |
+| clone: both export scripts, then `git status --short` | 0 lines (deterministic) |
+| clone: `m4_recompute_checks.py`; `m4_number_trace.py` | `29 checks, 0 failed` (2 EXP-004 SKIP, D-012); `TOTAL 1153 decimal tokens, 0 unmatched` |
+| `.venv/bin/python scripts/m6_build_pdfs.py --png <scratch>` | manuscript 185,054 bytes, supplementary 185,391, EXP-001 140,950, EXP-002 545,568, EXP-003 334,265, EXP-004 560,925 |
+| pypdf (shared toolchain) on the six PDFs | 10, 6, 4, 8, 5, 7 pages; title set on all; no e-mail address or local path |
+| `.venv/bin/python scripts/m6_check_links.py` | `61 Markdown files, 61 relative links, 0 broken` |
+| artifact manifest check (script in scratch) | 42 entries, 28 distinct paths present and tracked, 18 of 18 hashes match, copies identical |
+| `shasum -a 256 data/manifest.json` | `b2881ad4...a116a0`, equal to the value in the `reproduction.md` files |
+| secret scan of `git ls-files` (235 files) | keys 0, `.env` 0, e-mail 1 (service no-reply address in the commit-trailer rule of `CLAUDE.md`), home-directory paths 20 lines in 11 files |
+| `.venv/bin/python -m pytest -q` (working repository, end) | `329 passed in 8.71s` (327 plus 2 in `tests/test_links.py`) |
+| `npm test`; `npm run build`; `node tools/a11y_check.mjs dist` (working repository) | `Tests 21 passed (21)`; `built in 104ms`; `A11Y-CHECK PASS` |
+| `export_demo_data.py --check`; `export_sandbox_fixture.py --check`; `m4_number_trace.py` (end) | `results.json up to date`; `fixture up to date`; `TOTAL 1153 decimal tokens, 0 unmatched` |
+
+### Changes
+
+- PDFs committed: `research/paper/manuscript.pdf`, `research/paper/supplementary.pdf`, `research/experiments/EXP-00N/report.pdf`. Visual inspection of every manuscript and supplementary page and of the first and figure pages of each report found no layout defect; the only fix was the missing PDF title metadata (`src/paradox/report.py`).
+- Seven cited sources opened in full text and the cited claims checked (`research/literature_review.md` section 4; labels updated in the manuscript, the EXP-002 and EXP-004 reports and `references.bib`; `evidence_audit.md` section 7). No claim needed qualification.
+- Home-directory paths removed from `README.md`, `demo/README.md`, `CLAUDE.md`, `research/feasibility.md` and `src/paradox/report.py`. Note (append-only record): this file contains three such paths in earlier entries and `research/decision_log.md` two; they are left as written. The four `results/EXP-00N/run_log.txt` files also contain one each and are committed results, left unchanged.
+- `CITATION.cff`: `date-released` removed, version `0.1.0-rc1`, title set to the manuscript title.
+- New: `scripts/m6_build_pdfs.py`, `scripts/m6_check_links.py`, `tests/test_links.py`, `research/publication/dependency_licences.md`. Updated: `reproducibility_report.md`, `release_checklist.md`, `author_review.md` (no box ticked), `roadmap.md` (M6 status), README status and PDF links, `demo/public/data/results.json` (regenerated: it embeds the manuscript limitations text and source hashes).
+
+### Risks
+
+The source checks verify the cited claim only, not the whole paper. The `CITATION.cff` title and version and the Chen et al. title form are session choices open to owner review. The demo checker ran in headless Chrome only.
+
+### Next action
+
+Owner review of `research/publication/author_review.md` ("Prepared for the owner (M6, 2026-11-25)"): full-text review, owner-only facts, sign-off, then any G-PUBLIC decision.

@@ -7,7 +7,7 @@ Demo URL: `<demo URL: not yet published; release requires the owner's approval>`
 
 ## Commands
 
-Node 22 (in this workspace, `/Users/bechir/research/helix/.tools/node/bin`, read-only):
+Node 22 (in the development workspace, a shared install outside this repository, used read-only):
 
     cd demo && npm ci && npm run build && npm run preview
     npm test                                   # vitest: loader validation and engine port

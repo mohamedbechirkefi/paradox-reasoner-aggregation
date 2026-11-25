@@ -11,19 +11,19 @@ All values below were checked with the commands shown in this session; outputs a
 | Cores | `sysctl -n hw.ncpu` | 10 |
 | Memory | `sysctl -n hw.memsize` | 17179869184 bytes (16 GiB) |
 | OS | `sw_vers` | macOS 15.3.1, build 24D70 |
-| Free disk | `df -h /Users/bechir/research` | 129 GiB available (460 GiB volume, 71% used) |
+| Free disk | `df -h` on the workspace volume | 129 GiB available (460 GiB volume, 71% used) |
 
 ## 2. Tools
 
 | Tool | Location | Version (command output) | Use |
 |---|---|---|---|
 | Python | `/usr/local/bin/python3` | Python 3.12.1 | project runtime |
-| uv | `/Users/bechir/research/labs/.tools/py/bin/uv` | uv 0.9.5 (d5f39331a 2025-10-21) | environment and lockfile |
-| typst (Python package) | `/Users/bechir/research/labs/.tools/py/bin/python` | typst 0.15.0 | PDF compilation |
+| uv | `../.tools/py/bin/uv` | uv 0.9.5 (d5f39331a 2025-10-21) | environment and lockfile |
+| typst (Python package) | `../.tools/py/bin/python` | typst 0.15.0 | PDF compilation |
 | pypdf | same | 6.20.0 | PDF inspection |
 | pillow | same | 11.3.0 | figure checks |
-| pandoc | `/Users/bechir/research/labs/.tools/pandoc` | pandoc 3.6.3 | Markdown to Typst and LaTeX |
-| Node | `/Users/bechir/research/helix/.tools/node/bin/node` | v22.23.3 | demo build (read-only use; that folder is never modified) |
+| pandoc | `../.tools/pandoc` | pandoc 3.6.3 | Markdown to Typst and LaTeX |
+| Node | `../../helix/.tools/node/bin/node` | v22.23.3 | demo build (read-only use; that folder is never modified) |
 | git | system | git version 2.42.1 | version control |
 | TeX | `which tex pdflatex xelatex` | not found | none available |
 

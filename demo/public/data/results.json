@@ -8746,7 +8746,7 @@
   "Statistics. Cells share seeds (D-008), so counts of significant cells are not counts of independent findings. The P1 to P3 intervals are unadjusted, and unadjusted intervals produced at least one artefact (S6, lambda = 0.75, B = 31: an interval below 0 around an exact value of +0.00002). 30 seed-runs give approximate t intervals. Non-rejection is not evidence of no effect.",
   "Robustness. EXP-004 covered 3 of the 32 significant cells and none in S6; most of its checks were insensitive by construction.",
   "Exposure. Exploratory values of the primary contrast for S1 and S4 were seen before the freeze, with seeds distinct from the confirmatory ones (research/freeze.json).",
-  "Literature. The literature pass was targeted; several foundational sources were not opened and are not cited; most sources were read at abstract level only."
+  "Literature. The literature pass was targeted; several foundational sources were not opened and are not cited; for seven sources the full text was opened in M6 and only the cited claim was checked; Kaniovski (2008) pages 1 to 13 were read."
  ],
  "project": "PARADOX",
  "question": "Under an equal compute budget, when does aggregation of fallible reasoners improve or degrade accuracy?",
@@ -8833,11 +8833,11 @@
   },
   {
    "path": "research/experiments/EXP-004/report.md",
-   "sha256": "7d1b05fb0b07d86082cdeeea3e4ec583e1098a52efa347143036e5343ac1f1ae"
+   "sha256": "7e1f03fe1a293b8d12d4d7c2b0b83d09d4ce94d296a4000ce8753f7cb543d4b1"
   },
   {
    "path": "research/paper/manuscript.md",
-   "sha256": "307334d223a24f0aec3bf1d35943d63a13bffa94404a1ffea4177e1a707f9e5d"
+   "sha256": "d3bb601fe7843de19e8589a0abab3bb185fda8afea7765b08e6fb999b5a39b6a"
   },
   {
    "path": "research/paper/supplementary.md",

@@ -35,7 +35,7 @@
 
 EXP-002 fixes several secondary choices: coin tie-breaking, cost counted as calls, `tau = 1` and `w = 0.5`. A conclusion that depends on them would be fragile. Two parts of the design draw on the literature:
 
-- the herding factor follows the information-sharing literature cited in the EXP-002 report (Golub and Jackson 2010; Mavrodiev et al. 2012, abstracts verified);
+- the herding factor follows the information-sharing literature cited in the EXP-002 report (Golub and Jackson 2010; Mavrodiev et al. 2012; full texts opened at M6 and the cited claims checked);
 - the cost factor reflects that real systems pay for reading messages.
 
 ## 4. Hypotheses and operational definitions

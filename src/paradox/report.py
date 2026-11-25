@@ -19,7 +19,8 @@ from .schema import load_result  # noqa: E402
 
 __all__ = ["build_report", "build_pdf", "DEFAULT_PANDOC"]
 
-DEFAULT_PANDOC = "/Users/bechir/research/labs/.tools/pandoc"
+# Shared toolchain folder next to the repository (research/feasibility.md); PARADOX_PANDOC or PATH take precedence.
+DEFAULT_PANDOC = str(Path(__file__).resolve().parents[3] / ".tools" / "pandoc")
 # Long tables must break across pages (pandoc wraps them in non-breakable figures) and stay unhyphenated.
 _TYPST_HEADER = "#show figure: set block(breakable: true)\n#show table: set text(size: 7.5pt, hyphenate: false)"
 _RULE_STYLE = {"SINGLE": ("#222222", "o"), "MV": ("#1b6ca8", "s"), "CW": ("#2a9d8f", "^"), "SEQ": ("#c0392b", "v"), "DELIB": ("#8e6c8a", "D")}
@@ -184,18 +185,35 @@ def build_report(results_dir: str | Path, *, pdf: bool = False, title: str | Non
     return result
 
 
-def build_pdf(md_path: str | Path, pandoc: str | None = None) -> str:
-    """Markdown -> Typst (pandoc, mainfont Libertinus Serif) -> PDF (typst package)."""
+def _doc_title(md: Path) -> str | None:
+    """First level-one heading of a Markdown file, for the PDF title metadata."""
+    for line in md.read_text(encoding="utf-8").splitlines():
+        if line.startswith("# "):
+            return line[2:].strip()
+    return None
+
+
+def build_pdf(md_path: str | Path, pandoc: str | None = None, *, keep_typ: bool = False) -> str:
+    """Markdown -> Typst (pandoc, mainfont Libertinus Serif) -> PDF (typst package).
+
+    The PDF title metadata is the first level-one heading; ``keep_typ`` keeps
+    the intermediate ``.typ`` file (used to render pages for inspection)."""
     md = Path(md_path).resolve()
+    title = _doc_title(md)
     pandoc = pandoc or os.environ.get("PARADOX_PANDOC") or shutil.which("pandoc") or DEFAULT_PANDOC
     if not Path(pandoc).is_file():
         raise FileNotFoundError(f"pandoc not found at {pandoc}; set PARADOX_PANDOC")
     typ = md.with_suffix(".typ")
     subprocess.run([pandoc, str(md), "-s", "-f", "gfm", "-V", "mainfont=Libertinus Serif", "-V", "papersize=a4",
                     "-V", "fontsize=10pt", "-V", f"header-includes={_TYPST_HEADER}", "-o", str(typ)], check=True, cwd=md.parent)
+    if title:  # the pandoc template sets an empty title inside conf(); a top-level rule at the end overrides it
+        escaped = title.replace("\\", "\\\\").replace('"', '\\"')
+        with typ.open("a", encoding="utf-8") as fh:
+            fh.write(f'\n#set document(title: "{escaped}")\n')
     import typst
 
     pdf = md.with_suffix(".pdf")
     typst.compile(str(typ), output=str(pdf), root=str(md.parent))
-    typ.unlink()
+    if not keep_typ:
+        typ.unlink()
     return str(pdf)
