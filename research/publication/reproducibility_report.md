@@ -83,3 +83,17 @@ SPDX headers: every file added since the initial commit carries the header where
 ## 6. Re-check of the M6 commit in a fresh clone
 
 Fresh local clone of `77a0219`: `uv sync --frozen --all-groups --all-extras`, then `pytest -q`: `329 passed in 13.69s`; `scripts/m6_check_links.py`: `62 Markdown files, 61 relative links, 0 broken`; both exports left `git status` empty; `npm ci --prefer-offline`: `added 53 packages in 659ms`; `npm test`: `Tests 21 passed (21)`; `npm run build` succeeded; `node tools/a11y_check.mjs dist`: `A11Y-CHECK PASS`. The clone was deleted.
+
+## 7. Owner answers of 2026-11-26: home paths remaining
+
+Authority: owner, 2026-11-26, decision sheet, B9 (scrub editable files in a new commit; no history rewrite); D-018. The repository is public since 2026-11-25, so these lines are already public in the history either way.
+
+A `git grep` for the macOS home-directory prefix after the change finds 9 lines in 6 files, all left on purpose:
+
+| File | Lines | Why it stays |
+|---|---|---|
+| `progress.md` | 3 | append-only record; the dated entries stay true for their date |
+| `research/decision_log.md` | 2 | append-only record |
+| `results/EXP-001/run_log.txt` to `results/EXP-004/run_log.txt` | 1 each | committed run logs of the confirmatory runs (generated output, left unchanged with the results) |
+
+No editable file (README, CLAUDE.md, docs, scripts, source code, demo files, publication records) contains a home path.

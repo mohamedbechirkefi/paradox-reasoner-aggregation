@@ -41,4 +41,4 @@ These are synthetic Bernoulli reasoners, not language models, committees or peop
 
 ## Reproduce it
 
-The code, frozen protocols, raw results, reports, manuscript and an offline interactive page are in the repository: `<repository URL: not yet published; release requires the owner's approval>`. Demo: `<demo URL: not yet published; release requires the owner's approval>`.
+The code, frozen protocols, raw results, reports, manuscript and an offline interactive page are in the repository: https://github.com/mohamedbechirkefi/paradox-reasoner-aggregation. Demo: https://paradox-reasoner-aggregation.kefimohamedbechir.workers.dev.

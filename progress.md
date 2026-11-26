@@ -459,3 +459,44 @@ Owner review of `research/publication/author_review.md` ("Prepared for the owner
 | `npm ci --prefer-offline`; `npm test`; `npm run build`; `node tools/a11y_check.mjs dist` | `added 53 packages in 659ms`; `Tests 21 passed (21)`; build ok; `A11Y-CHECK PASS` |
 
 Both scratch clones were deleted at the end of the session.
+
+## 2026-11-26: owner answers of 2026-11-26 applied (wording and configuration)
+
+**Authority:** owner, 2026-11-26, decision sheet (`labs/_shared/owner-decision-sheet-2026-11-26.md`, `labs/_shared/owner-approvals-2026-11-26.md`; brief `labs/_shared/OWNER-ANSWERS-brief.md`). Decision D-018. No result, analysis, figure, config, seed, frozen protocol or checksummed output changed. Nothing pushed or deployed; no box ticked.
+
+**Starting state:** `git status`: on `main`, clean; HEAD `3cf5822`.
+
+### Changes
+
+- A1: README status, `release_checklist.md` status and `articles/README.md` now say the repository is public since 2026-11-25 (no release, tag, DOI or preprint).
+- B1, B2: repository and demo URLs filled in the README, demo README, both articles and manuscript section 10; `CITATION.cff` gains `repository-code`; new `demo/wrangler.jsonc` (assets only, `./dist`); the demo README states the Cloudflare Workers static-assets hosting (free plan, deployed by the coordinator).
+- B3: "Mohamed Bechir Kefi, independent researcher" in the manuscript (affiliation "Independent researcher"), supplementary, four report Author rows, `CITATION.cff` (`affiliation`), README and demo footer.
+- B4: manuscript section 11 funding and competing-interest statements; "to be confirmed" marks removed (also noted in `review_pass_2.md` R12).
+- B8, B11, B13: `release_checklist.md` gains the release-version note and "Release notes (draft)". B9: remaining home paths listed in `reproducibility_report.md` section 7 (none in editable files).
+- R-PARADOX-1: session decisions accepted (D-018); new `data/README.md` with a dated correction note (manifest unchanged); Chen et al. (2024) cited by its v2 title (manuscript, `references.bib`, `literature_review.md`).
+- `author_review.md`: section "Owner answers recorded (2026-11-26)", placeholder list now empty, settled items marked. `demo/public/data/results.json` regenerated: 3 source SHA-256 values changed (manuscript, supplementary and a report it embeds hashes of), no value changed.
+
+### Commands and actual outputs
+
+| Command | Output |
+|---|---|
+| `scripts/export_demo_data.py --check` (after the text edits) | `results.json differs from a fresh export` (source hashes) |
+| `scripts/export_demo_data.py`; `git diff --stat demo/public/data/results.json` | `wrote ... 6 entries, 59 estimates, 456 curve points`; 3 lines changed, all `sha256` |
+| `scripts/export_sandbox_fixture.py --check` | `fixture up to date` |
+| `.venv/bin/python -m pytest -q` | `329 passed in 10.23s` |
+| `npm test` (demo) | `Test Files 2 passed (2)`, `Tests 21 passed (21)` |
+| `npm run build` | `dist/assets/index-C8H8_G2H.js 254.86 kB`, `built in 188ms` |
+| `node tools/a11y_check.mjs dist` | 9 PASS lines (including `no request leaves the local origin`), `A11Y-CHECK PASS` |
+| `scripts/m6_build_pdfs.py --png <scratch>` | manuscript 186,374 bytes, supplementary 185,604, EXP-001 140,943, EXP-002 545,558, EXP-003 334,262, EXP-004 560,697 (all six sources changed, all kept) |
+| PNG inspection | manuscript pp. 1 and 9 (author, affiliation, sections 10 and 11, Chen v2 reference), supplementary p. 1, EXP-002 p. 1 (Author row): correct, no layout defect |
+| `scripts/m6_check_links.py` | `62 Markdown files, 61 relative links, 0 broken` |
+| `scripts/m4_number_trace.py` | `TOTAL 1153 decimal tokens, 0 unmatched` |
+| `git grep -c` for the home-directory prefix | 9 lines in 6 files (`progress.md` 3, `research/decision_log.md` 2, four `results/EXP-00N/run_log.txt` 1 each) |
+
+### Risks
+
+None new. The built demo loads only same-origin files (a11y check and a URL scan of `dist/`, which finds only XML namespace strings and the React error-page address in the bundle, never fetched).
+
+### Next action
+
+Owner: B15 (articles), B16 (full-text review and sign-off), B18 (release). Coordinator: push and deploy on the owner's word.

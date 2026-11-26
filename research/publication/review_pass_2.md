@@ -26,7 +26,7 @@
 | R9 | The abstract opens with "is often assumed to help", which is unsupported. | **Holds.** | Replaced by the Condorcet statement, which is supported. |
 | R10 | 32 significant cells may suggest a large, widespread effect. The smallest rejected effect is -0.0036 (S6, `lambda = 0.75`, MV, `B = 3`; exact -0.00199). | **Partly holds.** v1 already said the cells form three connected patterns. | Section 5.2 adds that several rejected effects are below 0.01 in absolute value and practically small. |
 | R11 | Title implies a general finding about reasoners. | **Partly holds.** | Subtitle now says "among synthetic reasoners". |
-| R12 | Funding and competing-interest statements are asserted without the owner's confirmation. | **Holds.** | Marked "to be confirmed by the owner before any release". |
+| R12 | Funding and competing-interest statements are asserted without the owner's confirmation. | **Holds.** | Marked "to be confirmed by the owner before any release" at the time of the review; confirmed by the owner on 2026-11-26 (D-018). |
 | R13 | Abstract length 255 words, above the 250-word limit of section 11.4. | **Holds.** | Shortened. |
 
 ## 3. Factual and evidence checks

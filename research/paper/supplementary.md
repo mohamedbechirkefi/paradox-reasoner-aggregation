@@ -1,6 +1,8 @@
 <!-- SPDX-License-Identifier: LicenseRef-PARADOX-NC-Research-1.0 -->
 # Supplementary appendix to "When more reasoners make worse decisions"
 
+Author: Mohamed Bechir Kefi, independent researcher.
+
 **Status: independent research manuscript / preprint draft, not peer-reviewed.** Every table below is copied from a generated, committed file named in its caption; the mapping is in `research/publication/artifact_manifest.json`.
 
 ## S1. Experimental matrix, hashes and runs

@@ -8,7 +8,7 @@
 ## Author and affiliation metadata
 
 - **Author:** Mohamed Bechir Kefi.
-- **Affiliation:** none (independent research).
+- **Affiliation:** Independent researcher.
 - **AI assistance:** an AI system (Claude, Anthropic) was used as a research and development assistant for code, analysis and drafting under the author's direction. It is not an author. The author is responsible for the content. Details are in section 11.
 - **Status:** independent research manuscript / preprint draft, not peer-reviewed.
 
@@ -209,17 +209,17 @@ In a preregistered equal-budget simulation, majority voting over more reasoners 
 
 ## 10. Data and code availability
 
-All code, configurations, frozen protocols, raw outputs (except two regenerable EXP-004 files, D-012), analyses, figures and reports are in the project repository: `<repository URL: not yet published; release requires the owner's approval>`. Reproduction: `uv sync --frozen`, then `uv run paradox run --config research/experiments/EXP-00N/config.json --out results/EXP-00N/ --pdf` followed by `python -m paradox.analysis EXP-00N results/EXP-00N` (wrapped by `scripts/m3_run.sh`). The evidence audit is reproduced by `scripts/m4_recompute_checks.py` and `scripts/m4_number_trace.py`, and the exploratory checks by `scripts/m4_exploratory_analytic.py` and `scripts/m4_cw_delta_summary.py`. Each experiment folder has a `reproduction.md`.
+All code, configurations, frozen protocols, raw outputs (except two regenerable EXP-004 files, D-012), analyses, figures and reports are in the project repository: <https://github.com/mohamedbechirkefi/paradox-reasoner-aggregation>. The interactive page is at <https://paradox-reasoner-aggregation.kefimohamedbechir.workers.dev>. Reproduction: `uv sync --frozen`, then `uv run paradox run --config research/experiments/EXP-00N/config.json --out results/EXP-00N/ --pdf` followed by `python -m paradox.analysis EXP-00N results/EXP-00N` (wrapped by `scripts/m3_run.sh`). The evidence audit is reproduced by `scripts/m4_recompute_checks.py` and `scripts/m4_number_trace.py`, and the exploratory checks by `scripts/m4_exploratory_analytic.py` and `scripts/m4_cw_delta_summary.py`. Each experiment folder has a `reproduction.md`.
 
 ## 11. Funding, competing interests and AI assistance
 
-- **Funding:** none (to be confirmed by the owner before any release).
-- **Competing interests:** none declared (to be confirmed by the owner before any release).
-- **AI assistance:** an AI system (Claude, Anthropic) acted as a research and development assistant. It drafted protocols, wrote and tested code, executed the runs, drafted the reports and this manuscript, and performed the internal evidence audit and the second review pass. The owner set the research question, approved every amendment and the freeze, and made every recorded decision. Every number was checked by script against committed outputs (`research/publication/evidence_audit.md`). AI review is internal quality control, not peer review. The owner approved these statements and the title on 2026-11-25 (decision D-015); full-text owner review of the manuscript is pending (M6).
+- **Funding:** No funding was received.
+- **Competing interests:** The author declares no competing interests.
+- **AI assistance:** an AI system (Claude, Anthropic) acted as a research and development assistant. It drafted protocols, wrote and tested code, executed the runs, drafted the reports and this manuscript, and performed the internal evidence audit and the second review pass. The owner set the research question, approved every amendment and the freeze, and made every recorded decision. Every number was checked by script against committed outputs (`research/publication/evidence_audit.md`). AI review is internal quality control, not peer review. The owner approved these statements and the title on 2026-11-25 (decision D-015) and confirmed the funding and competing-interest statements and the author line on 2026-11-26 (decision D-018); full-text owner review of the manuscript is pending.
 
 ## References
 
-- [chen2024] L. Chen, J. Q. Davis, B. Hanin, P. Bailis, I. Stoica, M. Zaharia, J. Zou. Are More LLM Calls All You Need? Towards Scaling Laws of Compound Inference Systems. arXiv:2403.02419, 2024 (title of v1; v2 of 4 June 2024 is titled "Are More LM Calls All You Need? Towards the Scaling Properties of Compound AI Systems"). https://arxiv.org/abs/2403.02419 (full text of v2 opened; claim checked).
+- [chen2024] L. Chen, J. Q. Davis, B. Hanin, P. Bailis, I. Stoica, M. Zaharia, J. Zou. Are More LM Calls All You Need? Towards the Scaling Properties of Compound AI Systems. arXiv:2403.02419v2, 2024. https://arxiv.org/abs/2403.02419 (full text of v2 opened; claim checked).
 - [du2023] Y. Du, S. Li, A. Torralba, J. B. Tenenbaum, I. Mordatch. Improving Factuality and Reasoning in Language Models through Multiagent Debate. arXiv:2305.14325, 2023. https://arxiv.org/abs/2305.14325 (full text of v1 opened; claim checked).
 - [golub2010] B. Golub, M. O. Jackson. Naive Learning in Social Networks and the Wisdom of Crowds. American Economic Journal: Microeconomics 2(1): 112-149, 2010. DOI 10.1257/mic.2.1.112 (full text of the authors' version, from the second author's web page, opened; claim checked).
 - [kaniovski2008] S. Kaniovski. Aggregation of Correlated Votes and Condorcet's Jury Theorem. Working paper, Austrian Institute of Economic Research (WIFO), dated 11 September 2008. https://Serguei.Kaniovski.wifo.ac.at/fileadmin/pdf/condorcet.pdf (full text, pages 1 to 13 read).

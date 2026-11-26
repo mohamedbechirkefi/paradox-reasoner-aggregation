@@ -52,6 +52,7 @@ export function App() {
             Runs offline after the first load. No data about visitors is collected, stored or sent anywhere; the sandbox runs in your browser
             and keeps nothing. Synthetic reasoners are not language models or people.
           </p>
+          <p>Mohamed Bechir Kefi, independent researcher.</p>
         </div>
       </footer>
     </>

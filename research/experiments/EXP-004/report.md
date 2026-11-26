@@ -12,7 +12,7 @@
 | Config | `config.json`, canonical SHA-256 `9f7e8cbf704f804170bbded5878e39d594afe418b582592db786be239efb1807` |
 | Provenance revision | `d997cf81784aaf136e385e489febaade7e18e55c` (clean tree); results committed in `84b1d14` |
 | Precondition | EXP-002 complete before this run started |
-| Author | Mohamed Bechir Kefi (no affiliation). An AI system (Claude, Anthropic) assisted with code, runs and drafting as a research and development assistant; it is not an author. |
+| Author | Mohamed Bechir Kefi, independent researcher. An AI system (Claude, Anthropic) assisted with code, runs and drafting as a research and development assistant; it is not an author. |
 
 ## 2. Executive summary
 

@@ -8833,15 +8833,15 @@
   },
   {
    "path": "research/experiments/EXP-004/report.md",
-   "sha256": "7e1f03fe1a293b8d12d4d7c2b0b83d09d4ce94d296a4000ce8753f7cb543d4b1"
+   "sha256": "c08f6e6c0d4d7c0fb58074f426faa21298816d8ac9643d61475748b5540a6d64"
   },
   {
    "path": "research/paper/manuscript.md",
-   "sha256": "d3bb601fe7843de19e8589a0abab3bb185fda8afea7765b08e6fb999b5a39b6a"
+   "sha256": "faa2253d68881dd89f9a9918c3ddd791a0d7e2805ca2adfa66b07dbbf4b0885c"
   },
   {
    "path": "research/paper/supplementary.md",
-   "sha256": "effc3a039ca41f433fbbf63d3d023c7a0719278217889f97b5e688db5c2981f2"
+   "sha256": "f868983a12c51d5328d89b81b65d98ee72fdd70abe37e67482100ccf1d0f3333"
   },
   {
    "path": "research/publication/artifact_manifest.json",

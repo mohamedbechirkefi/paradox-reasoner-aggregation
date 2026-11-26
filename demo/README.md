@@ -3,7 +3,9 @@
 
 A static, offline page for the PARADOX study: the published results of EXP-001 to EXP-004 and two exploratory checks, each with its verdict under the frozen rule and its intervals; the EXP-002 accuracy and cost curves (hand-written SVG, seed-level t 95% intervals, Holm-rejected cells marked); and a seeded sandbox with a reasoning-network view of one item. Measured results, sandbox output and assumption values are labelled distinctly. Synthetic reasoners are not language models or people.
 
-Demo URL: `<demo URL: not yet published; release requires the owner's approval>`.
+Demo URL: <https://paradox-reasoner-aggregation.kefimohamedbechir.workers.dev>.
+
+Hosting: the built page (`dist/`) is hosted as Cloudflare Workers static assets on the free plan, configured by `wrangler.jsonc` (assets only, no Worker script). It is deployed by the coordinator of the research workspace, not by any script of this repository. The built page loads nothing from another origin.
 
 ## Commands
 

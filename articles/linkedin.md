@@ -9,5 +9,5 @@ One defensible finding: when half the items are ones a reasoner usually gets wro
 
 Caveat: these are synthetic Bernoulli reasoners, not language models or people, and the degradation result holds only for two of the four dependence models tested. Not peer-reviewed.
 
-Repository: `<repository URL: not yet published; release requires the owner's approval>`
-Demo: `<demo URL: not yet published; release requires the owner's approval>`
+Repository: https://github.com/mohamedbechirkefi/paradox-reasoner-aggregation
+Demo: https://paradox-reasoner-aggregation.kefimohamedbechir.workers.dev

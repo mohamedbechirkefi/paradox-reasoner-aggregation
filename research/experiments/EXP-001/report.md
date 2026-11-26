@@ -12,7 +12,7 @@
 | Main protocol | `research/protocol.md` v1.0, SHA-256 `68ce4b150fc8350b66a2e89d6c9049e241555a05bb7e381243b42a7dd5654de9` |
 | Config | `config.json`, canonical SHA-256 `ec431b20bff323bb1c6e8461d721c25909e3522c839f03e0cc212775ec906709` |
 | Provenance revision | `d997cf81784aaf136e385e489febaade7e18e55c` (clean tree); results committed in `84b1d14` |
-| Author | Mohamed Bechir Kefi (no affiliation). An AI system (Claude, Anthropic) assisted with code, runs and drafting as a research and development assistant; it is not an author. |
+| Author | Mohamed Bechir Kefi, independent researcher. An AI system (Claude, Anthropic) assisted with code, runs and drafting as a research and development assistant; it is not an author. |
 
 ## 2. Executive summary
 
