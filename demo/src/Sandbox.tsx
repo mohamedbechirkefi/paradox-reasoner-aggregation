@@ -5,6 +5,7 @@
 import { useCallback, useEffect, useRef, useState, type ChangeEvent } from "react";
 import { MAX_ITEMS } from "./engine";
 import { Network } from "./Network";
+import { Seg } from "./Seg";
 import type { Results } from "./results";
 import { DETAIL_ITEMS, type SandboxParams, type SandboxResult, type WorkerReply, type WorkerRequest } from "./sandboxTypes";
 
@@ -43,6 +44,17 @@ export function Sandbox({ r }: { r: Results }) {
   const [netB, setNetB] = useState(15);
   const [mode, setMode] = useState<"MV" | "SEQ">("MV");
   const worker = useRef<Worker | null>(null);
+  const outRef = useRef<HTMLParagraphElement>(null);
+  // A returned run settles in: opacity and a short rise, opacity only under reduced motion.
+  useEffect(() => {
+    const el = outRef.current;
+    if (!el || !out || typeof el.animate !== "function") return;
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    el.animate(
+      reduce ? [{ opacity: 0 }, { opacity: 1 }] : [{ opacity: 0, transform: "translateY(6px)" }, { opacity: 1, transform: "none" }],
+      { duration: 240, easing: "cubic-bezier(0.23, 1, 0.32, 1)" },
+    );
+  }, [out]);
 
   const spawn = useCallback(() => {
     worker.current?.terminate();
@@ -169,7 +181,9 @@ export function Sandbox({ r }: { r: Results }) {
         <label>Seed <input type="number" min={0} max={4294967295} id="sb-seed" value={form.seed} onChange={num("seed", 0, 4294967295, true)} /></label>
       </div>
       <div className="controls">
-        <button type="button" id="sb-run" onClick={() => run()} disabled={running}>Run sandbox</button>
+        <button type="button" id="sb-run" className={`primary${running ? " is-running" : ""}`} onClick={() => run()} disabled={running}>
+          <span className="run-tally" aria-hidden="true"><i /><i /><i /><i /></span>Run sandbox
+        </button>
         <button type="button" id="sb-cancel" onClick={cancel} disabled={!running}>Cancel</button>
         <button type="button" id="sb-reset" onClick={reset}>Reset to defaults</button>
         <button type="button" id="sb-save" onClick={save} disabled={!result}>Save output as JSON</button>
@@ -178,7 +192,7 @@ export function Sandbox({ r }: { r: Results }) {
         Bounds: at most {MAX_ITEMS} items and 31 reasoners per run. Default seed {firstSeed} is the first confirmatory seed; with an EXP-002
         scenario and lambda, w 0.5 and 2000 items, the output equals that one seed-run of EXP-002.
       </p>
-      <p aria-live="polite" className="sandbox-out">{out}</p>
+      <p aria-live="polite" className="sandbox-out" ref={outRef}>{out}</p>
       {running && <p role="status">Sandbox running.</p>}
 
       {result && (
@@ -237,11 +251,16 @@ export function Sandbox({ r }: { r: Results }) {
               Reasoners shown (B){" "}
               <input id="net-b" type="number" min={1} max={31} value={netB} onChange={(e) => setNetB(clamp(Math.round(Number(e.target.value)), 1, 31, 15))} />
             </label>
-            <div className="toggle" role="group" aria-label="Votes shown">
-              <span className="toggle-title">Votes shown</span>
-              <button type="button" id="net-mv" aria-pressed={mode === "MV"} onClick={() => setMode("MV")}>Answers (MV)</button>
-              <button type="button" id="net-seq" aria-pressed={mode === "SEQ"} onClick={() => setMode("SEQ")}>Sequential public votes (SEQ)</button>
-            </div>
+            <Seg<"MV" | "SEQ">
+              title="Votes shown"
+              ariaLabel="Votes shown"
+              value={mode}
+              onChange={setMode}
+              items={[
+                { value: "MV", label: "Answers (MV)", id: "net-mv" },
+                { value: "SEQ", label: "Sequential public votes (SEQ)", id: "net-seq" },
+              ]}
+            />
           </div>
           <Network item={result.items[item]} n={netB} w={result.params.w} mode={mode} index={item} />
         </>

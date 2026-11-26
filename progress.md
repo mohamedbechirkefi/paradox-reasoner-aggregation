@@ -500,3 +500,39 @@ None new. The built demo loads only same-origin files (a11y check and a URL scan
 ### Next action
 
 Owner: B15 (articles), B16 (full-text review and sign-off), B18 (release). Coordinator: push and deploy on the owner's word.
+
+## 2026-11-26: demo brand identity, motion and UI redesign (owner request)
+
+Brief: `labs/_shared/DEMO-BRAND-brief.md` (read-only). The demo gets its own identity: a jury room (slate deliberation board, chalk tally marks, ballot-paper reading surfaces, seal red only for "wrong" and "degradation detected"). No number, result, exported data, fixture, test expectation, test id or checked accessible name changed.
+
+### Changed files
+
+- `demo/DESIGN.md` (new): subject, audience, job, palette, type, layout wireframe, motion plan, memorable thing, review against the generated-page tells and what was revised.
+- `demo/public/brand/` (new): `mark.svg`, `mark-mono.svg`, `mark-reversed.svg`, `lockup.svg`, `lockup-mono.svg`, `lockup-reversed.svg`, `favicon.svg`, `favicon-32.png`, `apple-touch-icon.png`, `og.png` (1200 by 630). Generators: `demo/tools/make_brand.py` (fontTools), `demo/tools/og.html` (Chrome headless).
+- `demo/src/`: new `Hero.tsx` (twelve-ballot tally illustration, labelled "Illustration, not study data", no numerals), `Seg.tsx` (segmented control with sliding indicator; keeps ids `axis-calls`, `axis-cost`, `net-mv`, `net-seq` and `aria-pressed`), `useReveal.ts` (chart reveal once on scroll); `App.tsx` (sticky bar, hero with question and answer, Verdicts docket, Reproduce section, footer with repository, manuscript, labs index, licence, AI-use and font credits); `Curves.tsx`, `Sandbox.tsx` (Seg, reveal, run feedback); `main.tsx` (font imports); `style.css` rewritten.
+- `demo/index.html`: favicon, theme colour, Open Graph and Twitter card metadata.
+- `demo/package.json`, `demo/package-lock.json`: `@fontsource/zilla-slab` 5.3.0 and `@fontsource/public-sans` 5.3.0 (exact, `npm_config_before=2026-11-12`), SIL OFL 1.1.
+- `demo/README.md`: design and brand section, third-party font notes.
+
+### Commands and actual outputs
+
+| Command | Output |
+|---|---|
+| `npm install --save-exact @fontsource/zilla-slab@5.3.0 @fontsource/public-sans@5.3.0` (before 2026-11-12) | `added 2 packages` |
+| `python3 tools/make_brand.py` | `brand written to public/brand` |
+| `svg_audit.py mark.svg favicon.svg lockup.svg` | mark 100/100, favicon 100/100, lockup 99/100 (info: 220 anchors from the outlined wordmark) |
+| `npm test` (demo) | `Test Files 2 passed (2)`, `Tests 21 passed (21)` |
+| `npm run build` | `tsc --noEmit` clean; `built in 92ms`; JS 263.33 kB (81.96 kB gzip), CSS 14.65 kB |
+| `node tools/a11y_check.mjs dist` | 9 PASS lines (keyboard 44 of 44, contrast light and dark, 360 px overflow 0, reduced motion 0 running, same origin only, offline sandbox), `A11Y-CHECK PASS` |
+| `.venv/bin/python -m pytest -q tests/test_demo_export.py` | `6 passed` |
+| `dist/` size | 771,972 bytes in 23 files (was about 528 kB before); a first visit loads about 582 kB (woff fallbacks, OG card and icon variants are not fetched) |
+
+Screenshots (desktop 1440 full page, phone 390 full page) were taken from a local server on 127.0.0.1:5233 and reviewed in two critique passes (chart moved to a two-column figure with its legend, sandbox slot accessory removed, verdict badges set on their own line, disclosure markers restored, hero board tightened, highlighted figure returned to chalk). The phone capture used Chrome DevTools device emulation at 390 px with clipped full-page captures, because a 390 px iframe capture could not reach the page end (the page is about 21,000 px tall at that width).
+
+### Risks
+
+The chart reveal starts hidden until the chart scrolls into view; a print rule and a no-IntersectionObserver fallback show it at once. The look depends on two bundled font families; system fallbacks are declared.
+
+### Next action
+
+Coordinator: review, push and deploy on the owner's word.

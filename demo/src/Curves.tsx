@@ -4,6 +4,8 @@
 // the strings shown are the strings the generated report prints.
 import { useEffect, useMemo, useState } from "react";
 import type { CellRef, CurvePoint, Results } from "./results";
+import { Seg } from "./Seg";
+import { useReveal } from "./useReveal";
 
 const SERIES = [
   { rule: "MV", name: "Majority vote (MV)", cls: "s-mv", shape: "circle" },
@@ -49,6 +51,7 @@ export function Curves({ r }: { r: Results }) {
   const [axis, setAxis] = useState<Axis>("calls");
   const [tableOpen, setTableOpen] = useState(false);
   const narrow = useNarrow();
+  const [figRef, reveal] = useReveal<HTMLElement>();
   // On narrow screens the drawing is laid out at its display size, so labels stay legible.
   const W = narrow ? 340 : 640;
   const H = narrow ? 320 : 380;
@@ -115,14 +118,19 @@ export function Curves({ r }: { r: Results }) {
             ))}
           </select>
         </label>
-        <div className="toggle" role="group" aria-label="Horizontal axis">
-          <span className="toggle-title">Horizontal axis</span>
-          <button type="button" id="axis-calls" aria-pressed={axis === "calls"} onClick={() => setAxis("calls")}>Calls per item</button>
-          <button type="button" id="axis-cost" aria-pressed={axis === "cost"} onClick={() => setAxis("cost")}>Calls plus messages read</button>
-        </div>
+        <Seg<Axis>
+          title="Horizontal axis"
+          ariaLabel="Horizontal axis"
+          value={axis}
+          onChange={setAxis}
+          items={[
+            { value: "calls", label: "Calls per item", id: "axis-calls" },
+            { value: "cost", label: "Calls plus messages read", id: "axis-cost" },
+          ]}
+        />
       </div>
 
-      <figure className="chart">
+      <figure className={`chart reveal-${reveal}`} ref={figRef}>
         <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-labelledby="curve-title curve-desc">
           <title id="curve-title">Change in accuracy against SINGLE by {axis === "calls" ? "calls per item" : "calls plus messages read"}</title>
           <desc id="curve-desc">{describe}</desc>
@@ -147,8 +155,8 @@ export function Curves({ r }: { r: Results }) {
           <text className="axis-label" transform={`translate(${narrow ? 12 : 16} ${(M.t + H - M.b) / 2}) rotate(-90)`} textAnchor="middle">
             {narrow ? "Change against SINGLE" : "Accuracy change against SINGLE"}
           </text>
-          {series.map((s) => (
-            <g key={s.rule}>
+          {series.map((s, si) => (
+            <g key={s.rule} className="series" style={{ transitionDelay: `${si * 80}ms` }}>
               <polyline
                 className={`line ${s.cls}${s.rule === "CW" ? " dashed" : ""}`}
                 points={s.pts.map((p) => `${X(cost(p, axis)) + offset[s.rule]},${Y(p.delta)}`).join(" ")}

@@ -15,7 +15,7 @@ Node 22 (in the development workspace, a shared install outside this repository,
     npm test                                   # vitest: loader validation and engine port
     node tools/a11y_check.mjs dist --screenshots <dir>
 
-The page is built from the shared lab template (TypeScript, React and Vite, versions pinned in `package-lock.json`). It adds no dependency.
+The page is built from the shared lab template (TypeScript, React and Vite, versions pinned in `package-lock.json`). Its only additions are two self-hosted font packages (see Third-party notes).
 
 ## Data
 
@@ -28,3 +28,14 @@ The page is built from the shared lab template (TypeScript, React and Vite, vers
 ## Privacy
 
 No visitor input is collected or stored, no request leaves the page's origin, and no font, script or image comes from a CDN. "Save output as JSON" writes a file on the visitor's own machine only.
+
+## Design and brand
+
+The page has its own identity (owner request of 2026-11-26): a jury room, with a slate deliberation board, chalk tally marks and ballot-paper reading surfaces. The plan, palette, type, motion and review are in `DESIGN.md`. Brand files are in `public/brand/` (mark, one-colour and reversed variants, wordmark lockups, favicon SVG and 32 px PNG, Open Graph card `og.png`). `tools/make_brand.py` regenerates the SVGs (needs fontTools; the wordmark is Zilla Slab Bold converted to outlines) and `tools/og.html` is the source of the Open Graph card (rendered with Chrome headless at 1200 by 630). The hero animation is labelled "Illustration, not study data" and prints no numeral; every number on the page still comes from `public/data/results.json`.
+
+## Third-party notes
+
+- Zilla Slab, `@fontsource/zilla-slab` 5.3.0 (weights 600 and 700, Latin subset), copyright 2017 The Mozilla Foundation, SIL Open Font License 1.1.
+- Public Sans, `@fontsource/public-sans` 5.3.0 (weights 400 and 600, Latin subset), copyright the Public Sans project authors (USWDS), SIL Open Font License 1.1.
+
+Both are bundled by Vite and served from the page's own origin. The licence texts ship in each package's `LICENSE` file under `node_modules/`.

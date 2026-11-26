@@ -1,0 +1,40 @@
+<!doctype html>
+<!-- SPDX-License-Identifier: LicenseRef-PARADOX-NC-Research-1.0 -->
+<!-- Open Graph card source. Render: Chrome headless, 1200x630, to public/brand/og.png -->
+<html lang="en"><head><meta charset="utf-8"><title>PARADOX card</title>
+<style>
+@font-face { font-family: "Zilla Slab"; font-weight: 700; src: url("../node_modules/@fontsource/zilla-slab/files/zilla-slab-latin-700-normal.woff2") format("woff2"); }
+@font-face { font-family: "Public Sans"; font-weight: 400; src: url("../node_modules/@fontsource/public-sans/files/public-sans-latin-400-normal.woff2") format("woff2"); }
+html, body { margin: 0; width: 1200px; height: 630px; overflow: hidden; }
+body { background: #25352f; color: #eceFe6; font-family: "Public Sans"; display: grid; grid-template-columns: 1fr 470px; }
+.l { padding: 64px 0 56px 72px; display: flex; flex-direction: column; }
+.l img { height: 56px; width: auto; align-self: flex-start; }
+h1 { font: 700 70px/1.04 "Zilla Slab"; margin: 52px 0 24px; letter-spacing: -0.01em; }
+p { font-size: 25px; line-height: 1.4; color: #b9c2b8; margin: 0; max-width: 560px; }
+.by { margin-top: auto; font-size: 21px; }
+.r { position: relative; }
+.slip { position: absolute; width: 92px; height: 112px; background: #f4f5ef; border-radius: 3px; box-shadow: 0 6px 18px rgba(0,0,0,.25); }
+.slip svg { position: absolute; left: 24px; top: 34px; }
+.tally { position: absolute; left: 40px; bottom: 70px; }
+</style></head><body>
+<div class="l">
+  <img src="../public/brand/lockup-reversed.svg" alt="">
+  <h1>When more reasoners make worse decisions</h1>
+  <p>A preregistered equal-budget simulation of majority, confidence-weighted and sequential voting among synthetic reasoners.</p>
+  <p class="by">Mohamed Bechir Kefi, independent researcher</p>
+</div>
+<div class="r" id="r"></div>
+<script>
+const marks = [0,1,0,0,1,0,1,0,0];
+const r = document.getElementById("r");
+marks.forEach((m, i) => {
+  const d = document.createElement("div"); d.className = "slip";
+  const x = 40 + (i % 3) * 130, y = 60 + Math.floor(i / 3) * 140, t = [-5,3,-2,4,-4,2,5,-3,1][i];
+  d.style.left = x + "px"; d.style.top = y + "px"; d.style.transform = `rotate(${t}deg)`;
+  d.innerHTML = `<svg width="44" height="44" viewBox="0 0 44 44"><rect x="1" y="1" width="42" height="42" fill="none" stroke="#8b948a" stroke-width="2"/>` +
+    (m ? `<path d="M9 23 L18 32 L35 11" fill="none" stroke="#2a4f86" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>`
+       : `<path d="M10 10 L34 34 M34 10 L10 34" fill="none" stroke="#a3262c" stroke-width="5" stroke-linecap="round"/>`) + `</svg>`;
+  r.appendChild(d);
+});
+</script>
+</body></html>
